@@ -1,0 +1,12 @@
+{
+  "task": "antonyms",
+  "optimizer_model": "gpt-5.5",
+  "task_description": "Given a single English word, output its opposite or antonym, typically by adding, removing, or changing a prefix/suffix when appropriate.",
+  "prompts": [
+    "You convert each input word into its best English antonym. Use common morphological opposites when natural. Return only the resulting word, with no explanation.",
+    "For a single English word, produce the most appropriate opposite word. Prefer standard antonyms and prefix-based reversals where applicable. Output only the answer.",
+    "Your task is antonym generation: read the input word and return its direct opposite in English. Do not include reasoning, punctuation, or extra text.",
+    "Given one word, respond with the corresponding opposite meaning word, preserving part of speech when possible. Return exactly one word and nothing else.",
+    "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word."
+  ]
+}

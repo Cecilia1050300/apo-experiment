@@ -171,3 +171,13 @@ demos/
 
 # Get rid of those pesky .DS_Store files
 .DS_Store
+# Local secrets
+.env
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
