@@ -1,0 +1,58 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "best_prompt_id": "candidate_5",
+  "best_prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+  "best_accuracy": 0.88,
+  "failed_case_count": 6,
+  "failed_cases": [
+    {
+      "input": "alternate",
+      "expected_outputs": [
+        "opposite"
+      ],
+      "prediction": "consistent",
+      "correct": false
+    },
+    {
+      "input": "nominative",
+      "expected_outputs": [
+        "oblique"
+      ],
+      "prediction": "accusative",
+      "correct": false
+    },
+    {
+      "input": "express",
+      "expected_outputs": [
+        "local"
+      ],
+      "prediction": "suppress",
+      "correct": false
+    },
+    {
+      "input": "darkness",
+      "expected_outputs": [
+        "lightness"
+      ],
+      "prediction": "light",
+      "correct": false
+    },
+    {
+      "input": "enclosed",
+      "expected_outputs": [
+        "unenclosed"
+      ],
+      "prediction": "open",
+      "correct": false
+    },
+    {
+      "input": "misconception",
+      "expected_outputs": [
+        "conception"
+      ],
+      "prediction": "understanding",
+      "correct": false
+    }
+  ]
+}

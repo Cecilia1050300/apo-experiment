@@ -1,0 +1,43 @@
+{
+  "task": "antonyms",
+  "round": 2,
+  "method": "protegi_opro_inspired_rewriting",
+  "optimizer_model": "gpt-5.5",
+  "parent_prompt_id": "candidate_5",
+  "parent_prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+  "parent_accuracy": 0.88,
+  "source_failed_case_count": 6,
+  "analysis": {
+    "failure_patterns": [
+      "Some inputs are ambiguous across senses, causing the model to choose a plausible but non-target opposite for the wrong sense.",
+      "Several errors come from changing the part of speech or derivational form instead of preserving the input word's morphology.",
+      "The model sometimes chooses a broad semantic opposite when a direct prefix removal, prefix addition, or suffix-preserving antonym is expected.",
+      "For specialized grammatical or conventional pairs, the model may select a related contrast rather than the established antonym.",
+      "Nominalized or inflected forms require an antonym with the same grammatical shape, not a simpler base adjective or verb."
+    ],
+    "revision_principles": [
+      "Emphasize preserving part of speech, inflection, and derivational suffixes whenever possible.",
+      "Prefer direct affix reversal over looser paraphrastic opposites when it yields a standard word.",
+      "Choose conventional dictionary antonym pairs for ambiguous or technical terms.",
+      "Avoid broad alternatives that alter grammatical form or sense when a closer one-word antonym exists.",
+      "Require exactly one word with no explanation or punctuation."
+    ]
+  },
+  "prompts": [
+    {
+      "prompt_id": "round_2_candidate_1",
+      "strategy": "Morphological and part-of-speech preservation",
+      "prompt": "Given one English word, output its antonym while preserving the original part of speech, inflection, and derivational form whenever possible. Prefer standard prefix or suffix changes that keep the word shape parallel. Output exactly one word and nothing else."
+    },
+    {
+      "prompt_id": "round_2_candidate_2",
+      "strategy": "Conventional lexical antonyms and ambiguity handling",
+      "prompt": "For the supplied English word, return the most conventional dictionary antonym for its common or technical sense. If multiple opposites are possible, choose the direct established word-pair rather than a loose semantic alternative. Output only one word."
+    },
+    {
+      "prompt_id": "round_2_candidate_3",
+      "strategy": "Explicit decision priority",
+      "prompt": "Generate one English-word antonym using this priority: first reverse a standard negative or contrastive affix; next preserve part of speech and derivational suffixes; next use a conventional lexical antonym; last use a broader opposite. Output exactly one word, with no explanation."
+    }
+  ]
+}

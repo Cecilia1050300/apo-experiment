@@ -1,0 +1,93 @@
+{
+  "task": "antonyms",
+  "dataset_split": "optimization",
+  "round_1": {
+    "best_prompt_id": "candidate_5",
+    "best_prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+    "accuracy": 0.88,
+    "correct_count": 44,
+    "total": 50
+  },
+  "round_2": {
+    "best_prompt_id": "round_2_candidate_1",
+    "best_prompt": "Given one English word, output its antonym while preserving the original part of speech, inflection, and derivational form whenever possible. Prefer standard prefix or suffix changes that keep the word shape parallel. Output exactly one word and nothing else.",
+    "accuracy": 0.94,
+    "correct_count": 47,
+    "total": 50
+  },
+  "comparison": {
+    "accuracy_delta": 0.06,
+    "common_case_count": 50,
+    "fixed_case_count": 3,
+    "newly_failed_case_count": 0,
+    "still_failed_case_count": 3,
+    "still_correct_case_count": 44,
+    "only_in_round_1": [],
+    "only_in_round_2": []
+  },
+  "fixed_cases": [
+    {
+      "input": "darkness",
+      "expected_outputs": [
+        "lightness"
+      ],
+      "round_1_prediction": "light",
+      "round_2_prediction": "lightness",
+      "round_1_correct": false,
+      "round_2_correct": true
+    },
+    {
+      "input": "enclosed",
+      "expected_outputs": [
+        "unenclosed"
+      ],
+      "round_1_prediction": "open",
+      "round_2_prediction": "unenclosed",
+      "round_1_correct": false,
+      "round_2_correct": true
+    },
+    {
+      "input": "misconception",
+      "expected_outputs": [
+        "conception"
+      ],
+      "round_1_prediction": "understanding",
+      "round_2_prediction": "conception",
+      "round_1_correct": false,
+      "round_2_correct": true
+    }
+  ],
+  "newly_failed_cases": [],
+  "still_failed_cases": [
+    {
+      "input": "alternate",
+      "expected_outputs": [
+        "opposite"
+      ],
+      "round_1_prediction": "consistent",
+      "round_2_prediction": "consecutive",
+      "round_1_correct": false,
+      "round_2_correct": false
+    },
+    {
+      "input": "express",
+      "expected_outputs": [
+        "local"
+      ],
+      "round_1_prediction": "suppress",
+      "round_2_prediction": "suppress",
+      "round_1_correct": false,
+      "round_2_correct": false
+    },
+    {
+      "input": "nominative",
+      "expected_outputs": [
+        "oblique"
+      ],
+      "round_1_prediction": "accusative",
+      "round_2_prediction": "accusative",
+      "round_1_correct": false,
+      "round_2_correct": false
+    }
+  ]
+}

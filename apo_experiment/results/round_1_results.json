@@ -1,0 +1,2058 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "dataset_split": "optimization",
+  "max_cases": null,
+  "results": [
+    {
+      "prompt_id": "candidate_5",
+      "prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+      "accuracy": 0.88,
+      "correct_count": 44,
+      "total": 50,
+      "records": [
+        {
+          "input": "noncommissioned",
+          "expected_outputs": [
+            "commissioned"
+          ],
+          "prediction": "commissioned",
+          "correct": true
+        },
+        {
+          "input": "recede",
+          "expected_outputs": [
+            "advance"
+          ],
+          "prediction": "advance",
+          "correct": true
+        },
+        {
+          "input": "uncompromising",
+          "expected_outputs": [
+            "compromising"
+          ],
+          "prediction": "compromising",
+          "correct": true
+        },
+        {
+          "input": "alternate",
+          "expected_outputs": [
+            "opposite"
+          ],
+          "prediction": "consistent",
+          "correct": false
+        },
+        {
+          "input": "provocative",
+          "expected_outputs": [
+            "unprovocative"
+          ],
+          "prediction": "unprovocative",
+          "correct": true
+        },
+        {
+          "input": "disincentive",
+          "expected_outputs": [
+            "incentive"
+          ],
+          "prediction": "incentive",
+          "correct": true
+        },
+        {
+          "input": "wellness",
+          "expected_outputs": [
+            "illness"
+          ],
+          "prediction": "illness",
+          "correct": true
+        },
+        {
+          "input": "nonspeaking",
+          "expected_outputs": [
+            "speaking"
+          ],
+          "prediction": "speaking",
+          "correct": true
+        },
+        {
+          "input": "immature",
+          "expected_outputs": [
+            "mature"
+          ],
+          "prediction": "mature",
+          "correct": true
+        },
+        {
+          "input": "anode",
+          "expected_outputs": [
+            "cathode"
+          ],
+          "prediction": "cathode",
+          "correct": true
+        },
+        {
+          "input": "deciduous",
+          "expected_outputs": [
+            "evergreen"
+          ],
+          "prediction": "evergreen",
+          "correct": true
+        },
+        {
+          "input": "unmodified",
+          "expected_outputs": [
+            "modified"
+          ],
+          "prediction": "modified",
+          "correct": true
+        },
+        {
+          "input": "displease",
+          "expected_outputs": [
+            "please"
+          ],
+          "prediction": "please",
+          "correct": true
+        },
+        {
+          "input": "unburden",
+          "expected_outputs": [
+            "burden"
+          ],
+          "prediction": "burden",
+          "correct": true
+        },
+        {
+          "input": "reasonable",
+          "expected_outputs": [
+            "unreasonable"
+          ],
+          "prediction": "unreasonable",
+          "correct": true
+        },
+        {
+          "input": "unworthy",
+          "expected_outputs": [
+            "worthy"
+          ],
+          "prediction": "worthy",
+          "correct": true
+        },
+        {
+          "input": "benign",
+          "expected_outputs": [
+            "malignant"
+          ],
+          "prediction": "malignant",
+          "correct": true
+        },
+        {
+          "input": "assisted",
+          "expected_outputs": [
+            "unassisted"
+          ],
+          "prediction": "unassisted",
+          "correct": true
+        },
+        {
+          "input": "logical",
+          "expected_outputs": [
+            "illogical"
+          ],
+          "prediction": "illogical",
+          "correct": true
+        },
+        {
+          "input": "empirical",
+          "expected_outputs": [
+            "theoretical"
+          ],
+          "prediction": "theoretical",
+          "correct": true
+        },
+        {
+          "input": "urban",
+          "expected_outputs": [
+            "rural"
+          ],
+          "prediction": "rural",
+          "correct": true
+        },
+        {
+          "input": "unmask",
+          "expected_outputs": [
+            "mask"
+          ],
+          "prediction": "mask",
+          "correct": true
+        },
+        {
+          "input": "infectious",
+          "expected_outputs": [
+            "noninfectious"
+          ],
+          "prediction": "noninfectious",
+          "correct": true
+        },
+        {
+          "input": "improperly",
+          "expected_outputs": [
+            "properly"
+          ],
+          "prediction": "properly",
+          "correct": true
+        },
+        {
+          "input": "invalidate",
+          "expected_outputs": [
+            "validate"
+          ],
+          "prediction": "validate",
+          "correct": true
+        },
+        {
+          "input": "attach",
+          "expected_outputs": [
+            "detach"
+          ],
+          "prediction": "detach",
+          "correct": true
+        },
+        {
+          "input": "approve",
+          "expected_outputs": [
+            "disapprove"
+          ],
+          "prediction": "disapprove",
+          "correct": true
+        },
+        {
+          "input": "dissimilar",
+          "expected_outputs": [
+            "similar"
+          ],
+          "prediction": "similar",
+          "correct": true
+        },
+        {
+          "input": "credulous",
+          "expected_outputs": [
+            "incredulous"
+          ],
+          "prediction": "incredulous",
+          "correct": true
+        },
+        {
+          "input": "illegible",
+          "expected_outputs": [
+            "legible"
+          ],
+          "prediction": "legible",
+          "correct": true
+        },
+        {
+          "input": "dishonest",
+          "expected_outputs": [
+            "honest"
+          ],
+          "prediction": "honest",
+          "correct": true
+        },
+        {
+          "input": "noncompliance",
+          "expected_outputs": [
+            "compliance"
+          ],
+          "prediction": "compliance",
+          "correct": true
+        },
+        {
+          "input": "nominative",
+          "expected_outputs": [
+            "oblique"
+          ],
+          "prediction": "accusative",
+          "correct": false
+        },
+        {
+          "input": "clergy",
+          "expected_outputs": [
+            "laity"
+          ],
+          "prediction": "laity",
+          "correct": true
+        },
+        {
+          "input": "express",
+          "expected_outputs": [
+            "local"
+          ],
+          "prediction": "suppress",
+          "correct": false
+        },
+        {
+          "input": "descendant",
+          "expected_outputs": [
+            "ancestor"
+          ],
+          "prediction": "ancestor",
+          "correct": true
+        },
+        {
+          "input": "darkness",
+          "expected_outputs": [
+            "lightness"
+          ],
+          "prediction": "light",
+          "correct": false
+        },
+        {
+          "input": "female",
+          "expected_outputs": [
+            "male"
+          ],
+          "prediction": "male",
+          "correct": true
+        },
+        {
+          "input": "perceptibly",
+          "expected_outputs": [
+            "imperceptibly"
+          ],
+          "prediction": "imperceptibly",
+          "correct": true
+        },
+        {
+          "input": "unmitigated",
+          "expected_outputs": [
+            "mitigated"
+          ],
+          "prediction": "mitigated",
+          "correct": true
+        },
+        {
+          "input": "unveiled",
+          "expected_outputs": [
+            "veiled"
+          ],
+          "prediction": "veiled",
+          "correct": true
+        },
+        {
+          "input": "uninspiring",
+          "expected_outputs": [
+            "inspiring"
+          ],
+          "prediction": "inspiring",
+          "correct": true
+        },
+        {
+          "input": "enclosed",
+          "expected_outputs": [
+            "unenclosed"
+          ],
+          "prediction": "open",
+          "correct": false
+        },
+        {
+          "input": "divergence",
+          "expected_outputs": [
+            "convergence"
+          ],
+          "prediction": "convergence",
+          "correct": true
+        },
+        {
+          "input": "misconception",
+          "expected_outputs": [
+            "conception"
+          ],
+          "prediction": "understanding",
+          "correct": false
+        },
+        {
+          "input": "concerned",
+          "expected_outputs": [
+            "unconcerned"
+          ],
+          "prediction": "unconcerned",
+          "correct": true
+        },
+        {
+          "input": "successful",
+          "expected_outputs": [
+            "unsuccessful"
+          ],
+          "prediction": "unsuccessful",
+          "correct": true
+        },
+        {
+          "input": "impatience",
+          "expected_outputs": [
+            "patience"
+          ],
+          "prediction": "patience",
+          "correct": true
+        },
+        {
+          "input": "unattached",
+          "expected_outputs": [
+            "attached"
+          ],
+          "prediction": "attached",
+          "correct": true
+        },
+        {
+          "input": "fairness",
+          "expected_outputs": [
+            "unfairness"
+          ],
+          "prediction": "unfairness",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_2",
+      "prompt": "For a single English word, produce the most appropriate opposite word. Prefer standard antonyms and prefix-based reversals where applicable. Output only the answer.",
+      "accuracy": 0.88,
+      "correct_count": 44,
+      "total": 50,
+      "records": [
+        {
+          "input": "noncommissioned",
+          "expected_outputs": [
+            "commissioned"
+          ],
+          "prediction": "commissioned",
+          "correct": true
+        },
+        {
+          "input": "recede",
+          "expected_outputs": [
+            "advance"
+          ],
+          "prediction": "advance",
+          "correct": true
+        },
+        {
+          "input": "uncompromising",
+          "expected_outputs": [
+            "compromising"
+          ],
+          "prediction": "compromising",
+          "correct": true
+        },
+        {
+          "input": "alternate",
+          "expected_outputs": [
+            "opposite"
+          ],
+          "prediction": "same",
+          "correct": false
+        },
+        {
+          "input": "provocative",
+          "expected_outputs": [
+            "unprovocative"
+          ],
+          "prediction": "unprovocative",
+          "correct": true
+        },
+        {
+          "input": "disincentive",
+          "expected_outputs": [
+            "incentive"
+          ],
+          "prediction": "incentive",
+          "correct": true
+        },
+        {
+          "input": "wellness",
+          "expected_outputs": [
+            "illness"
+          ],
+          "prediction": "illness",
+          "correct": true
+        },
+        {
+          "input": "nonspeaking",
+          "expected_outputs": [
+            "speaking"
+          ],
+          "prediction": "speaking",
+          "correct": true
+        },
+        {
+          "input": "immature",
+          "expected_outputs": [
+            "mature"
+          ],
+          "prediction": "mature",
+          "correct": true
+        },
+        {
+          "input": "anode",
+          "expected_outputs": [
+            "cathode"
+          ],
+          "prediction": "cathode",
+          "correct": true
+        },
+        {
+          "input": "deciduous",
+          "expected_outputs": [
+            "evergreen"
+          ],
+          "prediction": "evergreen",
+          "correct": true
+        },
+        {
+          "input": "unmodified",
+          "expected_outputs": [
+            "modified"
+          ],
+          "prediction": "modified",
+          "correct": true
+        },
+        {
+          "input": "displease",
+          "expected_outputs": [
+            "please"
+          ],
+          "prediction": "please",
+          "correct": true
+        },
+        {
+          "input": "unburden",
+          "expected_outputs": [
+            "burden"
+          ],
+          "prediction": "burden",
+          "correct": true
+        },
+        {
+          "input": "reasonable",
+          "expected_outputs": [
+            "unreasonable"
+          ],
+          "prediction": "unreasonable",
+          "correct": true
+        },
+        {
+          "input": "unworthy",
+          "expected_outputs": [
+            "worthy"
+          ],
+          "prediction": "worthy",
+          "correct": true
+        },
+        {
+          "input": "benign",
+          "expected_outputs": [
+            "malignant"
+          ],
+          "prediction": "malignant",
+          "correct": true
+        },
+        {
+          "input": "assisted",
+          "expected_outputs": [
+            "unassisted"
+          ],
+          "prediction": "unassisted",
+          "correct": true
+        },
+        {
+          "input": "logical",
+          "expected_outputs": [
+            "illogical"
+          ],
+          "prediction": "illogical",
+          "correct": true
+        },
+        {
+          "input": "empirical",
+          "expected_outputs": [
+            "theoretical"
+          ],
+          "prediction": "theoretical",
+          "correct": true
+        },
+        {
+          "input": "urban",
+          "expected_outputs": [
+            "rural"
+          ],
+          "prediction": "rural",
+          "correct": true
+        },
+        {
+          "input": "unmask",
+          "expected_outputs": [
+            "mask"
+          ],
+          "prediction": "mask",
+          "correct": true
+        },
+        {
+          "input": "infectious",
+          "expected_outputs": [
+            "noninfectious"
+          ],
+          "prediction": "noninfectious",
+          "correct": true
+        },
+        {
+          "input": "improperly",
+          "expected_outputs": [
+            "properly"
+          ],
+          "prediction": "properly",
+          "correct": true
+        },
+        {
+          "input": "invalidate",
+          "expected_outputs": [
+            "validate"
+          ],
+          "prediction": "validate",
+          "correct": true
+        },
+        {
+          "input": "attach",
+          "expected_outputs": [
+            "detach"
+          ],
+          "prediction": "detach",
+          "correct": true
+        },
+        {
+          "input": "approve",
+          "expected_outputs": [
+            "disapprove"
+          ],
+          "prediction": "disapprove",
+          "correct": true
+        },
+        {
+          "input": "dissimilar",
+          "expected_outputs": [
+            "similar"
+          ],
+          "prediction": "similar",
+          "correct": true
+        },
+        {
+          "input": "credulous",
+          "expected_outputs": [
+            "incredulous"
+          ],
+          "prediction": "incredulous",
+          "correct": true
+        },
+        {
+          "input": "illegible",
+          "expected_outputs": [
+            "legible"
+          ],
+          "prediction": "legible",
+          "correct": true
+        },
+        {
+          "input": "dishonest",
+          "expected_outputs": [
+            "honest"
+          ],
+          "prediction": "honest",
+          "correct": true
+        },
+        {
+          "input": "noncompliance",
+          "expected_outputs": [
+            "compliance"
+          ],
+          "prediction": "compliance",
+          "correct": true
+        },
+        {
+          "input": "nominative",
+          "expected_outputs": [
+            "oblique"
+          ],
+          "prediction": "accusative",
+          "correct": false
+        },
+        {
+          "input": "clergy",
+          "expected_outputs": [
+            "laity"
+          ],
+          "prediction": "laity",
+          "correct": true
+        },
+        {
+          "input": "express",
+          "expected_outputs": [
+            "local"
+          ],
+          "prediction": "suppress",
+          "correct": false
+        },
+        {
+          "input": "descendant",
+          "expected_outputs": [
+            "ancestor"
+          ],
+          "prediction": "ancestor",
+          "correct": true
+        },
+        {
+          "input": "darkness",
+          "expected_outputs": [
+            "lightness"
+          ],
+          "prediction": "light",
+          "correct": false
+        },
+        {
+          "input": "female",
+          "expected_outputs": [
+            "male"
+          ],
+          "prediction": "male",
+          "correct": true
+        },
+        {
+          "input": "perceptibly",
+          "expected_outputs": [
+            "imperceptibly"
+          ],
+          "prediction": "imperceptibly",
+          "correct": true
+        },
+        {
+          "input": "unmitigated",
+          "expected_outputs": [
+            "mitigated"
+          ],
+          "prediction": "mitigated",
+          "correct": true
+        },
+        {
+          "input": "unveiled",
+          "expected_outputs": [
+            "veiled"
+          ],
+          "prediction": "veiled",
+          "correct": true
+        },
+        {
+          "input": "uninspiring",
+          "expected_outputs": [
+            "inspiring"
+          ],
+          "prediction": "inspiring",
+          "correct": true
+        },
+        {
+          "input": "enclosed",
+          "expected_outputs": [
+            "unenclosed"
+          ],
+          "prediction": "open",
+          "correct": false
+        },
+        {
+          "input": "divergence",
+          "expected_outputs": [
+            "convergence"
+          ],
+          "prediction": "convergence",
+          "correct": true
+        },
+        {
+          "input": "misconception",
+          "expected_outputs": [
+            "conception"
+          ],
+          "prediction": "understanding",
+          "correct": false
+        },
+        {
+          "input": "concerned",
+          "expected_outputs": [
+            "unconcerned"
+          ],
+          "prediction": "unconcerned",
+          "correct": true
+        },
+        {
+          "input": "successful",
+          "expected_outputs": [
+            "unsuccessful"
+          ],
+          "prediction": "unsuccessful",
+          "correct": true
+        },
+        {
+          "input": "impatience",
+          "expected_outputs": [
+            "patience"
+          ],
+          "prediction": "patience",
+          "correct": true
+        },
+        {
+          "input": "unattached",
+          "expected_outputs": [
+            "attached"
+          ],
+          "prediction": "attached",
+          "correct": true
+        },
+        {
+          "input": "fairness",
+          "expected_outputs": [
+            "unfairness"
+          ],
+          "prediction": "unfairness",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_3",
+      "prompt": "Your task is antonym generation: read the input word and return its direct opposite in English. Do not include reasoning, punctuation, or extra text.",
+      "accuracy": 0.84,
+      "correct_count": 42,
+      "total": 50,
+      "records": [
+        {
+          "input": "noncommissioned",
+          "expected_outputs": [
+            "commissioned"
+          ],
+          "prediction": "commissioned",
+          "correct": true
+        },
+        {
+          "input": "recede",
+          "expected_outputs": [
+            "advance"
+          ],
+          "prediction": "advance",
+          "correct": true
+        },
+        {
+          "input": "uncompromising",
+          "expected_outputs": [
+            "compromising"
+          ],
+          "prediction": "yielding",
+          "correct": false
+        },
+        {
+          "input": "alternate",
+          "expected_outputs": [
+            "opposite"
+          ],
+          "prediction": "constant",
+          "correct": false
+        },
+        {
+          "input": "provocative",
+          "expected_outputs": [
+            "unprovocative"
+          ],
+          "prediction": "unprovocative",
+          "correct": true
+        },
+        {
+          "input": "disincentive",
+          "expected_outputs": [
+            "incentive"
+          ],
+          "prediction": "incentive",
+          "correct": true
+        },
+        {
+          "input": "wellness",
+          "expected_outputs": [
+            "illness"
+          ],
+          "prediction": "illness",
+          "correct": true
+        },
+        {
+          "input": "nonspeaking",
+          "expected_outputs": [
+            "speaking"
+          ],
+          "prediction": "speaking",
+          "correct": true
+        },
+        {
+          "input": "immature",
+          "expected_outputs": [
+            "mature"
+          ],
+          "prediction": "mature",
+          "correct": true
+        },
+        {
+          "input": "anode",
+          "expected_outputs": [
+            "cathode"
+          ],
+          "prediction": "cathode",
+          "correct": true
+        },
+        {
+          "input": "deciduous",
+          "expected_outputs": [
+            "evergreen"
+          ],
+          "prediction": "evergreen",
+          "correct": true
+        },
+        {
+          "input": "unmodified",
+          "expected_outputs": [
+            "modified"
+          ],
+          "prediction": "modified",
+          "correct": true
+        },
+        {
+          "input": "displease",
+          "expected_outputs": [
+            "please"
+          ],
+          "prediction": "please",
+          "correct": true
+        },
+        {
+          "input": "unburden",
+          "expected_outputs": [
+            "burden"
+          ],
+          "prediction": "burden",
+          "correct": true
+        },
+        {
+          "input": "reasonable",
+          "expected_outputs": [
+            "unreasonable"
+          ],
+          "prediction": "unreasonable",
+          "correct": true
+        },
+        {
+          "input": "unworthy",
+          "expected_outputs": [
+            "worthy"
+          ],
+          "prediction": "worthy",
+          "correct": true
+        },
+        {
+          "input": "benign",
+          "expected_outputs": [
+            "malignant"
+          ],
+          "prediction": "malignant",
+          "correct": true
+        },
+        {
+          "input": "assisted",
+          "expected_outputs": [
+            "unassisted"
+          ],
+          "prediction": "unassisted",
+          "correct": true
+        },
+        {
+          "input": "logical",
+          "expected_outputs": [
+            "illogical"
+          ],
+          "prediction": "illogical",
+          "correct": true
+        },
+        {
+          "input": "empirical",
+          "expected_outputs": [
+            "theoretical"
+          ],
+          "prediction": "theoretical",
+          "correct": true
+        },
+        {
+          "input": "urban",
+          "expected_outputs": [
+            "rural"
+          ],
+          "prediction": "rural",
+          "correct": true
+        },
+        {
+          "input": "unmask",
+          "expected_outputs": [
+            "mask"
+          ],
+          "prediction": "mask",
+          "correct": true
+        },
+        {
+          "input": "infectious",
+          "expected_outputs": [
+            "noninfectious"
+          ],
+          "prediction": "noninfectious",
+          "correct": true
+        },
+        {
+          "input": "improperly",
+          "expected_outputs": [
+            "properly"
+          ],
+          "prediction": "properly",
+          "correct": true
+        },
+        {
+          "input": "invalidate",
+          "expected_outputs": [
+            "validate"
+          ],
+          "prediction": "validate",
+          "correct": true
+        },
+        {
+          "input": "attach",
+          "expected_outputs": [
+            "detach"
+          ],
+          "prediction": "detach",
+          "correct": true
+        },
+        {
+          "input": "approve",
+          "expected_outputs": [
+            "disapprove"
+          ],
+          "prediction": "disapprove",
+          "correct": true
+        },
+        {
+          "input": "dissimilar",
+          "expected_outputs": [
+            "similar"
+          ],
+          "prediction": "similar",
+          "correct": true
+        },
+        {
+          "input": "credulous",
+          "expected_outputs": [
+            "incredulous"
+          ],
+          "prediction": "skeptical",
+          "correct": false
+        },
+        {
+          "input": "illegible",
+          "expected_outputs": [
+            "legible"
+          ],
+          "prediction": "legible",
+          "correct": true
+        },
+        {
+          "input": "dishonest",
+          "expected_outputs": [
+            "honest"
+          ],
+          "prediction": "honest",
+          "correct": true
+        },
+        {
+          "input": "noncompliance",
+          "expected_outputs": [
+            "compliance"
+          ],
+          "prediction": "compliance",
+          "correct": true
+        },
+        {
+          "input": "nominative",
+          "expected_outputs": [
+            "oblique"
+          ],
+          "prediction": "accusative",
+          "correct": false
+        },
+        {
+          "input": "clergy",
+          "expected_outputs": [
+            "laity"
+          ],
+          "prediction": "laity",
+          "correct": true
+        },
+        {
+          "input": "express",
+          "expected_outputs": [
+            "local"
+          ],
+          "prediction": "suppress",
+          "correct": false
+        },
+        {
+          "input": "descendant",
+          "expected_outputs": [
+            "ancestor"
+          ],
+          "prediction": "ancestor",
+          "correct": true
+        },
+        {
+          "input": "darkness",
+          "expected_outputs": [
+            "lightness"
+          ],
+          "prediction": "light",
+          "correct": false
+        },
+        {
+          "input": "female",
+          "expected_outputs": [
+            "male"
+          ],
+          "prediction": "male",
+          "correct": true
+        },
+        {
+          "input": "perceptibly",
+          "expected_outputs": [
+            "imperceptibly"
+          ],
+          "prediction": "imperceptibly",
+          "correct": true
+        },
+        {
+          "input": "unmitigated",
+          "expected_outputs": [
+            "mitigated"
+          ],
+          "prediction": "mitigated",
+          "correct": true
+        },
+        {
+          "input": "unveiled",
+          "expected_outputs": [
+            "veiled"
+          ],
+          "prediction": "veiled",
+          "correct": true
+        },
+        {
+          "input": "uninspiring",
+          "expected_outputs": [
+            "inspiring"
+          ],
+          "prediction": "inspiring",
+          "correct": true
+        },
+        {
+          "input": "enclosed",
+          "expected_outputs": [
+            "unenclosed"
+          ],
+          "prediction": "open",
+          "correct": false
+        },
+        {
+          "input": "divergence",
+          "expected_outputs": [
+            "convergence"
+          ],
+          "prediction": "convergence",
+          "correct": true
+        },
+        {
+          "input": "misconception",
+          "expected_outputs": [
+            "conception"
+          ],
+          "prediction": "understanding",
+          "correct": false
+        },
+        {
+          "input": "concerned",
+          "expected_outputs": [
+            "unconcerned"
+          ],
+          "prediction": "unconcerned",
+          "correct": true
+        },
+        {
+          "input": "successful",
+          "expected_outputs": [
+            "unsuccessful"
+          ],
+          "prediction": "unsuccessful",
+          "correct": true
+        },
+        {
+          "input": "impatience",
+          "expected_outputs": [
+            "patience"
+          ],
+          "prediction": "patience",
+          "correct": true
+        },
+        {
+          "input": "unattached",
+          "expected_outputs": [
+            "attached"
+          ],
+          "prediction": "attached",
+          "correct": true
+        },
+        {
+          "input": "fairness",
+          "expected_outputs": [
+            "unfairness"
+          ],
+          "prediction": "unfairness",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_1",
+      "prompt": "You convert each input word into its best English antonym. Use common morphological opposites when natural. Return only the resulting word, with no explanation.",
+      "accuracy": 0.84,
+      "correct_count": 42,
+      "total": 50,
+      "records": [
+        {
+          "input": "noncommissioned",
+          "expected_outputs": [
+            "commissioned"
+          ],
+          "prediction": "commissioned",
+          "correct": true
+        },
+        {
+          "input": "recede",
+          "expected_outputs": [
+            "advance"
+          ],
+          "prediction": "advance",
+          "correct": true
+        },
+        {
+          "input": "uncompromising",
+          "expected_outputs": [
+            "compromising"
+          ],
+          "prediction": "yielding",
+          "correct": false
+        },
+        {
+          "input": "alternate",
+          "expected_outputs": [
+            "opposite"
+          ],
+          "prediction": "continuous",
+          "correct": false
+        },
+        {
+          "input": "provocative",
+          "expected_outputs": [
+            "unprovocative"
+          ],
+          "prediction": "unprovocative",
+          "correct": true
+        },
+        {
+          "input": "disincentive",
+          "expected_outputs": [
+            "incentive"
+          ],
+          "prediction": "incentive",
+          "correct": true
+        },
+        {
+          "input": "wellness",
+          "expected_outputs": [
+            "illness"
+          ],
+          "prediction": "illness",
+          "correct": true
+        },
+        {
+          "input": "nonspeaking",
+          "expected_outputs": [
+            "speaking"
+          ],
+          "prediction": "speaking",
+          "correct": true
+        },
+        {
+          "input": "immature",
+          "expected_outputs": [
+            "mature"
+          ],
+          "prediction": "mature",
+          "correct": true
+        },
+        {
+          "input": "anode",
+          "expected_outputs": [
+            "cathode"
+          ],
+          "prediction": "cathode",
+          "correct": true
+        },
+        {
+          "input": "deciduous",
+          "expected_outputs": [
+            "evergreen"
+          ],
+          "prediction": "evergreen",
+          "correct": true
+        },
+        {
+          "input": "unmodified",
+          "expected_outputs": [
+            "modified"
+          ],
+          "prediction": "modified",
+          "correct": true
+        },
+        {
+          "input": "displease",
+          "expected_outputs": [
+            "please"
+          ],
+          "prediction": "please",
+          "correct": true
+        },
+        {
+          "input": "unburden",
+          "expected_outputs": [
+            "burden"
+          ],
+          "prediction": "burden",
+          "correct": true
+        },
+        {
+          "input": "reasonable",
+          "expected_outputs": [
+            "unreasonable"
+          ],
+          "prediction": "unreasonable",
+          "correct": true
+        },
+        {
+          "input": "unworthy",
+          "expected_outputs": [
+            "worthy"
+          ],
+          "prediction": "worthy",
+          "correct": true
+        },
+        {
+          "input": "benign",
+          "expected_outputs": [
+            "malignant"
+          ],
+          "prediction": "malignant",
+          "correct": true
+        },
+        {
+          "input": "assisted",
+          "expected_outputs": [
+            "unassisted"
+          ],
+          "prediction": "unassisted",
+          "correct": true
+        },
+        {
+          "input": "logical",
+          "expected_outputs": [
+            "illogical"
+          ],
+          "prediction": "illogical",
+          "correct": true
+        },
+        {
+          "input": "empirical",
+          "expected_outputs": [
+            "theoretical"
+          ],
+          "prediction": "theoretical",
+          "correct": true
+        },
+        {
+          "input": "urban",
+          "expected_outputs": [
+            "rural"
+          ],
+          "prediction": "rural",
+          "correct": true
+        },
+        {
+          "input": "unmask",
+          "expected_outputs": [
+            "mask"
+          ],
+          "prediction": "mask",
+          "correct": true
+        },
+        {
+          "input": "infectious",
+          "expected_outputs": [
+            "noninfectious"
+          ],
+          "prediction": "noninfectious",
+          "correct": true
+        },
+        {
+          "input": "improperly",
+          "expected_outputs": [
+            "properly"
+          ],
+          "prediction": "properly",
+          "correct": true
+        },
+        {
+          "input": "invalidate",
+          "expected_outputs": [
+            "validate"
+          ],
+          "prediction": "validate",
+          "correct": true
+        },
+        {
+          "input": "attach",
+          "expected_outputs": [
+            "detach"
+          ],
+          "prediction": "detach",
+          "correct": true
+        },
+        {
+          "input": "approve",
+          "expected_outputs": [
+            "disapprove"
+          ],
+          "prediction": "disapprove",
+          "correct": true
+        },
+        {
+          "input": "dissimilar",
+          "expected_outputs": [
+            "similar"
+          ],
+          "prediction": "similar",
+          "correct": true
+        },
+        {
+          "input": "credulous",
+          "expected_outputs": [
+            "incredulous"
+          ],
+          "prediction": "skeptical",
+          "correct": false
+        },
+        {
+          "input": "illegible",
+          "expected_outputs": [
+            "legible"
+          ],
+          "prediction": "legible",
+          "correct": true
+        },
+        {
+          "input": "dishonest",
+          "expected_outputs": [
+            "honest"
+          ],
+          "prediction": "honest",
+          "correct": true
+        },
+        {
+          "input": "noncompliance",
+          "expected_outputs": [
+            "compliance"
+          ],
+          "prediction": "compliance",
+          "correct": true
+        },
+        {
+          "input": "nominative",
+          "expected_outputs": [
+            "oblique"
+          ],
+          "prediction": "accusative",
+          "correct": false
+        },
+        {
+          "input": "clergy",
+          "expected_outputs": [
+            "laity"
+          ],
+          "prediction": "laity",
+          "correct": true
+        },
+        {
+          "input": "express",
+          "expected_outputs": [
+            "local"
+          ],
+          "prediction": "suppress",
+          "correct": false
+        },
+        {
+          "input": "descendant",
+          "expected_outputs": [
+            "ancestor"
+          ],
+          "prediction": "ancestor",
+          "correct": true
+        },
+        {
+          "input": "darkness",
+          "expected_outputs": [
+            "lightness"
+          ],
+          "prediction": "light",
+          "correct": false
+        },
+        {
+          "input": "female",
+          "expected_outputs": [
+            "male"
+          ],
+          "prediction": "male",
+          "correct": true
+        },
+        {
+          "input": "perceptibly",
+          "expected_outputs": [
+            "imperceptibly"
+          ],
+          "prediction": "imperceptibly",
+          "correct": true
+        },
+        {
+          "input": "unmitigated",
+          "expected_outputs": [
+            "mitigated"
+          ],
+          "prediction": "mitigated",
+          "correct": true
+        },
+        {
+          "input": "unveiled",
+          "expected_outputs": [
+            "veiled"
+          ],
+          "prediction": "veiled",
+          "correct": true
+        },
+        {
+          "input": "uninspiring",
+          "expected_outputs": [
+            "inspiring"
+          ],
+          "prediction": "inspiring",
+          "correct": true
+        },
+        {
+          "input": "enclosed",
+          "expected_outputs": [
+            "unenclosed"
+          ],
+          "prediction": "open",
+          "correct": false
+        },
+        {
+          "input": "divergence",
+          "expected_outputs": [
+            "convergence"
+          ],
+          "prediction": "convergence",
+          "correct": true
+        },
+        {
+          "input": "misconception",
+          "expected_outputs": [
+            "conception"
+          ],
+          "prediction": "understanding",
+          "correct": false
+        },
+        {
+          "input": "concerned",
+          "expected_outputs": [
+            "unconcerned"
+          ],
+          "prediction": "unconcerned",
+          "correct": true
+        },
+        {
+          "input": "successful",
+          "expected_outputs": [
+            "unsuccessful"
+          ],
+          "prediction": "unsuccessful",
+          "correct": true
+        },
+        {
+          "input": "impatience",
+          "expected_outputs": [
+            "patience"
+          ],
+          "prediction": "patience",
+          "correct": true
+        },
+        {
+          "input": "unattached",
+          "expected_outputs": [
+            "attached"
+          ],
+          "prediction": "attached",
+          "correct": true
+        },
+        {
+          "input": "fairness",
+          "expected_outputs": [
+            "unfairness"
+          ],
+          "prediction": "unfairness",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_4",
+      "prompt": "Given one word, respond with the corresponding opposite meaning word, preserving part of speech when possible. Return exactly one word and nothing else.",
+      "accuracy": 0.76,
+      "correct_count": 38,
+      "total": 50,
+      "records": [
+        {
+          "input": "noncommissioned",
+          "expected_outputs": [
+            "commissioned"
+          ],
+          "prediction": "commissioned",
+          "correct": true
+        },
+        {
+          "input": "recede",
+          "expected_outputs": [
+            "advance"
+          ],
+          "prediction": "advance",
+          "correct": true
+        },
+        {
+          "input": "uncompromising",
+          "expected_outputs": [
+            "compromising"
+          ],
+          "prediction": "flexible",
+          "correct": false
+        },
+        {
+          "input": "alternate",
+          "expected_outputs": [
+            "opposite"
+          ],
+          "prediction": "same",
+          "correct": false
+        },
+        {
+          "input": "provocative",
+          "expected_outputs": [
+            "unprovocative"
+          ],
+          "prediction": "uncontroversial",
+          "correct": false
+        },
+        {
+          "input": "disincentive",
+          "expected_outputs": [
+            "incentive"
+          ],
+          "prediction": "incentive",
+          "correct": true
+        },
+        {
+          "input": "wellness",
+          "expected_outputs": [
+            "illness"
+          ],
+          "prediction": "illness",
+          "correct": true
+        },
+        {
+          "input": "nonspeaking",
+          "expected_outputs": [
+            "speaking"
+          ],
+          "prediction": "speaking",
+          "correct": true
+        },
+        {
+          "input": "immature",
+          "expected_outputs": [
+            "mature"
+          ],
+          "prediction": "mature",
+          "correct": true
+        },
+        {
+          "input": "anode",
+          "expected_outputs": [
+            "cathode"
+          ],
+          "prediction": "cathode",
+          "correct": true
+        },
+        {
+          "input": "deciduous",
+          "expected_outputs": [
+            "evergreen"
+          ],
+          "prediction": "evergreen",
+          "correct": true
+        },
+        {
+          "input": "unmodified",
+          "expected_outputs": [
+            "modified"
+          ],
+          "prediction": "modified",
+          "correct": true
+        },
+        {
+          "input": "displease",
+          "expected_outputs": [
+            "please"
+          ],
+          "prediction": "please",
+          "correct": true
+        },
+        {
+          "input": "unburden",
+          "expected_outputs": [
+            "burden"
+          ],
+          "prediction": "burden",
+          "correct": true
+        },
+        {
+          "input": "reasonable",
+          "expected_outputs": [
+            "unreasonable"
+          ],
+          "prediction": "unreasonable",
+          "correct": true
+        },
+        {
+          "input": "unworthy",
+          "expected_outputs": [
+            "worthy"
+          ],
+          "prediction": "worthy",
+          "correct": true
+        },
+        {
+          "input": "benign",
+          "expected_outputs": [
+            "malignant"
+          ],
+          "prediction": "malignant",
+          "correct": true
+        },
+        {
+          "input": "assisted",
+          "expected_outputs": [
+            "unassisted"
+          ],
+          "prediction": "hindered",
+          "correct": false
+        },
+        {
+          "input": "logical",
+          "expected_outputs": [
+            "illogical"
+          ],
+          "prediction": "illogical",
+          "correct": true
+        },
+        {
+          "input": "empirical",
+          "expected_outputs": [
+            "theoretical"
+          ],
+          "prediction": "theoretical",
+          "correct": true
+        },
+        {
+          "input": "urban",
+          "expected_outputs": [
+            "rural"
+          ],
+          "prediction": "rural",
+          "correct": true
+        },
+        {
+          "input": "unmask",
+          "expected_outputs": [
+            "mask"
+          ],
+          "prediction": "mask",
+          "correct": true
+        },
+        {
+          "input": "infectious",
+          "expected_outputs": [
+            "noninfectious"
+          ],
+          "prediction": "benign",
+          "correct": false
+        },
+        {
+          "input": "improperly",
+          "expected_outputs": [
+            "properly"
+          ],
+          "prediction": "properly",
+          "correct": true
+        },
+        {
+          "input": "invalidate",
+          "expected_outputs": [
+            "validate"
+          ],
+          "prediction": "validate",
+          "correct": true
+        },
+        {
+          "input": "attach",
+          "expected_outputs": [
+            "detach"
+          ],
+          "prediction": "detach",
+          "correct": true
+        },
+        {
+          "input": "approve",
+          "expected_outputs": [
+            "disapprove"
+          ],
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "input": "dissimilar",
+          "expected_outputs": [
+            "similar"
+          ],
+          "prediction": "similar",
+          "correct": true
+        },
+        {
+          "input": "credulous",
+          "expected_outputs": [
+            "incredulous"
+          ],
+          "prediction": "skeptical",
+          "correct": false
+        },
+        {
+          "input": "illegible",
+          "expected_outputs": [
+            "legible"
+          ],
+          "prediction": "legible",
+          "correct": true
+        },
+        {
+          "input": "dishonest",
+          "expected_outputs": [
+            "honest"
+          ],
+          "prediction": "honest",
+          "correct": true
+        },
+        {
+          "input": "noncompliance",
+          "expected_outputs": [
+            "compliance"
+          ],
+          "prediction": "compliance",
+          "correct": true
+        },
+        {
+          "input": "nominative",
+          "expected_outputs": [
+            "oblique"
+          ],
+          "prediction": "accusative",
+          "correct": false
+        },
+        {
+          "input": "clergy",
+          "expected_outputs": [
+            "laity"
+          ],
+          "prediction": "laity",
+          "correct": true
+        },
+        {
+          "input": "express",
+          "expected_outputs": [
+            "local"
+          ],
+          "prediction": "conceal",
+          "correct": false
+        },
+        {
+          "input": "descendant",
+          "expected_outputs": [
+            "ancestor"
+          ],
+          "prediction": "ancestor",
+          "correct": true
+        },
+        {
+          "input": "darkness",
+          "expected_outputs": [
+            "lightness"
+          ],
+          "prediction": "light",
+          "correct": false
+        },
+        {
+          "input": "female",
+          "expected_outputs": [
+            "male"
+          ],
+          "prediction": "male",
+          "correct": true
+        },
+        {
+          "input": "perceptibly",
+          "expected_outputs": [
+            "imperceptibly"
+          ],
+          "prediction": "imperceptibly",
+          "correct": true
+        },
+        {
+          "input": "unmitigated",
+          "expected_outputs": [
+            "mitigated"
+          ],
+          "prediction": "mitigated",
+          "correct": true
+        },
+        {
+          "input": "unveiled",
+          "expected_outputs": [
+            "veiled"
+          ],
+          "prediction": "veiled",
+          "correct": true
+        },
+        {
+          "input": "uninspiring",
+          "expected_outputs": [
+            "inspiring"
+          ],
+          "prediction": "inspiring",
+          "correct": true
+        },
+        {
+          "input": "enclosed",
+          "expected_outputs": [
+            "unenclosed"
+          ],
+          "prediction": "open",
+          "correct": false
+        },
+        {
+          "input": "divergence",
+          "expected_outputs": [
+            "convergence"
+          ],
+          "prediction": "convergence",
+          "correct": true
+        },
+        {
+          "input": "misconception",
+          "expected_outputs": [
+            "conception"
+          ],
+          "prediction": "understanding",
+          "correct": false
+        },
+        {
+          "input": "concerned",
+          "expected_outputs": [
+            "unconcerned"
+          ],
+          "prediction": "unconcerned",
+          "correct": true
+        },
+        {
+          "input": "successful",
+          "expected_outputs": [
+            "unsuccessful"
+          ],
+          "prediction": "unsuccessful",
+          "correct": true
+        },
+        {
+          "input": "impatience",
+          "expected_outputs": [
+            "patience"
+          ],
+          "prediction": "patience",
+          "correct": true
+        },
+        {
+          "input": "unattached",
+          "expected_outputs": [
+            "attached"
+          ],
+          "prediction": "attached",
+          "correct": true
+        },
+        {
+          "input": "fairness",
+          "expected_outputs": [
+            "unfairness"
+          ],
+          "prediction": "unfairness",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "best_prompt_id": "candidate_5",
+  "best_prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+  "best_accuracy": 0.88,
+  "best_correct_count": 44,
+  "best_total": 50
+}

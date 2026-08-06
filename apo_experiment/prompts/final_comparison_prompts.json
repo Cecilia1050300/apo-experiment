@@ -1,0 +1,18 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "prompts": [
+    {
+      "prompt_id": "manual_seed",
+      "prompt": "Given a single English word, output its opposite or antonym, typically by adding, removing, or changing a prefix/suffix when appropriate."
+    },
+    {
+      "prompt_id": "round_1_best",
+      "prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word."
+    },
+    {
+      "prompt_id": "round_2_best",
+      "prompt": "Given one English word, output its antonym while preserving the original part of speech, inflection, and derivational form whenever possible. Prefer standard prefix or suffix changes that keep the word shape parallel. Output exactly one word and nothing else."
+    }
+  ]
+}

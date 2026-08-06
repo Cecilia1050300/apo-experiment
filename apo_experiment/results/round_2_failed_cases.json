@@ -1,0 +1,38 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "dataset_split": "optimization",
+  "best_prompt_id": "round_2_candidate_1",
+  "best_prompt": "Given one English word, output its antonym while preserving the original part of speech, inflection, and derivational form whenever possible. Prefer standard prefix or suffix changes that keep the word shape parallel. Output exactly one word and nothing else.",
+  "best_accuracy": 0.94,
+  "failed_case_count": 3,
+  "failed_cases": [
+    {
+      "input": "alternate",
+      "expected_outputs": [
+        "opposite"
+      ],
+      "prediction": "consecutive",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "nominative",
+      "expected_outputs": [
+        "oblique"
+      ],
+      "prediction": "accusative",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "express",
+      "expected_outputs": [
+        "local"
+      ],
+      "prediction": "suppress",
+      "correct": false,
+      "error": null
+    }
+  ]
+}

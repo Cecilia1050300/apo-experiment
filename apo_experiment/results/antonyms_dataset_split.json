@@ -1,0 +1,700 @@
+{
+  "task": "antonyms",
+  "random_seed": 42,
+  "prompt_generation": [
+    {
+      "input": "inconvenience",
+      "expected_outputs": [
+        "convenience"
+      ]
+    },
+    {
+      "input": "concave",
+      "expected_outputs": [
+        "convex"
+      ]
+    },
+    {
+      "input": "mismatched",
+      "expected_outputs": [
+        "matched"
+      ]
+    },
+    {
+      "input": "enjoy",
+      "expected_outputs": [
+        "suffer"
+      ]
+    },
+    {
+      "input": "equity",
+      "expected_outputs": [
+        "inequity"
+      ]
+    },
+    {
+      "input": "decisive",
+      "expected_outputs": [
+        "indecisive"
+      ]
+    },
+    {
+      "input": "epidemic",
+      "expected_outputs": [
+        "endemic"
+      ]
+    },
+    {
+      "input": "depreciate",
+      "expected_outputs": [
+        "appreciate"
+      ]
+    },
+    {
+      "input": "reality",
+      "expected_outputs": [
+        "unreality"
+      ]
+    },
+    {
+      "input": "rehabilitate",
+      "expected_outputs": [
+        "purge"
+      ]
+    },
+    {
+      "input": "incomparable",
+      "expected_outputs": [
+        "comparable"
+      ]
+    },
+    {
+      "input": "sold",
+      "expected_outputs": [
+        "unsold"
+      ]
+    },
+    {
+      "input": "precise",
+      "expected_outputs": [
+        "imprecise"
+      ]
+    },
+    {
+      "input": "resolution",
+      "expected_outputs": [
+        "preparation"
+      ]
+    },
+    {
+      "input": "attraction",
+      "expected_outputs": [
+        "repulsion"
+      ]
+    }
+  ],
+  "optimization": [
+    {
+      "input": "noncommissioned",
+      "expected_outputs": [
+        "commissioned"
+      ]
+    },
+    {
+      "input": "recede",
+      "expected_outputs": [
+        "advance"
+      ]
+    },
+    {
+      "input": "uncompromising",
+      "expected_outputs": [
+        "compromising"
+      ]
+    },
+    {
+      "input": "alternate",
+      "expected_outputs": [
+        "opposite"
+      ]
+    },
+    {
+      "input": "provocative",
+      "expected_outputs": [
+        "unprovocative"
+      ]
+    },
+    {
+      "input": "disincentive",
+      "expected_outputs": [
+        "incentive"
+      ]
+    },
+    {
+      "input": "wellness",
+      "expected_outputs": [
+        "illness"
+      ]
+    },
+    {
+      "input": "nonspeaking",
+      "expected_outputs": [
+        "speaking"
+      ]
+    },
+    {
+      "input": "immature",
+      "expected_outputs": [
+        "mature"
+      ]
+    },
+    {
+      "input": "anode",
+      "expected_outputs": [
+        "cathode"
+      ]
+    },
+    {
+      "input": "deciduous",
+      "expected_outputs": [
+        "evergreen"
+      ]
+    },
+    {
+      "input": "unmodified",
+      "expected_outputs": [
+        "modified"
+      ]
+    },
+    {
+      "input": "displease",
+      "expected_outputs": [
+        "please"
+      ]
+    },
+    {
+      "input": "unburden",
+      "expected_outputs": [
+        "burden"
+      ]
+    },
+    {
+      "input": "reasonable",
+      "expected_outputs": [
+        "unreasonable"
+      ]
+    },
+    {
+      "input": "unworthy",
+      "expected_outputs": [
+        "worthy"
+      ]
+    },
+    {
+      "input": "benign",
+      "expected_outputs": [
+        "malignant"
+      ]
+    },
+    {
+      "input": "assisted",
+      "expected_outputs": [
+        "unassisted"
+      ]
+    },
+    {
+      "input": "logical",
+      "expected_outputs": [
+        "illogical"
+      ]
+    },
+    {
+      "input": "empirical",
+      "expected_outputs": [
+        "theoretical"
+      ]
+    },
+    {
+      "input": "urban",
+      "expected_outputs": [
+        "rural"
+      ]
+    },
+    {
+      "input": "unmask",
+      "expected_outputs": [
+        "mask"
+      ]
+    },
+    {
+      "input": "infectious",
+      "expected_outputs": [
+        "noninfectious"
+      ]
+    },
+    {
+      "input": "improperly",
+      "expected_outputs": [
+        "properly"
+      ]
+    },
+    {
+      "input": "invalidate",
+      "expected_outputs": [
+        "validate"
+      ]
+    },
+    {
+      "input": "attach",
+      "expected_outputs": [
+        "detach"
+      ]
+    },
+    {
+      "input": "approve",
+      "expected_outputs": [
+        "disapprove"
+      ]
+    },
+    {
+      "input": "dissimilar",
+      "expected_outputs": [
+        "similar"
+      ]
+    },
+    {
+      "input": "credulous",
+      "expected_outputs": [
+        "incredulous"
+      ]
+    },
+    {
+      "input": "illegible",
+      "expected_outputs": [
+        "legible"
+      ]
+    },
+    {
+      "input": "dishonest",
+      "expected_outputs": [
+        "honest"
+      ]
+    },
+    {
+      "input": "noncompliance",
+      "expected_outputs": [
+        "compliance"
+      ]
+    },
+    {
+      "input": "nominative",
+      "expected_outputs": [
+        "oblique"
+      ]
+    },
+    {
+      "input": "clergy",
+      "expected_outputs": [
+        "laity"
+      ]
+    },
+    {
+      "input": "express",
+      "expected_outputs": [
+        "local"
+      ]
+    },
+    {
+      "input": "descendant",
+      "expected_outputs": [
+        "ancestor"
+      ]
+    },
+    {
+      "input": "darkness",
+      "expected_outputs": [
+        "lightness"
+      ]
+    },
+    {
+      "input": "female",
+      "expected_outputs": [
+        "male"
+      ]
+    },
+    {
+      "input": "perceptibly",
+      "expected_outputs": [
+        "imperceptibly"
+      ]
+    },
+    {
+      "input": "unmitigated",
+      "expected_outputs": [
+        "mitigated"
+      ]
+    },
+    {
+      "input": "unveiled",
+      "expected_outputs": [
+        "veiled"
+      ]
+    },
+    {
+      "input": "uninspiring",
+      "expected_outputs": [
+        "inspiring"
+      ]
+    },
+    {
+      "input": "enclosed",
+      "expected_outputs": [
+        "unenclosed"
+      ]
+    },
+    {
+      "input": "divergence",
+      "expected_outputs": [
+        "convergence"
+      ]
+    },
+    {
+      "input": "misconception",
+      "expected_outputs": [
+        "conception"
+      ]
+    },
+    {
+      "input": "concerned",
+      "expected_outputs": [
+        "unconcerned"
+      ]
+    },
+    {
+      "input": "successful",
+      "expected_outputs": [
+        "unsuccessful"
+      ]
+    },
+    {
+      "input": "impatience",
+      "expected_outputs": [
+        "patience"
+      ]
+    },
+    {
+      "input": "unattached",
+      "expected_outputs": [
+        "attached"
+      ]
+    },
+    {
+      "input": "fairness",
+      "expected_outputs": [
+        "unfairness"
+      ]
+    }
+  ],
+  "final_test": [
+    {
+      "input": "guided",
+      "expected_outputs": [
+        "unguided"
+      ]
+    },
+    {
+      "input": "inconsistency",
+      "expected_outputs": [
+        "consistency"
+      ]
+    },
+    {
+      "input": "atypical",
+      "expected_outputs": [
+        "typical"
+      ]
+    },
+    {
+      "input": "affirm",
+      "expected_outputs": [
+        "negate"
+      ]
+    },
+    {
+      "input": "unnaturally",
+      "expected_outputs": [
+        "naturally"
+      ]
+    },
+    {
+      "input": "tail",
+      "expected_outputs": [
+        "head"
+      ]
+    },
+    {
+      "input": "surprised",
+      "expected_outputs": [
+        "unsurprised"
+      ]
+    },
+    {
+      "input": "falsity",
+      "expected_outputs": [
+        "truth"
+      ]
+    },
+    {
+      "input": "immodest",
+      "expected_outputs": [
+        "modest"
+      ]
+    },
+    {
+      "input": "acceleration",
+      "expected_outputs": [
+        "deceleration"
+      ]
+    },
+    {
+      "input": "highland",
+      "expected_outputs": [
+        "lowland"
+      ]
+    },
+    {
+      "input": "curable",
+      "expected_outputs": [
+        "incurable"
+      ]
+    },
+    {
+      "input": "agreement",
+      "expected_outputs": [
+        "disagreement"
+      ]
+    },
+    {
+      "input": "animate",
+      "expected_outputs": [
+        "inanimate"
+      ]
+    },
+    {
+      "input": "enabling",
+      "expected_outputs": [
+        "disabling"
+      ]
+    },
+    {
+      "input": "natural",
+      "expected_outputs": [
+        "flat"
+      ]
+    },
+    {
+      "input": "narrow",
+      "expected_outputs": [
+        "wide"
+      ]
+    },
+    {
+      "input": "disobedient",
+      "expected_outputs": [
+        "obedient"
+      ]
+    },
+    {
+      "input": "unextended",
+      "expected_outputs": [
+        "extended"
+      ]
+    },
+    {
+      "input": "sanity",
+      "expected_outputs": [
+        "insanity"
+      ]
+    },
+    {
+      "input": "incommensurate",
+      "expected_outputs": [
+        "commensurate"
+      ]
+    },
+    {
+      "input": "elitist",
+      "expected_outputs": [
+        "egalitarian"
+      ]
+    },
+    {
+      "input": "strength",
+      "expected_outputs": [
+        "weakness"
+      ]
+    },
+    {
+      "input": "plucked",
+      "expected_outputs": [
+        "bowed"
+      ]
+    },
+    {
+      "input": "privileged",
+      "expected_outputs": [
+        "underprivileged"
+      ]
+    },
+    {
+      "input": "indecisive",
+      "expected_outputs": [
+        "decisive"
+      ]
+    },
+    {
+      "input": "fortunate",
+      "expected_outputs": [
+        "unfortunate"
+      ]
+    },
+    {
+      "input": "stay",
+      "expected_outputs": [
+        "change"
+      ]
+    },
+    {
+      "input": "hawk",
+      "expected_outputs": [
+        "dove"
+      ]
+    },
+    {
+      "input": "real",
+      "expected_outputs": [
+        "nominal"
+      ]
+    },
+    {
+      "input": "irreverence",
+      "expected_outputs": [
+        "reverence"
+      ]
+    },
+    {
+      "input": "suspected",
+      "expected_outputs": [
+        "unsuspected"
+      ]
+    },
+    {
+      "input": "nondeductible",
+      "expected_outputs": [
+        "deductible"
+      ]
+    },
+    {
+      "input": "ignoble",
+      "expected_outputs": [
+        "noble"
+      ]
+    },
+    {
+      "input": "married",
+      "expected_outputs": [
+        "unmarried"
+      ]
+    },
+    {
+      "input": "enter",
+      "expected_outputs": [
+        "exit"
+      ]
+    },
+    {
+      "input": "unchristian",
+      "expected_outputs": [
+        "christian"
+      ]
+    },
+    {
+      "input": "above",
+      "expected_outputs": [
+        "below"
+      ]
+    },
+    {
+      "input": "synergistic",
+      "expected_outputs": [
+        "antagonistic"
+      ]
+    },
+    {
+      "input": "glad",
+      "expected_outputs": [
+        "sad"
+      ]
+    },
+    {
+      "input": "legitimate",
+      "expected_outputs": [
+        "illegitimate"
+      ]
+    },
+    {
+      "input": "uncongenial",
+      "expected_outputs": [
+        "congenial"
+      ]
+    },
+    {
+      "input": "unlock",
+      "expected_outputs": [
+        "lock"
+      ]
+    },
+    {
+      "input": "imperishable",
+      "expected_outputs": [
+        "perishable"
+      ]
+    },
+    {
+      "input": "flexion",
+      "expected_outputs": [
+        "extension"
+      ]
+    },
+    {
+      "input": "elation",
+      "expected_outputs": [
+        "depression"
+      ]
+    },
+    {
+      "input": "fauna",
+      "expected_outputs": [
+        "flora"
+      ]
+    },
+    {
+      "input": "import",
+      "expected_outputs": [
+        "export"
+      ]
+    },
+    {
+      "input": "dorsal",
+      "expected_outputs": [
+        "ventral"
+      ]
+    },
+    {
+      "input": "inclined",
+      "expected_outputs": [
+        "vertical"
+      ]
+    }
+  ]
+}

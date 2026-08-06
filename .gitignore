@@ -181,3 +181,7 @@ __pycache__/
 
 # VS Code
 .vscode/
+.env
+.venv/
+__pycache__/
+*.pyc

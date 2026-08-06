@@ -1,0 +1,2328 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "dataset_split": "final_test",
+  "prompt_source": "prompts/final_comparison_prompts.json",
+  "dataset_source": "results/antonyms_dataset_split.json",
+  "max_cases": null,
+  "candidate_count": 3,
+  "evaluation": {
+    "primary_metric": "exact_match",
+    "strict_exact": false,
+    "normalization": "strip_and_casefold"
+  },
+  "results": [
+    {
+      "prompt_id": "manual_seed",
+      "prompt": "Given a single English word, output its opposite or antonym, typically by adding, removing, or changing a prefix/suffix when appropriate.",
+      "strategy": "",
+      "accuracy": 0.88,
+      "correct_count": 44,
+      "total": 50,
+      "failed_count": 6,
+      "average_latency_seconds": 2.5291,
+      "total_latency_seconds": 126.4546,
+      "usage": {
+        "input_tokens": 2004,
+        "output_tokens": 1624,
+        "total_tokens": 3628
+      },
+      "records": [
+        {
+          "input": "guided",
+          "expected_outputs": [
+            "unguided"
+          ],
+          "prediction": "unguided",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.5403,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 34,
+            "total_tokens": 73
+          }
+        },
+        {
+          "input": "inconsistency",
+          "expected_outputs": [
+            "consistency"
+          ],
+          "prediction": "consistency",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2666,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 25,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "atypical",
+          "expected_outputs": [
+            "typical"
+          ],
+          "prediction": "typical",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9053,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 23,
+            "total_tokens": 64
+          }
+        },
+        {
+          "input": "affirm",
+          "expected_outputs": [
+            "negate"
+          ],
+          "prediction": "deny",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.4719,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 31,
+            "total_tokens": 70
+          }
+        },
+        {
+          "input": "unnaturally",
+          "expected_outputs": [
+            "naturally"
+          ],
+          "prediction": "naturally",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0417,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 30,
+            "total_tokens": 71
+          }
+        },
+        {
+          "input": "tail",
+          "expected_outputs": [
+            "head"
+          ],
+          "prediction": "head",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7621,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 36,
+            "total_tokens": 75
+          }
+        },
+        {
+          "input": "surprised",
+          "expected_outputs": [
+            "unsurprised"
+          ],
+          "prediction": "unsurprised",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.7635,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 42,
+            "total_tokens": 83
+          }
+        },
+        {
+          "input": "falsity",
+          "expected_outputs": [
+            "truth"
+          ],
+          "prediction": "truth",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.3633,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 27,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "immodest",
+          "expected_outputs": [
+            "modest"
+          ],
+          "prediction": "modest",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.8968,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 26,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "acceleration",
+          "expected_outputs": [
+            "deceleration"
+          ],
+          "prediction": "deceleration",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.743,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 28,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "highland",
+          "expected_outputs": [
+            "lowland"
+          ],
+          "prediction": "lowland",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9091,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 26,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "curable",
+          "expected_outputs": [
+            "incurable"
+          ],
+          "prediction": "incurable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.7565,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 26,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "agreement",
+          "expected_outputs": [
+            "disagreement"
+          ],
+          "prediction": "disagreement",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0344,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 24,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "animate",
+          "expected_outputs": [
+            "inanimate"
+          ],
+          "prediction": "inanimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7943,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 28,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "enabling",
+          "expected_outputs": [
+            "disabling"
+          ],
+          "prediction": "disabling",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.1555,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 31,
+            "total_tokens": 71
+          }
+        },
+        {
+          "input": "natural",
+          "expected_outputs": [
+            "flat"
+          ],
+          "prediction": "unnatural",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 1.8787,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 24,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "narrow",
+          "expected_outputs": [
+            "wide"
+          ],
+          "prediction": "wide",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.1207,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 34,
+            "total_tokens": 74
+          }
+        },
+        {
+          "input": "disobedient",
+          "expected_outputs": [
+            "obedient"
+          ],
+          "prediction": "obedient",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9988,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 26,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "unextended",
+          "expected_outputs": [
+            "extended"
+          ],
+          "prediction": "extended",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9195,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 32,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "sanity",
+          "expected_outputs": [
+            "insanity"
+          ],
+          "prediction": "insanity",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.3187,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 22,
+            "total_tokens": 62
+          }
+        },
+        {
+          "input": "incommensurate",
+          "expected_outputs": [
+            "commensurate"
+          ],
+          "prediction": "commensurate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7516,
+          "usage": {
+            "input_tokens": 42,
+            "output_tokens": 42,
+            "total_tokens": 84
+          }
+        },
+        {
+          "input": "elitist",
+          "expected_outputs": [
+            "egalitarian"
+          ],
+          "prediction": "egalitarian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4893,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 35,
+            "total_tokens": 75
+          }
+        },
+        {
+          "input": "strength",
+          "expected_outputs": [
+            "weakness"
+          ],
+          "prediction": "weakness",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9745,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 24,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "plucked",
+          "expected_outputs": [
+            "bowed"
+          ],
+          "prediction": "unplucked",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.9476,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 44,
+            "total_tokens": 84
+          }
+        },
+        {
+          "input": "privileged",
+          "expected_outputs": [
+            "underprivileged"
+          ],
+          "prediction": "underprivileged",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.5075,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 43,
+            "total_tokens": 83
+          }
+        },
+        {
+          "input": "indecisive",
+          "expected_outputs": [
+            "decisive"
+          ],
+          "prediction": "decisive",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7725,
+          "usage": {
+            "input_tokens": 42,
+            "output_tokens": 27,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "fortunate",
+          "expected_outputs": [
+            "unfortunate"
+          ],
+          "prediction": "unfortunate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.3805,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 22,
+            "total_tokens": 61
+          }
+        },
+        {
+          "input": "stay",
+          "expected_outputs": [
+            "change"
+          ],
+          "prediction": "leave",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.334,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 31,
+            "total_tokens": 70
+          }
+        },
+        {
+          "input": "hawk",
+          "expected_outputs": [
+            "dove"
+          ],
+          "prediction": "dove",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.9277,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 62,
+            "total_tokens": 101
+          }
+        },
+        {
+          "input": "real",
+          "expected_outputs": [
+            "nominal"
+          ],
+          "prediction": "unreal",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.8643,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 47,
+            "total_tokens": 86
+          }
+        },
+        {
+          "input": "irreverence",
+          "expected_outputs": [
+            "reverence"
+          ],
+          "prediction": "reverence",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6585,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 32,
+            "total_tokens": 73
+          }
+        },
+        {
+          "input": "suspected",
+          "expected_outputs": [
+            "unsuspected"
+          ],
+          "prediction": "unsuspected",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.419,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 46,
+            "total_tokens": 86
+          }
+        },
+        {
+          "input": "nondeductible",
+          "expected_outputs": [
+            "deductible"
+          ],
+          "prediction": "deductible",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9695,
+          "usage": {
+            "input_tokens": 42,
+            "output_tokens": 25,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "ignoble",
+          "expected_outputs": [
+            "noble"
+          ],
+          "prediction": "noble",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.6791,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 25,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "married",
+          "expected_outputs": [
+            "unmarried"
+          ],
+          "prediction": "unmarried",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.0307,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 37,
+            "total_tokens": 77
+          }
+        },
+        {
+          "input": "enter",
+          "expected_outputs": [
+            "exit"
+          ],
+          "prediction": "exit",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2842,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 28,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "unchristian",
+          "expected_outputs": [
+            "christian"
+          ],
+          "prediction": "christian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7675,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 36,
+            "total_tokens": 77
+          }
+        },
+        {
+          "input": "above",
+          "expected_outputs": [
+            "below"
+          ],
+          "prediction": "below",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.8235,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 23,
+            "total_tokens": 62
+          }
+        },
+        {
+          "input": "synergistic",
+          "expected_outputs": [
+            "antagonistic"
+          ],
+          "prediction": "antagonistic",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.7649,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 28,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "glad",
+          "expected_outputs": [
+            "sad"
+          ],
+          "prediction": "sad",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4771,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 32,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "legitimate",
+          "expected_outputs": [
+            "illegitimate"
+          ],
+          "prediction": "illegitimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.3342,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 28,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "uncongenial",
+          "expected_outputs": [
+            "congenial"
+          ],
+          "prediction": "congenial",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9385,
+          "usage": {
+            "input_tokens": 42,
+            "output_tokens": 40,
+            "total_tokens": 82
+          }
+        },
+        {
+          "input": "unlock",
+          "expected_outputs": [
+            "lock"
+          ],
+          "prediction": "lock",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 10.5422,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 24,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "imperishable",
+          "expected_outputs": [
+            "perishable"
+          ],
+          "prediction": "perishable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6721,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 26,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "flexion",
+          "expected_outputs": [
+            "extension"
+          ],
+          "prediction": "extension",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.403,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 31,
+            "total_tokens": 71
+          }
+        },
+        {
+          "input": "elation",
+          "expected_outputs": [
+            "depression"
+          ],
+          "prediction": "depression",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.5553,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 40,
+            "total_tokens": 80
+          }
+        },
+        {
+          "input": "fauna",
+          "expected_outputs": [
+            "flora"
+          ],
+          "prediction": "flora",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.1092,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 34,
+            "total_tokens": 74
+          }
+        },
+        {
+          "input": "import",
+          "expected_outputs": [
+            "export"
+          ],
+          "prediction": "export",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.5702,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 26,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "dorsal",
+          "expected_outputs": [
+            "ventral"
+          ],
+          "prediction": "ventral",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.6463,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 25,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "inclined",
+          "expected_outputs": [
+            "vertical"
+          ],
+          "prediction": "disinclined",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.2192,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 86,
+            "total_tokens": 126
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "round_1_best",
+      "prompt": "Transform the supplied English word into its antonym, using conventional vocabulary or affix changes as needed. Provide only the final transformed word.",
+      "strategy": "",
+      "accuracy": 0.86,
+      "correct_count": 43,
+      "total": 50,
+      "failed_count": 7,
+      "average_latency_seconds": 2.6212,
+      "total_latency_seconds": 131.0591,
+      "usage": {
+        "input_tokens": 1954,
+        "output_tokens": 1831,
+        "total_tokens": 3785
+      },
+      "records": [
+        {
+          "input": "guided",
+          "expected_outputs": [
+            "unguided"
+          ],
+          "prediction": "unguided",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.8814,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 34,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "inconsistency",
+          "expected_outputs": [
+            "consistency"
+          ],
+          "prediction": "consistency",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6375,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 29,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "atypical",
+          "expected_outputs": [
+            "typical"
+          ],
+          "prediction": "typical",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 5.0189,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 26,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "affirm",
+          "expected_outputs": [
+            "negate"
+          ],
+          "prediction": "deny",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.53,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 39,
+            "total_tokens": 77
+          }
+        },
+        {
+          "input": "unnaturally",
+          "expected_outputs": [
+            "naturally"
+          ],
+          "prediction": "naturally",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.5093,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 32,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "tail",
+          "expected_outputs": [
+            "head"
+          ],
+          "prediction": "head",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.0581,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 33,
+            "total_tokens": 71
+          }
+        },
+        {
+          "input": "surprised",
+          "expected_outputs": [
+            "unsurprised"
+          ],
+          "prediction": "unsurprised",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.8444,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 37,
+            "total_tokens": 77
+          }
+        },
+        {
+          "input": "falsity",
+          "expected_outputs": [
+            "truth"
+          ],
+          "prediction": "truth",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7052,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 26,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "immodest",
+          "expected_outputs": [
+            "modest"
+          ],
+          "prediction": "modest",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7427,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 29,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "acceleration",
+          "expected_outputs": [
+            "deceleration"
+          ],
+          "prediction": "deceleration",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.4636,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 30,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "highland",
+          "expected_outputs": [
+            "lowland"
+          ],
+          "prediction": "lowland",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 9.3627,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 32,
+            "total_tokens": 71
+          }
+        },
+        {
+          "input": "curable",
+          "expected_outputs": [
+            "incurable"
+          ],
+          "prediction": "incurable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.4742,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 26,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "agreement",
+          "expected_outputs": [
+            "disagreement"
+          ],
+          "prediction": "disagreement",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.8395,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 25,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "animate",
+          "expected_outputs": [
+            "inanimate"
+          ],
+          "prediction": "inanimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7161,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 29,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "enabling",
+          "expected_outputs": [
+            "disabling"
+          ],
+          "prediction": "disabling",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.1357,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 30,
+            "total_tokens": 69
+          }
+        },
+        {
+          "input": "natural",
+          "expected_outputs": [
+            "flat"
+          ],
+          "prediction": "unnatural",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 1.9128,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 34,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "narrow",
+          "expected_outputs": [
+            "wide"
+          ],
+          "prediction": "wide",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 10.0761,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 29,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "disobedient",
+          "expected_outputs": [
+            "obedient"
+          ],
+          "prediction": "obedient",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0041,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 25,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "unextended",
+          "expected_outputs": [
+            "extended"
+          ],
+          "prediction": "extended",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.5326,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 29,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "sanity",
+          "expected_outputs": [
+            "insanity"
+          ],
+          "prediction": "insanity",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6623,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 31,
+            "total_tokens": 70
+          }
+        },
+        {
+          "input": "incommensurate",
+          "expected_outputs": [
+            "commensurate"
+          ],
+          "prediction": "commensurate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0375,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 53,
+            "total_tokens": 94
+          }
+        },
+        {
+          "input": "elitist",
+          "expected_outputs": [
+            "egalitarian"
+          ],
+          "prediction": "egalitarian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0536,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 49,
+            "total_tokens": 88
+          }
+        },
+        {
+          "input": "strength",
+          "expected_outputs": [
+            "weakness"
+          ],
+          "prediction": "weakness",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2334,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 28,
+            "total_tokens": 66
+          }
+        },
+        {
+          "input": "plucked",
+          "expected_outputs": [
+            "bowed"
+          ],
+          "prediction": "unplucked",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.9525,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 109,
+            "total_tokens": 148
+          }
+        },
+        {
+          "input": "privileged",
+          "expected_outputs": [
+            "underprivileged"
+          ],
+          "prediction": "underprivileged",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0324,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 43,
+            "total_tokens": 82
+          }
+        },
+        {
+          "input": "indecisive",
+          "expected_outputs": [
+            "decisive"
+          ],
+          "prediction": "decisive",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6824,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 29,
+            "total_tokens": 70
+          }
+        },
+        {
+          "input": "fortunate",
+          "expected_outputs": [
+            "unfortunate"
+          ],
+          "prediction": "unfortunate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.6182,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 23,
+            "total_tokens": 61
+          }
+        },
+        {
+          "input": "stay",
+          "expected_outputs": [
+            "change"
+          ],
+          "prediction": "leave",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 1.9904,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 48,
+            "total_tokens": 86
+          }
+        },
+        {
+          "input": "hawk",
+          "expected_outputs": [
+            "dove"
+          ],
+          "prediction": "dove",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.4077,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 71,
+            "total_tokens": 109
+          }
+        },
+        {
+          "input": "real",
+          "expected_outputs": [
+            "nominal"
+          ],
+          "prediction": "unreal",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.6399,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 59,
+            "total_tokens": 97
+          }
+        },
+        {
+          "input": "irreverence",
+          "expected_outputs": [
+            "reverence"
+          ],
+          "prediction": "reverence",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.848,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 33,
+            "total_tokens": 73
+          }
+        },
+        {
+          "input": "suspected",
+          "expected_outputs": [
+            "unsuspected"
+          ],
+          "prediction": "unsuspected",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 8.7295,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 63,
+            "total_tokens": 102
+          }
+        },
+        {
+          "input": "nondeductible",
+          "expected_outputs": [
+            "deductible"
+          ],
+          "prediction": "deductible",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.1251,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 31,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "ignoble",
+          "expected_outputs": [
+            "noble"
+          ],
+          "prediction": "noble",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.701,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 33,
+            "total_tokens": 72
+          }
+        },
+        {
+          "input": "married",
+          "expected_outputs": [
+            "unmarried"
+          ],
+          "prediction": "unmarried",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9846,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 48,
+            "total_tokens": 87
+          }
+        },
+        {
+          "input": "enter",
+          "expected_outputs": [
+            "exit"
+          ],
+          "prediction": "exit",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6125,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 27,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "unchristian",
+          "expected_outputs": [
+            "christian"
+          ],
+          "prediction": "Christian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.8182,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 61,
+            "total_tokens": 101
+          }
+        },
+        {
+          "input": "above",
+          "expected_outputs": [
+            "below"
+          ],
+          "prediction": "below",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6932,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 22,
+            "total_tokens": 60
+          }
+        },
+        {
+          "input": "synergistic",
+          "expected_outputs": [
+            "antagonistic"
+          ],
+          "prediction": "antagonistic",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9833,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 33,
+            "total_tokens": 73
+          }
+        },
+        {
+          "input": "glad",
+          "expected_outputs": [
+            "sad"
+          ],
+          "prediction": "sad",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.4344,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 24,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "legitimate",
+          "expected_outputs": [
+            "illegitimate"
+          ],
+          "prediction": "illegitimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.418,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 25,
+            "total_tokens": 64
+          }
+        },
+        {
+          "input": "uncongenial",
+          "expected_outputs": [
+            "congenial"
+          ],
+          "prediction": "congenial",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6231,
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 33,
+            "total_tokens": 74
+          }
+        },
+        {
+          "input": "unlock",
+          "expected_outputs": [
+            "lock"
+          ],
+          "prediction": "lock",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.2118,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 25,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "imperishable",
+          "expected_outputs": [
+            "perishable"
+          ],
+          "prediction": "perishable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.4012,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 26,
+            "total_tokens": 65
+          }
+        },
+        {
+          "input": "flexion",
+          "expected_outputs": [
+            "extension"
+          ],
+          "prediction": "extension",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.7626,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 36,
+            "total_tokens": 75
+          }
+        },
+        {
+          "input": "elation",
+          "expected_outputs": [
+            "depression"
+          ],
+          "prediction": "dejection",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.7777,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 81,
+            "total_tokens": 120
+          }
+        },
+        {
+          "input": "fauna",
+          "expected_outputs": [
+            "flora"
+          ],
+          "prediction": "flora",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 5.1062,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 28,
+            "total_tokens": 67
+          }
+        },
+        {
+          "input": "import",
+          "expected_outputs": [
+            "export"
+          ],
+          "prediction": "export",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6477,
+          "usage": {
+            "input_tokens": 38,
+            "output_tokens": 30,
+            "total_tokens": 68
+          }
+        },
+        {
+          "input": "dorsal",
+          "expected_outputs": [
+            "ventral"
+          ],
+          "prediction": "ventral",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7249,
+          "usage": {
+            "input_tokens": 40,
+            "output_tokens": 23,
+            "total_tokens": 63
+          }
+        },
+        {
+          "input": "inclined",
+          "expected_outputs": [
+            "vertical"
+          ],
+          "prediction": "disinclined",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 1.7011,
+          "usage": {
+            "input_tokens": 39,
+            "output_tokens": 32,
+            "total_tokens": 71
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "round_2_best",
+      "prompt": "Given one English word, output its antonym while preserving the original part of speech, inflection, and derivational form whenever possible. Prefer standard prefix or suffix changes that keep the word shape parallel. Output exactly one word and nothing else.",
+      "strategy": "",
+      "accuracy": 0.86,
+      "correct_count": 43,
+      "total": 50,
+      "failed_count": 7,
+      "average_latency_seconds": 2.4636,
+      "total_latency_seconds": 123.1821,
+      "usage": {
+        "input_tokens": 3004,
+        "output_tokens": 2500,
+        "total_tokens": 5504
+      },
+      "records": [
+        {
+          "input": "guided",
+          "expected_outputs": [
+            "unguided"
+          ],
+          "prediction": "unguided",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.6614,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 46,
+            "total_tokens": 105
+          }
+        },
+        {
+          "input": "inconsistency",
+          "expected_outputs": [
+            "consistency"
+          ],
+          "prediction": "consistency",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7148,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 38,
+            "total_tokens": 99
+          }
+        },
+        {
+          "input": "atypical",
+          "expected_outputs": [
+            "typical"
+          ],
+          "prediction": "typical",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.9996,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 33,
+            "total_tokens": 94
+          }
+        },
+        {
+          "input": "affirm",
+          "expected_outputs": [
+            "negate"
+          ],
+          "prediction": "deny",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.0951,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 82,
+            "total_tokens": 141
+          }
+        },
+        {
+          "input": "unnaturally",
+          "expected_outputs": [
+            "naturally"
+          ],
+          "prediction": "naturally",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4519,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 33,
+            "total_tokens": 94
+          }
+        },
+        {
+          "input": "tail",
+          "expected_outputs": [
+            "head"
+          ],
+          "prediction": "head",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2368,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 57,
+            "total_tokens": 116
+          }
+        },
+        {
+          "input": "surprised",
+          "expected_outputs": [
+            "unsurprised"
+          ],
+          "prediction": "unsurprised",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9398,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 50,
+            "total_tokens": 111
+          }
+        },
+        {
+          "input": "falsity",
+          "expected_outputs": [
+            "truth"
+          ],
+          "prediction": "truth",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0415,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 48,
+            "total_tokens": 109
+          }
+        },
+        {
+          "input": "immodest",
+          "expected_outputs": [
+            "modest"
+          ],
+          "prediction": "modest",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.1967,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 43,
+            "total_tokens": 104
+          }
+        },
+        {
+          "input": "acceleration",
+          "expected_outputs": [
+            "deceleration"
+          ],
+          "prediction": "deceleration",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7467,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 30,
+            "total_tokens": 90
+          }
+        },
+        {
+          "input": "highland",
+          "expected_outputs": [
+            "lowland"
+          ],
+          "prediction": "lowland",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.4884,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 46,
+            "total_tokens": 106
+          }
+        },
+        {
+          "input": "curable",
+          "expected_outputs": [
+            "incurable"
+          ],
+          "prediction": "incurable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.5176,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 29,
+            "total_tokens": 89
+          }
+        },
+        {
+          "input": "agreement",
+          "expected_outputs": [
+            "disagreement"
+          ],
+          "prediction": "disagreement",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4735,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 39,
+            "total_tokens": 98
+          }
+        },
+        {
+          "input": "animate",
+          "expected_outputs": [
+            "inanimate"
+          ],
+          "prediction": "inanimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.2672,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 78,
+            "total_tokens": 137
+          }
+        },
+        {
+          "input": "enabling",
+          "expected_outputs": [
+            "disabling"
+          ],
+          "prediction": "disabling",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7665,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 46,
+            "total_tokens": 106
+          }
+        },
+        {
+          "input": "natural",
+          "expected_outputs": [
+            "flat"
+          ],
+          "prediction": "unnatural",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.38,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 38,
+            "total_tokens": 97
+          }
+        },
+        {
+          "input": "narrow",
+          "expected_outputs": [
+            "wide"
+          ],
+          "prediction": "wide",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4377,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 58,
+            "total_tokens": 118
+          }
+        },
+        {
+          "input": "disobedient",
+          "expected_outputs": [
+            "obedient"
+          ],
+          "prediction": "obedient",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9699,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 35,
+            "total_tokens": 96
+          }
+        },
+        {
+          "input": "unextended",
+          "expected_outputs": [
+            "extended"
+          ],
+          "prediction": "extended",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4127,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 64,
+            "total_tokens": 124
+          }
+        },
+        {
+          "input": "sanity",
+          "expected_outputs": [
+            "insanity"
+          ],
+          "prediction": "insanity",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.6719,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 29,
+            "total_tokens": 89
+          }
+        },
+        {
+          "input": "incommensurate",
+          "expected_outputs": [
+            "commensurate"
+          ],
+          "prediction": "commensurate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4531,
+          "usage": {
+            "input_tokens": 62,
+            "output_tokens": 55,
+            "total_tokens": 117
+          }
+        },
+        {
+          "input": "elitist",
+          "expected_outputs": [
+            "egalitarian"
+          ],
+          "prediction": "egalitarian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 5.5773,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 130,
+            "total_tokens": 190
+          }
+        },
+        {
+          "input": "strength",
+          "expected_outputs": [
+            "weakness"
+          ],
+          "prediction": "weakness",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 8.3527,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 27,
+            "total_tokens": 86
+          }
+        },
+        {
+          "input": "plucked",
+          "expected_outputs": [
+            "bowed"
+          ],
+          "prediction": "unplucked",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.2548,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 84,
+            "total_tokens": 144
+          }
+        },
+        {
+          "input": "privileged",
+          "expected_outputs": [
+            "underprivileged"
+          ],
+          "prediction": "underprivileged",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2766,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 53,
+            "total_tokens": 113
+          }
+        },
+        {
+          "input": "indecisive",
+          "expected_outputs": [
+            "decisive"
+          ],
+          "prediction": "decisive",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6646,
+          "usage": {
+            "input_tokens": 62,
+            "output_tokens": 38,
+            "total_tokens": 100
+          }
+        },
+        {
+          "input": "fortunate",
+          "expected_outputs": [
+            "unfortunate"
+          ],
+          "prediction": "unfortunate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.4866,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 24,
+            "total_tokens": 83
+          }
+        },
+        {
+          "input": "stay",
+          "expected_outputs": [
+            "change"
+          ],
+          "prediction": "leave",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.3968,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 64,
+            "total_tokens": 123
+          }
+        },
+        {
+          "input": "hawk",
+          "expected_outputs": [
+            "dove"
+          ],
+          "prediction": "dove",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4891,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 80,
+            "total_tokens": 139
+          }
+        },
+        {
+          "input": "real",
+          "expected_outputs": [
+            "nominal"
+          ],
+          "prediction": "unreal",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.9142,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 44,
+            "total_tokens": 103
+          }
+        },
+        {
+          "input": "irreverence",
+          "expected_outputs": [
+            "reverence"
+          ],
+          "prediction": "reverence",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.898,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 39,
+            "total_tokens": 100
+          }
+        },
+        {
+          "input": "suspected",
+          "expected_outputs": [
+            "unsuspected"
+          ],
+          "prediction": "unsuspected",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.164,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 62,
+            "total_tokens": 122
+          }
+        },
+        {
+          "input": "nondeductible",
+          "expected_outputs": [
+            "deductible"
+          ],
+          "prediction": "deductible",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7226,
+          "usage": {
+            "input_tokens": 62,
+            "output_tokens": 46,
+            "total_tokens": 108
+          }
+        },
+        {
+          "input": "ignoble",
+          "expected_outputs": [
+            "noble"
+          ],
+          "prediction": "noble",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.0185,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 44,
+            "total_tokens": 104
+          }
+        },
+        {
+          "input": "married",
+          "expected_outputs": [
+            "unmarried"
+          ],
+          "prediction": "unmarried",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9989,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 39,
+            "total_tokens": 99
+          }
+        },
+        {
+          "input": "enter",
+          "expected_outputs": [
+            "exit"
+          ],
+          "prediction": "exit",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2265,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 54,
+            "total_tokens": 113
+          }
+        },
+        {
+          "input": "unchristian",
+          "expected_outputs": [
+            "christian"
+          ],
+          "prediction": "christian",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 3.0607,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 107,
+            "total_tokens": 168
+          }
+        },
+        {
+          "input": "above",
+          "expected_outputs": [
+            "below"
+          ],
+          "prediction": "below",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.6353,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 23,
+            "total_tokens": 82
+          }
+        },
+        {
+          "input": "synergistic",
+          "expected_outputs": [
+            "antagonistic"
+          ],
+          "prediction": "antagonistic",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.4609,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 48,
+            "total_tokens": 109
+          }
+        },
+        {
+          "input": "glad",
+          "expected_outputs": [
+            "sad"
+          ],
+          "prediction": "sad",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.1695,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 49,
+            "total_tokens": 109
+          }
+        },
+        {
+          "input": "legitimate",
+          "expected_outputs": [
+            "illegitimate"
+          ],
+          "prediction": "illegitimate",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.8817,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 29,
+            "total_tokens": 89
+          }
+        },
+        {
+          "input": "uncongenial",
+          "expected_outputs": [
+            "congenial"
+          ],
+          "prediction": "congenial",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.2036,
+          "usage": {
+            "input_tokens": 62,
+            "output_tokens": 49,
+            "total_tokens": 111
+          }
+        },
+        {
+          "input": "unlock",
+          "expected_outputs": [
+            "lock"
+          ],
+          "prediction": "lock",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7788,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 36,
+            "total_tokens": 95
+          }
+        },
+        {
+          "input": "imperishable",
+          "expected_outputs": [
+            "perishable"
+          ],
+          "prediction": "perishable",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9407,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 45,
+            "total_tokens": 105
+          }
+        },
+        {
+          "input": "flexion",
+          "expected_outputs": [
+            "extension"
+          ],
+          "prediction": "extension",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.7704,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 47,
+            "total_tokens": 107
+          }
+        },
+        {
+          "input": "elation",
+          "expected_outputs": [
+            "depression"
+          ],
+          "prediction": "dejection",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 2.7435,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 84,
+            "total_tokens": 144
+          }
+        },
+        {
+          "input": "fauna",
+          "expected_outputs": [
+            "flora"
+          ],
+          "prediction": "flora",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 2.7353,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 43,
+            "total_tokens": 103
+          }
+        },
+        {
+          "input": "import",
+          "expected_outputs": [
+            "export"
+          ],
+          "prediction": "export",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.9067,
+          "usage": {
+            "input_tokens": 59,
+            "output_tokens": 38,
+            "total_tokens": 97
+          }
+        },
+        {
+          "input": "dorsal",
+          "expected_outputs": [
+            "ventral"
+          ],
+          "prediction": "ventral",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 1.5148,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 33,
+            "total_tokens": 94
+          }
+        },
+        {
+          "input": "inclined",
+          "expected_outputs": [
+            "vertical"
+          ],
+          "prediction": "disinclined",
+          "correct": false,
+          "error": null,
+          "latency_seconds": 3.0163,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 64,
+            "total_tokens": 124
+          }
+        }
+      ]
+    }
+  ],
+  "best_prompt_id": "manual_seed",
+  "best_prompt": "Given a single English word, output its opposite or antonym, typically by adding, removing, or changing a prefix/suffix when appropriate.",
+  "best_accuracy": 0.88,
+  "best_correct_count": 44,
+  "best_total": 50,
+  "tied_best_prompt_ids": [
+    "manual_seed"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "task": "antonyms",
+  "target_model": "gpt-5.5",
+  "dataset_split": "final_test",
+  "best_prompt_id": "manual_seed",
+  "best_prompt": "Given a single English word, output its opposite or antonym, typically by adding, removing, or changing a prefix/suffix when appropriate.",
+  "best_accuracy": 0.88,
+  "failed_case_count": 6,
+  "failed_cases": [
+    {
+      "input": "affirm",
+      "expected_outputs": [
+        "negate"
+      ],
+      "prediction": "deny",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "natural",
+      "expected_outputs": [
+        "flat"
+      ],
+      "prediction": "unnatural",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "plucked",
+      "expected_outputs": [
+        "bowed"
+      ],
+      "prediction": "unplucked",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "stay",
+      "expected_outputs": [
+        "change"
+      ],
+      "prediction": "leave",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "real",
+      "expected_outputs": [
+        "nominal"
+      ],
+      "prediction": "unreal",
+      "correct": false,
+      "error": null
+    },
+    {
+      "input": "inclined",
+      "expected_outputs": [
+        "vertical"
+      ],
+      "prediction": "disinclined",
+      "correct": false,
+      "error": null
+    }
+  ]
+}
