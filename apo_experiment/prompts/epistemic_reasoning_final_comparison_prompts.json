@@ -1,0 +1,21 @@
+{
+  "task": "epistemic_reasoning",
+  "task_description": "Determine whether one sentence entails the next",
+  "labels": [
+    "entailment",
+    "non-entailment"
+  ],
+  "generation_method": "final_comparison",
+  "prompts": [
+    {
+      "prompt_id": "manual_seed",
+      "strategy": "manual baseline",
+      "prompt": "Determine whether the premise entails the hypothesis. Output exactly entailment or non-entailment."
+    },
+    {
+      "prompt_id": "round_1_best",
+      "strategy": "perspective alignment",
+      "prompt": "You are solving natural-language inference with special care for epistemic perspective. Identify whose knowledge, belief, perception, memory, doubt, or assumption is being described, and what exact proposition falls within that perspective. Do not confuse one person's attitude with another's, and do not treat a belief about someone else's mental state as establishing that state. Then judge whether the hypothesis must be true whenever the premise is true. Output only entailment or non-entailment."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "task": "epistemic_reasoning",
+  "task_description": "Determine whether one sentence entails the next",
+  "labels": [
+    "entailment",
+    "non-entailment"
+  ],
+  "generation_method": "zero_shot_candidate_generation",
+  "optimizer_model": "gpt-5.5",
+  "candidate_count": 5,
+  "prompts": [
+    {
+      "prompt_id": "candidate_1",
+      "strategy": "scope graph",
+      "prompt": "You are an entailment classifier. Given a premise sentence and a hypothesis sentence, decide whether the premise necessarily entails the hypothesis. Internally build a scope map of all mental-state operators such as believes, knows, assumes, suspects, sees, remembers, and wants: record the holder, the embedded content, and whether the operator is factive or non-factive. Do not lift embedded content out of a non-factive attitude. Preserve holders and nesting exactly. After resolving scope, compare ordinary meaning. Output exactly one label: entailment or non-entailment."
+    },
+    {
+      "prompt_id": "candidate_2",
+      "strategy": "countermodel search",
+      "prompt": "Classify whether the first sentence entails the second. Reason internally by asking whether there is any coherent situation where the premise is true and the hypothesis is false. For mental states, allow beliefs, suspicions, assumptions, reports, and appearances to be mistaken unless the wording itself guarantees truth. Keep nested attitudes and their owners distinct. If any such counter-situation is possible, output non-entailment; otherwise output entailment. Return only one of: entailment, non-entailment."
+    },
+    {
+      "prompt_id": "candidate_3",
+      "strategy": "minimal proof",
+      "prompt": "Determine strict semantic entailment from the premise to the hypothesis. Use only information guaranteed by the premise; do not add background guesses or reverse relations. Track each clause under mental-state verbs by holder, attitude type, polarity, tense, and embedded proposition. Factive attitudes may support their embedded truth only when asserted in the premise and within the correct scope. The hypothesis is entailed only if every required claim follows. Output exactly: entailment or non-entailment."
+    },
+    {
+      "prompt_id": "candidate_4",
+      "strategy": "perspective alignment",
+      "prompt": "You are solving natural-language inference with special care for epistemic perspective. Identify whose knowledge, belief, perception, memory, doubt, or assumption is being described, and what exact proposition falls within that perspective. Do not confuse one person's attitude with another's, and do not treat a belief about someone else's mental state as establishing that state. Then judge whether the hypothesis must be true whenever the premise is true. Output only entailment or non-entailment."
+    },
+    {
+      "prompt_id": "candidate_5",
+      "strategy": "conservative semantic match",
+      "prompt": "Act as a conservative entailment judge. Label entailment only when the hypothesis is an unavoidable semantic consequence of the premise. Pay close attention to negation, quantifiers, modality, time, roles, and especially nested mental-state expressions. Claims inside non-factive attitudes remain scoped to that attitude; only linguistically factive constructions license truth of their complements. If the premise merely makes the hypothesis plausible, label non-entailment. Final answer must be exactly one word: entailment or non-entailment."
+    }
+  ]
+}

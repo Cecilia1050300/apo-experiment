@@ -1,0 +1,46 @@
+{
+  "task": "epistemic_reasoning",
+  "dataset_split": "optimization",
+  "best_prompt_id": "candidate_4",
+  "best_prompt": "You are solving natural-language inference with special care for epistemic perspective. Identify whose knowledge, belief, perception, memory, doubt, or assumption is being described, and what exact proposition falls within that perspective. Do not confuse one person's attitude with another's, and do not treat a belief about someone else's mental state as establishing that state. Then judge whether the hypothesis must be true whenever the premise is true. Output only entailment or non-entailment.",
+  "best_accuracy": 0.96,
+  "failed_case_count": 2,
+  "failed_cases": [
+    {
+      "id": "epistemic_reasoning_1411",
+      "input": "Premise: Abigail assumes that the tennis player spikes the tennis ball on the boundary line. Hypothesis: Abigail assumes that tennis player is playing tennis.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 10.7047,
+      "usage": {
+        "input_tokens": 131,
+        "output_tokens": 526,
+        "total_tokens": 657
+      }
+    },
+    {
+      "id": "epistemic_reasoning_1796",
+      "input": "Premise: Thomas recognizes that a boy in a green shirt surrounded by toys and another boy, wearing a blue shirt with penguins, to his left. Hypothesis: Thomas recognizes that two boys sit in a classroom at their desks.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 4.4408,
+      "usage": {
+        "input_tokens": 148,
+        "output_tokens": 173,
+        "total_tokens": 321
+      }
+    }
+  ]
+}
