@@ -1,0 +1,50 @@
+{
+  "task": "causal_judgment",
+  "generation_method": "failure_attribution_plus_history_guided_rewriting",
+  "method_note": "ProTeGi/OPRO-inspired hybrid; not an exact reproduction.",
+  "optimizer_model": "gpt-5.5",
+  "source_best_prompt_id": "candidate_2",
+  "source_best_accuracy": 0.66,
+  "error_attribution": [
+    {
+      "error_type": "Over-counting necessary but normal/background conditions as causes",
+      "evidence": "Several errors marked permitted, expected, or routine contributors as causes when an abnormal rule-violating or more salient factor produced the outcome.",
+      "revision_direction": "Incorporate causal selection: when multiple factors are required, prefer abnormal, norm-violating, surprising, or focal contributors over normal background enablers."
+    },
+    {
+      "error_type": "But-for reasoning applied too broadly to remote enablers",
+      "evidence": "The model treated delays, prior jobs, approvals, and ordinary components as causes even when the actual outcome was better attributed to an intervening accident, proximate event, or abnormal cofactor.",
+      "revision_direction": "Distinguish real causal contribution from mere enabling conditions, remote setup, and intervening independent causes."
+    },
+    {
+      "error_type": "Ignoring contrastive standards in 'because' questions",
+      "evidence": "The model rejected omissions/non-changes that maintained a sufficient state, but accepted ordinary conjuncts where the contrastively salient factor was another rare or abnormal condition.",
+      "revision_direction": "For 'because' questions, ask which factor best explains the contrast, not merely whether it was logically necessary."
+    },
+    {
+      "error_type": "Conflating foreseen side effects with intentional outcomes",
+      "evidence": "The model answered Yes for harms that were merely foreseen and indifferent, while answering No for outcomes that were aimed at or certain immediate effects of the chosen action.",
+      "revision_direction": "For intentionality, count goals, chosen means, and certain immediate effects as intentional; exclude merely collateral, indifferent, or merely possible side effects."
+    }
+  ],
+  "prompts": [
+    {
+      "prompt_id": "round_2_candidate_1",
+      "strategy": "Add causal-selection and intentionality cautions to the prior best prompt while preserving its structure.",
+      "change_type": "minimal_edit",
+      "prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events, relevant alternatives, norms, and intentions. Do not treat normal background enablers or merely foreseen side effects as causes when a more salient abnormal or intended factor explains the result. Do not explain. Answer exactly: Yes or No."
+    },
+    {
+      "prompt_id": "round_2_candidate_2",
+      "strategy": "Emphasize necessity, sufficiency, counterfactuals, overdetermination, and contrastive causal explanation.",
+      "change_type": "new_focus",
+      "prompt": "Decide whether the questioned factor genuinely explains the outcome. Use counterfactual reasoning, but do not rely on simple but-for necessity alone: exclude remote background conditions, normal permitted enablers, and factors displaced by a more proximate, abnormal, or sufficient cause. In overdetermined cases, ask which factor best explains the contrast. Output exactly: Yes or No."
+    },
+    {
+      "prompt_id": "round_2_candidate_3",
+      "strategy": "Handle intentionality questions and norm-sensitive causal attribution explicitly.",
+      "change_type": "new_focus",
+      "prompt": "Answer the causal or intentionality question using the scenario's norms, plans, and causal structure. For intentionality, answer Yes only for outcomes that were goals, chosen means, specifically aimed at, or certain immediate effects of the chosen act; answer No for merely collateral, indifferent, or merely possible side effects. For causation, favor abnormal or rule-violating contributors over normal background conditions. Return only: Yes or No."
+    }
+  ]
+}

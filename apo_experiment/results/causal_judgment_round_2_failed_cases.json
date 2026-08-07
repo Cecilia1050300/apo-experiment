@@ -1,0 +1,90 @@
+{
+  "task": "causal_judgment",
+  "dataset_split": "optimization",
+  "best_prompt_id": "round_2_candidate_1",
+  "best_prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events, relevant alternatives, norms, and intentions. Do not treat normal background enablers or merely foreseen side effects as causes when a more salient abnormal or intended factor explains the result. Do not explain. Answer exactly: Yes or No.",
+  "best_accuracy": 0.84,
+  "failed_case_count": 8,
+  "failed_cases": [
+    {
+      "id": "causal_judgment_0185",
+      "input": "A bear and a hedgehog were shown a box full of colored pencils. Only bears were allowed to take pencils, whereas hedgehogs were not allowed to take them. The hedgehog was absent when the new rule about pencil use was announced. Therefore, the hedgehog does not know about the new norm. Both animals alternately took pencils out of the box six times. At last, the hedgehog and the bear came to the box and simultaneously took a pencil. A short time later, another animal, a polar bear, approached the box seeking a pencil to do his homework with. However, there were no pencils left in the box. The polar bear could not finish his homework. Did the hedgehog cause the problem?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0036",
+      "input": "Imagine that there is a man out in the woods who is participating in a hunting competition. After spending hours waiting for a deer to cross his path, the hunter suddenly sees the largest deer he has ever seen. If he can only kill this deer, he will surely win the competition. So, the hunter gets the deer in his sights -- but at the last second, he notices that there is a group of bird-watchers just on the other side of the deer. The hunter realizes that if he shoots the deer, the bullet will definitely hit one of the birdwatchers as well. But he does not care at all about the bird watchers -- he just wants to win the competition. So, he shoots and kills the deer. And as expected, the bullet ends up hitting one of the bird-watchers as well. Did the man intentionally shoot the bird-watcher?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0073",
+      "input": "Wayne has a new high-tech watch that tracks his heart rate while he exercises. He must charge the device before he uses it this evening. The device will fully charge in one hour if it is both plugged in and on the charging pad. At 2:00 PM, the device is plugged in, and the device is on the charging pad. At that time, Wayne checks to see if the device is on the charging pad, and he sees that it is. So, he does not change the position of the device, and he leaves it on the charging pad. Because the device will fully charge in one hour if it is either plugged in or on the charging pad, the device is fully charged at 3:00 PM. Is the device fully charged because Wayne did not change the position of the device?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0042",
+      "input": "A sniper has been ordered to kill an enemy commander. So, after getting himself into position, he finally has the enemy commander in his sights. Before he pulls the trigger, however, the sniper realizes that the gunfire will definitely cause the barrel of his gun to get hot. But the sniper doesn't care at all whether the barrel of the gun is hot, he doesn't have to touch it anyway. So, he pulls the trigger -- thereby shooting and killing the commander. And, as the sniper expected, firing the gun caused the barrel to heat up. Did the sniper intentionally heat the barrel of his gun?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0030",
+      "input": "In Nazi Germany, there was a law called the 'racial identification law.' The purpose of the law was to help identify people of certain races so that they could be rounded up and sent to concentration camps. Shortly after this law was passed, the CEO of a small corporation decided to make certain organizational changes. The Vice-President of the corporation said: \"By making those changes, you'll definitely be increasing our profits. But you'll also be violating the requirements of the racial identification law.\" The CEO said: \"Look, I know that I'll be violating the requirements of the law, but I don't care one bit about that. All I care about is making as much profit as I can. Let's make those organizational changes!\" As soon as the CEO gave this order, the corporation began making the organizational changes. Did the CEO intentionally violate the requirements of the law?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0032",
+      "input": "Brown wants to kill Smith now. Smith is in another building. There is a bomb in that building and Brown can detonate it only by producing a six-dotted image on the lens of a camera that is focused on the top of a table in Brown's room and wired to the bomb. So, Brown takes out a normal, fair, six-sided die and tosses it onto the table, hoping that it will land six-up. By throwing a six, Brown detonates the bomb, thereby killing Smith. Did Brown intentionally roll a six?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0061",
+      "input": "Ned has a new motorboat. When Ned turns the key, the motorboat starts if either the gear is in neutral or the motor is in the lock position. Today, the gear is in neutral, and the motor is in the lock position. Ned checks the motor to see if it is in the lock position. He sees that it is in the lock position, and he does not change its position at all. Because the motorboat would start if either the gear is in neutral or the motor is in the lock position, the motorboat starts when Ned turns the key. Did the motorboat start because Ned did not change the position of the motor?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0147",
+      "input": "Janet is an employee in a factory. Since she works in the maintenance department, she knows how to grease and oil all of the machines in the factory. It is her responsibility to put oil into the machines. Kate is also an employee at the factory. While she works in the human resources department, she knows how to grease and oil all of the machines in the factory. If Janet does not put oil in the machines, it is not Kate's responsibility to do so. One day, Janet forgets to put oil in an important machine. Kate noticed that Janet did not put oil in the machine, and Kate also did not put oil in the machine. The machine broke down a few days later. Did Kate not putting oil in the machine cause it to break down?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    }
+  ]
+}

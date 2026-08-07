@@ -1,0 +1,9 @@
+{
+  "task": "causal_judgment",
+  "dataset_split": "optimization",
+  "best_prompt_id": "candidate_1",
+  "best_prompt": "Decide whether the event or agent named in the question actually caused the outcome in the scenario. Use causal reasoning about what would likely have happened otherwise, not keyword matching. Output exactly one label: Yes or No.",
+  "best_accuracy": 1.0,
+  "failed_case_count": 0,
+  "failed_cases": []
+}

@@ -1,0 +1,288 @@
+{
+  "task": "causal_judgment",
+  "target_model": "gpt-5.5",
+  "dataset_split": "optimization",
+  "evaluation": {
+    "primary_metric": "exact_match_accuracy",
+    "secondary_metrics": [
+      "format_compliance",
+      "total_tokens",
+      "average_latency_seconds"
+    ]
+  },
+  "results": [
+    {
+      "prompt_id": "candidate_1",
+      "strategy": "counterfactual dependence",
+      "prompt": "Decide whether the event or agent named in the question actually caused the outcome in the scenario. Use causal reasoning about what would likely have happened otherwise, not keyword matching. Output exactly one label: Yes or No.",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "format_compliance": 1.0,
+      "format_compliant_count": 2,
+      "average_latency_seconds": 5.6782,
+      "total_latency_seconds": 11.3564,
+      "usage": {
+        "input_tokens": 396,
+        "output_tokens": 157,
+        "total_tokens": 553
+      },
+      "records": [
+        {
+          "id": "causal_judgment_0002",
+          "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Lauren would be the only one permitted to use the computer in the mornings and that Jane would be the only one permitted to use the computer in the afternoons. As expected, Lauren logged on the computer the next day at 9:00 am. But Jane decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+          "expected_outputs": [
+            "Yes"
+          ],
+          "prediction": "Yes",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.1114,
+          "usage": {
+            "input_tokens": 193,
+            "output_tokens": 50,
+            "total_tokens": 243
+          }
+        },
+        {
+          "id": "causal_judgment_0064",
+          "input": "David has a new dryer in his apartment. David's clothes will dry in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH. Today, the cycle is already set to MAX DRY, and the temperature is not set on HIGH. David checks the dryer's settings, and he sees that the temperature is not set on HIGH. He completely changes the setting, and he sets the temperature to HIGH. He then turns on the dryer. Because the dryer would dry David's clothes in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH, the dryer dries David's clothes in sixty minutes. Did David's clothes dry in sixty minutes because David changed the temperature setting?",
+          "expected_outputs": [
+            "No"
+          ],
+          "prediction": "No",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 6.245,
+          "usage": {
+            "input_tokens": 203,
+            "output_tokens": 107,
+            "total_tokens": 310
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_4",
+      "strategy": "responsibility under intervention",
+      "prompt": "Assess whether changing or removing the stated action or condition would plausibly change the outcome. If so, mark it causal; if not, do not. Provide exactly one word: Yes or No.",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "format_compliance": 1.0,
+      "format_compliant_count": 2,
+      "average_latency_seconds": 3.2249,
+      "total_latency_seconds": 6.4497,
+      "usage": {
+        "input_tokens": 388,
+        "output_tokens": 197,
+        "total_tokens": 585
+      },
+      "records": [
+        {
+          "id": "causal_judgment_0002",
+          "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Lauren would be the only one permitted to use the computer in the mornings and that Jane would be the only one permitted to use the computer in the afternoons. As expected, Lauren logged on the computer the next day at 9:00 am. But Jane decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+          "expected_outputs": [
+            "Yes"
+          ],
+          "prediction": "Yes",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.004,
+          "usage": {
+            "input_tokens": 189,
+            "output_tokens": 46,
+            "total_tokens": 235
+          }
+        },
+        {
+          "id": "causal_judgment_0064",
+          "input": "David has a new dryer in his apartment. David's clothes will dry in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH. Today, the cycle is already set to MAX DRY, and the temperature is not set on HIGH. David checks the dryer's settings, and he sees that the temperature is not set on HIGH. He completely changes the setting, and he sets the temperature to HIGH. He then turns on the dryer. Because the dryer would dry David's clothes in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH, the dryer dries David's clothes in sixty minutes. Did David's clothes dry in sixty minutes because David changed the temperature setting?",
+          "expected_outputs": [
+            "No"
+          ],
+          "prediction": "No",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.4457,
+          "usage": {
+            "input_tokens": 199,
+            "output_tokens": 151,
+            "total_tokens": 350
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_2",
+      "strategy": "actual contribution",
+      "prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events and relevant alternatives. Do not explain. Answer exactly: Yes or No.",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "format_compliance": 1.0,
+      "format_compliant_count": 2,
+      "average_latency_seconds": 9.9874,
+      "total_latency_seconds": 19.9748,
+      "usage": {
+        "input_tokens": 386,
+        "output_tokens": 433,
+        "total_tokens": 819
+      },
+      "records": [
+        {
+          "id": "causal_judgment_0002",
+          "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Lauren would be the only one permitted to use the computer in the mornings and that Jane would be the only one permitted to use the computer in the afternoons. As expected, Lauren logged on the computer the next day at 9:00 am. But Jane decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+          "expected_outputs": [
+            "Yes"
+          ],
+          "prediction": "Yes",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 11.4214,
+          "usage": {
+            "input_tokens": 188,
+            "output_tokens": 36,
+            "total_tokens": 224
+          }
+        },
+        {
+          "id": "causal_judgment_0064",
+          "input": "David has a new dryer in his apartment. David's clothes will dry in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH. Today, the cycle is already set to MAX DRY, and the temperature is not set on HIGH. David checks the dryer's settings, and he sees that the temperature is not set on HIGH. He completely changes the setting, and he sets the temperature to HIGH. He then turns on the dryer. Because the dryer would dry David's clothes in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH, the dryer dries David's clothes in sixty minutes. Did David's clothes dry in sixty minutes because David changed the temperature setting?",
+          "expected_outputs": [
+            "No"
+          ],
+          "prediction": "No",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 8.5534,
+          "usage": {
+            "input_tokens": 198,
+            "output_tokens": 397,
+            "total_tokens": 595
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_3",
+      "strategy": "distinguish causation from correlation",
+      "prompt": "Determine if the questioned event is a cause of the outcome rather than merely associated, present, or followed by it. Base the decision on the scenario's causal structure. Return only Yes or No.",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "format_compliance": 1.0,
+      "format_compliant_count": 2,
+      "average_latency_seconds": 6.8297,
+      "total_latency_seconds": 13.6594,
+      "usage": {
+        "input_tokens": 388,
+        "output_tokens": 593,
+        "total_tokens": 981
+      },
+      "records": [
+        {
+          "id": "causal_judgment_0002",
+          "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Lauren would be the only one permitted to use the computer in the mornings and that Jane would be the only one permitted to use the computer in the afternoons. As expected, Lauren logged on the computer the next day at 9:00 am. But Jane decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+          "expected_outputs": [
+            "Yes"
+          ],
+          "prediction": "Yes",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.8858,
+          "usage": {
+            "input_tokens": 189,
+            "output_tokens": 70,
+            "total_tokens": 259
+          }
+        },
+        {
+          "id": "causal_judgment_0064",
+          "input": "David has a new dryer in his apartment. David's clothes will dry in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH. Today, the cycle is already set to MAX DRY, and the temperature is not set on HIGH. David checks the dryer's settings, and he sees that the temperature is not set on HIGH. He completely changes the setting, and he sets the temperature to HIGH. He then turns on the dryer. Because the dryer would dry David's clothes in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH, the dryer dries David's clothes in sixty minutes. Did David's clothes dry in sixty minutes because David changed the temperature setting?",
+          "expected_outputs": [
+            "No"
+          ],
+          "prediction": "No",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 10.7737,
+          "usage": {
+            "input_tokens": 199,
+            "output_tokens": 523,
+            "total_tokens": 722
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_5",
+      "strategy": "proximate and enabling causes",
+      "prompt": "Judge whether the cited factor should count as a cause of the outcome, including direct, indirect, or necessary enabling causes, while excluding irrelevant background details. Output only Yes or No.",
+      "accuracy": 0.5,
+      "correct_count": 1,
+      "total": 2,
+      "failed_count": 1,
+      "format_compliance": 1.0,
+      "format_compliant_count": 2,
+      "average_latency_seconds": 4.0658,
+      "total_latency_seconds": 8.1316,
+      "usage": {
+        "input_tokens": 382,
+        "output_tokens": 364,
+        "total_tokens": 746
+      },
+      "records": [
+        {
+          "id": "causal_judgment_0002",
+          "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Lauren would be the only one permitted to use the computer in the mornings and that Jane would be the only one permitted to use the computer in the afternoons. As expected, Lauren logged on the computer the next day at 9:00 am. But Jane decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+          "expected_outputs": [
+            "Yes"
+          ],
+          "prediction": "Yes",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 1.4943,
+          "usage": {
+            "input_tokens": 186,
+            "output_tokens": 35,
+            "total_tokens": 221
+          }
+        },
+        {
+          "id": "causal_judgment_0064",
+          "input": "David has a new dryer in his apartment. David's clothes will dry in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH. Today, the cycle is already set to MAX DRY, and the temperature is not set on HIGH. David checks the dryer's settings, and he sees that the temperature is not set on HIGH. He completely changes the setting, and he sets the temperature to HIGH. He then turns on the dryer. Because the dryer would dry David's clothes in sixty minutes if either the cycle is set to MAX DRY or the temperature is set to HIGH, the dryer dries David's clothes in sixty minutes. Did David's clothes dry in sixty minutes because David changed the temperature setting?",
+          "expected_outputs": [
+            "No"
+          ],
+          "prediction": "Yes",
+          "correct": false,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 6.6372,
+          "usage": {
+            "input_tokens": 196,
+            "output_tokens": 329,
+            "total_tokens": 525
+          }
+        }
+      ]
+    }
+  ],
+  "best_prompt_id": "candidate_1",
+  "best_prompt": "Decide whether the event or agent named in the question actually caused the outcome in the scenario. Use causal reasoning about what would likely have happened otherwise, not keyword matching. Output exactly one label: Yes or No.",
+  "best_accuracy": 1.0
+}

@@ -1,0 +1,21 @@
+{
+  "task": "causal_judgment",
+  "note": "Freeze this file before final_test. Do not rewrite using final-test failures.",
+  "prompts": [
+    {
+      "prompt_id": "manual_seed",
+      "strategy": "manual baseline",
+      "prompt": "Determine whether the event or action asked about caused or intentionally brought about the stated outcome in the scenario. Output exactly Yes or No."
+    },
+    {
+      "prompt_id": "round_1_best",
+      "strategy": "best Round 1 prompt",
+      "prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events and relevant alternatives. Do not explain. Answer exactly: Yes or No."
+    },
+    {
+      "prompt_id": "round_2_best",
+      "strategy": "best Round 2 prompt",
+      "prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events, relevant alternatives, norms, and intentions. Do not treat normal background enablers or merely foreseen side effects as causes when a more salient abnormal or intended factor explains the result. Do not explain. Answer exactly: Yes or No."
+    }
+  ]
+}

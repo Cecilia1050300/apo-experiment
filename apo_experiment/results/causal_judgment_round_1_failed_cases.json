@@ -1,0 +1,180 @@
+{
+  "task": "causal_judgment",
+  "dataset_split": "optimization",
+  "best_prompt_id": "candidate_2",
+  "best_prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events and relevant alternatives. Do not explain. Answer exactly: Yes or No.",
+  "best_accuracy": 0.66,
+  "failed_case_count": 17,
+  "failed_cases": [
+    {
+      "id": "causal_judgment_0012",
+      "input": "An intern is taking care of a patient in a hospital. The intern notices that the patient is having some kidney problems. Recently, the intern read a series of studies about a new drug that can alleviate problems like this one, and he decides to administer the drug in this case. Before the intern can administer the drug, he needs to get the signature of the pharmacist (to confirm that the hospital has enough in stock) and the signature of the attending doctor (to confirm that the drug is appropriate for this patient). So he sends off requests to both the pharmacist and the attending doctor. The pharmacist receives the request, checks to see that they have enough in stock, and immediately signs off. The attending doctor receives the request at the same time and immediately realizes that there are strong reasons to refuse. Although some studies show that the drug can help people with kidney problems, there are also a number of studies showing that the drug can have very dangerous side effects. For this reason, the hospital has a policy forbidding the use of this drug for kidney problems. Despite this policy, the doctor decides to sign off. Since both signatures were received, the patient is administered the drug. As it happens, the patient immediately recovers, and the drug has no adverse effects. Did the pharmacist's decision cause the patient's recovery?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0185",
+      "input": "A bear and a hedgehog were shown a box full of colored pencils. Only bears were allowed to take pencils, whereas hedgehogs were not allowed to take them. The hedgehog was absent when the new rule about pencil use was announced. Therefore, the hedgehog does not know about the new norm. Both animals alternately took pencils out of the box six times. At last, the hedgehog and the bear came to the box and simultaneously took a pencil. A short time later, another animal, a polar bear, approached the box seeking a pencil to do his homework with. However, there were no pencils left in the box. The polar bear could not finish his homework. Did the hedgehog cause the problem?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0179",
+      "input": "Alice and Zoe work for the same company. They work in different rooms and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, following the official policy, Alice logs in at 9.30 am, when Zoe is already logged in. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Alice cause an empty email to be sent from the central computer to a non-existent email address?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0186",
+      "input": "There is a supervillain who has a group of evil henchmen working for him. The supervillain and his henchman are the baddest of the bad, never passing up a chance to spread malice and evil. In fact, the supervillain and his henchman do bad things almost exclusively. You are the assistant to the supervillain. Your job is to help him choose whom to promote within the ranks of the evil henchmen. The job of the evil henchmen is to do maximum evil at every opportunity. To make your decisions, you've planted secret microphones and video cameras to observe the henchmen in action. Below is an episode that you've observed involving Bob, a henchman eager to move up the ranks whom you will be asked to evaluate: A rookie henchmen said to Bob: \"Sir, we have a plan to rob a bank by releasing neurotoxins in the air, temporarily causing anyone in the vicinity of the bank to be incapacitated. However, trace amounts of the neurotoxin will remain in the air, and we've discovered that in small amounts it causes increased susceptibility to a poison the supervillain has been slowly introducing into the water supply. Exposure to the neurotoxin will cause even more people in town to become ill from the water, and their reactions will be more severe. It will greatly harm the town's quality of life.\" Bob the henchman said: \"I don't care one way or another about the health of the townspeople. I just want to steal as much money as I can. Let's go ahead with the plan.\" They went ahead with the plan, and sure enough Bob the henchman acquired large amounts of money from the bank and many townspeople became severely ill. The health of the townspeople was thus harmed. Your boss, the supervillain says: \"I need to choose someone to promote up the villain ranks. I have a lot of henchmen to choose from. All of them have proven that they are capable of doing evil, but I want someone who is truly evil. What about Bob? I heard he robbed a bank, acquired a large amount of money, and made a bunch of townspeople ill.\" Did Bob intentionally harm the health of the townspeople?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0073",
+      "input": "Wayne has a new high-tech watch that tracks his heart rate while he exercises. He must charge the device before he uses it this evening. The device will fully charge in one hour if it is both plugged in and on the charging pad. At 2:00 PM, the device is plugged in, and the device is on the charging pad. At that time, Wayne checks to see if the device is on the charging pad, and he sees that it is. So, he does not change the position of the device, and he leaves it on the charging pad. Because the device will fully charge in one hour if it is either plugged in or on the charging pad, the device is fully charged at 3:00 PM. Is the device fully charged because Wayne did not change the position of the device?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0015",
+      "input": "A machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the fact that the black wire touched the battery cause the machine to short circuit?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0042",
+      "input": "A sniper has been ordered to kill an enemy commander. So, after getting himself into position, he finally has the enemy commander in his sights. Before he pulls the trigger, however, the sniper realizes that the gunfire will definitely cause the barrel of his gun to get hot. But the sniper doesn't care at all whether the barrel of the gun is hot, he doesn't have to touch it anyway. So, he pulls the trigger -- thereby shooting and killing the commander. And, as the sniper expected, firing the gun caused the barrel to heat up. Did the sniper intentionally heat the barrel of his gun?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0005",
+      "input": "The receptionist in the philosophy department keeps her desk stocked with pens. The administrative assistants are allowed to take the pens, but faculty members are supposed to buy their own. The administrative assistants typically do take the pens. Unfortunately, so do the faculty members. The receptionist has repeatedly emailed them reminders that only administrative assistants are allowed to take the pens. On Monday morning, one of the administrative assistants encounters Professor Smith walking past the receptionist's desk. Both take pens. Later that day, the receptionist needs to take an important message... but she has a problem. There are no pens left on her desk. Did the administrative assistant cause the problem?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0119",
+      "input": "Billy and Suzy work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Nobody at the company is aware that if two people are logged into the central computer at the same time, some spam emails containing important customer information are immediately deleted from the central computer. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Suzy is the only one permitted to log into the central computer in the mornings, whereas Billy is the only one permitted to log into the central computer in the afternoons. Billy is not permitted to log into the central computer in the morning. Today at 9 am, Billy and Suzy both log into the central computer at the same time. Immediately, some work emails containing important customer information are deleted from the central computer. Did Suzy cause the central computer to delete some work emails containing important customer information?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0124",
+      "input": "Long ago, when John was only 17 years old, he got a job working for a large manufacturing company. He started out working on an assembly line for minimum wage, but after a few years at the company, he was given a choice between two line manager positions. He could stay in the woodwork division, which is where he was currently working. Or he could move to the plastics division. John was unsure what to do because he liked working in the woodwork division, but he also thought it might be worth trying something different. He finally decided to switch to the plastics division and try something new. For the last 30 years, John has worked as a production line supervisor in the plastics division. After the first year there, the plastics division was moved to a different building with more space. Unfortunately, through the many years he worked there, John was exposed to asbestos, a highly carcinogenic substance. Most of the plastics division was quite safe, but the small part in which John worked was exposed to asbestos fibers. And now, although John has never smoked a cigarette in his life and otherwise lives a healthy lifestyle, he has a highly progressed and incurable case of lung cancer at the age of 50. John had seen three cancer specialists, all of whom confirmed the worst: that, except for pain, John's cancer was untreatable and he was absolutely certain to die from it very soon (the doctors estimated no more than 2 months). Yesterday, while John was in the hospital for a routine medical appointment, a new nurse accidentally administered the wrong medication to him. John was allergic to the drug and he immediately went into shock and experienced cardiac arrest (a heart attack). Doctors attempted to resuscitate him but he died minutes after the medication was administered. Did John's job cause his premature death?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0037",
+      "input": "Imagine that there is a man out in the woods who is participating in a hunting competition. After spending hours waiting for a deer to cross his path, the hunter suddenly sees the largest deer he has ever seen. If he can only kill this deer, he will surely win the competition. So, the hunter gets the deer in his sights -- but at the last second, he notices that there is a group of bird-watchers just on the other side of the deer. The hunter realizes that if he shoots the deer, the bullet could possibly hit one of the birdwatchers as well. But he does not care at all about the bird watchers -- he just wants to win the competition. So, he shoots and kills the deer. And as expected, the bullet ends up hitting one of the bird-watchers as well. Did the man intentionally shoot the bird-watcher?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0003",
+      "input": "Lauren and Jane work for the same company. They each need to use a computer for work sometimes. Unfortunately, the computer isn't very powerful. If two people are logged on at the same time, it usually crashes. So the company decided to institute an official policy. It declared that Jane would be the only one permitted to use the computer in the mornings and that Lauren would be the only one permitted to use the computer in the afternoons. As expected, Jane logged on the computer the next day at 9:00 am. But Lauren decided to disobey the official policy. She also logged on at 9:00 am. The computer crashed immediately. Did Jane cause the computer to crash?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0136",
+      "input": "Joe was about to go pick up his child from a school in the suburbs. In the parking lot, he stopped to help a person who was injured while exercising. Because of this delay in picking up his son, Joe's neighbor, who waited 15 min for Joe to show up, took the child home in his car. On the way home, the neighbor's car was struck by a drunk driver. Joe's son, the only seriously hurt victim, received severe leg injuries. Joe's behavior was due to his generosity. Joe is the type of person who wants to do good things for others in need. Sometimes his friends are bothered by his seemingly excessive generosity and they even complain about it occasionally. But, after they got to know him better, they realized his generosity was a basic trait of his personality. Thus, it was something he could not help, even when he tried hard. Did Joe cause his son's injury?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0032",
+      "input": "Brown wants to kill Smith now. Smith is in another building. There is a bomb in that building and Brown can detonate it only by producing a six-dotted image on the lens of a camera that is focused on the top of a table in Brown's room and wired to the bomb. So, Brown takes out a normal, fair, six-sided die and tosses it onto the table, hoping that it will land six-up. By throwing a six, Brown detonates the bomb, thereby killing Smith. Did Brown intentionally roll a six?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0061",
+      "input": "Ned has a new motorboat. When Ned turns the key, the motorboat starts if either the gear is in neutral or the motor is in the lock position. Today, the gear is in neutral, and the motor is in the lock position. Ned checks the motor to see if it is in the lock position. He sees that it is in the lock position, and he does not change its position at all. Because the motorboat would start if either the gear is in neutral or the motor is in the lock position, the motorboat starts when Ned turns the key. Did the motorboat start because Ned did not change the position of the motor?",
+      "expected_outputs": [
+        "Yes"
+      ],
+      "prediction": "No",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0121",
+      "input": "Alex will only win the game if the total of his dice roll is greater than 11 AND the coin comes up heads. It is very unlikely that he will roll higher than 11, but the coin has equal odds of coming up heads or tails. Alex flips the coin and rolls his dice at exactly the same time. The coin comes up heads, and he rolls a 12, so amazingly, he rolled greater than 11. Alex wins the game. Did Alex win because of the coin flip?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    },
+    {
+      "id": "causal_judgment_0105",
+      "input": "Tom has a huge garden and loves flowers. He employed two gardeners who take care of the plants on his 30 flower beds: Alex and Benni. Both can independently decide on their working hours and arrange who cares for which flower beds. Alex and Benni are very reliable and Tom is satisfied with their work. Nevertheless he wants to optimize the plant growth. Since Tom has read in a magazine that plants grow better when they are fertilized, he decides to let Alex and Benni fertilize his plants. The magazine recommends the use of the chemicals A X200R or B Y33R, since both are especially effective. However, Tom also read that it can damage plants when they are exposed to multiple different types of chemicals. Tom therefore decides that he only wants to use one fertilizer. He goes for A X200R. Tom instructs Alex and Benni to buy the chemical A X200R and to use only this fertilizer. Alex volunteers for buying several bottles of this chemical for Benni and himself. After a few weeks, Tom goes for a walk in his garden. He realizes that some of his plants are much prettier and bigger than before. However, he also realizes that some of his plants have lost their beautiful color and are dried up. That makes Tom very sad and reflective. He wonders whether the drying of his plants might have something to do with the fertilization. He wants to investigate this matter and talks to Alex and Benni. Alex tells him that he followed Tom's instructions and only bought and used the chemical A X200R. However, Benni tells him that he had used the chemical B Y33R instead. He still had some bottles of this chemical in stock at home and wanted to use them up. Tom realizes that the plants dried up in the flower beds on which both A X200R and B Y33R were applied by the gardeners. Did the fertilization by Alex cause the plant to dry out?",
+      "expected_outputs": [
+        "No"
+      ],
+      "prediction": "Yes",
+      "format_compliant": true,
+      "error": null
+    }
+  ]
+}

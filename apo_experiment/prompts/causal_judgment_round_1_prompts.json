@@ -1,0 +1,34 @@
+{
+  "task": "causal_judgment",
+  "task_description": "Answer questions about causal attribution",
+  "generation_method": "zero_shot_candidate_generation",
+  "optimizer_model": "gpt-5.5",
+  "candidate_count": 5,
+  "prompts": [
+    {
+      "prompt_id": "candidate_1",
+      "strategy": "counterfactual dependence",
+      "prompt": "Decide whether the event or agent named in the question actually caused the outcome in the scenario. Use causal reasoning about what would likely have happened otherwise, not keyword matching. Output exactly one label: Yes or No."
+    },
+    {
+      "prompt_id": "candidate_2",
+      "strategy": "actual contribution",
+      "prompt": "For each scenario, judge whether the specified factor made a real causal contribution to the result, considering the sequence of events and relevant alternatives. Do not explain. Answer exactly: Yes or No."
+    },
+    {
+      "prompt_id": "candidate_3",
+      "strategy": "distinguish causation from correlation",
+      "prompt": "Determine if the questioned event is a cause of the outcome rather than merely associated, present, or followed by it. Base the decision on the scenario's causal structure. Return only Yes or No."
+    },
+    {
+      "prompt_id": "candidate_4",
+      "strategy": "responsibility under intervention",
+      "prompt": "Assess whether changing or removing the stated action or condition would plausibly change the outcome. If so, mark it causal; if not, do not. Provide exactly one word: Yes or No."
+    },
+    {
+      "prompt_id": "candidate_5",
+      "strategy": "proximate and enabling causes",
+      "prompt": "Judge whether the cited factor should count as a cause of the outcome, including direct, indirect, or necessary enabling causes, while excluding irrelevant background details. Output only Yes or No."
+    }
+  ]
+}
