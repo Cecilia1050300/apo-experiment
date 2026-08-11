@@ -1,0 +1,5 @@
+
+# FactoryBench generated/raw data
+factorybench_experiment/data/level_4_train.jsonl
+factorybench_experiment/data/*_with_summary.json
+factorybench_experiment/data/*_with_temporal_features.json
