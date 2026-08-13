@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "comparison_type": "descriptive_paired_2x2_model_by_skill_control",
+    "n_complete_cases": 5,
+    "judge_models": [
+      "gpt-5.5"
+    ],
+    "experimental_parity": {
+      "same_case_ids": true,
+      "same_target_input_hash_by_case_and_role": true,
+      "same_instruction_hash_by_case_and_role": true,
+      "same_reference_and_root_cause": true,
+      "same_judge_models": true
+    },
+    "condition_mean_l4_scores": {
+      "mini_no_skill": 0.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_no_skill": 0.2,
+      "gpt55_skill_v2": 0.4
+    },
+    "model_effect_gpt55_minus_mini": {
+      "without_skill": 0.2,
+      "with_skill_v2": 0.4,
+      "without_skill_improved_cases": 1,
+      "with_skill_improved_cases": 2
+    },
+    "skill_effect_within_model": {
+      "mini": 0.0,
+      "gpt55": 0.2
+    },
+    "difference_in_differences": 0.2,
+    "interpretation": {
+      "positive_model_effect": "Consistent with greater target-model capability under the same prompt.",
+      "positive_skill_effect": "Consistent with a Skill contribution for these held-out cases.",
+      "difference_in_differences": "GPT-5.5 Skill effect minus mini Skill effect; descriptive only."
+    },
+    "limitations": [
+      "Only five held-out cases are compared.",
+      "A single GPT-5.5 Judge is preliminary unless the files contain three distinct Judges.",
+      "GPT-5.5 judging GPT-5.5 may introduce same-model evaluation bias.",
+      "Scores alone do not identify whether remaining failures require RAG, a signal tool, or Skill revision."
+    ],
+    "mini_source_file": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/results/mini_neutral_context_control_judged_gpt-5.5.json",
+    "mini_source_sha256": "a5fb46cd5098ec148e586ce94c608dc2b4e17e7fac4736f3c4d83d4f08f693aa",
+    "gpt55_source_file": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/results/gpt55_neutral_context_control_judged_gpt-5.5.json",
+    "gpt55_source_sha256": "6dd1a9fe9703cc4d8c3e5c2b8502f2acfeeef9a5b328623abaf6a8e5635fa413"
+  },
+  "per_case": [
+    {
+      "id": "353fdb06-257a-4ee0-9c45-ff948a654747",
+      "mini_no_skill": 0.0,
+      "gpt55_no_skill": 0.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_skill_v2": 0.0,
+      "model_effect_no_skill": 0.0,
+      "model_effect_skill_v2": 0.0,
+      "skill_effect_mini": 0.0,
+      "skill_effect_gpt55": 0.0
+    },
+    {
+      "id": "69d936dd-9ceb-4520-bb97-bf13ce264ec7",
+      "mini_no_skill": 0.0,
+      "gpt55_no_skill": 0.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_skill_v2": 0.0,
+      "model_effect_no_skill": 0.0,
+      "model_effect_skill_v2": 0.0,
+      "skill_effect_mini": 0.0,
+      "skill_effect_gpt55": 0.0
+    },
+    {
+      "id": "6d351f4a-3042-4998-8b94-89af56f212f5",
+      "mini_no_skill": 0.0,
+      "gpt55_no_skill": 0.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_skill_v2": 1.0,
+      "model_effect_no_skill": 0.0,
+      "model_effect_skill_v2": 1.0,
+      "skill_effect_mini": 0.0,
+      "skill_effect_gpt55": 1.0
+    },
+    {
+      "id": "85c46509-1237-4b82-8031-5b8df660d17b",
+      "mini_no_skill": 0.0,
+      "gpt55_no_skill": 0.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_skill_v2": 0.0,
+      "model_effect_no_skill": 0.0,
+      "model_effect_skill_v2": 0.0,
+      "skill_effect_mini": 0.0,
+      "skill_effect_gpt55": 0.0
+    },
+    {
+      "id": "edfc29e1-a8cd-46f3-8973-89076cbded4f",
+      "mini_no_skill": 0.0,
+      "gpt55_no_skill": 1.0,
+      "mini_skill_v2": 0.0,
+      "gpt55_skill_v2": 1.0,
+      "model_effect_no_skill": 1.0,
+      "model_effect_skill_v2": 1.0,
+      "skill_effect_mini": 0.0,
+      "skill_effect_gpt55": 0.0
+    }
+  ]
+}

@@ -1,0 +1,3421 @@
+{
+  "task": "liar",
+  "task_description": "Classify a statement into one of six truthfulness labels using the statement and provided contextual metadata.",
+  "labels": [
+    "pants-fire",
+    "false",
+    "barely-true",
+    "half-true",
+    "mostly-true",
+    "true"
+  ],
+  "source_file": "../liar_dataset/train.tsv",
+  "seed": 42,
+  "source_example_count": 10238,
+  "splits": {
+    "optimization": [
+      {
+        "id": "liar_04190",
+        "source_id": "4539.json",
+        "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says Every year air pollution protections are delayed, another 34,000 people will die prematurely.",
+          "subject": "environment,government-regulation,public-health",
+          "speaker": "earl-blumenauer",
+          "speaker_job": "U.S. representative",
+          "state": "Oregon",
+          "party": "democrat",
+          "context": "a House floor speech"
+        }
+      },
+      {
+        "id": "liar_04321",
+        "source_id": "1293.json",
+        "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "You must list all your guns on your 2010 tax return.",
+          "subject": "guns,taxes",
+          "speaker": "chain-email",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "an e-mail circulated to many people."
+        }
+      },
+      {
+        "id": "liar_05010",
+        "source_id": "6762.json",
+        "input": "Statement:\nCollege tuition costs have risen by 25 percent under the Democrats.\n\nSubject:\neducation,message-machine-2012\n\nSpeaker:\nmitt-romney\n\nSpeaker job:\nFormer governor\n\nState:\nMassachusetts\n\nParty:\nrepublican\n\nContext:\na Spanish-language television ad",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "College tuition costs have risen by 25 percent under the Democrats.",
+          "subject": "education,message-machine-2012",
+          "speaker": "mitt-romney",
+          "speaker_job": "Former governor",
+          "state": "Massachusetts",
+          "party": "republican",
+          "context": "a Spanish-language television ad"
+        }
+      },
+      {
+        "id": "liar_01114",
+        "source_id": "11182.json",
+        "input": "Statement:\nThe United States has the highest incarceration rate in the world.\n\nSubject:\ncrime,criminal-justice\n\nSpeaker:\njim-webb\n\nSpeaker job:\nwriter\n\nState:\nVirginia\n\nParty:\ndemocrat\n\nContext:\na web post.",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "The United States has the highest incarceration rate in the world.",
+          "subject": "crime,criminal-justice",
+          "speaker": "jim-webb",
+          "speaker_job": "writer",
+          "state": "Virginia",
+          "party": "democrat",
+          "context": "a web post."
+        }
+      },
+      {
+        "id": "liar_01953",
+        "source_id": "10630.json",
+        "input": "Statement:\nBeer drinking is not allowed in any Illinois state parks.\n\nSubject:\nstate-budget\n\nSpeaker:\nhoward-marklein\n\nSpeaker job:\nState Senator\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na budget hearing",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Beer drinking is not allowed in any Illinois state parks.",
+          "subject": "state-budget",
+          "speaker": "howard-marklein",
+          "speaker_job": "State Senator",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a budget hearing"
+        }
+      },
+      {
+        "id": "liar_03889",
+        "source_id": "9361.json",
+        "input": "Statement:\nObama Announces Plans For A Third Term Presidential Run\n\nSubject:\nlegal-issues\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na chain email",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Obama Announces Plans For A Third Term Presidential Run",
+          "subject": "legal-issues",
+          "speaker": "chain-email",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a chain email"
+        }
+      },
+      {
+        "id": "liar_03412",
+        "source_id": "4616.json",
+        "input": "Statement:\nSays Texas Senate hopeful Donna Campbell doesnt live in the district shes hoping to win in 2012.\n\nSubject:\ncandidates-biography\n\nSpeaker:\nburnt-orange-report\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na blog post.",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Says Texas Senate hopeful Donna Campbell doesnt live in the district shes hoping to win in 2012.",
+          "subject": "candidates-biography",
+          "speaker": "burnt-orange-report",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a blog post."
+        }
+      },
+      {
+        "id": "liar_07099",
+        "source_id": "4731.json",
+        "input": "Statement:\nA state bill would end a longstanding requirement that local governments repair highways and sidewalks -- and block injured citizens from suing over neglected maintenance.\n\nSubject:\ncounty-government,legal-issues\n\nSpeaker:\nwisconsin-association-justice\n\nSpeaker job:\n\n\nState:\nWisconsin\n\nParty:\norganization\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "A state bill would end a longstanding requirement that local governments repair highways and sidewalks -- and block injured citizens from suing over neglected maintenance.",
+          "subject": "county-government,legal-issues",
+          "speaker": "wisconsin-association-justice",
+          "speaker_job": "",
+          "state": "Wisconsin",
+          "party": "organization",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_01764",
+        "source_id": "12871.json",
+        "input": "Statement:\nI havent switched my position on the Trans-Pacific Partnership trade deal.\n\nSubject:\ncandidates-biography,trade\n\nSpeaker:\ntim-kaine\n\nSpeaker job:\nU.S. Senator\n\nState:\nVirginia\n\nParty:\ndemocrat\n\nContext:\nan interview on \"Meet the Press\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "I havent switched my position on the Trans-Pacific Partnership trade deal.",
+          "subject": "candidates-biography,trade",
+          "speaker": "tim-kaine",
+          "speaker_job": "U.S. Senator",
+          "state": "Virginia",
+          "party": "democrat",
+          "context": "an interview on \"Meet the Press\""
+        }
+      },
+      {
+        "id": "liar_03051",
+        "source_id": "11495.json",
+        "input": "Statement:\nMy campaign finished the last quarter reporting the most cash on hand of any Republican in the field $13.8 million in the bank, $3.5 million more than the Jeb Bush campaign.\n\nSubject:\ncampaign-finance\n\nSpeaker:\nted-cruz\n\nSpeaker job:\nSenator\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na Houston press conference",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "My campaign finished the last quarter reporting the most cash on hand of any Republican in the field $13.8 million in the bank, $3.5 million more than the Jeb Bush campaign.",
+          "subject": "campaign-finance",
+          "speaker": "ted-cruz",
+          "speaker_job": "Senator",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a Houston press conference"
+        }
+      },
+      {
+        "id": "liar_04092",
+        "source_id": "9907.json",
+        "input": "Statement:\nThe president referred to the Syrian opposition just a few months ago as pharmacists and doctors, and so on.\n\nSubject:\niraq,terrorism\n\nSpeaker:\nmichael-hayden\n\nSpeaker job:\nFormer director of the CIA\n\nState:\n\n\nParty:\nnone\n\nContext:\ncomments on \"Fox News Sunday\"",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "The president referred to the Syrian opposition just a few months ago as pharmacists and doctors, and so on.",
+          "subject": "iraq,terrorism",
+          "speaker": "michael-hayden",
+          "speaker_job": "Former director of the CIA",
+          "state": "",
+          "party": "none",
+          "context": "comments on \"Fox News Sunday\""
+        }
+      },
+      {
+        "id": "liar_06707",
+        "source_id": "6430.json",
+        "input": "Statement:\nBill Nelsons vote for the Affordable Care Act cuts $500 billion from Medicare to pay for new government programs.\n\nSubject:\nfederal-budget,medicare,message-machine-2012\n\nSpeaker:\namerican-commitment\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na TV ad",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Bill Nelsons vote for the Affordable Care Act cuts $500 billion from Medicare to pay for new government programs.",
+          "subject": "federal-budget,medicare,message-machine-2012",
+          "speaker": "american-commitment",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a TV ad"
+        }
+      },
+      {
+        "id": "liar_03733",
+        "source_id": "5744.json",
+        "input": "Statement:\nGeorgia is one of three states that effectively have no regulations whatsoever on lobbyists giving to legislators.\n\nSubject:\nethics\n\nSpeaker:\njoshua-mckoon\n\nSpeaker job:\n\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\na press conference",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Georgia is one of three states that effectively have no regulations whatsoever on lobbyists giving to legislators.",
+          "subject": "ethics",
+          "speaker": "joshua-mckoon",
+          "speaker_job": "",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "a press conference"
+        }
+      },
+      {
+        "id": "liar_06323",
+        "source_id": "13063.json",
+        "input": "Statement:\nYouve got a medical report on me that meets the same standard as Mitt Romney and Barack Obama.\n\nSubject:\ncandidates-biography,disability,elections,history,privacy,transparency\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nan interview on CNN",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Youve got a medical report on me that meets the same standard as Mitt Romney and Barack Obama.",
+          "subject": "candidates-biography,disability,elections,history,privacy,transparency",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "an interview on CNN"
+        }
+      },
+      {
+        "id": "liar_09244",
+        "source_id": "11281.json",
+        "input": "Statement:\nSays Scott Walker said Labor unions dont deserve to have a national holiday due to their damage to the economy. And the holiday should be replaced by Patriots Day, celebrated every year on 9/11.\n\nSubject:\nlabor\n\nSpeaker:\nfacebook-posts\n\nSpeaker job:\nSocial media posting\n\nState:\n\n\nParty:\nnone\n\nContext:\na Facebook post",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says Scott Walker said Labor unions dont deserve to have a national holiday due to their damage to the economy. And the holiday should be replaced by Patriots Day, celebrated every year on 9/11.",
+          "subject": "labor",
+          "speaker": "facebook-posts",
+          "speaker_job": "Social media posting",
+          "state": "",
+          "party": "none",
+          "context": "a Facebook post"
+        }
+      },
+      {
+        "id": "liar_04462",
+        "source_id": "4564.json",
+        "input": "Statement:\nEvery month, another 50,000 U.S.-born Hispanics turn 18 and become eligible to vote.\n\nSubject:\nelections,immigration\n\nSpeaker:\nruben-navarrette-jr\n\nSpeaker job:\nColumnist\n\nState:\nCalifornia\n\nParty:\nnone\n\nContext:\nan opinion column.",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Every month, another 50,000 U.S.-born Hispanics turn 18 and become eligible to vote.",
+          "subject": "elections,immigration",
+          "speaker": "ruben-navarrette-jr",
+          "speaker_job": "Columnist",
+          "state": "California",
+          "party": "none",
+          "context": "an opinion column."
+        }
+      },
+      {
+        "id": "liar_09918",
+        "source_id": "2612.json",
+        "input": "Statement:\nSays Tom Barrett supports a government takeover of our health care\n\nSubject:\nhealth-care,message-machine\n\nSpeaker:\nrebecca-kleefisch\n\nSpeaker job:\nCandidate for lieutenant governor\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na campaign TV ad",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says Tom Barrett supports a government takeover of our health care",
+          "subject": "health-care,message-machine",
+          "speaker": "rebecca-kleefisch",
+          "speaker_job": "Candidate for lieutenant governor",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a campaign TV ad"
+        }
+      },
+      {
+        "id": "liar_06386",
+        "source_id": "203.json",
+        "input": "Statement:\nSupported in-state tuition in Arkansas for illegal immigrants \"if you'd sat in our schools from the time you're 5 or 6 years old and you had become an A-plus student,\" among other things.\n\nSubject:\nimmigration\n\nSpeaker:\nmike-huckabee\n\nSpeaker job:\nauthor\n\nState:\nArkansas\n\nParty:\nrepublican\n\nContext:\na debate in St. Petersburg",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Supported in-state tuition in Arkansas for illegal immigrants \"if you'd sat in our schools from the time you're 5 or 6 years old and you had become an A-plus student,\" among other things.",
+          "subject": "immigration",
+          "speaker": "mike-huckabee",
+          "speaker_job": "author",
+          "state": "Arkansas",
+          "party": "republican",
+          "context": "a debate in St. Petersburg"
+        }
+      },
+      {
+        "id": "liar_07736",
+        "source_id": "4459.json",
+        "input": "Statement:\nSays an amendment specifying when military members may use deadly force does nothing to change existing rules of engagement for American service members.\n\nSubject:\nafghanistan,iraq,legal-issues,voting-record\n\nSpeaker:\ndavid-cicilline\n\nSpeaker job:\nmayor of Providence\n\nState:\nRhode Island\n\nParty:\ndemocrat\n\nContext:\na letter posted on a blog ",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Says an amendment specifying when military members may use deadly force does nothing to change existing rules of engagement for American service members.",
+          "subject": "afghanistan,iraq,legal-issues,voting-record",
+          "speaker": "david-cicilline",
+          "speaker_job": "mayor of Providence",
+          "state": "Rhode Island",
+          "party": "democrat",
+          "context": "a letter posted on a blog "
+        }
+      },
+      {
+        "id": "liar_01653",
+        "source_id": "6077.json",
+        "input": "Statement:\nAs Governor: Romney did not keep public safety funding in line with inflation.\n\nSubject:\nhistory,message-machine-2012,public-safety,state-budget,state-finances,states\n\nSpeaker:\namerican-bridge-21st-century\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na campaign ad",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "As Governor: Romney did not keep public safety funding in line with inflation.",
+          "subject": "history,message-machine-2012,public-safety,state-budget,state-finances,states",
+          "speaker": "american-bridge-21st-century",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a campaign ad"
+        }
+      },
+      {
+        "id": "liar_09591",
+        "source_id": "11804.json",
+        "input": "Statement:\nA lot of student loans are already refinanced by the federal government.\n\nSubject:\ndebt,education,federal-budget,financial-regulation\n\nSpeaker:\ndale-kooyenga\n\nSpeaker job:\nState Representative\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "A lot of student loans are already refinanced by the federal government.",
+          "subject": "debt,education,federal-budget,financial-regulation",
+          "speaker": "dale-kooyenga",
+          "speaker_job": "State Representative",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_04616",
+        "source_id": "9599.json",
+        "input": "Statement:\nWe spend $18 billion a year on making sure that the federal government has immigrant enforcement agents. Thats more than DEA and the ATF and the FBI and all the other enforcement (agencies) combined.\n\nSubject:\nfederal-budget,immigration,legal-issues\n\nSpeaker:\nluis-gutierrez\n\nSpeaker job:\nU.S. House of Representatives\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\nan interview on CBS' \"Face the Nation\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "We spend $18 billion a year on making sure that the federal government has immigrant enforcement agents. Thats more than DEA and the ATF and the FBI and all the other enforcement (agencies) combined.",
+          "subject": "federal-budget,immigration,legal-issues",
+          "speaker": "luis-gutierrez",
+          "speaker_job": "U.S. House of Representatives",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "an interview on CBS' \"Face the Nation\""
+        }
+      },
+      {
+        "id": "liar_06574",
+        "source_id": "2790.json",
+        "input": "Statement:\nElectric utility FirstEnergys annual revenues are greater than the GDP of Haiti, Kyrgyzstan, Iceland, or 15 African nations.\n\nSubject:\ncorporations,energy,infrastructure\n\nSpeaker:\nmarcy-kaptur\n\nSpeaker job:\nRepresentative from Ohio's Ninth Congressional District\n\nState:\nOhio\n\nParty:\ndemocrat\n\nContext:\ntestimony given at a public hearing",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Electric utility FirstEnergys annual revenues are greater than the GDP of Haiti, Kyrgyzstan, Iceland, or 15 African nations.",
+          "subject": "corporations,energy,infrastructure",
+          "speaker": "marcy-kaptur",
+          "speaker_job": "Representative from Ohio's Ninth Congressional District",
+          "state": "Ohio",
+          "party": "democrat",
+          "context": "testimony given at a public hearing"
+        }
+      },
+      {
+        "id": "liar_08856",
+        "source_id": "1785.json",
+        "input": "Statement:\nSen. Robert Bennett, R-Utah, cast votes for TARP, the stimulus, and an individual mandate for health care.\n\nSubject:\neconomy,financial-regulation,health-care,pundits\n\nSpeaker:\ngeorge-will\n\nSpeaker job:\nColumnist\n\nState:\nMaryland\n\nParty:\ncolumnist\n\nContext:\na roundtable discussion on ABC's This Week",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Sen. Robert Bennett, R-Utah, cast votes for TARP, the stimulus, and an individual mandate for health care.",
+          "subject": "economy,financial-regulation,health-care,pundits",
+          "speaker": "george-will",
+          "speaker_job": "Columnist",
+          "state": "Maryland",
+          "party": "columnist",
+          "context": "a roundtable discussion on ABC's This Week"
+        }
+      },
+      {
+        "id": "liar_05200",
+        "source_id": "10098.json",
+        "input": "Statement:\nI was speaking out on pension reform almost 17 years ago.\n\nSubject:\ncandidates-biography,debt,deficit,economy,government-regulation,history,job-accomplishments,labor,pensions,retirement,state-budget,state-finances,taxes,unions,wealth,workers\n\nSpeaker:\nernest-almonte\n\nSpeaker job:\nauditor\n\nState:\nRhode Island\n\nParty:\nindependent\n\nContext:\nan interview on WLNE's \"On the Record\"",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "I was speaking out on pension reform almost 17 years ago.",
+          "subject": "candidates-biography,debt,deficit,economy,government-regulation,history,job-accomplishments,labor,pensions,retirement,state-budget,state-finances,taxes,unions,wealth,workers",
+          "speaker": "ernest-almonte",
+          "speaker_job": "auditor",
+          "state": "Rhode Island",
+          "party": "independent",
+          "context": "an interview on WLNE's \"On the Record\""
+        }
+      },
+      {
+        "id": "liar_04037",
+        "source_id": "10820.json",
+        "input": "Statement:\nTwo-thirds of American families rely on the mothers income to stay above the poverty level.\n\nSubject:\neconomy,poverty,women\n\nSpeaker:\nmaria-shriver\n\nSpeaker job:\nNBC News correspondent\n\nState:\n\n\nParty:\nnone\n\nContext:\ncomments on NBC's \"Meet the Press\"",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Two-thirds of American families rely on the mothers income to stay above the poverty level.",
+          "subject": "economy,poverty,women",
+          "speaker": "maria-shriver",
+          "speaker_job": "NBC News correspondent",
+          "state": "",
+          "party": "none",
+          "context": "comments on NBC's \"Meet the Press\""
+        }
+      },
+      {
+        "id": "liar_09658",
+        "source_id": "6237.json",
+        "input": "Statement:\nThe health care law is the largest tax [increase] in the history of our country\n\nSubject:\nhealth-care,taxes\n\nSpeaker:\nphil-gingrey\n\nSpeaker job:\nU.S. Congressman\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The health care law is the largest tax [increase] in the history of our country",
+          "subject": "health-care,taxes",
+          "speaker": "phil-gingrey",
+          "speaker_job": "U.S. Congressman",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_03014",
+        "source_id": "1583.json",
+        "input": "Statement:\nBill White ...offered sanctuary to illegal immigrants.\n\nSubject:\nimmigration\n\nSpeaker:\ncathie-adams\n\nSpeaker job:\nChair, Republican Party of Texas\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na fund-raising letter",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Bill White ...offered sanctuary to illegal immigrants.",
+          "subject": "immigration",
+          "speaker": "cathie-adams",
+          "speaker_job": "Chair, Republican Party of Texas",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a fund-raising letter"
+        }
+      },
+      {
+        "id": "liar_01310",
+        "source_id": "9699.json",
+        "input": "Statement:\nSays U.S. Senate candidate Joni Ernst does not support a national minimum wage.\n\nSubject:\nfederal-budget,income,jobs,workers\n\nSpeaker:\nbruce-braley\n\nSpeaker job:\nU.S. House of Representatives\n\nState:\nIowa\n\nParty:\ndemocrat\n\nContext:\n",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says U.S. Senate candidate Joni Ernst does not support a national minimum wage.",
+          "subject": "federal-budget,income,jobs,workers",
+          "speaker": "bruce-braley",
+          "speaker_job": "U.S. House of Representatives",
+          "state": "Iowa",
+          "party": "democrat",
+          "context": ""
+        }
+      },
+      {
+        "id": "liar_02860",
+        "source_id": "2565.json",
+        "input": "Statement:\nSaid state insurance commissioner candidate Ralph Hudgens fights hard to strip women of life-saving coverage such as mammograms.\n\nSubject:\nhealth-care,women\n\nSpeaker:\nmary-squires\n\nSpeaker job:\n\n\nState:\nGeorgia\n\nParty:\ndemocrat\n\nContext:\na newspaper interview",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Said state insurance commissioner candidate Ralph Hudgens fights hard to strip women of life-saving coverage such as mammograms.",
+          "subject": "health-care,women",
+          "speaker": "mary-squires",
+          "speaker_job": "",
+          "state": "Georgia",
+          "party": "democrat",
+          "context": "a newspaper interview"
+        }
+      },
+      {
+        "id": "liar_06188",
+        "source_id": "8133.json",
+        "input": "Statement:\nIf we use (Tax Increment Financing) funding, thats going to take funds from the general fund for Pinellas County, as it will take funds from the general fund for the city of St. Pete.\n\nSubject:\ntaxes\n\nSpeaker:\nkathleen-ford\n\nSpeaker job:\nAttorney\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na mayoral debate",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "If we use (Tax Increment Financing) funding, thats going to take funds from the general fund for Pinellas County, as it will take funds from the general fund for the city of St. Pete.",
+          "subject": "taxes",
+          "speaker": "kathleen-ford",
+          "speaker_job": "Attorney",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a mayoral debate"
+        }
+      },
+      {
+        "id": "liar_02113",
+        "source_id": "9453.json",
+        "input": "Statement:\nSens. Mark Warner and Tim Kaine voted to let the U.N. take OUR guns.\n\nSubject:\nguns,voting-record\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na chain email.",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Sens. Mark Warner and Tim Kaine voted to let the U.N. take OUR guns.",
+          "subject": "guns,voting-record",
+          "speaker": "chain-email",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a chain email."
+        }
+      },
+      {
+        "id": "liar_05785",
+        "source_id": "8264.json",
+        "input": "Statement:\nOn support for a military strike on Syria\n\nSubject:\nforeign-policy\n\nSpeaker:\njohnny-isakson\n\nSpeaker job:\nU.S. Senator\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\na statement",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "On support for a military strike on Syria",
+          "subject": "foreign-policy",
+          "speaker": "johnny-isakson",
+          "speaker_job": "U.S. Senator",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "a statement"
+        }
+      },
+      {
+        "id": "liar_07135",
+        "source_id": "9667.json",
+        "input": "Statement:\nThe state of New York is the worst in the nation in economic recovery.\n\nSubject:\neconomy,jobs,states\n\nSpeaker:\nrob-astorino\n\nSpeaker job:\nWestchester County (N.Y.) executive\n\nState:\nNew York\n\nParty:\nrepublican\n\nContext:\nan interview on \"Fox & Friends\"",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The state of New York is the worst in the nation in economic recovery.",
+          "subject": "economy,jobs,states",
+          "speaker": "rob-astorino",
+          "speaker_job": "Westchester County (N.Y.) executive",
+          "state": "New York",
+          "party": "republican",
+          "context": "an interview on \"Fox & Friends\""
+        }
+      },
+      {
+        "id": "liar_03248",
+        "source_id": "1272.json",
+        "input": "Statement:\nIf President Obama signs the Copenhagen climate change treaty, he \"will sign your freedom, your democracy, and your prosperity away forever and neither you nor any subsequent government you may elect would have any power whatsoever to take it back again.\"\n\nSubject:\nenvironment,foreign-policy,legal-issues\n\nSpeaker:\nchristopher-monckton\n\nSpeaker job:\nconservative activist and member of the British nobility\n\nState:\nUnited Kingdom\n\nParty:\nnone\n\nContext:\na speech in St. Paul, Minn.",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "If President Obama signs the Copenhagen climate change treaty, he \"will sign your freedom, your democracy, and your prosperity away forever and neither you nor any subsequent government you may elect would have any power whatsoever to take it back again.\"",
+          "subject": "environment,foreign-policy,legal-issues",
+          "speaker": "christopher-monckton",
+          "speaker_job": "conservative activist and member of the British nobility",
+          "state": "United Kingdom",
+          "party": "none",
+          "context": "a speech in St. Paul, Minn."
+        }
+      },
+      {
+        "id": "liar_01201",
+        "source_id": "13166.json",
+        "input": "Statement:\nThe Great Recession emerged in large part because of tax policies that slashed taxes on the wealthy, failed to invest in the middle class, took their eyes off of Wall Street, and created a perfect storm.\n\nSubject:\neconomy,financial-regulation,history,taxes\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nthe first presidential debate at Hofstra University",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "The Great Recession emerged in large part because of tax policies that slashed taxes on the wealthy, failed to invest in the middle class, took their eyes off of Wall Street, and created a perfect storm.",
+          "subject": "economy,financial-regulation,history,taxes",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "the first presidential debate at Hofstra University"
+        }
+      },
+      {
+        "id": "liar_06457",
+        "source_id": "11085.json",
+        "input": "Statement:\nIf youre from Syria and youre a Christian, you cannot come into this country as a refugee.\n\nSubject:\nforeign-policy,immigration,religion\n\nSpeaker:\ndonald-trump\n\nSpeaker job:\nPresident-Elect\n\nState:\nNew York\n\nParty:\nrepublican\n\nContext:\na speech in Las Vegas",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "If youre from Syria and youre a Christian, you cannot come into this country as a refugee.",
+          "subject": "foreign-policy,immigration,religion",
+          "speaker": "donald-trump",
+          "speaker_job": "President-Elect",
+          "state": "New York",
+          "party": "republican",
+          "context": "a speech in Las Vegas"
+        }
+      },
+      {
+        "id": "liar_04748",
+        "source_id": "11914.json",
+        "input": "Statement:\nUnder Virginia law, if you are a non-federally licensed (gun) dealer, you cannot get a background check even if you want one.\n\nSubject:\nguns\n\nSpeaker:\nterry-mcauliffe\n\nSpeaker job:\nGovernor\n\nState:\nVirginia\n\nParty:\ndemocrat\n\nContext:\na TV interview.",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Under Virginia law, if you are a non-federally licensed (gun) dealer, you cannot get a background check even if you want one.",
+          "subject": "guns",
+          "speaker": "terry-mcauliffe",
+          "speaker_job": "Governor",
+          "state": "Virginia",
+          "party": "democrat",
+          "context": "a TV interview."
+        }
+      },
+      {
+        "id": "liar_05095",
+        "source_id": "3681.json",
+        "input": "Statement:\nSays using E-Verify is a fair amount of cost, about $20 per person that does not match.\n\nSubject:\nimmigration\n\nSpeaker:\njd-alexander\n\nSpeaker job:\nState senator\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\ncomments to the 'St. Petersburg Times' and 'Miami Herald'",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says using E-Verify is a fair amount of cost, about $20 per person that does not match.",
+          "subject": "immigration",
+          "speaker": "jd-alexander",
+          "speaker_job": "State senator",
+          "state": "Florida",
+          "party": "republican",
+          "context": "comments to the 'St. Petersburg Times' and 'Miami Herald'"
+        }
+      },
+      {
+        "id": "liar_09036",
+        "source_id": "3327.json",
+        "input": "Statement:\nSays signs posted at projects funded by the federal stimulus act has cost 20 or 40 million dollars.\n\nSubject:\ndeficit,federal-budget,stimulus\n\nSpeaker:\njim-renacci\n\nSpeaker job:\nU.S. representative \n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\na radio interview ",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says signs posted at projects funded by the federal stimulus act has cost 20 or 40 million dollars.",
+          "subject": "deficit,federal-budget,stimulus",
+          "speaker": "jim-renacci",
+          "speaker_job": "U.S. representative ",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "a radio interview "
+        }
+      },
+      {
+        "id": "liar_04769",
+        "source_id": "2938.json",
+        "input": "Statement:\nAn overwhelming majority of Americans support passage of the DREAM Act, which would provide a path to citizenship for undocumented youth willing to work for a college degree or serve in our armed forces.\n\nSubject:\neducation,families,immigration,military\n\nSpeaker:\norganizing-america\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na press release.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "An overwhelming majority of Americans support passage of the DREAM Act, which would provide a path to citizenship for undocumented youth willing to work for a college degree or serve in our armed forces.",
+          "subject": "education,families,immigration,military",
+          "speaker": "organizing-america",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a press release."
+        }
+      },
+      {
+        "id": "liar_05537",
+        "source_id": "7124.json",
+        "input": "Statement:\nIn the past year alone, Ohio businesses have created more jobs than almost every other state in the country.\n\nSubject:\neconomy,jobs\n\nSpeaker:\njobs-ohio\n\nSpeaker job:\nState job creation organization\n\nState:\nOhio\n\nParty:\nnone\n\nContext:\na television ad",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "In the past year alone, Ohio businesses have created more jobs than almost every other state in the country.",
+          "subject": "economy,jobs",
+          "speaker": "jobs-ohio",
+          "speaker_job": "State job creation organization",
+          "state": "Ohio",
+          "party": "none",
+          "context": "a television ad"
+        }
+      },
+      {
+        "id": "liar_06051",
+        "source_id": "13215.json",
+        "input": "Statement:\nKelly Ayotte voted to give big oil more than $20 billion in tax breaks.\n\nSubject:\ntaxes,voting-record,wealth\n\nSpeaker:\ndemocratic-senatorial-campaign-committee\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\nan ad",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Kelly Ayotte voted to give big oil more than $20 billion in tax breaks.",
+          "subject": "taxes,voting-record,wealth",
+          "speaker": "democratic-senatorial-campaign-committee",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "an ad"
+        }
+      },
+      {
+        "id": "liar_04784",
+        "source_id": "11759.json",
+        "input": "Statement:\nSays President Barack Obama appointed Eric Holder as attorney general. Eric Holder said he viewed his mission as brainwashing the American people against guns.\n\nSubject:\ncrime,criminal-justice,guns\n\nSpeaker:\nted-cruz\n\nSpeaker job:\nSenator\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na Republican presidential debate in North Charleston, S.C.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says President Barack Obama appointed Eric Holder as attorney general. Eric Holder said he viewed his mission as brainwashing the American people against guns.",
+          "subject": "crime,criminal-justice,guns",
+          "speaker": "ted-cruz",
+          "speaker_job": "Senator",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a Republican presidential debate in North Charleston, S.C."
+        }
+      },
+      {
+        "id": "liar_00388",
+        "source_id": "3695.json",
+        "input": "Statement:\nPolls show that Floridians dont want to repeal the Affordable Care Act.\n\nSubject:\nhealth-care,polls\n\nSpeaker:\njoe-gibbons\n\nSpeaker job:\nState Representative\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\ncomments on the House floor",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Polls show that Floridians dont want to repeal the Affordable Care Act.",
+          "subject": "health-care,polls",
+          "speaker": "joe-gibbons",
+          "speaker_job": "State Representative",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "comments on the House floor"
+        }
+      },
+      {
+        "id": "liar_02094",
+        "source_id": "10280.json",
+        "input": "Statement:\nA golf course closes somewhere in America every 48 hours.\n\nSubject:\nsports\n\nSpeaker:\nbryant-gumbel\n\nSpeaker job:\nBroadcaster\n\nState:\nNew York\n\nParty:\nnone\n\nContext:\nan episode of HBO's Real Sports with Bryant Gumbel",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "A golf course closes somewhere in America every 48 hours.",
+          "subject": "sports",
+          "speaker": "bryant-gumbel",
+          "speaker_job": "Broadcaster",
+          "state": "New York",
+          "party": "none",
+          "context": "an episode of HBO's Real Sports with Bryant Gumbel"
+        }
+      },
+      {
+        "id": "liar_08228",
+        "source_id": "1067.json",
+        "input": "Statement:\nDuring a town hall meeting on health care, \"ABC didn't even allow ads that opposed the president's health care plan to be aired.\"\n\nSubject:\nhealth-care\n\nSpeaker:\nlamar-smith\n\nSpeaker job:\nCongressman\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\nan interview on Fox News",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "During a town hall meeting on health care, \"ABC didn't even allow ads that opposed the president's health care plan to be aired.\"",
+          "subject": "health-care",
+          "speaker": "lamar-smith",
+          "speaker_job": "Congressman",
+          "state": "Texas",
+          "party": "republican",
+          "context": "an interview on Fox News"
+        }
+      },
+      {
+        "id": "liar_07294",
+        "source_id": "4509.json",
+        "input": "Statement:\nWe have asked public employees to pay 10 percent of the costs of their guaranteed pension and 15 percent of the cost of their health care. ... The leadership of those public employees unions dont want to pay anything.\n\nSubject:\nlabor,state-finances,unions\n\nSpeaker:\njohn-kasich\n\nSpeaker job:\nGovernor of Ohio as of Jan. 10, 2011\n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\na television interview",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "We have asked public employees to pay 10 percent of the costs of their guaranteed pension and 15 percent of the cost of their health care. ... The leadership of those public employees unions dont want to pay anything.",
+          "subject": "labor,state-finances,unions",
+          "speaker": "john-kasich",
+          "speaker_job": "Governor of Ohio as of Jan. 10, 2011",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "a television interview"
+        }
+      },
+      {
+        "id": "liar_09352",
+        "source_id": "5468.json",
+        "input": "Statement:\nSays we had to cut 13 billion dollars in state spending over two years.\n\nSubject:\ndeficit,state-budget,state-finances\n\nSpeaker:\nchris-christie\n\nSpeaker job:\nGovernor of New Jersey\n\nState:\nNew Jersey\n\nParty:\nrepublican\n\nContext:\nan interview on CNN’s “Piers Morgan Tonight”",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says we had to cut 13 billion dollars in state spending over two years.",
+          "subject": "deficit,state-budget,state-finances",
+          "speaker": "chris-christie",
+          "speaker_job": "Governor of New Jersey",
+          "state": "New Jersey",
+          "party": "republican",
+          "context": "an interview on CNN’s “Piers Morgan Tonight”"
+        }
+      },
+      {
+        "id": "liar_00007",
+        "source_id": "153.json",
+        "input": "Statement:\nI'm the only person on this stage who has worked actively just last year passing, along with Russ Feingold, some of the toughest ethics reform since Watergate.\n\nSubject:\nethics\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\na Democratic debate in Philadelphia, Pa.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "I'm the only person on this stage who has worked actively just last year passing, along with Russ Feingold, some of the toughest ethics reform since Watergate.",
+          "subject": "ethics",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "a Democratic debate in Philadelphia, Pa."
+        }
+      }
+    ],
+    "final_test": [
+      {
+        "id": "liar_00248",
+        "source_id": "11772.json",
+        "input": "Statement:\nWe now have driven (health care) costs down to the lowest theyve been in 50 years.\n\nSubject:\nhealth-care\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\ncomments during the South Carolina Democratic presidential debate",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "We now have driven (health care) costs down to the lowest theyve been in 50 years.",
+          "subject": "health-care",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "comments during the South Carolina Democratic presidential debate"
+        }
+      },
+      {
+        "id": "liar_04502",
+        "source_id": "9712.json",
+        "input": "Statement:\nAttorney General Eric Holders own Justice Department precleared the voting changes in the 2011 law about early voting in Florida.\n\nSubject:\nelections\n\nSpeaker:\nrick-scott\n\nSpeaker job:\nGovernor\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na press statement",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Attorney General Eric Holders own Justice Department precleared the voting changes in the 2011 law about early voting in Florida.",
+          "subject": "elections",
+          "speaker": "rick-scott",
+          "speaker_job": "Governor",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a press statement"
+        }
+      },
+      {
+        "id": "liar_03249",
+        "source_id": "13061.json",
+        "input": "Statement:\nIf Congress fails to act, the Obama administration intends to give away control of the internet to an international body akin to the United Nations.\n\nSubject:\nforeign-policy,government-regulation,technology\n\nSpeaker:\nted-cruz\n\nSpeaker job:\nSenator\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\nSenate floor remarks",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "If Congress fails to act, the Obama administration intends to give away control of the internet to an international body akin to the United Nations.",
+          "subject": "foreign-policy,government-regulation,technology",
+          "speaker": "ted-cruz",
+          "speaker_job": "Senator",
+          "state": "Texas",
+          "party": "republican",
+          "context": "Senate floor remarks"
+        }
+      },
+      {
+        "id": "liar_02721",
+        "source_id": "2065.json",
+        "input": "Statement:\nForty cents of every dollar being spent by the federal government is being borrowed from my children.\n\nSubject:\nfederal-budget\n\nSpeaker:\nmarco-rubio\n\nSpeaker job:\nU.S. Senator\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na Fox News interview",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Forty cents of every dollar being spent by the federal government is being borrowed from my children.",
+          "subject": "federal-budget",
+          "speaker": "marco-rubio",
+          "speaker_job": "U.S. Senator",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a Fox News interview"
+        }
+      },
+      {
+        "id": "liar_06856",
+        "source_id": "3407.json",
+        "input": "Statement:\nAt Twin River, were more than competitive with nearby casinos in slot machine payouts.\n\nSubject:\neconomy,gambling\n\nSpeaker:\npatti-doyle\n\nSpeaker job:\nPublic relations\n\nState:\nRhode Island\n\nParty:\norganization\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "At Twin River, were more than competitive with nearby casinos in slot machine payouts.",
+          "subject": "economy,gambling",
+          "speaker": "patti-doyle",
+          "speaker_job": "Public relations",
+          "state": "Rhode Island",
+          "party": "organization",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_01183",
+        "source_id": "1839.json",
+        "input": "Statement:\nAs the CEO of eBay, \"Whitman started a separate division that only sells porn.\"\n\nSubject:\nethics,message-machine\n\nSpeaker:\nsteve-poizner\n\nSpeaker job:\nInsurance commissioner and gubernatorial candidate\n\nState:\nCalifornia\n\nParty:\nrepublican\n\nContext:\nan online campaign commercial ",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "As the CEO of eBay, \"Whitman started a separate division that only sells porn.\"",
+          "subject": "ethics,message-machine",
+          "speaker": "steve-poizner",
+          "speaker_job": "Insurance commissioner and gubernatorial candidate",
+          "state": "California",
+          "party": "republican",
+          "context": "an online campaign commercial "
+        }
+      },
+      {
+        "id": "liar_10192",
+        "source_id": "612.json",
+        "input": "Statement:\nJohn McCain refuses to support a new bipartisan energy bill \"because it would take away tax breaks from oil companies like Exxon Mobil.\"\n\nSubject:\nenergy\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "John McCain refuses to support a new bipartisan energy bill \"because it would take away tax breaks from oil companies like Exxon Mobil.\"",
+          "subject": "energy",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_02632",
+        "source_id": "1099.json",
+        "input": "Statement:\nThe health care reform bill would make it mandatory absolutely require that every five years people in Medicare have a required counseling session that will tell them how to end their life sooner.\n\nSubject:\nhealth-care\n\nSpeaker:\nbetsy-mccaughey\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nrepublican\n\nContext:\non the Fred Thompson radio show",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "The health care reform bill would make it mandatory absolutely require that every five years people in Medicare have a required counseling session that will tell them how to end their life sooner.",
+          "subject": "health-care",
+          "speaker": "betsy-mccaughey",
+          "speaker_job": "",
+          "state": "",
+          "party": "republican",
+          "context": "on the Fred Thompson radio show"
+        }
+      },
+      {
+        "id": "liar_08269",
+        "source_id": "8359.json",
+        "input": "Statement:\nSays a man opted out of Obamacare after the marketplace launched on Oct. 1, 2013, and was informed he owed a $4,000 fine.\n\nSubject:\nhealth-care\n\nSpeaker:\nfacebook-posts\n\nSpeaker job:\nSocial media posting\n\nState:\n\n\nParty:\nnone\n\nContext:\nviral posts on the Internet",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says a man opted out of Obamacare after the marketplace launched on Oct. 1, 2013, and was informed he owed a $4,000 fine.",
+          "subject": "health-care",
+          "speaker": "facebook-posts",
+          "speaker_job": "Social media posting",
+          "state": "",
+          "party": "none",
+          "context": "viral posts on the Internet"
+        }
+      },
+      {
+        "id": "liar_05643",
+        "source_id": "4021.json",
+        "input": "Statement:\nSays that as a gubernatorial candidate, Chris Christie promised no school cuts.\n\nSubject:\neducation\n\nSpeaker:\nstephen-sweeney\n\nSpeaker job:\nState Senator\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na press release",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Says that as a gubernatorial candidate, Chris Christie promised no school cuts.",
+          "subject": "education",
+          "speaker": "stephen-sweeney",
+          "speaker_job": "State Senator",
+          "state": "",
+          "party": "democrat",
+          "context": "a press release"
+        }
+      },
+      {
+        "id": "liar_08759",
+        "source_id": "10238.json",
+        "input": "Statement:\nIn Wisconsin, unions can essentially give unlimited contributions to political parties, but business cant give any.\n\nSubject:\ncampaign-finance,corporations,elections,small-business,unions\n\nSpeaker:\nrobin-vos\n\nSpeaker job:\nWisconsin Assembly speaker\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\nan interview",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "In Wisconsin, unions can essentially give unlimited contributions to political parties, but business cant give any.",
+          "subject": "campaign-finance,corporations,elections,small-business,unions",
+          "speaker": "robin-vos",
+          "speaker_job": "Wisconsin Assembly speaker",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "an interview"
+        }
+      },
+      {
+        "id": "liar_04857",
+        "source_id": "3499.json",
+        "input": "Statement:\nSays the Patient Protection and Affordable Care Act adopted last year contains a series of slush funds, set up to stay on the books automatically, with little or no oversight.\n\nSubject:\nhealth-care\n\nSpeaker:\njohn-boehner\n\nSpeaker job:\nSpeaker of the House of Representatives\n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\nvideo",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says the Patient Protection and Affordable Care Act adopted last year contains a series of slush funds, set up to stay on the books automatically, with little or no oversight.",
+          "subject": "health-care",
+          "speaker": "john-boehner",
+          "speaker_job": "Speaker of the House of Representatives",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "video"
+        }
+      },
+      {
+        "id": "liar_09143",
+        "source_id": "329.json",
+        "input": "Statement:\nHillary Clinton \"actually differed with (John McCain) by arguing for exceptions for torture before changing positions.\"\n\nSubject:\nterrorism\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\nDenver",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Hillary Clinton \"actually differed with (John McCain) by arguing for exceptions for torture before changing positions.\"",
+          "subject": "terrorism",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "Denver"
+        }
+      },
+      {
+        "id": "liar_08232",
+        "source_id": "2504.json",
+        "input": "Statement:\nPeter DeFazio will sneak in a 1 percent tax on all banking transactions.\n\nSubject:\ntaxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nin a chain e-mail",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Peter DeFazio will sneak in a 1 percent tax on all banking transactions.",
+          "subject": "taxes",
+          "speaker": "chain-email",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "in a chain e-mail"
+        }
+      },
+      {
+        "id": "liar_06945",
+        "source_id": "244.json",
+        "input": "Statement:\nSays he has \"the most impressive education record\" of the Republican candidates.\n\nSubject:\neducation\n\nSpeaker:\nmike-huckabee\n\nSpeaker job:\nauthor\n\nState:\nArkansas\n\nParty:\nrepublican\n\nContext:\na debate in Des Moines, Iowa",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says he has \"the most impressive education record\" of the Republican candidates.",
+          "subject": "education",
+          "speaker": "mike-huckabee",
+          "speaker_job": "author",
+          "state": "Arkansas",
+          "party": "republican",
+          "context": "a debate in Des Moines, Iowa"
+        }
+      },
+      {
+        "id": "liar_01738",
+        "source_id": "3825.json",
+        "input": "Statement:\nThe Democratic health care law added 12 years of solvency to Medicare.\n\nSubject:\nfederal-budget,health-care,medicare\n\nSpeaker:\ndebbie-wasserman-schultz\n\nSpeaker job:\nU.S. Representative, Florida District 23\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\nan interview on MSNBC",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The Democratic health care law added 12 years of solvency to Medicare.",
+          "subject": "federal-budget,health-care,medicare",
+          "speaker": "debbie-wasserman-schultz",
+          "speaker_job": "U.S. Representative, Florida District 23",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "an interview on MSNBC"
+        }
+      },
+      {
+        "id": "liar_02727",
+        "source_id": "10600.json",
+        "input": "Statement:\nToday in Selma, Ala., the poverty rate is roughly nine times that of whites.\n\nSubject:\ndiversity,history,income,poverty\n\nSpeaker:\nhenry-sanders\n\nSpeaker job:\nState senator\n\nState:\nAlabama\n\nParty:\ndemocrat\n\nContext:\na video clip aired on NBC's \"Meet the Press\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Today in Selma, Ala., the poverty rate is roughly nine times that of whites.",
+          "subject": "diversity,history,income,poverty",
+          "speaker": "henry-sanders",
+          "speaker_job": "State senator",
+          "state": "Alabama",
+          "party": "democrat",
+          "context": "a video clip aired on NBC's \"Meet the Press\""
+        }
+      },
+      {
+        "id": "liar_00070",
+        "source_id": "3786.json",
+        "input": "Statement:\nIf you take the population growth here in Virginia, we are net zero on job creation since (Bob McDonnell) became governor.\n\nSubject:\njobs\n\nSpeaker:\nterry-mcauliffe\n\nSpeaker job:\nGovernor\n\nState:\nVirginia\n\nParty:\ndemocrat\n\nContext:\na speech.",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "If you take the population growth here in Virginia, we are net zero on job creation since (Bob McDonnell) became governor.",
+          "subject": "jobs",
+          "speaker": "terry-mcauliffe",
+          "speaker_job": "Governor",
+          "state": "Virginia",
+          "party": "democrat",
+          "context": "a speech."
+        }
+      },
+      {
+        "id": "liar_04982",
+        "source_id": "95.json",
+        "input": "Statement:\nI opposed this war from the beginning. I opposed the war in 2002. I opposed the war in 2003. I opposed it in 2004 and 2005 and 2006.\n\nSubject:\niraq\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\nClinton, Iowa",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "I opposed this war from the beginning. I opposed the war in 2002. I opposed the war in 2003. I opposed it in 2004 and 2005 and 2006.",
+          "subject": "iraq",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "Clinton, Iowa"
+        }
+      },
+      {
+        "id": "liar_06755",
+        "source_id": "13301.json",
+        "input": "Statement:\nWe have 33,000 people a year who die from guns.\n\nSubject:\ncrime,guns,public-safety\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nthe third 2016 presidential debate",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "We have 33,000 people a year who die from guns.",
+          "subject": "crime,guns,public-safety",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "the third 2016 presidential debate"
+        }
+      },
+      {
+        "id": "liar_07216",
+        "source_id": "9814.json",
+        "input": "Statement:\nThe Obama administration originally wanted 10,000 troops to remain in Iraq -- not combat troops, but military advisers, special operations forces, to watch the counterterrorism effort.\n\nSubject:\niraq\n\nSpeaker:\nmartha-raddatz\n\nSpeaker job:\nABC News\n\nState:\n\n\nParty:\njournalist\n\nContext:\ncomments on ABC's \"This Week\"",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "The Obama administration originally wanted 10,000 troops to remain in Iraq -- not combat troops, but military advisers, special operations forces, to watch the counterterrorism effort.",
+          "subject": "iraq",
+          "speaker": "martha-raddatz",
+          "speaker_job": "ABC News",
+          "state": "",
+          "party": "journalist",
+          "context": "comments on ABC's \"This Week\""
+        }
+      },
+      {
+        "id": "liar_06831",
+        "source_id": "11682.json",
+        "input": "Statement:\nWere practically not allowed to use coal any more. What do we do with our coal? We ship it to China and they spew it in the air.\n\nSubject:\nenergy,environment\n\nSpeaker:\ndonald-trump\n\nSpeaker job:\nPresident-Elect\n\nState:\nNew York\n\nParty:\nrepublican\n\nContext:\nan interview on MSNBC's \"Morning Joe\"",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Were practically not allowed to use coal any more. What do we do with our coal? We ship it to China and they spew it in the air.",
+          "subject": "energy,environment",
+          "speaker": "donald-trump",
+          "speaker_job": "President-Elect",
+          "state": "New York",
+          "party": "republican",
+          "context": "an interview on MSNBC's \"Morning Joe\""
+        }
+      },
+      {
+        "id": "liar_04919",
+        "source_id": "7536.json",
+        "input": "Statement:\nWall Street megabanks that received bailouts in 2009 now get taxpayer-funded advantages not available to community banks in Ohio.\n\nSubject:\nfinancial-regulation\n\nSpeaker:\nsherrod-brown\n\nSpeaker job:\nU.S. Senator\n\nState:\nOhio\n\nParty:\ndemocrat\n\nContext:\na news release",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Wall Street megabanks that received bailouts in 2009 now get taxpayer-funded advantages not available to community banks in Ohio.",
+          "subject": "financial-regulation",
+          "speaker": "sherrod-brown",
+          "speaker_job": "U.S. Senator",
+          "state": "Ohio",
+          "party": "democrat",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_07671",
+        "source_id": "4169.json",
+        "input": "Statement:\nThis past (legislative) session, we passed out of the Legislature a resolution requiring Congress to pass a balanced-budget amendment to the (U.S.) Constitution.\n\nSubject:\ndeficit,federal-budget\n\nSpeaker:\ndavid-dewhurst\n\nSpeaker job:\nLieutenant governor\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na campaign video.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "This past (legislative) session, we passed out of the Legislature a resolution requiring Congress to pass a balanced-budget amendment to the (U.S.) Constitution.",
+          "subject": "deficit,federal-budget",
+          "speaker": "david-dewhurst",
+          "speaker_job": "Lieutenant governor",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a campaign video."
+        }
+      },
+      {
+        "id": "liar_04905",
+        "source_id": "996.json",
+        "input": "Statement:\nThe Geneva Convention did not apply, until 2005, to the war on terror.\n\nSubject:\nmilitary\n\nSpeaker:\nlindsey-graham\n\nSpeaker job:\nU.S. senator\n\nState:\nSouth Carolina\n\nParty:\nrepublican\n\nContext:\na TV interview",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The Geneva Convention did not apply, until 2005, to the war on terror.",
+          "subject": "military",
+          "speaker": "lindsey-graham",
+          "speaker_job": "U.S. senator",
+          "state": "South Carolina",
+          "party": "republican",
+          "context": "a TV interview"
+        }
+      },
+      {
+        "id": "liar_04147",
+        "source_id": "3698.json",
+        "input": "Statement:\nWrote that in 2006, Nancy Pelosi said she didnt think capturing Osama bin Laden makes us any safer, but in 2011 called his killing historic.\n\nSubject:\nhomeland-security,military,terrorism\n\nSpeaker:\nblog-posting\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nin various posts on the web",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Wrote that in 2006, Nancy Pelosi said she didnt think capturing Osama bin Laden makes us any safer, but in 2011 called his killing historic.",
+          "subject": "homeland-security,military,terrorism",
+          "speaker": "blog-posting",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "in various posts on the web"
+        }
+      },
+      {
+        "id": "liar_01282",
+        "source_id": "6941.json",
+        "input": "Statement:\nSays Rep. Jon Runyan voted to redefine rape.\n\nSubject:\nabortion,crime,voting-record,women\n\nSpeaker:\nshelley-adler\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na campaign event",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says Rep. Jon Runyan voted to redefine rape.",
+          "subject": "abortion,crime,voting-record,women",
+          "speaker": "shelley-adler",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a campaign event"
+        }
+      },
+      {
+        "id": "liar_01699",
+        "source_id": "6582.json",
+        "input": "Statement:\nWhen President Obama took office, we were losing 700,000 jobs a month. Now weve had job growth, I think, for 24 consecutive months.\n\nSubject:\neconomy,jobs\n\nSpeaker:\ndavid-cicilline\n\nSpeaker job:\nmayor of Providence\n\nState:\nRhode Island\n\nParty:\ndemocrat\n\nContext:\na debate on WPRI.com",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "When President Obama took office, we were losing 700,000 jobs a month. Now weve had job growth, I think, for 24 consecutive months.",
+          "subject": "economy,jobs",
+          "speaker": "david-cicilline",
+          "speaker_job": "mayor of Providence",
+          "state": "Rhode Island",
+          "party": "democrat",
+          "context": "a debate on WPRI.com"
+        }
+      },
+      {
+        "id": "liar_02876",
+        "source_id": "10393.json",
+        "input": "Statement:\nTampa Bay isleading the state in jobs creation.\n\nSubject:\neconomy,florida,jobs\n\nSpeaker:\nbob-buckhorn\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\nnone\n\nContext:\na campaign ad",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Tampa Bay isleading the state in jobs creation.",
+          "subject": "economy,florida,jobs",
+          "speaker": "bob-buckhorn",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "none",
+          "context": "a campaign ad"
+        }
+      },
+      {
+        "id": "liar_02724",
+        "source_id": "3273.json",
+        "input": "Statement:\nSays under his budget-repair bill, collective bargaining is fully intact.\n\nSubject:\nlabor,state-budget\n\nSpeaker:\nscott-walker\n\nSpeaker job:\nMilwaukee County Executive\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says under his budget-repair bill, collective bargaining is fully intact.",
+          "subject": "labor,state-budget",
+          "speaker": "scott-walker",
+          "speaker_job": "Milwaukee County Executive",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_09517",
+        "source_id": "12964.json",
+        "input": "Statement:\nMilwaukee has the highest incarceration rate among African-American men in the country.\n\nSubject:\ncrime,criminal-justice,urban\n\nSpeaker:\ngwen-moore\n\nSpeaker job:\nU.S. House member -- 4th District\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\nan interview",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Milwaukee has the highest incarceration rate among African-American men in the country.",
+          "subject": "crime,criminal-justice,urban",
+          "speaker": "gwen-moore",
+          "speaker_job": "U.S. House member -- 4th District",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "an interview"
+        }
+      },
+      {
+        "id": "liar_06837",
+        "source_id": "6099.json",
+        "input": "Statement:\nSay this biennium, liquor sales account for nearly $1 billion in the state budget.\n\nSubject:\nstate-budget,state-finances\n\nSpeaker:\nchris-garrett-bill-kennemer\n\nSpeaker job:\nOregon House members\n\nState:\nOregon\n\nParty:\nnone\n\nContext:\na commentary article.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Say this biennium, liquor sales account for nearly $1 billion in the state budget.",
+          "subject": "state-budget,state-finances",
+          "speaker": "chris-garrett-bill-kennemer",
+          "speaker_job": "Oregon House members",
+          "state": "Oregon",
+          "party": "none",
+          "context": "a commentary article."
+        }
+      },
+      {
+        "id": "liar_04861",
+        "source_id": "4238.json",
+        "input": "Statement:\nSays Sen. Luther Olsen, his recall opponent, supported the sale of state-owned power plants not to the highest bidder, but to the biggest donors with no oversight.\n\nSubject:\nenergy,state-budget\n\nSpeaker:\nfred-clark\n\nSpeaker job:\nState Assembly member, 42nd District\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na television ad",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Says Sen. Luther Olsen, his recall opponent, supported the sale of state-owned power plants not to the highest bidder, but to the biggest donors with no oversight.",
+          "subject": "energy,state-budget",
+          "speaker": "fred-clark",
+          "speaker_job": "State Assembly member, 42nd District",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a television ad"
+        }
+      },
+      {
+        "id": "liar_09589",
+        "source_id": "6042.json",
+        "input": "Statement:\nSays TriMet now spends $1.63 in benefits for every $1.00 spent on wages.\n\nSubject:\ntransportation\n\nSpeaker:\njohn-charles\n\nSpeaker job:\nPresident and CEO of Cascade Policy Institute\n\nState:\nOregon\n\nParty:\nlibertarian\n\nContext:\na blog post.",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says TriMet now spends $1.63 in benefits for every $1.00 spent on wages.",
+          "subject": "transportation",
+          "speaker": "john-charles",
+          "speaker_job": "President and CEO of Cascade Policy Institute",
+          "state": "Oregon",
+          "party": "libertarian",
+          "context": "a blog post."
+        }
+      },
+      {
+        "id": "liar_08192",
+        "source_id": "9014.json",
+        "input": "Statement:\nWe have invested record funding in protecting our environment.\n\nSubject:\nenvironment\n\nSpeaker:\nrick-scott\n\nSpeaker job:\nGovernor\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\nhis State of the State speech",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "We have invested record funding in protecting our environment.",
+          "subject": "environment",
+          "speaker": "rick-scott",
+          "speaker_job": "Governor",
+          "state": "Florida",
+          "party": "republican",
+          "context": "his State of the State speech"
+        }
+      },
+      {
+        "id": "liar_09429",
+        "source_id": "2366.json",
+        "input": "Statement:\nWhen the mayor of Providences brother wrote over 100 grand in bad checks to the city, Joe Fernandez didnt have the guts to prosecute him. He let him off the hook.\n\nSubject:\ncrime,ethics,message-machine\n\nSpeaker:\npeter-kilmartin\n\nSpeaker job:\nstate representative\n\nState:\nRhode Island\n\nParty:\ndemocrat\n\nContext:\na campaign commercial",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "When the mayor of Providences brother wrote over 100 grand in bad checks to the city, Joe Fernandez didnt have the guts to prosecute him. He let him off the hook.",
+          "subject": "crime,ethics,message-machine",
+          "speaker": "peter-kilmartin",
+          "speaker_job": "state representative",
+          "state": "Rhode Island",
+          "party": "democrat",
+          "context": "a campaign commercial"
+        }
+      },
+      {
+        "id": "liar_03542",
+        "source_id": "999.json",
+        "input": "Statement:\nWashing your hands and covering your mouth when you cough makes a huge difference in reducing transmission of the flu.\n\nSubject:\nhealth-care\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\na press conference",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Washing your hands and covering your mouth when you cough makes a huge difference in reducing transmission of the flu.",
+          "subject": "health-care",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "a press conference"
+        }
+      },
+      {
+        "id": "liar_01128",
+        "source_id": "1817.json",
+        "input": "Statement:\nJeff Greene only moved from California to Florida in the last two years. In fact, he would not legally be allowed to run for any other statewide office because he has not lived here long enough to meet the residency requirement.\n\nSubject:\ncandidates-biography\n\nSpeaker:\nkendrick-meek\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na campaign website",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Jeff Greene only moved from California to Florida in the last two years. In fact, he would not legally be allowed to run for any other statewide office because he has not lived here long enough to meet the residency requirement.",
+          "subject": "candidates-biography",
+          "speaker": "kendrick-meek",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a campaign website"
+        }
+      },
+      {
+        "id": "liar_04339",
+        "source_id": "10347.json",
+        "input": "Statement:\nSays President Barack Obamasown administration has done five environmental impact assessments of the Keystone XL pipeline, all of which have said it would have a minimum impact on the environment.\n\nSubject:\nenergy,environment,jobs\n\nSpeaker:\njohn-thune\n\nSpeaker job:\nU.S. Senator\n\nState:\nSouth Dakota\n\nParty:\nrepublican\n\nContext:\ncomments on \"Fox News Sunday\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says President Barack Obamasown administration has done five environmental impact assessments of the Keystone XL pipeline, all of which have said it would have a minimum impact on the environment.",
+          "subject": "energy,environment,jobs",
+          "speaker": "john-thune",
+          "speaker_job": "U.S. Senator",
+          "state": "South Dakota",
+          "party": "republican",
+          "context": "comments on \"Fox News Sunday\""
+        }
+      },
+      {
+        "id": "liar_05076",
+        "source_id": "13302.json",
+        "input": "Statement:\nSays Donald Trump saidas recently as a few weeks ago in Phoenix that every undocumented person would be subject to deportation.\n\nSubject:\ncandidates-biography,homeland-security,immigration\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nthe third 2016 presidential debate",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says Donald Trump saidas recently as a few weeks ago in Phoenix that every undocumented person would be subject to deportation.",
+          "subject": "candidates-biography,homeland-security,immigration",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "the third 2016 presidential debate"
+        }
+      },
+      {
+        "id": "liar_04489",
+        "source_id": "4081.json",
+        "input": "Statement:\nChina owns more of our bonds than do Americans.\n\nSubject:\nchina,deficit,economy\n\nSpeaker:\ngeorge-allen\n\nSpeaker job:\nconsultant\n\nState:\nVirginia\n\nParty:\nrepublican\n\nContext:\na TV interview.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "China owns more of our bonds than do Americans.",
+          "subject": "china,deficit,economy",
+          "speaker": "george-allen",
+          "speaker_job": "consultant",
+          "state": "Virginia",
+          "party": "republican",
+          "context": "a TV interview."
+        }
+      },
+      {
+        "id": "liar_02395",
+        "source_id": "10849.json",
+        "input": "Statement:\nIt is simply a fact that insufficient funding for Amtrak has delayed the installation of a positive train control safety system. To deny a connection between the (derailment in Philadelphia) and underfunding Amtrak is to deny reality.\n\nSubject:\nfederal-budget,transportation\n\nSpeaker:\ncharles-schumer\n\nSpeaker job:\nSenator\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nremarks to reporters",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "It is simply a fact that insufficient funding for Amtrak has delayed the installation of a positive train control safety system. To deny a connection between the (derailment in Philadelphia) and underfunding Amtrak is to deny reality.",
+          "subject": "federal-budget,transportation",
+          "speaker": "charles-schumer",
+          "speaker_job": "Senator",
+          "state": "New York",
+          "party": "democrat",
+          "context": "remarks to reporters"
+        }
+      },
+      {
+        "id": "liar_01411",
+        "source_id": "1507.json",
+        "input": "Statement:\nWe have solved the problem. ... Scientists are now saying leave the nuclear waste where it is.\n\nSubject:\nenergy,nuclear\n\nSpeaker:\nharry-reid\n\nSpeaker job:\nSenate Democratic Leader\n\nState:\nNevada\n\nParty:\ndemocrat\n\nContext:\na television interview with Las Vegas political analyst Jon Ralston",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "We have solved the problem. ... Scientists are now saying leave the nuclear waste where it is.",
+          "subject": "energy,nuclear",
+          "speaker": "harry-reid",
+          "speaker_job": "Senate Democratic Leader",
+          "state": "Nevada",
+          "party": "democrat",
+          "context": "a television interview with Las Vegas political analyst Jon Ralston"
+        }
+      },
+      {
+        "id": "liar_07903",
+        "source_id": "3604.json",
+        "input": "Statement:\nWhat we have done with the PATRIOT Act, weve given the government enormous powers. Weve given the government the right to reach deeply into peoples private lives, into their business affairs, without a court order.\n\nSubject:\ncriminal-justice,terrorism\n\nSpeaker:\ndennis-kucinich\n\nSpeaker job:\nU.S. representative\n\nState:\nOhio\n\nParty:\ndemocrat\n\nContext:\na speech in the House of Representatives",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "What we have done with the PATRIOT Act, weve given the government enormous powers. Weve given the government the right to reach deeply into peoples private lives, into their business affairs, without a court order.",
+          "subject": "criminal-justice,terrorism",
+          "speaker": "dennis-kucinich",
+          "speaker_job": "U.S. representative",
+          "state": "Ohio",
+          "party": "democrat",
+          "context": "a speech in the House of Representatives"
+        }
+      },
+      {
+        "id": "liar_08782",
+        "source_id": "2409.json",
+        "input": "Statement:\nHarry Reid has voted to give illegals Social Security benefits even for the time they were here illegally.\n\nSubject:\nimmigration,message-machine,social-security\n\nSpeaker:\nsharron-angle\n\nSpeaker job:\nRepublican nominee for Nevada U.S. Senate seat\n\nState:\nNevada\n\nParty:\nrepublican\n\nContext:\na campaign commercial",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Harry Reid has voted to give illegals Social Security benefits even for the time they were here illegally.",
+          "subject": "immigration,message-machine,social-security",
+          "speaker": "sharron-angle",
+          "speaker_job": "Republican nominee for Nevada U.S. Senate seat",
+          "state": "Nevada",
+          "party": "republican",
+          "context": "a campaign commercial"
+        }
+      },
+      {
+        "id": "liar_01970",
+        "source_id": "7842.json",
+        "input": "Statement:\nA bill to advance the Keystone XL Pipeline is an earmark under House rules.\n\nSubject:\nclimate-change,congressional-rules,environment,federal-budget,infrastructure\n\nSpeaker:\nalan-grayson\n\nSpeaker job:\nU.S. House of Representatives\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "A bill to advance the Keystone XL Pipeline is an earmark under House rules.",
+          "subject": "climate-change,congressional-rules,environment,federal-budget,infrastructure",
+          "speaker": "alan-grayson",
+          "speaker_job": "U.S. House of Representatives",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_07275",
+        "source_id": "1555.json",
+        "input": "Statement:\nThe health care bill will \"create 4 million jobs, 400,000 jobs almost immediately.\"\n\nSubject:\neconomy,health-care\n\nSpeaker:\nnancy-pelosi\n\nSpeaker job:\nHouse Minority Leader\n\nState:\nCalifornia\n\nParty:\ndemocrat\n\nContext:\na statement at the health care summit",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The health care bill will \"create 4 million jobs, 400,000 jobs almost immediately.\"",
+          "subject": "economy,health-care",
+          "speaker": "nancy-pelosi",
+          "speaker_job": "House Minority Leader",
+          "state": "California",
+          "party": "democrat",
+          "context": "a statement at the health care summit"
+        }
+      },
+      {
+        "id": "liar_00758",
+        "source_id": "1467.json",
+        "input": "Statement:\nThe law is very clear! 'The monies recouped from the TARP shall be paid into the general fund of the treasury for the reduction of the public debt.'\n\nSubject:\neconomy\n\nSpeaker:\njudd-gregg\n\nSpeaker job:\nU.S. Senator\n\nState:\n\n\nParty:\nrepublican\n\nContext:\na Senate budget hearing",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "The law is very clear! 'The monies recouped from the TARP shall be paid into the general fund of the treasury for the reduction of the public debt.'",
+          "subject": "economy",
+          "speaker": "judd-gregg",
+          "speaker_job": "U.S. Senator",
+          "state": "",
+          "party": "republican",
+          "context": "a Senate budget hearing"
+        }
+      },
+      {
+        "id": "liar_06177",
+        "source_id": "10387.json",
+        "input": "Statement:\nThere are actual cities like Birmingham, England, that are totally Muslim where non-Muslims just simply dont go in.\n\nSubject:\nreligion\n\nSpeaker:\nsteven-emerson\n\nSpeaker job:\nExecutive director of The Investigative Project on Terrorism\n\nState:\nWashington, D.C.\n\nParty:\nnone\n\nContext:\nan interview on Fox News",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "There are actual cities like Birmingham, England, that are totally Muslim where non-Muslims just simply dont go in.",
+          "subject": "religion",
+          "speaker": "steven-emerson",
+          "speaker_job": "Executive director of The Investigative Project on Terrorism",
+          "state": "Washington, D.C.",
+          "party": "none",
+          "context": "an interview on Fox News"
+        }
+      },
+      {
+        "id": "liar_02932",
+        "source_id": "7424.json",
+        "input": "Statement:\nSays Chuck Hagels nomination as defense secretary has been publicly celebrated by the Iranian government.\n\nSubject:\nforeign-policy,military\n\nSpeaker:\nted-cruz\n\nSpeaker job:\nSenator\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na Politico column.",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says Chuck Hagels nomination as defense secretary has been publicly celebrated by the Iranian government.",
+          "subject": "foreign-policy,military",
+          "speaker": "ted-cruz",
+          "speaker_job": "Senator",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a Politico column."
+        }
+      },
+      {
+        "id": "liar_01028",
+        "source_id": "8268.json",
+        "input": "Statement:\nAccording to the most recent jobs report, weve got more Americans leaving the workforce than we have finding jobs.\n\nSubject:\neconomy,jobs\n\nSpeaker:\njohn-boehner\n\nSpeaker job:\nSpeaker of the House of Representatives\n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\na press conference",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "According to the most recent jobs report, weve got more Americans leaving the workforce than we have finding jobs.",
+          "subject": "economy,jobs",
+          "speaker": "john-boehner",
+          "speaker_job": "Speaker of the House of Representatives",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "a press conference"
+        }
+      },
+      {
+        "id": "liar_02605",
+        "source_id": "9696.json",
+        "input": "Statement:\nIsrael in the last three weeks haskilled more Palestinian children, more than 200, than the total number of Israeli soldiers killed in military operations since 2006.\n\nSubject:\nchildren,foreign-policy,israel,military\n\nSpeaker:\njake-tapper\n\nSpeaker job:\nHost of CNN's \"The Lead\"\n\nState:\n\n\nParty:\njournalist\n\nContext:\ncomments on CNN",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Israel in the last three weeks haskilled more Palestinian children, more than 200, than the total number of Israeli soldiers killed in military operations since 2006.",
+          "subject": "children,foreign-policy,israel,military",
+          "speaker": "jake-tapper",
+          "speaker_job": "Host of CNN's \"The Lead\"",
+          "state": "",
+          "party": "journalist",
+          "context": "comments on CNN"
+        }
+      },
+      {
+        "id": "liar_09719",
+        "source_id": "7841.json",
+        "input": "Statement:\nThe UK has an unarmed police force and a firearm fatality rate that is 40 times lower per capita than in the U.S.\n\nSubject:\ncrime,criminal-justice,education,guns,public-safety\n\nSpeaker:\npeter-nightingale\n\nSpeaker job:\nPhysicist\n\nState:\nRhode Island\n\nParty:\nnewsmaker\n\nContext:\na web commentary",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "The UK has an unarmed police force and a firearm fatality rate that is 40 times lower per capita than in the U.S.",
+          "subject": "crime,criminal-justice,education,guns,public-safety",
+          "speaker": "peter-nightingale",
+          "speaker_job": "Physicist",
+          "state": "Rhode Island",
+          "party": "newsmaker",
+          "context": "a web commentary"
+        }
+      },
+      {
+        "id": "liar_03533",
+        "source_id": "7256.json",
+        "input": "Statement:\nThe United States has an immigration system where only 6.5 percent of people who come here, come here based on labor and skill.\n\nSubject:\nimmigration\n\nSpeaker:\nmarco-rubio\n\nSpeaker job:\nU.S. Senator\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\nan interview",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "The United States has an immigration system where only 6.5 percent of people who come here, come here based on labor and skill.",
+          "subject": "immigration",
+          "speaker": "marco-rubio",
+          "speaker_job": "U.S. Senator",
+          "state": "Florida",
+          "party": "republican",
+          "context": "an interview"
+        }
+      },
+      {
+        "id": "liar_00081",
+        "source_id": "9613.json",
+        "input": "Statement:\nAt some point in their lives, 99% of women use birth control.\n\nSubject:\nsexuality\n\nSpeaker:\nsusan-happ\n\nSpeaker job:\nJefferson County District Attorney\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na press release",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "At some point in their lives, 99% of women use birth control.",
+          "subject": "sexuality",
+          "speaker": "susan-happ",
+          "speaker_job": "Jefferson County District Attorney",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a press release"
+        }
+      },
+      {
+        "id": "liar_01266",
+        "source_id": "13531.json",
+        "input": "Statement:\nSays U.S. Rep. Nancy Pelosi said, Employers cutting hours is a good thing. It then gives that person time to pursue their dreams and passions.\n\nSubject:\nfake-news\n\nSpeaker:\nturning-point-usa\n\nSpeaker job:\n\n\nState:\n\n\nParty:\norganization\n\nContext:\na Facebook post",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says U.S. Rep. Nancy Pelosi said, Employers cutting hours is a good thing. It then gives that person time to pursue their dreams and passions.",
+          "subject": "fake-news",
+          "speaker": "turning-point-usa",
+          "speaker_job": "",
+          "state": "",
+          "party": "organization",
+          "context": "a Facebook post"
+        }
+      },
+      {
+        "id": "liar_05026",
+        "source_id": "1540.json",
+        "input": "Statement:\nHe (Obama) has done several things well. Most of those things are places where he changed his view from where he had during the campaign. So, for instance, he's left our troops in Iraq and they're being more successful there. He boosted our effort in Afghanistan, which is the right course to take. He did not close Guantanamo, thank heavens.\n\nSubject:\nafghanistan,iraq\n\nSpeaker:\nmitt-romney\n\nSpeaker job:\nFormer governor\n\nState:\nMassachusetts\n\nParty:\nrepublican\n\nContext:\na 'Today Show' interview",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "He (Obama) has done several things well. Most of those things are places where he changed his view from where he had during the campaign. So, for instance, he's left our troops in Iraq and they're being more successful there. He boosted our effort in Afghanistan, which is the right course to take. He did not close Guantanamo, thank heavens.",
+          "subject": "afghanistan,iraq",
+          "speaker": "mitt-romney",
+          "speaker_job": "Former governor",
+          "state": "Massachusetts",
+          "party": "republican",
+          "context": "a 'Today Show' interview"
+        }
+      },
+      {
+        "id": "liar_04911",
+        "source_id": "9347.json",
+        "input": "Statement:\nCanadian middle class incomes are now higher than in the United States. They are working fewer hours for more pay, living longer on average, and facing less income inequality.\n\nSubject:\nhealth-care,income,labor\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\na speech at the New America Foundation",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Canadian middle class incomes are now higher than in the United States. They are working fewer hours for more pay, living longer on average, and facing less income inequality.",
+          "subject": "health-care,income,labor",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "a speech at the New America Foundation"
+        }
+      },
+      {
+        "id": "liar_04161",
+        "source_id": "10662.json",
+        "input": "Statement:\nUnder current conditions, by 2023, the interest payments on the national debt will be $722 billion, larger than the projected defense spending of $696 billion.\n\nSubject:\ndeficit,federal-budget\n\nSpeaker:\ntom-price\n\nSpeaker job:\nCongressman\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\nthe 2016 Budget Resolution from House Budget Committee",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Under current conditions, by 2023, the interest payments on the national debt will be $722 billion, larger than the projected defense spending of $696 billion.",
+          "subject": "deficit,federal-budget",
+          "speaker": "tom-price",
+          "speaker_job": "Congressman",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "the 2016 Budget Resolution from House Budget Committee"
+        }
+      },
+      {
+        "id": "liar_04799",
+        "source_id": "13491.json",
+        "input": "Statement:\nStudy after study have shown that sanctuary cities do not lead to an increase in crime because of the presence of people that are undocumented.\n\nSubject:\nhomeland-security,immigration\n\nSpeaker:\njavier-m-gonzales\n\nSpeaker job:\nSanta Fe Mayor\n\nState:\nNew Mexico\n\nParty:\ndemocrat\n\nContext:\nan interview on The Kelly File",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Study after study have shown that sanctuary cities do not lead to an increase in crime because of the presence of people that are undocumented.",
+          "subject": "homeland-security,immigration",
+          "speaker": "javier-m-gonzales",
+          "speaker_job": "Santa Fe Mayor",
+          "state": "New Mexico",
+          "party": "democrat",
+          "context": "an interview on The Kelly File"
+        }
+      },
+      {
+        "id": "liar_03465",
+        "source_id": "12673.json",
+        "input": "Statement:\n(Big banks) have invested over $300,000 in (Joe Heck), and Heck has sponsored $44 million dollars in tax breaks for banks.\n\nSubject:\ncampaign-finance\n\nSpeaker:\nsenate-majority-pac\n\nSpeaker job:\npolitical action committee\n\nState:\nWashington, D.C. \n\nParty:\ndemocrat\n\nContext:\na television ad first airing on July 1",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "(Big banks) have invested over $300,000 in (Joe Heck), and Heck has sponsored $44 million dollars in tax breaks for banks.",
+          "subject": "campaign-finance",
+          "speaker": "senate-majority-pac",
+          "speaker_job": "political action committee",
+          "state": "Washington, D.C. ",
+          "party": "democrat",
+          "context": "a television ad first airing on July 1"
+        }
+      },
+      {
+        "id": "liar_06742",
+        "source_id": "9531.json",
+        "input": "Statement:\nHes been in office nearly four years now, but 40% of Wisconsinites dont know who (U.S. Sen.) Ron Johnson is.\n\nSubject:\ncongress,job-accomplishments,polls\n\nSpeaker:\nstate-democratic-party-wisconsin\n\nSpeaker job:\n\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na Facebook post",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Hes been in office nearly four years now, but 40% of Wisconsinites dont know who (U.S. Sen.) Ron Johnson is.",
+          "subject": "congress,job-accomplishments,polls",
+          "speaker": "state-democratic-party-wisconsin",
+          "speaker_job": "",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a Facebook post"
+        }
+      },
+      {
+        "id": "liar_04069",
+        "source_id": "10277.json",
+        "input": "Statement:\nIn 2012, 123 African-Americans were shot dead by police. ... Same year, 326 whites were killed by police.\n\nSubject:\ncrime,diversity,urban\n\nSpeaker:\nbill-oreilly\n\nSpeaker job:\nFox News Channel host\n\nState:\n\n\nParty:\nnone\n\nContext:\na segment on \"The O'Reilly Factor\"",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "In 2012, 123 African-Americans were shot dead by police. ... Same year, 326 whites were killed by police.",
+          "subject": "crime,diversity,urban",
+          "speaker": "bill-oreilly",
+          "speaker_job": "Fox News Channel host",
+          "state": "",
+          "party": "none",
+          "context": "a segment on \"The O'Reilly Factor\""
+        }
+      },
+      {
+        "id": "liar_09382",
+        "source_id": "3011.json",
+        "input": "Statement:\nThe city of Atlanta has $56 million in its reserves.\n\nSubject:\njob-accomplishments\n\nSpeaker:\nkasim-reed\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na speech",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "The city of Atlanta has $56 million in its reserves.",
+          "subject": "job-accomplishments",
+          "speaker": "kasim-reed",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a speech"
+        }
+      },
+      {
+        "id": "liar_05824",
+        "source_id": "4342.json",
+        "input": "Statement:\nSays Texas gained 21,000 doctors due to tort reform.\n\nSubject:\nhealth-care,legal-issues,new-hampshire-2012\n\nSpeaker:\nrick-perry\n\nSpeaker job:\nGovernor\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na speech at \"Politics and Eggs\" in Bedford, N.H.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says Texas gained 21,000 doctors due to tort reform.",
+          "subject": "health-care,legal-issues,new-hampshire-2012",
+          "speaker": "rick-perry",
+          "speaker_job": "Governor",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a speech at \"Politics and Eggs\" in Bedford, N.H."
+        }
+      },
+      {
+        "id": "liar_07829",
+        "source_id": "13461.json",
+        "input": "Statement:\nFinal election 2016 numbers: Trump won the popular vote.\n\nSubject:\nelections\n\nSpeaker:\nblog-posting\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nweb posts",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Final election 2016 numbers: Trump won the popular vote.",
+          "subject": "elections",
+          "speaker": "blog-posting",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "web posts"
+        }
+      },
+      {
+        "id": "liar_02668",
+        "source_id": "1595.json",
+        "input": "Statement:\nThe Massachusetts Supreme Court...defined marriage as simply, quote,the establishment of intimacy ... I guess that would mean if you really had affection for your horse, I guess you could marry your horse.\n\nSubject:\ngays-and-lesbians,marriage\n\nSpeaker:\njd-hayworth\n\nSpeaker job:\n\n\nState:\nArizona\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "The Massachusetts Supreme Court...defined marriage as simply, quote,the establishment of intimacy ... I guess that would mean if you really had affection for your horse, I guess you could marry your horse.",
+          "subject": "gays-and-lesbians,marriage",
+          "speaker": "jd-hayworth",
+          "speaker_job": "",
+          "state": "Arizona",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_09268",
+        "source_id": "10923.json",
+        "input": "Statement:\nFormer Gov. Rick Perry signed a law that a federal court said was actually written with the purpose of discriminating against minority voters.\n\nSubject:\ncivil-rights,corrections-and-updates,elections,legal-issues\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\na speech",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Former Gov. Rick Perry signed a law that a federal court said was actually written with the purpose of discriminating against minority voters.",
+          "subject": "civil-rights,corrections-and-updates,elections,legal-issues",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "a speech"
+        }
+      },
+      {
+        "id": "liar_09936",
+        "source_id": "8072.json",
+        "input": "Statement:\nThe Republican-authored state budget includes a provision forcing people earning as little as $12,000 to buy private health insurance that could cost them as much as $4,000 per year.\n\nSubject:\nhealth-care,state-budget\n\nSpeaker:\ndave-hansen\n\nSpeaker job:\nState Senator\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The Republican-authored state budget includes a provision forcing people earning as little as $12,000 to buy private health insurance that could cost them as much as $4,000 per year.",
+          "subject": "health-care,state-budget",
+          "speaker": "dave-hansen",
+          "speaker_job": "State Senator",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_08212",
+        "source_id": "9664.json",
+        "input": "Statement:\n(Mary) Burkes company, Trek Bicycles, makes 99% of their bikes overseas.\n\nSubject:\nlabor,workers\n\nSpeaker:\nscott-walker\n\nSpeaker job:\nMilwaukee County Executive\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na campaign TV ad",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "(Mary) Burkes company, Trek Bicycles, makes 99% of their bikes overseas.",
+          "subject": "labor,workers",
+          "speaker": "scott-walker",
+          "speaker_job": "Milwaukee County Executive",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a campaign TV ad"
+        }
+      },
+      {
+        "id": "liar_00913",
+        "source_id": "13275.json",
+        "input": "Statement:\nSays that compared to direct sales by manufacturers, consumers save avg of $500 per car sold through franchised dealer model.\n\nSubject:\ntransportation\n\nSpeaker:\ntexas-automobile-dealers-association\n\nSpeaker job:\nAdvocacy group\n\nState:\nTexas\n\nParty:\nnone\n\nContext:\na tweet",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says that compared to direct sales by manufacturers, consumers save avg of $500 per car sold through franchised dealer model.",
+          "subject": "transportation",
+          "speaker": "texas-automobile-dealers-association",
+          "speaker_job": "Advocacy group",
+          "state": "Texas",
+          "party": "none",
+          "context": "a tweet"
+        }
+      },
+      {
+        "id": "liar_00473",
+        "source_id": "3098.json",
+        "input": "Statement:\nSays a Portland school gives Muslim students their own school provided prayer room, prayer rugs, and lets them out of class five times a day to pray to Allah.\n\nSubject:\nreligion\n\nSpeaker:\nvictoria-taft\n\nSpeaker job:\nradio talk show host\n\nState:\nOregon\n\nParty:\nnone\n\nContext:\na website posting",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says a Portland school gives Muslim students their own school provided prayer room, prayer rugs, and lets them out of class five times a day to pray to Allah.",
+          "subject": "religion",
+          "speaker": "victoria-taft",
+          "speaker_job": "radio talk show host",
+          "state": "Oregon",
+          "party": "none",
+          "context": "a website posting"
+        }
+      },
+      {
+        "id": "liar_04150",
+        "source_id": "11823.json",
+        "input": "Statement:\nIt is rare that a retirement grade determination is conducted for an officer previously retired from the U.S. armed forces.\n\nSubject:\nafghanistan,congress,military\n\nSpeaker:\njack-reed\n\nSpeaker job:\nU.S. Senator\n\nState:\nRhode Island\n\nParty:\ndemocrat\n\nContext:\na letter",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "It is rare that a retirement grade determination is conducted for an officer previously retired from the U.S. armed forces.",
+          "subject": "afghanistan,congress,military",
+          "speaker": "jack-reed",
+          "speaker_job": "U.S. Senator",
+          "state": "Rhode Island",
+          "party": "democrat",
+          "context": "a letter"
+        }
+      },
+      {
+        "id": "liar_08697",
+        "source_id": "7058.json",
+        "input": "Statement:\nSays Mark Hass raised your taxes by $1 billion in a single day.\n\nSubject:\ntaxes\n\nSpeaker:\ntaxpayer-association-oregon\n\nSpeaker job:\npolitical action committee\n\nState:\nOregon\n\nParty:\nnone\n\nContext:\na campaign mailer.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says Mark Hass raised your taxes by $1 billion in a single day.",
+          "subject": "taxes",
+          "speaker": "taxpayer-association-oregon",
+          "speaker_job": "political action committee",
+          "state": "Oregon",
+          "party": "none",
+          "context": "a campaign mailer."
+        }
+      },
+      {
+        "id": "liar_05749",
+        "source_id": "11049.json",
+        "input": "Statement:\nSays his average federal tax rate was 36 percent.\n\nSubject:\ntaxes\n\nSpeaker:\njeb-bush\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na post on his campaign website about releasing his tax returns",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says his average federal tax rate was 36 percent.",
+          "subject": "taxes",
+          "speaker": "jeb-bush",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a post on his campaign website about releasing his tax returns"
+        }
+      },
+      {
+        "id": "liar_09252",
+        "source_id": "6607.json",
+        "input": "Statement:\nFederal law adopted under Tommy Thompsons watch prohibits the government from negotiating for better prices on prescription drugs for senior citizens\n\nSubject:\ndrugs,health-care,medicare\n\nSpeaker:\ntammy-baldwin\n\nSpeaker job:\nU.S. Representative\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\nan interview",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Federal law adopted under Tommy Thompsons watch prohibits the government from negotiating for better prices on prescription drugs for senior citizens",
+          "subject": "drugs,health-care,medicare",
+          "speaker": "tammy-baldwin",
+          "speaker_job": "U.S. Representative",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "an interview"
+        }
+      },
+      {
+        "id": "liar_04624",
+        "source_id": "5351.json",
+        "input": "Statement:\nYou cant pass a budget in the Senate of the United States without 60 votes.\n\nSubject:\ncongressional-rules,federal-budget\n\nSpeaker:\njack-lew\n\nSpeaker job:\nTreasury secretary \n\nState:\nWashington, D.C. \n\nParty:\ndemocrat\n\nContext:\nan interview on CNN's \"State of the Union with Candy Crowley\"",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "You cant pass a budget in the Senate of the United States without 60 votes.",
+          "subject": "congressional-rules,federal-budget",
+          "speaker": "jack-lew",
+          "speaker_job": "Treasury secretary ",
+          "state": "Washington, D.C. ",
+          "party": "democrat",
+          "context": "an interview on CNN's \"State of the Union with Candy Crowley\""
+        }
+      },
+      {
+        "id": "liar_09501",
+        "source_id": "3682.json",
+        "input": "Statement:\nChina now owns $1.1 trillion of our debt, our trade deficit last year with them was a quarter of a trillion dollars.\n\nSubject:\nchina,deficit,trade\n\nSpeaker:\nterry-mcauliffe\n\nSpeaker job:\nGovernor\n\nState:\nVirginia\n\nParty:\ndemocrat\n\nContext:\nan appearance on MSNBC's Hardball with Chris Matthews.",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "China now owns $1.1 trillion of our debt, our trade deficit last year with them was a quarter of a trillion dollars.",
+          "subject": "china,deficit,trade",
+          "speaker": "terry-mcauliffe",
+          "speaker_job": "Governor",
+          "state": "Virginia",
+          "party": "democrat",
+          "context": "an appearance on MSNBC's Hardball with Chris Matthews."
+        }
+      },
+      {
+        "id": "liar_03513",
+        "source_id": "9238.json",
+        "input": "Statement:\nSays Charlie Crists campaign bashedSen. Bill Nelsons big-government solutions.\n\nSubject:\nelections\n\nSpeaker:\nmsnbc\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na graphic during \"The Daily Rundown\"",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Says Charlie Crists campaign bashedSen. Bill Nelsons big-government solutions.",
+          "subject": "elections",
+          "speaker": "msnbc",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a graphic during \"The Daily Rundown\""
+        }
+      },
+      {
+        "id": "liar_06370",
+        "source_id": "11998.json",
+        "input": "Statement:\nFor every time the state gets paid a dollar in taxes (on gambling), somebody loses $6.\n\nSubject:\ngambling\n\nSpeaker:\ncharles-van-zant\n\nSpeaker job:\nMember of Florida House of Representatives\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na House Finance and Tax committee meeting",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "For every time the state gets paid a dollar in taxes (on gambling), somebody loses $6.",
+          "subject": "gambling",
+          "speaker": "charles-van-zant",
+          "speaker_job": "Member of Florida House of Representatives",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a House Finance and Tax committee meeting"
+        }
+      },
+      {
+        "id": "liar_01061",
+        "source_id": "2373.json",
+        "input": "Statement:\nJeff Weems legal record is one of defending BP, Enron and just about every big oil company against the working man.\n\nSubject:\ncandidates-biography,energy\n\nSpeaker:\ndavid-porter\n\nSpeaker job:\nCertified Public Accountant\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na press release.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Jeff Weems legal record is one of defending BP, Enron and just about every big oil company against the working man.",
+          "subject": "candidates-biography,energy",
+          "speaker": "david-porter",
+          "speaker_job": "Certified Public Accountant",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a press release."
+        }
+      },
+      {
+        "id": "liar_08060",
+        "source_id": "8223.json",
+        "input": "Statement:\nAmericans spend more than $160 billion and 6 billion hours per year complying with the tax code.\n\nSubject:\nfinancial-regulation,government-regulation,taxes\n\nSpeaker:\ntom-price\n\nSpeaker job:\nCongressman\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\nTwitter posts",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Americans spend more than $160 billion and 6 billion hours per year complying with the tax code.",
+          "subject": "financial-regulation,government-regulation,taxes",
+          "speaker": "tom-price",
+          "speaker_job": "Congressman",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "Twitter posts"
+        }
+      },
+      {
+        "id": "liar_04323",
+        "source_id": "9689.json",
+        "input": "Statement:\nWomen in Florida make 83 cents for every dollar a man makes.\n\nSubject:\njobs,women\n\nSpeaker:\ncharlie-crist\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na campaign email",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Women in Florida make 83 cents for every dollar a man makes.",
+          "subject": "jobs,women",
+          "speaker": "charlie-crist",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a campaign email"
+        }
+      },
+      {
+        "id": "liar_07036",
+        "source_id": "6402.json",
+        "input": "Statement:\nSays that President Obama said that Small Businesses Succeed Because of Government.\n\nSubject:\ngovernment-regulation,infrastructure,small-business\n\nSpeaker:\nchuck-fleischmann\n\nSpeaker job:\nCongressman\n\nState:\nTennessee\n\nParty:\nrepublican\n\nContext:\nin a blog post on his campaign website.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says that President Obama said that Small Businesses Succeed Because of Government.",
+          "subject": "government-regulation,infrastructure,small-business",
+          "speaker": "chuck-fleischmann",
+          "speaker_job": "Congressman",
+          "state": "Tennessee",
+          "party": "republican",
+          "context": "in a blog post on his campaign website."
+        }
+      },
+      {
+        "id": "liar_08633",
+        "source_id": "1662.json",
+        "input": "Statement:\nOn financial reform, there is \"a million dollars being spent, per congressman, in lobbying expenses on this issue. (The) industry has four lobbyists per member of the House and Senate working on this.\"\n\nSubject:\ncorporations,ethics,market-regulation,abc-news-week\n\nSpeaker:\nlawrence-summers\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\nan interview on \"This Week.\"",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "On financial reform, there is \"a million dollars being spent, per congressman, in lobbying expenses on this issue. (The) industry has four lobbyists per member of the House and Senate working on this.\"",
+          "subject": "corporations,ethics,market-regulation,abc-news-week",
+          "speaker": "lawrence-summers",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "an interview on \"This Week.\""
+        }
+      },
+      {
+        "id": "liar_07628",
+        "source_id": "2523.json",
+        "input": "Statement:\nMore lives have been lost because of the war with the drug cartels in Juarez alone, just a few blocks from the United States of America, than have been lost in the war in Afghanistan.\n\nSubject:\nafghanistan,crime,immigration\n\nSpeaker:\ngreg-abbott\n\nSpeaker job:\ngovernor\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\nan interview with Fox News",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "More lives have been lost because of the war with the drug cartels in Juarez alone, just a few blocks from the United States of America, than have been lost in the war in Afghanistan.",
+          "subject": "afghanistan,crime,immigration",
+          "speaker": "greg-abbott",
+          "speaker_job": "governor",
+          "state": "Texas",
+          "party": "republican",
+          "context": "an interview with Fox News"
+        }
+      },
+      {
+        "id": "liar_00209",
+        "source_id": "2550.json",
+        "input": "Statement:\nSays Rep. Jim Weidner proposed a bill taking away health care for 80,000 of Oregons children.\n\nSubject:\nhealth-care,taxes\n\nSpeaker:\nblue-oregon\n\nSpeaker job:\nliberal blog\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na website posting",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Says Rep. Jim Weidner proposed a bill taking away health care for 80,000 of Oregons children.",
+          "subject": "health-care,taxes",
+          "speaker": "blue-oregon",
+          "speaker_job": "liberal blog",
+          "state": "Oregon",
+          "party": "democrat",
+          "context": "a website posting"
+        }
+      },
+      {
+        "id": "liar_08773",
+        "source_id": "9486.json",
+        "input": "Statement:\nGov. Rick Scott signed into law a bill that gives Floridas public officials an easy way to avoid disclosing their personal finances.\n\nSubject:\nelections,transparency\n\nSpeaker:\nbill-nelson\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\nhis campaign website",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Gov. Rick Scott signed into law a bill that gives Floridas public officials an easy way to avoid disclosing their personal finances.",
+          "subject": "elections,transparency",
+          "speaker": "bill-nelson",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "his campaign website"
+        }
+      },
+      {
+        "id": "liar_06584",
+        "source_id": "6864.json",
+        "input": "Statement:\nAll legislative mail, from the content to the timing, is approved by the speakers office.\n\nSubject:\ncampaign-finance,congressional-rules\n\nSpeaker:\njim-kyle\n\nSpeaker job:\nLawyer\n\nState:\nTennessee\n\nParty:\ndemocrat\n\nContext:\na story in the Clarksville Leaf-Chronicle",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "All legislative mail, from the content to the timing, is approved by the speakers office.",
+          "subject": "campaign-finance,congressional-rules",
+          "speaker": "jim-kyle",
+          "speaker_job": "Lawyer",
+          "state": "Tennessee",
+          "party": "democrat",
+          "context": "a story in the Clarksville Leaf-Chronicle"
+        }
+      },
+      {
+        "id": "liar_03966",
+        "source_id": "10031.json",
+        "input": "Statement:\nSaudi Arabia is the only Muslim country out of 47 Muslim-majority countries where women cannot get licenses to drive.\n\nSubject:\nislam\n\nSpeaker:\ndean-obeidallah\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\na broadcast of MSNBC's \"The Ed Show\"",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Saudi Arabia is the only Muslim country out of 47 Muslim-majority countries where women cannot get licenses to drive.",
+          "subject": "islam",
+          "speaker": "dean-obeidallah",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "a broadcast of MSNBC's \"The Ed Show\""
+        }
+      },
+      {
+        "id": "liar_05381",
+        "source_id": "8623.json",
+        "input": "Statement:\nThe minimum wage in real terms right now is below where it was when Harry Truman was in office.\n\nSubject:\neconomy,history,workers\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\na speech at the Center for American Progress",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The minimum wage in real terms right now is below where it was when Harry Truman was in office.",
+          "subject": "economy,history,workers",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "a speech at the Center for American Progress"
+        }
+      },
+      {
+        "id": "liar_09581",
+        "source_id": "1751.json",
+        "input": "Statement:\nKlein did not hold a single town hall meeting (on health care) where the general public was invited to ask questions or present their views.\n\nSubject:\nhealth-care\n\nSpeaker:\nallen-west\n\nSpeaker job:\nU.S. representative, Florida District 22\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\npress release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Klein did not hold a single town hall meeting (on health care) where the general public was invited to ask questions or present their views.",
+          "subject": "health-care",
+          "speaker": "allen-west",
+          "speaker_job": "U.S. representative, Florida District 22",
+          "state": "Florida",
+          "party": "republican",
+          "context": "press release"
+        }
+      },
+      {
+        "id": "liar_02518",
+        "source_id": "9530.json",
+        "input": "Statement:\nObama regime planned the influx of illegal alien children at the border.\n\nSubject:\nchildren,immigration\n\nSpeaker:\nrush-limbaugh\n\nSpeaker job:\nRadio host\n\nState:\n\n\nParty:\nnone\n\nContext:\na broadcast of the \"Rush Limbaugh Show\"",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Obama regime planned the influx of illegal alien children at the border.",
+          "subject": "children,immigration",
+          "speaker": "rush-limbaugh",
+          "speaker_job": "Radio host",
+          "state": "",
+          "party": "none",
+          "context": "a broadcast of the \"Rush Limbaugh Show\""
+        }
+      },
+      {
+        "id": "liar_02122",
+        "source_id": "154.json",
+        "input": "Statement:\nIt's just outrageous that under President Bush, the National Institutes of Health have been basically decreased in funding.\n\nSubject:\nbush-administration\n\nSpeaker:\nhillary-clinton\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew York\n\nParty:\ndemocrat\n\nContext:\nPhiladelphia, Pa.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "It's just outrageous that under President Bush, the National Institutes of Health have been basically decreased in funding.",
+          "subject": "bush-administration",
+          "speaker": "hillary-clinton",
+          "speaker_job": "Presidential candidate",
+          "state": "New York",
+          "party": "democrat",
+          "context": "Philadelphia, Pa."
+        }
+      },
+      {
+        "id": "liar_07052",
+        "source_id": "1117.json",
+        "input": "Statement:\nUnder President George W. Bush, the U.S. spent $1.3 trillion on tax cuts for the wealthy and trillions each on a war and on Medicare drug benefits.\n\nSubject:\nfederal-budget,iraq,medicare,military,taxes\n\nSpeaker:\ndonna-brazile\n\nSpeaker job:\nPolitical commentator\n\nState:\nWashington, D.C.\n\nParty:\ndemocrat\n\nContext:\nCNN's State of the Union with John King",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Under President George W. Bush, the U.S. spent $1.3 trillion on tax cuts for the wealthy and trillions each on a war and on Medicare drug benefits.",
+          "subject": "federal-budget,iraq,medicare,military,taxes",
+          "speaker": "donna-brazile",
+          "speaker_job": "Political commentator",
+          "state": "Washington, D.C.",
+          "party": "democrat",
+          "context": "CNN's State of the Union with John King"
+        }
+      },
+      {
+        "id": "liar_00389",
+        "source_id": "5631.json",
+        "input": "Statement:\nSays Congressman Bill Pascrell voted to remove the public option from the Affordable Health Care Act.\n\nSubject:\nhealth-care\n\nSpeaker:\nsteve-rothman\n\nSpeaker job:\n\n\nState:\n\n\nParty:\ndemocrat\n\nContext:\nan interview on NJToday",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Says Congressman Bill Pascrell voted to remove the public option from the Affordable Health Care Act.",
+          "subject": "health-care",
+          "speaker": "steve-rothman",
+          "speaker_job": "",
+          "state": "",
+          "party": "democrat",
+          "context": "an interview on NJToday"
+        }
+      },
+      {
+        "id": "liar_08550",
+        "source_id": "8260.json",
+        "input": "Statement:\nThe amount of interest paid on the federal debt exceeds total tax revenue.\n\nSubject:\ncorporations,debt,federal-budget,taxes\n\nSpeaker:\nchris-kapanga\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nrepublican\n\nContext:\na newsletter",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The amount of interest paid on the federal debt exceeds total tax revenue.",
+          "subject": "corporations,debt,federal-budget,taxes",
+          "speaker": "chris-kapanga",
+          "speaker_job": "",
+          "state": "",
+          "party": "republican",
+          "context": "a newsletter"
+        }
+      },
+      {
+        "id": "liar_03851",
+        "source_id": "2912.json",
+        "input": "Statement:\nThe Pentagons survey about the Dont Ask, Dont Tell policy found that 92 percent of service members agree that they could serve ... in a unit in combat without compromising mission readiness.\n\nSubject:\ngays-and-lesbians,military,abc-news-week\n\nSpeaker:\nwesley-clark\n\nSpeaker job:\n\n\nState:\nArkansas\n\nParty:\ndemocrat\n\nContext:\nan interview on ABC's \"This Week with Christiane Amanpour\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The Pentagons survey about the Dont Ask, Dont Tell policy found that 92 percent of service members agree that they could serve ... in a unit in combat without compromising mission readiness.",
+          "subject": "gays-and-lesbians,military,abc-news-week",
+          "speaker": "wesley-clark",
+          "speaker_job": "",
+          "state": "Arkansas",
+          "party": "democrat",
+          "context": "an interview on ABC's \"This Week with Christiane Amanpour\""
+        }
+      },
+      {
+        "id": "liar_09187",
+        "source_id": "7021.json",
+        "input": "Statement:\nSays New Jersey lost private-sector jobs between 2000 and 2009 because Democrats increased taxes, fees, regulations and state spending.\n\nSubject:\njobs\n\nSpeaker:\nchris-christie\n\nSpeaker job:\nGovernor of New Jersey\n\nState:\nNew Jersey\n\nParty:\nrepublican\n\nContext:\na campaign event in New Hampshire",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says New Jersey lost private-sector jobs between 2000 and 2009 because Democrats increased taxes, fees, regulations and state spending.",
+          "subject": "jobs",
+          "speaker": "chris-christie",
+          "speaker_job": "Governor of New Jersey",
+          "state": "New Jersey",
+          "party": "republican",
+          "context": "a campaign event in New Hampshire"
+        }
+      },
+      {
+        "id": "liar_08525",
+        "source_id": "1072.json",
+        "input": "Statement:\nIf the United States moves ahead by itself (on cap-and-trade)... after 30 or 40 years, were going to reduce CO2 by less than 1 percent.\n\nSubject:\nclimate-change,energy,environment\n\nSpeaker:\nchuck-grassley\n\nSpeaker job:\nU.S. senator\n\nState:\nIowa\n\nParty:\nrepublican\n\nContext:\ninterview on This Week with George Stephanopoulos",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "If the United States moves ahead by itself (on cap-and-trade)... after 30 or 40 years, were going to reduce CO2 by less than 1 percent.",
+          "subject": "climate-change,energy,environment",
+          "speaker": "chuck-grassley",
+          "speaker_job": "U.S. senator",
+          "state": "Iowa",
+          "party": "republican",
+          "context": "interview on This Week with George Stephanopoulos"
+        }
+      },
+      {
+        "id": "liar_05147",
+        "source_id": "2082.json",
+        "input": "Statement:\nOpponent Holly Benson said that Just because youre poor doesnt mean youre unhealthy, it just means you have a lot more time to go running.\n\nSubject:\ncandidates-biography,health-care\n\nSpeaker:\npam-bondi\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na campaign mail piece.",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Opponent Holly Benson said that Just because youre poor doesnt mean youre unhealthy, it just means you have a lot more time to go running.",
+          "subject": "candidates-biography,health-care",
+          "speaker": "pam-bondi",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a campaign mail piece."
+        }
+      },
+      {
+        "id": "liar_09212",
+        "source_id": "9886.json",
+        "input": "Statement:\nOver the next two years, this $1.8 billion deficit will cost individual Wisconsinites $300 each, or $1,200 for families of four.\n\nSubject:\ndeficit,state-budget,state-finances,taxes\n\nSpeaker:\nchris-larson\n\nSpeaker job:\nWisconsin Senate Minority Leader\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Over the next two years, this $1.8 billion deficit will cost individual Wisconsinites $300 each, or $1,200 for families of four.",
+          "subject": "deficit,state-budget,state-finances,taxes",
+          "speaker": "chris-larson",
+          "speaker_job": "Wisconsin Senate Minority Leader",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_06861",
+        "source_id": "5046.json",
+        "input": "Statement:\nSay in November 2010, voters overwhelmingly supported the idea of creating a (library) district.\n\nSubject:\ntaxes\n\nSpeaker:\njudy-shiprack-diane-mckeel\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na guest column",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Say in November 2010, voters overwhelmingly supported the idea of creating a (library) district.",
+          "subject": "taxes",
+          "speaker": "judy-shiprack-diane-mckeel",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a guest column"
+        }
+      },
+      {
+        "id": "liar_05892",
+        "source_id": "13274.json",
+        "input": "Statement:\nSays Marco Rubio opposes immigration reform. Worse, Rubio supports Donald Trump. His plan would deport 800,000 children, destroying families.\n\nSubject:\nimmigration\n\nSpeaker:\npatrick-murphy\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na TV ad",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says Marco Rubio opposes immigration reform. Worse, Rubio supports Donald Trump. His plan would deport 800,000 children, destroying families.",
+          "subject": "immigration",
+          "speaker": "patrick-murphy",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a TV ad"
+        }
+      },
+      {
+        "id": "liar_03228",
+        "source_id": "13170.json",
+        "input": "Statement:\nThe New York Times writes this long story about Donald Trumps tax returns but didnt point out there was no wrongdoing until paragraph 18.\n\nSubject:\ncandidates-biography,taxes\n\nSpeaker:\nrudy-giuliani\n\nSpeaker job:\nAttorney\n\nState:\nNew York\n\nParty:\nrepublican\n\nContext:\nan interview on \"Meet the Press\"",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The New York Times writes this long story about Donald Trumps tax returns but didnt point out there was no wrongdoing until paragraph 18.",
+          "subject": "candidates-biography,taxes",
+          "speaker": "rudy-giuliani",
+          "speaker_job": "Attorney",
+          "state": "New York",
+          "party": "republican",
+          "context": "an interview on \"Meet the Press\""
+        }
+      },
+      {
+        "id": "liar_06962",
+        "source_id": "3069.json",
+        "input": "Statement:\nIn Wisconsin, 98 percent of all small businesses will qualify for income-tax relief under my plan, freeing them to expand and create jobs.\n\nSubject:\nsmall-business,taxes\n\nSpeaker:\nscott-walker\n\nSpeaker job:\nMilwaukee County Executive\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na news release",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "In Wisconsin, 98 percent of all small businesses will qualify for income-tax relief under my plan, freeing them to expand and create jobs.",
+          "subject": "small-business,taxes",
+          "speaker": "scott-walker",
+          "speaker_job": "Milwaukee County Executive",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_01763",
+        "source_id": "8908.json",
+        "input": "Statement:\nSays Rep. Renee Ellmers voted for the government shutdown 21 times.\n\nSubject:\ncongress,congressional-rules,health-care\n\nSpeaker:\nclay-aiken\n\nSpeaker job:\n\n\nState:\nNorth Carolina\n\nParty:\ndemocrat\n\nContext:\na YouTube campaign announcement",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says Rep. Renee Ellmers voted for the government shutdown 21 times.",
+          "subject": "congress,congressional-rules,health-care",
+          "speaker": "clay-aiken",
+          "speaker_job": "",
+          "state": "North Carolina",
+          "party": "democrat",
+          "context": "a YouTube campaign announcement"
+        }
+      },
+      {
+        "id": "liar_07082",
+        "source_id": "6734.json",
+        "input": "Statement:\nPresident Obama has no plan to reduce the deficit, let alone pay down the debt.\n\nSubject:\ndebt,deficit,federal-budget\n\nSpeaker:\nconnie-mack\n\nSpeaker job:\nU.S. representative from Fort Myers\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\nan op-ed in 'The Hill'",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "President Obama has no plan to reduce the deficit, let alone pay down the debt.",
+          "subject": "debt,deficit,federal-budget",
+          "speaker": "connie-mack",
+          "speaker_job": "U.S. representative from Fort Myers",
+          "state": "Florida",
+          "party": "republican",
+          "context": "an op-ed in 'The Hill'"
+        }
+      },
+      {
+        "id": "liar_09781",
+        "source_id": "4684.json",
+        "input": "Statement:\nSays adding toll lanes on I-95 in Broward County improved rush-hour traffic for non-toll lanes from 25 mph to 45 mph.\n\nSubject:\ntransportation\n\nSpeaker:\nrick-scott\n\nSpeaker job:\nGovernor\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\na radio show interview",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says adding toll lanes on I-95 in Broward County improved rush-hour traffic for non-toll lanes from 25 mph to 45 mph.",
+          "subject": "transportation",
+          "speaker": "rick-scott",
+          "speaker_job": "Governor",
+          "state": "Florida",
+          "party": "republican",
+          "context": "a radio show interview"
+        }
+      },
+      {
+        "id": "liar_08077",
+        "source_id": "2463.json",
+        "input": "Statement:\nA $300 million stimulus allocation to Wisconsin has led to the creation of tens of thousands of jobs in every corner of this state.\n\nSubject:\njob-accomplishments,stimulus\n\nSpeaker:\ntom-nelson\n\nSpeaker job:\n\n\nState:\nWisconsin\n\nParty:\ndemocrat\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "A $300 million stimulus allocation to Wisconsin has led to the creation of tens of thousands of jobs in every corner of this state.",
+          "subject": "job-accomplishments,stimulus",
+          "speaker": "tom-nelson",
+          "speaker_job": "",
+          "state": "Wisconsin",
+          "party": "democrat",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_03015",
+        "source_id": "10795.json",
+        "input": "Statement:\nSays the Clintons burst through their own self-pronounced guidelines by acceptingforeign donations.There is a clip of Bill Clinton saying were not going to take foreign donations.\n\nSubject:\nethics\n\nSpeaker:\njoe-scarborough\n\nSpeaker job:\nHost of a morning show on MSNBC\n\nState:\n\n\nParty:\nnone\n\nContext:\na broadcast of MSNBC's \"Morning Joe\"",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Says the Clintons burst through their own self-pronounced guidelines by acceptingforeign donations.There is a clip of Bill Clinton saying were not going to take foreign donations.",
+          "subject": "ethics",
+          "speaker": "joe-scarborough",
+          "speaker_job": "Host of a morning show on MSNBC",
+          "state": "",
+          "party": "none",
+          "context": "a broadcast of MSNBC's \"Morning Joe\""
+        }
+      },
+      {
+        "id": "liar_05339",
+        "source_id": "2572.json",
+        "input": "Statement:\nShows in a television ad that police took evidence fromSolantic, Rick Scotts new health care company, after allegations emerged that the company was engaging in fraud.\n\nSubject:\nhealth-care,legal-issues,message-machine\n\nSpeaker:\nflorida-democratic-party\n\nSpeaker job:\n\n\nState:\nFlorida\n\nParty:\ndemocrat\n\nContext:\na TV ad.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Shows in a television ad that police took evidence fromSolantic, Rick Scotts new health care company, after allegations emerged that the company was engaging in fraud.",
+          "subject": "health-care,legal-issues,message-machine",
+          "speaker": "florida-democratic-party",
+          "speaker_job": "",
+          "state": "Florida",
+          "party": "democrat",
+          "context": "a TV ad."
+        }
+      },
+      {
+        "id": "liar_06741",
+        "source_id": "4228.json",
+        "input": "Statement:\nThere was a loss of eight million jobs during the Bush eight years.\n\nSubject:\neconomy,history,jobs\n\nSpeaker:\nharry-reid\n\nSpeaker job:\nSenate Democratic Leader\n\nState:\nNevada\n\nParty:\ndemocrat\n\nContext:\na Senate floor speech",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "There was a loss of eight million jobs during the Bush eight years.",
+          "subject": "economy,history,jobs",
+          "speaker": "harry-reid",
+          "speaker_job": "Senate Democratic Leader",
+          "state": "Nevada",
+          "party": "democrat",
+          "context": "a Senate floor speech"
+        }
+      },
+      {
+        "id": "liar_05674",
+        "source_id": "13327.json",
+        "input": "Statement:\nSays he and his running mate are the only candidates that do believe in free trade.\n\nSubject:\neconomy,trade\n\nSpeaker:\ngary-johnson\n\nSpeaker job:\nPresidential candidate\n\nState:\nNew Mexico\n\nParty:\nlibertarian\n\nContext:\na campaign appearance",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says he and his running mate are the only candidates that do believe in free trade.",
+          "subject": "economy,trade",
+          "speaker": "gary-johnson",
+          "speaker_job": "Presidential candidate",
+          "state": "New Mexico",
+          "party": "libertarian",
+          "context": "a campaign appearance"
+        }
+      },
+      {
+        "id": "liar_09155",
+        "source_id": "8715.json",
+        "input": "Statement:\n(The farm bill) has aprovision that would in many ways reduce the deficit.\n\nSubject:\nagriculture,deficit\n\nSpeaker:\ndonna-brazile\n\nSpeaker job:\nPolitical commentator\n\nState:\nWashington, D.C.\n\nParty:\ndemocrat\n\nContext:\na discussion on CNN's \"State of the Union\"",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "(The farm bill) has aprovision that would in many ways reduce the deficit.",
+          "subject": "agriculture,deficit",
+          "speaker": "donna-brazile",
+          "speaker_job": "Political commentator",
+          "state": "Washington, D.C.",
+          "party": "democrat",
+          "context": "a discussion on CNN's \"State of the Union\""
+        }
+      },
+      {
+        "id": "liar_08474",
+        "source_id": "567.json",
+        "input": "Statement:\nSays Obama flip-flopped on warrantless wiretapping.\n\nSubject:\nterrorism\n\nSpeaker:\njohn-mccain\n\nSpeaker job:\nU.S. senator\n\nState:\nArizona\n\nParty:\nrepublican\n\nContext:\na news release from McCain spokesman Tucker Bounds ",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Says Obama flip-flopped on warrantless wiretapping.",
+          "subject": "terrorism",
+          "speaker": "john-mccain",
+          "speaker_job": "U.S. senator",
+          "state": "Arizona",
+          "party": "republican",
+          "context": "a news release from McCain spokesman Tucker Bounds "
+        }
+      },
+      {
+        "id": "liar_08516",
+        "source_id": "10462.json",
+        "input": "Statement:\nDid you know under President Obama family health care premiums have increased $4,154 on the average?\n\nSubject:\nhealth-care\n\nSpeaker:\nbarbara-comstock\n\nSpeaker job:\nState delegate\n\nState:\nVirginia\n\nParty:\nrepublican\n\nContext:\na tweet.",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Did you know under President Obama family health care premiums have increased $4,154 on the average?",
+          "subject": "health-care",
+          "speaker": "barbara-comstock",
+          "speaker_job": "State delegate",
+          "state": "Virginia",
+          "party": "republican",
+          "context": "a tweet."
+        }
+      },
+      {
+        "id": "liar_09768",
+        "source_id": "6250.json",
+        "input": "Statement:\nWe are not producing jobs. We created 80,000 jobs last month. We dont talk about the jobs that we lost. The net of it all is that we lost jobs.\n\nSubject:\neconomy,jobs,taxes\n\nSpeaker:\njoseph-kyrillos\n\nSpeaker job:\nState Senator\n\nState:\nNew Jersey\n\nParty:\nrepublican\n\nContext:\nan interview on WNYC’s The Brian Lehrer Show",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "We are not producing jobs. We created 80,000 jobs last month. We dont talk about the jobs that we lost. The net of it all is that we lost jobs.",
+          "subject": "economy,jobs,taxes",
+          "speaker": "joseph-kyrillos",
+          "speaker_job": "State Senator",
+          "state": "New Jersey",
+          "party": "republican",
+          "context": "an interview on WNYC’s The Brian Lehrer Show"
+        }
+      },
+      {
+        "id": "liar_00361",
+        "source_id": "1693.json",
+        "input": "Statement:\nCell phone numbers go public this month.\n\nSubject:\nconsumer-safety\n\nSpeaker:\nken-legler\n\nSpeaker job:\nState House representative\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\nFacebook and Twitter posts",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Cell phone numbers go public this month.",
+          "subject": "consumer-safety",
+          "speaker": "ken-legler",
+          "speaker_job": "State House representative",
+          "state": "Texas",
+          "party": "republican",
+          "context": "Facebook and Twitter posts"
+        }
+      },
+      {
+        "id": "liar_00313",
+        "source_id": "2011.json",
+        "input": "Statement:\nThere are mechanisms in place to shut down the Internet privately.\n\nSubject:\ninfrastructure\n\nSpeaker:\nandrew-napolitano\n\nSpeaker job:\njudge\n\nState:\n\n\nParty:\nrepublican\n\nContext:\ncomments on the 'Glenn Beck' show",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "There are mechanisms in place to shut down the Internet privately.",
+          "subject": "infrastructure",
+          "speaker": "andrew-napolitano",
+          "speaker_job": "judge",
+          "state": "",
+          "party": "republican",
+          "context": "comments on the 'Glenn Beck' show"
+        }
+      },
+      {
+        "id": "liar_02298",
+        "source_id": "11251.json",
+        "input": "Statement:\nI was one of the few, very few, who voted `no on the Iran deal.\n\nSubject:\ncongress,congressional-rules,nuclear,voting-record\n\nSpeaker:\ndave-brat\n\nSpeaker job:\nCollege professor\n\nState:\nVirginia\n\nParty:\nrepublican\n\nContext:\na speech.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "I was one of the few, very few, who voted `no on the Iran deal.",
+          "subject": "congress,congressional-rules,nuclear,voting-record",
+          "speaker": "dave-brat",
+          "speaker_job": "College professor",
+          "state": "Virginia",
+          "party": "republican",
+          "context": "a speech."
+        }
+      },
+      {
+        "id": "liar_06823",
+        "source_id": "4285.json",
+        "input": "Statement:\nPresident Obama and Democrats spending addiction has driven our national debt to historic proportions, maxed out our national credit card and has now led to the Democrat Downgrade of our countrys AAA credit rating.\n\nSubject:\nfederal-budget\n\nSpeaker:\nkevin-dewine\n\nSpeaker job:\nChairman of the Ohio Republican Party\n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\na news release",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "President Obama and Democrats spending addiction has driven our national debt to historic proportions, maxed out our national credit card and has now led to the Democrat Downgrade of our countrys AAA credit rating.",
+          "subject": "federal-budget",
+          "speaker": "kevin-dewine",
+          "speaker_job": "Chairman of the Ohio Republican Party",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "a news release"
+        }
+      },
+      {
+        "id": "liar_06995",
+        "source_id": "7428.json",
+        "input": "Statement:\nIf the sequester hits, hundreds of thousands of Americans will lose access to primary care and preventive care like flu vaccinations and cancer screenings.\n\nSubject:\nchildren,federal-budget,health-care,public-health\n\nSpeaker:\nbarack-obama\n\nSpeaker job:\nPresident\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\na speech in Washington, D.C.",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "If the sequester hits, hundreds of thousands of Americans will lose access to primary care and preventive care like flu vaccinations and cancer screenings.",
+          "subject": "children,federal-budget,health-care,public-health",
+          "speaker": "barack-obama",
+          "speaker_job": "President",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "a speech in Washington, D.C."
+        }
+      },
+      {
+        "id": "liar_05564",
+        "source_id": "7443.json",
+        "input": "Statement:\nKewpie burgers are delicious. An Ohio institution. And theyll cost less thanks to John Kasichs tax cut.\n\nSubject:\nfood-safety,state-budget,taxes\n\nSpeaker:\nohio-republican-party\n\nSpeaker job:\n\n\nState:\nOhio\n\nParty:\nrepublican\n\nContext:\na Tweet",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Kewpie burgers are delicious. An Ohio institution. And theyll cost less thanks to John Kasichs tax cut.",
+          "subject": "food-safety,state-budget,taxes",
+          "speaker": "ohio-republican-party",
+          "speaker_job": "",
+          "state": "Ohio",
+          "party": "republican",
+          "context": "a Tweet"
+        }
+      },
+      {
+        "id": "liar_02454",
+        "source_id": "5540.json",
+        "input": "Statement:\nSays there have been well over 54 million abortions since 1973.\n\nSubject:\nabortion,supreme-court,women\n\nSpeaker:\nchris-smith\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nrepublican\n\nContext:\na speech on the House floor",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says there have been well over 54 million abortions since 1973.",
+          "subject": "abortion,supreme-court,women",
+          "speaker": "chris-smith",
+          "speaker_job": "",
+          "state": "",
+          "party": "republican",
+          "context": "a speech on the House floor"
+        }
+      },
+      {
+        "id": "liar_07004",
+        "source_id": "12739.json",
+        "input": "Statement:\nEvery single strawberry that is served to Members of Congress will have passed through the rough hands of an undocumented immigrant.\n\nSubject:\nagriculture,immigration,jobs,labor\n\nSpeaker:\nluis-gutierrez\n\nSpeaker job:\nU.S. House of Representatives\n\nState:\nIllinois\n\nParty:\ndemocrat\n\nContext:\nin a speech",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Every single strawberry that is served to Members of Congress will have passed through the rough hands of an undocumented immigrant.",
+          "subject": "agriculture,immigration,jobs,labor",
+          "speaker": "luis-gutierrez",
+          "speaker_job": "U.S. House of Representatives",
+          "state": "Illinois",
+          "party": "democrat",
+          "context": "in a speech"
+        }
+      },
+      {
+        "id": "liar_06020",
+        "source_id": "6819.json",
+        "input": "Statement:\nOne of the first states in the union to pass a voter ID bill was Rhode Island, 85 percent Democratic legislature.\n\nSubject:\nelections,pundits\n\nSpeaker:\nann-coulter\n\nSpeaker job:\nColumnist and author\n\nState:\nNew York\n\nParty:\nrepublican\n\nContext:\na TV show appearance",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "One of the first states in the union to pass a voter ID bill was Rhode Island, 85 percent Democratic legislature.",
+          "subject": "elections,pundits",
+          "speaker": "ann-coulter",
+          "speaker_job": "Columnist and author",
+          "state": "New York",
+          "party": "republican",
+          "context": "a TV show appearance"
+        }
+      },
+      {
+        "id": "liar_01345",
+        "source_id": "10745.json",
+        "input": "Statement:\nThe fastest-growing part of the Pentagons budget are health care expenses.\n\nSubject:\nhealth-care,military\n\nSpeaker:\nevan-bayh\n\nSpeaker job:\nformer governor and senator\n\nState:\nIndiana\n\nParty:\ndemocrat\n\nContext:\nan interview in Concord, N.H.",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "The fastest-growing part of the Pentagons budget are health care expenses.",
+          "subject": "health-care,military",
+          "speaker": "evan-bayh",
+          "speaker_job": "former governor and senator",
+          "state": "Indiana",
+          "party": "democrat",
+          "context": "an interview in Concord, N.H."
+        }
+      },
+      {
+        "id": "liar_06850",
+        "source_id": "8028.json",
+        "input": "Statement:\nSays excise taxes are...disproportionately burdening middle- and lower-income consumers.\n\nSubject:\ntaxes\n\nSpeaker:\ndavid-sutton\n\nSpeaker job:\nAltria spokesman\n\nState:\n\n\nParty:\nnone\n\nContext:\nan interview",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Says excise taxes are...disproportionately burdening middle- and lower-income consumers.",
+          "subject": "taxes",
+          "speaker": "david-sutton",
+          "speaker_job": "Altria spokesman",
+          "state": "",
+          "party": "none",
+          "context": "an interview"
+        }
+      },
+      {
+        "id": "liar_00408",
+        "source_id": "8491.json",
+        "input": "Statement:\nCongress is bewildered at the scope and reach of our spying apparatus but in 2008 and 2012 explicitly rejected an amendment calling for more disclosure.\n\nSubject:\nforeign-policy,pundits,terrorism\n\nSpeaker:\njon-stewart\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nin comments on Comedy Central's \"The Daily Show\"",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Congress is bewildered at the scope and reach of our spying apparatus but in 2008 and 2012 explicitly rejected an amendment calling for more disclosure.",
+          "subject": "foreign-policy,pundits,terrorism",
+          "speaker": "jon-stewart",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "in comments on Comedy Central's \"The Daily Show\""
+        }
+      },
+      {
+        "id": "liar_00526",
+        "source_id": "2469.json",
+        "input": "Statement:\nSays Zack Space voted for budgets and debt, energy taxes and the stimulus, and we still lost more than 2.5 million jobs.\n\nSubject:\neconomy,federal-budget,message-machine,stimulus,taxes,voting-record\n\nSpeaker:\namericans-job-security\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na campaign ad",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says Zack Space voted for budgets and debt, energy taxes and the stimulus, and we still lost more than 2.5 million jobs.",
+          "subject": "economy,federal-budget,message-machine,stimulus,taxes,voting-record",
+          "speaker": "americans-job-security",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a campaign ad"
+        }
+      },
+      {
+        "id": "liar_08893",
+        "source_id": "7117.json",
+        "input": "Statement:\nThe error rates for the Fulton County elections department are well below the average.\n\nSubject:\nelections\n\nSpeaker:\nemma-darnell\n\nSpeaker job:\nFulton County Commissioner\n\nState:\nGeorgia\n\nParty:\ndemocrat\n\nContext:\na meeting",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "The error rates for the Fulton County elections department are well below the average.",
+          "subject": "elections",
+          "speaker": "emma-darnell",
+          "speaker_job": "Fulton County Commissioner",
+          "state": "Georgia",
+          "party": "democrat",
+          "context": "a meeting"
+        }
+      },
+      {
+        "id": "liar_09946",
+        "source_id": "7238.json",
+        "input": "Statement:\nThe fiscal cliff deal ultimately raised taxes.\n\nSubject:\nfederal-budget,taxes\n\nSpeaker:\ntom-price\n\nSpeaker job:\nCongressman\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The fiscal cliff deal ultimately raised taxes.",
+          "subject": "federal-budget,taxes",
+          "speaker": "tom-price",
+          "speaker_job": "Congressman",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_08115",
+        "source_id": "2575.json",
+        "input": "Statement:\nHouston suffered $1.7 billion in operating losses under Mayor Bill White.\n\nSubject:\neconomy,government-efficiency,message-machine,taxes\n\nSpeaker:\nrick-perry\n\nSpeaker job:\nGovernor\n\nState:\nTexas\n\nParty:\nrepublican\n\nContext:\na television ad",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Houston suffered $1.7 billion in operating losses under Mayor Bill White.",
+          "subject": "economy,government-efficiency,message-machine,taxes",
+          "speaker": "rick-perry",
+          "speaker_job": "Governor",
+          "state": "Texas",
+          "party": "republican",
+          "context": "a television ad"
+        }
+      },
+      {
+        "id": "liar_07980",
+        "source_id": "13206.json",
+        "input": "Statement:\nAs a result of Chris Sununus vote against a Planned Parenthood contract, nearly 3,000 fewer women and families statewide accessed health care for birth control, cancer screenings and annual exams.\n\nSubject:\nabortion,health-care,voting-record\n\nSpeaker:\ncolin-van-ostern\n\nSpeaker job:\nExecutive Councilor\n\nState:\nNew Hampshire\n\nParty:\ndemocrat\n\nContext:\na speech in Manchester, N.H.",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "As a result of Chris Sununus vote against a Planned Parenthood contract, nearly 3,000 fewer women and families statewide accessed health care for birth control, cancer screenings and annual exams.",
+          "subject": "abortion,health-care,voting-record",
+          "speaker": "colin-van-ostern",
+          "speaker_job": "Executive Councilor",
+          "state": "New Hampshire",
+          "party": "democrat",
+          "context": "a speech in Manchester, N.H."
+        }
+      },
+      {
+        "id": "liar_06785",
+        "source_id": "3082.json",
+        "input": "Statement:\n92 percent of President Barack Obamas administration has never worked outside government.\n\nSubject:\ncandidates-biography,economy,job-accomplishments\n\nSpeaker:\nsteve-southerland\n\nSpeaker job:\nU.S. Representative, Florida District 2\n\nState:\nFlorida\n\nParty:\nrepublican\n\nContext:\ncomments at the Liberty County Chamber of Commerce annual dinner.",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "92 percent of President Barack Obamas administration has never worked outside government.",
+          "subject": "candidates-biography,economy,job-accomplishments",
+          "speaker": "steve-southerland",
+          "speaker_job": "U.S. Representative, Florida District 2",
+          "state": "Florida",
+          "party": "republican",
+          "context": "comments at the Liberty County Chamber of Commerce annual dinner."
+        }
+      },
+      {
+        "id": "liar_08995",
+        "source_id": "4063.json",
+        "input": "Statement:\nSays car insurance rates have decreased since about a decade ago because of market-based solutions that attracted more auto insurers to New Jersey.\n\nSubject:\ntransportation\n\nSpeaker:\nchris-christie\n\nSpeaker job:\nGovernor of New Jersey\n\nState:\nNew Jersey\n\nParty:\nrepublican\n\nContext:\nan \"On the Line\" interview with Steve Adubato",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Says car insurance rates have decreased since about a decade ago because of market-based solutions that attracted more auto insurers to New Jersey.",
+          "subject": "transportation",
+          "speaker": "chris-christie",
+          "speaker_job": "Governor of New Jersey",
+          "state": "New Jersey",
+          "party": "republican",
+          "context": "an \"On the Line\" interview with Steve Adubato"
+        }
+      },
+      {
+        "id": "liar_04655",
+        "source_id": "10728.json",
+        "input": "Statement:\nSays Howard Zinn, an anti-American Marxist, wrote the most popular textbook thats taught in our high schools in America.\n\nSubject:\neducation,history\n\nSpeaker:\nrick-santorum\n\nSpeaker job:\n\n\nState:\nPennsylvania\n\nParty:\nrepublican\n\nContext:\na speech to the NRA",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Says Howard Zinn, an anti-American Marxist, wrote the most popular textbook thats taught in our high schools in America.",
+          "subject": "education,history",
+          "speaker": "rick-santorum",
+          "speaker_job": "",
+          "state": "Pennsylvania",
+          "party": "republican",
+          "context": "a speech to the NRA"
+        }
+      },
+      {
+        "id": "liar_01252",
+        "source_id": "8828.json",
+        "input": "Statement:\nOver half of the young people in medical, dental and law schools are women.\n\nSubject:\neducation,health-care,legal-issues,women\n\nSpeaker:\nrand-paul\n\nSpeaker job:\nCandidate for U.S. Senate and physician\n\nState:\nKentucky\n\nParty:\nrepublican\n\nContext:\nan interview with CNN",
+        "expected_outputs": [
+          "false"
+        ],
+        "metadata": {
+          "statement": "Over half of the young people in medical, dental and law schools are women.",
+          "subject": "education,health-care,legal-issues,women",
+          "speaker": "rand-paul",
+          "speaker_job": "Candidate for U.S. Senate and physician",
+          "state": "Kentucky",
+          "party": "republican",
+          "context": "an interview with CNN"
+        }
+      },
+      {
+        "id": "liar_09711",
+        "source_id": "11537.json",
+        "input": "Statement:\nOur state has no major rivers to produce big hydropower.\n\nSubject:\nenergy,nuclear,water\n\nSpeaker:\ntim-echols\n\nSpeaker job:\nPublic Service Commissioner\n\nState:\nGeorgia\n\nParty:\nrepublican\n\nContext:\nan opinion piece in a trade magazine",
+        "expected_outputs": [
+          "mostly-true"
+        ],
+        "metadata": {
+          "statement": "Our state has no major rivers to produce big hydropower.",
+          "subject": "energy,nuclear,water",
+          "speaker": "tim-echols",
+          "speaker_job": "Public Service Commissioner",
+          "state": "Georgia",
+          "party": "republican",
+          "context": "an opinion piece in a trade magazine"
+        }
+      },
+      {
+        "id": "liar_05064",
+        "source_id": "2834.json",
+        "input": "Statement:\nSmall businesses that have $250,000 in gross sales for the business. Theyre the ones that are looking at massive tax increases.\n\nSubject:\nsmall-business,taxes\n\nSpeaker:\nmichele-bachmann\n\nSpeaker job:\nCongresswoman\n\nState:\nMinnesota\n\nParty:\nrepublican\n\nContext:\nan interview on \"Good Morning America.\"",
+        "expected_outputs": [
+          "pants-fire"
+        ],
+        "metadata": {
+          "statement": "Small businesses that have $250,000 in gross sales for the business. Theyre the ones that are looking at massive tax increases.",
+          "subject": "small-business,taxes",
+          "speaker": "michele-bachmann",
+          "speaker_job": "Congresswoman",
+          "state": "Minnesota",
+          "party": "republican",
+          "context": "an interview on \"Good Morning America.\""
+        }
+      },
+      {
+        "id": "liar_07314",
+        "source_id": "11723.json",
+        "input": "Statement:\nGuantanamo has never been a key component of ISIS or al-Qaida propaganda.\n\nSubject:\nterrorism\n\nSpeaker:\nstephen-hayes\n\nSpeaker job:\nSenior writer for the Weekly Standard\n\nState:\n\n\nParty:\nnone\n\nContext:\non \"Fox News Sunday\"",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Guantanamo has never been a key component of ISIS or al-Qaida propaganda.",
+          "subject": "terrorism",
+          "speaker": "stephen-hayes",
+          "speaker_job": "Senior writer for the Weekly Standard",
+          "state": "",
+          "party": "none",
+          "context": "on \"Fox News Sunday\""
+        }
+      },
+      {
+        "id": "liar_03610",
+        "source_id": "10647.json",
+        "input": "Statement:\nWhales live as long at SeaWorld as they do in the wild.\n\nSubject:\nanimals,science,tourism\n\nSpeaker:\nseaworld\n\nSpeaker job:\nTheme park company\n\nState:\nFlorida\n\nParty:\nnone\n\nContext:\nan ad",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Whales live as long at SeaWorld as they do in the wild.",
+          "subject": "animals,science,tourism",
+          "speaker": "seaworld",
+          "speaker_job": "Theme park company",
+          "state": "Florida",
+          "party": "none",
+          "context": "an ad"
+        }
+      },
+      {
+        "id": "liar_09791",
+        "source_id": "695.json",
+        "input": "Statement:\nSenate Majority Leader Harry Reid \"said, quote, 'I can't stand John McCain.' \"\n\nSubject:\ncandidates-biography\n\nSpeaker:\nsarah-palin\n\nSpeaker job:\n\n\nState:\nAlaska\n\nParty:\nrepublican\n\nContext:\na speech at the Republican National Convention",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Senate Majority Leader Harry Reid \"said, quote, 'I can't stand John McCain.' \"",
+          "subject": "candidates-biography",
+          "speaker": "sarah-palin",
+          "speaker_job": "",
+          "state": "Alaska",
+          "party": "republican",
+          "context": "a speech at the Republican National Convention"
+        }
+      },
+      {
+        "id": "liar_05546",
+        "source_id": "13083.json",
+        "input": "Statement:\nTexas has lost the most law enforcement officers in the line of duty of any state in America.\n\nSubject:\ncrime,criminal-justice,history\n\nSpeaker:\ncharley-wilkison\n\nSpeaker job:\nexecutive director, Combined Law Enforcement Associations of Texas (CLEAT)\n\nState:\nTexas\n\nParty:\nnone\n\nContext:\nan interview with Laura Rice for the Texas Standard",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Texas has lost the most law enforcement officers in the line of duty of any state in America.",
+          "subject": "crime,criminal-justice,history",
+          "speaker": "charley-wilkison",
+          "speaker_job": "executive director, Combined Law Enforcement Associations of Texas (CLEAT)",
+          "state": "Texas",
+          "party": "none",
+          "context": "an interview with Laura Rice for the Texas Standard"
+        }
+      },
+      {
+        "id": "liar_04537",
+        "source_id": "8856.json",
+        "input": "Statement:\nSays Marshawn Lynch is second all-time in terms of average yards per rush only to Terrell Davis.\n\nSubject:\nsports\n\nSpeaker:\njoel-klatt\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\na Fox Sports panel about Super Bowl XLVIII",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "Says Marshawn Lynch is second all-time in terms of average yards per rush only to Terrell Davis.",
+          "subject": "sports",
+          "speaker": "joel-klatt",
+          "speaker_job": "",
+          "state": "",
+          "party": "none",
+          "context": "a Fox Sports panel about Super Bowl XLVIII"
+        }
+      },
+      {
+        "id": "liar_02300",
+        "source_id": "9019.json",
+        "input": "Statement:\nOregon has never before tried to create a land-use plan for what it should look like for 50 years.\n\nSubject:\nurban\n\nSpeaker:\nstate-rep-brian-clem-d-salem\n\nSpeaker job:\nState representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na newspaper story",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Oregon has never before tried to create a land-use plan for what it should look like for 50 years.",
+          "subject": "urban",
+          "speaker": "state-rep-brian-clem-d-salem",
+          "speaker_job": "State representative",
+          "state": "Oregon",
+          "party": "democrat",
+          "context": "a newspaper story"
+        }
+      },
+      {
+        "id": "liar_00280",
+        "source_id": "12497.json",
+        "input": "Statement:\nSince 1978, college tuition nationwide has gone up something like four times the rate of inflation.\n\nSubject:\neducation\n\nSpeaker:\nscott-walker\n\nSpeaker job:\nMilwaukee County Executive\n\nState:\nWisconsin\n\nParty:\nrepublican\n\nContext:\na radio interview",
+        "expected_outputs": [
+          "true"
+        ],
+        "metadata": {
+          "statement": "Since 1978, college tuition nationwide has gone up something like four times the rate of inflation.",
+          "subject": "education",
+          "speaker": "scott-walker",
+          "speaker_job": "Milwaukee County Executive",
+          "state": "Wisconsin",
+          "party": "republican",
+          "context": "a radio interview"
+        }
+      },
+      {
+        "id": "liar_05252",
+        "source_id": "3949.json",
+        "input": "Statement:\nDemocratic tax hikes led $70 billion of wealth to leave New Jersey between 2004 and 2008, and mainly relocate to Florida, North Carolina, Virginia and Pennsylvania.\n\nSubject:\ntaxes\n\nSpeaker:\nchris-christie\n\nSpeaker job:\nGovernor of New Jersey\n\nState:\nNew Jersey\n\nParty:\nrepublican\n\nContext:\na speech at Princeton University",
+        "expected_outputs": [
+          "barely-true"
+        ],
+        "metadata": {
+          "statement": "Democratic tax hikes led $70 billion of wealth to leave New Jersey between 2004 and 2008, and mainly relocate to Florida, North Carolina, Virginia and Pennsylvania.",
+          "subject": "taxes",
+          "speaker": "chris-christie",
+          "speaker_job": "Governor of New Jersey",
+          "state": "New Jersey",
+          "party": "republican",
+          "context": "a speech at Princeton University"
+        }
+      },
+      {
+        "id": "liar_06828",
+        "source_id": "9671.json",
+        "input": "Statement:\nThe best evidence is that you lose -- if you use marijuana as a teenager regularly -- eight IQ points.\n\nSubject:\nmarijuana\n\nSpeaker:\nruth-marcus\n\nSpeaker job:\nColumnist, Washington Post\n\nState:\n\n\nParty:\njournalist\n\nContext:\ncomments on NBC's \"Meet the Press\"",
+        "expected_outputs": [
+          "half-true"
+        ],
+        "metadata": {
+          "statement": "The best evidence is that you lose -- if you use marijuana as a teenager regularly -- eight IQ points.",
+          "subject": "marijuana",
+          "speaker": "ruth-marcus",
+          "speaker_job": "Columnist, Washington Post",
+          "state": "",
+          "party": "journalist",
+          "context": "comments on NBC's \"Meet the Press\""
+        }
+      }
+    ]
+  }
+}

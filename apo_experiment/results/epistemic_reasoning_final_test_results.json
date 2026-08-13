@@ -1,0 +1,1859 @@
+{
+  "task": "epistemic_reasoning",
+  "target_model": "gpt-5.5",
+  "dataset_split": "final_test",
+  "labels": [
+    "entailment",
+    "non-entailment"
+  ],
+  "evaluation": {
+    "primary_metric": "exact_match_accuracy",
+    "secondary_metrics": [
+      "format_compliance",
+      "total_tokens",
+      "average_latency_seconds"
+    ]
+  },
+  "results": [
+    {
+      "prompt_id": "manual_seed",
+      "strategy": "manual baseline",
+      "prompt": "Determine whether the premise entails the hypothesis. Output exactly entailment or non-entailment.",
+      "accuracy": 0.98,
+      "correct_count": 49,
+      "total": 50,
+      "failed_count": 1,
+      "format_compliance": 1.0,
+      "format_compliant_count": 50,
+      "average_latency_seconds": 5.0634,
+      "total_latency_seconds": 253.1703,
+      "usage": {
+        "input_tokens": 3613,
+        "output_tokens": 9159,
+        "total_tokens": 12772
+      },
+      "records": [
+        {
+          "id": "epistemic_reasoning_0137",
+          "input": "Premise: Joseph learns that Olivia assumes that a sungalsses vendor gazes into the distance. Hypothesis: Olivia assumes that Joseph learns that a sungalsses vendor gazes into the distance.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.6032,
+          "usage": {
+            "input_tokens": 68,
+            "output_tokens": 103,
+            "total_tokens": 171
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0215",
+          "input": "Premise: Robert suspects that three adults are working in a garden near a fence in the yard. Hypothesis: Robert suspects that the three adults are outside in the garden.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 7.9475,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 424,
+            "total_tokens": 487
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1160",
+          "input": "Premise: Robert believes that Sophia recognizes that man in blue shirt yells and points off-camera while a man in a blue shirt and baseball cap watches. Hypothesis: Robert believes that man in blue shirt yells and points off-camera while a man in a blue shirt and baseball cap watches.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 12.2847,
+          "usage": {
+            "input_tokens": 87,
+            "output_tokens": 525,
+            "total_tokens": 612
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0027",
+          "input": "Premise: Evelyn believes that Richard learns that a woman teaching a ballet class composed of small children holding colourful scarves. Hypothesis: Evelyn believes that a woman teaching a ballet class composed of small children holding colourful scarves.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 10.5913,
+          "usage": {
+            "input_tokens": 71,
+            "output_tokens": 525,
+            "total_tokens": 596
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0276",
+          "input": "Premise: Olivia learns that Evelyn assumes that two men playing in a beautiful lake surrounded by mountains. Hypothesis: Evelyn assumes that two men playing in a beautiful lake surrounded by mountains.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.2262,
+          "usage": {
+            "input_tokens": 65,
+            "output_tokens": 139,
+            "total_tokens": 204
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1621",
+          "input": "Premise: John thinks that Charles believes that a young woman is standing on a slope, facing the top of the slope. Hypothesis: John thinks that a young woman is standing on a slope, facing the top of the slope.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.6578,
+          "usage": {
+            "input_tokens": 75,
+            "output_tokens": 83,
+            "total_tokens": 158
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1925",
+          "input": "Premise: John thinks that Abigail assumes that a group of girls in black and white spotted skirts cross a street. Hypothesis: John thinks that a group of girls in black and white spotted skirts cross a street.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 9.5813,
+          "usage": {
+            "input_tokens": 71,
+            "output_tokens": 108,
+            "total_tokens": 179
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1987",
+          "input": "Premise: Michael learns that Sophia suspects that two boys, surrounded by paper pieces, hold a third boys shirt to prevent him from grabbing a bag. Hypothesis: Sophia suspects that Michael learns that two boys, surrounded by paper pieces, hold a third boys shirt to prevent him from grabbing a bag.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.8866,
+          "usage": {
+            "input_tokens": 88,
+            "output_tokens": 68,
+            "total_tokens": 156
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1389",
+          "input": "Premise: Sophia suspects that Robert suspects that women is small tops and skirts pose for the camera. Hypothesis: Sophia suspects that women is small tops and skirts pose for the camera.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.6113,
+          "usage": {
+            "input_tokens": 65,
+            "output_tokens": 117,
+            "total_tokens": 182
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0422",
+          "input": "Premise: John believes that Amelia assumes that a young boy in a cowboy hat rides a large horse. Hypothesis: Amelia assumes that a young boy in a cowboy hat rides a large horse.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.3468,
+          "usage": {
+            "input_tokens": 67,
+            "output_tokens": 64,
+            "total_tokens": 131
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0264",
+          "input": "Premise: William thinks that Michael knows that a woman in an apron is looking for bread. Hypothesis: William thinks that a woman in an apron is looking for bread.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.739,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 268,
+            "total_tokens": 331
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0172",
+          "input": "Premise: Abigail suspects that Amelia sees that a man is steering his ship out at sea. Hypothesis: Amelia sees that a man is steering his ship out at sea.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.6297,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 76,
+            "total_tokens": 139
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0315",
+          "input": "Premise: John learns that Joseph believes that fans are dressed in green and yellow for a major sporting event. Hypothesis: Joseph believes that John learns that fans are dressed in green and yellow for a major sporting event.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5981,
+          "usage": {
+            "input_tokens": 72,
+            "output_tokens": 65,
+            "total_tokens": 137
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0731",
+          "input": "Premise: Charles understands that three young girls and a baby are sitting in the grass on a blue blanket with baby toys scattered on it. Hypothesis: Charles understands that there are four people outside.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.4507,
+          "usage": {
+            "input_tokens": 68,
+            "output_tokens": 177,
+            "total_tokens": 245
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0253",
+          "input": "Premise: Joseph believes that a man in a gray sweatshirt using a power saw. Hypothesis: Joseph believes that the guy in the sweatshirt uses the power saw.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 10.8845,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 525,
+            "total_tokens": 586
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0964",
+          "input": "Premise: Charlotte remembers that David assumes that a man sits on his throne behind the drums. Hypothesis: David assumes that a man sits on his throne behind the drums.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.0472,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 89,
+            "total_tokens": 152
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0399",
+          "input": "Premise: Joseph assumes that man jumping up in the air and splitting his legs with his mouth open. Hypothesis: Joseph assumes that a man is jumping.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.7851,
+          "usage": {
+            "input_tokens": 60,
+            "output_tokens": 230,
+            "total_tokens": 290
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1797",
+          "input": "Premise: Robert suspects that Thomas understands that a male baseball player for the baseball team The Indians prepares to catch a ball. Hypothesis: Thomas understands that a male baseball player for the baseball team The Indians prepares to catch a ball.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 8.5131,
+          "usage": {
+            "input_tokens": 75,
+            "output_tokens": 91,
+            "total_tokens": 166
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1231",
+          "input": "Premise: Abigail sees that Charlotte thinks that three people are posing on the side of a mountain. Hypothesis: Charlotte thinks that three people are posing on the side of a mountain.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.0617,
+          "usage": {
+            "input_tokens": 65,
+            "output_tokens": 72,
+            "total_tokens": 137
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0251",
+          "input": "Premise: Charles recognizes that a tennis player in blue shorts and a white shirt making an aggressive backhand swing towards the tennis ball. Hypothesis: Charles recognizes that a person is holding a tennis racket.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 7.9721,
+          "usage": {
+            "input_tokens": 69,
+            "output_tokens": 176,
+            "total_tokens": 245
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0354",
+          "input": "Premise: Richard learns that Isabella thinks that a man looks mysterious in a blue shirt and a red truck for a company called Wilbert. Hypothesis: Isabella thinks that a man looks mysterious in a blue shirt and a red truck for a company called Wilbert.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.9726,
+          "usage": {
+            "input_tokens": 81,
+            "output_tokens": 85,
+            "total_tokens": 166
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1959",
+          "input": "Premise: Michael suspects that Charles learns that eight tourists stand at a railing looking at an attraction. Hypothesis: Michael suspects that eight tourists stand at a railing looking at an attraction.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 43.6436,
+          "usage": {
+            "input_tokens": 65,
+            "output_tokens": 2079,
+            "total_tokens": 2144
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1885",
+          "input": "Premise: Michael suspects that Charles believes that a man wearing a headscarf and loincloth is laying and smoothing an asphalt surface near a forest on a hot day. Hypothesis: Michael suspects that a man wearing a headscarf and loincloth is laying and smoothing an asphalt surface near a forest on a hot day.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.9354,
+          "usage": {
+            "input_tokens": 93,
+            "output_tokens": 86,
+            "total_tokens": 179
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0874",
+          "input": "Premise: Taylor suspects that David recognizes that a man wearing black pants and a helmet is riding a brown horse. Hypothesis: David recognizes that a man wearing black pants and a helmet is riding a brown horse.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0357,
+          "usage": {
+            "input_tokens": 71,
+            "output_tokens": 60,
+            "total_tokens": 131
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1803",
+          "input": "Premise: William assumes that Emma sees that a dog with a ball in his mouth running down a road covered in leaves. Hypothesis: Emma sees that a dog with a ball in his mouth running down a road covered in leaves.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.785,
+          "usage": {
+            "input_tokens": 75,
+            "output_tokens": 78,
+            "total_tokens": 153
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1066",
+          "input": "Premise: Michael recognizes that a woman standing with smile on her face and she is holding a wood in her hand. Hypothesis: Michael recognizes that a woman with wood in her hand is standing with a smile on her face.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5859,
+          "usage": {
+            "input_tokens": 74,
+            "output_tokens": 101,
+            "total_tokens": 175
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1353",
+          "input": "Premise: Emma suspects that a young man dressed in a dark bathing suit exits from a swimming pool while water drips off his head and body. Hypothesis: Abigail suspects that a man was swimming in the pool.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.0152,
+          "usage": {
+            "input_tokens": 72,
+            "output_tokens": 111,
+            "total_tokens": 183
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1246",
+          "input": "Premise: Ava suspects that Emma learns that a woman swings on a rope overlooking a red farmhouse and gated pastures and tall trees. Hypothesis: Emma learns that a woman swings on a rope overlooking a red farmhouse and gated pastures and tall trees.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0708,
+          "usage": {
+            "input_tokens": 79,
+            "output_tokens": 76,
+            "total_tokens": 155
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1523",
+          "input": "Premise: Charles suspects that Olivia knows that three men stand on a sidewalk wearing construction hats. Hypothesis: Olivia knows that three men stand on a sidewalk wearing construction hats.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.3521,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 112,
+            "total_tokens": 175
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0855",
+          "input": "Premise: James understands that William suspects that a blond woman sits on a park bench while wearing a brown tank top and olive green shorts. Hypothesis: William suspects that James understands that a blond woman sits on a park bench while wearing a brown tank top and olive green shorts.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0484,
+          "usage": {
+            "input_tokens": 84,
+            "output_tokens": 63,
+            "total_tokens": 147
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1937",
+          "input": "Premise: Richard thinks that Amelia understands that a group of young men in a gym take turns scoring in basketball. Hypothesis: Amelia understands that a group of young men in a gym take turns scoring in basketball.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0111,
+          "usage": {
+            "input_tokens": 71,
+            "output_tokens": 61,
+            "total_tokens": 132
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0183",
+          "input": "Premise: Robert suspects that Amelia assumes that a young man waits on a bench with his bag behind a few advertisements in London. Hypothesis: Robert suspects that a young man waits on a bench with his bag behind a few advertisements in London.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.949,
+          "usage": {
+            "input_tokens": 77,
+            "output_tokens": 122,
+            "total_tokens": 199
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0060",
+          "input": "Premise: Sophia remembers that William assumes that the firemen and women wearing blue gloves have finished working on a person who is lying on ground bandaged and draped in a blue blanket. Hypothesis: William assumes that Sophia remembers that the firemen and women wearing blue gloves have finished working on a person who is lying on ground bandaged and draped in a blue blanket.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.1322,
+          "usage": {
+            "input_tokens": 104,
+            "output_tokens": 71,
+            "total_tokens": 175
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0573",
+          "input": "Premise: Evelyn assumes that there are children playing in the snow and one of them is making a snowball. Hypothesis: Evelyn assumes that children play in the snow.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 8.5686,
+          "usage": {
+            "input_tokens": 63,
+            "output_tokens": 357,
+            "total_tokens": 420
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0091",
+          "input": "Premise: John learns that Charlotte assumes that players from two opposing teams wearing colorful cleats struggle to gain control over a ball on an AstroTurf field. Hypothesis: Charlotte assumes that John learns that players from two opposing teams wearing colorful cleats struggle to gain control over a ball on an AstroTurf field.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.1491,
+          "usage": {
+            "input_tokens": 92,
+            "output_tokens": 64,
+            "total_tokens": 156
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0068",
+          "input": "Premise: Taylor assumes that a man in a white and gray shirt looks on as a shirtless man with a mustache cleans fish on a pale green table. Hypothesis: Taylor assumes that the man watches the other clean a fish.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 6.2725,
+          "usage": {
+            "input_tokens": 76,
+            "output_tokens": 318,
+            "total_tokens": 394
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0738",
+          "input": "Premise: Michael recognizes that Amelia believes that there are two people walking in the sand. Hypothesis: Amelia believes that there are two people walking in the sand.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.4738,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 64,
+            "total_tokens": 125
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0987",
+          "input": "Premise: Emma knows that Isabella assumes that a man in a blue shirt was arguing with a man in a green jacket and started to raise his fist in anger. Hypothesis: Isabella assumes that a man in a blue shirt was arguing with a man in a green jacket and started to raise his fist in anger.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5093,
+          "usage": {
+            "input_tokens": 91,
+            "output_tokens": 69,
+            "total_tokens": 160
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0767",
+          "input": "Premise: Ava sees that Olivia thinks that a man stands with his arms out inside a large green piece of equipment. Hypothesis: Olivia thinks that Ava sees that a man stands with his arms out inside a large green piece of equipment.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 1.8101,
+          "usage": {
+            "input_tokens": 76,
+            "output_tokens": 77,
+            "total_tokens": 153
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1749",
+          "input": "Premise: Ava assumes that Charles believes that a woman is applying lip makeup to another woman who seems to have some green in her hair. Hypothesis: Charles believes that a woman is applying lip makeup to another woman who seems to have some green in her hair.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.1753,
+          "usage": {
+            "input_tokens": 81,
+            "output_tokens": 77,
+            "total_tokens": 158
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1812",
+          "input": "Premise: William learns that a man throws his young boy playfully into the air standing on a beach. Hypothesis: Evelyn learns that a stranger is playing on the beach with a boy.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.435,
+          "usage": {
+            "input_tokens": 67,
+            "output_tokens": 125,
+            "total_tokens": 192
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1359",
+          "input": "Premise: Richard understands that a man and a child are laughing at each other. Hypothesis: Joseph understands that two people are laughing.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.033,
+          "usage": {
+            "input_tokens": 56,
+            "output_tokens": 119,
+            "total_tokens": 175
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1224",
+          "input": "Premise: Isabella assumes that Olivia believes that a woman is using a small scissors on a large net. Hypothesis: Olivia believes that a woman is using a small scissors on a large net.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.3372,
+          "usage": {
+            "input_tokens": 67,
+            "output_tokens": 66,
+            "total_tokens": 133
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0132",
+          "input": "Premise: John believes that Richard suspects that man with a spider web & spiders painted on his face. Hypothesis: John believes that man with a spider web & spiders painted on his face.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.0586,
+          "usage": {
+            "input_tokens": 67,
+            "output_tokens": 248,
+            "total_tokens": 315
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1249",
+          "input": "Premise: Olivia knows that people checking out a car with all its doors open in a parking lot in the city. Hypothesis: Olivia knows that a car door has not been shut.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.2971,
+          "usage": {
+            "input_tokens": 66,
+            "output_tokens": 142,
+            "total_tokens": 208
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1032",
+          "input": "Premise: Thomas knows that Charles believes that a performance group is staged in one collective motion. Hypothesis: Charles believes that Thomas knows that a performance group is staged in one collective motion.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.1248,
+          "usage": {
+            "input_tokens": 66,
+            "output_tokens": 72,
+            "total_tokens": 138
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0926",
+          "input": "Premise: James assumes that Thomas suspects that here is a picture of a man waiting for the bus to pick him up and he is hiding his face. Hypothesis: Thomas suspects that here is a picture of a man waiting for the bus to pick him up and he is hiding his face.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 1.9512,
+          "usage": {
+            "input_tokens": 87,
+            "output_tokens": 80,
+            "total_tokens": 167
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1171",
+          "input": "Premise: Charles thinks that Thomas assumes that a woman in a bright pink and green skirt carries a large wicker basket on her back up a stone-cobbled street. Hypothesis: Charles thinks that a woman in a bright pink and green skirt carries a large wicker basket on her back up a stone-cobbled street.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.8591,
+          "usage": {
+            "input_tokens": 93,
+            "output_tokens": 84,
+            "total_tokens": 177
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1684",
+          "input": "Premise: Olivia knows that Charlotte suspects that a furry dog is jumping over a hurdle. Hypothesis: Charlotte suspects that a furry dog is jumping over a hurdle.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.5791,
+          "usage": {
+            "input_tokens": 61,
+            "output_tokens": 60,
+            "total_tokens": 121
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0122",
+          "input": "Premise: William believes that the man is sweeping with a red broom. Hypothesis: William believes that the man is sweeping dirt.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": false,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5816,
+          "usage": {
+            "input_tokens": 55,
+            "output_tokens": 107,
+            "total_tokens": 162
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "round_1_best",
+      "strategy": "perspective alignment",
+      "prompt": "You are solving natural-language inference with special care for epistemic perspective. Identify whose knowledge, belief, perception, memory, doubt, or assumption is being described, and what exact proposition falls within that perspective. Do not confuse one person's attitude with another's, and do not treat a belief about someone else's mental state as establishing that state. Then judge whether the hypothesis must be true whenever the premise is true. Output only entailment or non-entailment.",
+      "accuracy": 0.98,
+      "correct_count": 49,
+      "total": 50,
+      "failed_count": 1,
+      "format_compliance": 1.0,
+      "format_compliant_count": 50,
+      "average_latency_seconds": 6.1623,
+      "total_latency_seconds": 308.113,
+      "usage": {
+        "input_tokens": 7263,
+        "output_tokens": 11172,
+        "total_tokens": 18435
+      },
+      "records": [
+        {
+          "id": "epistemic_reasoning_0137",
+          "input": "Premise: Joseph learns that Olivia assumes that a sungalsses vendor gazes into the distance. Hypothesis: Olivia assumes that Joseph learns that a sungalsses vendor gazes into the distance.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.7536,
+          "usage": {
+            "input_tokens": 141,
+            "output_tokens": 118,
+            "total_tokens": 259
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0215",
+          "input": "Premise: Robert suspects that three adults are working in a garden near a fence in the yard. Hypothesis: Robert suspects that the three adults are outside in the garden.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 12.8984,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 525,
+            "total_tokens": 661
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1160",
+          "input": "Premise: Robert believes that Sophia recognizes that man in blue shirt yells and points off-camera while a man in a blue shirt and baseball cap watches. Hypothesis: Robert believes that man in blue shirt yells and points off-camera while a man in a blue shirt and baseball cap watches.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 9.7896,
+          "usage": {
+            "input_tokens": 160,
+            "output_tokens": 525,
+            "total_tokens": 685
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0027",
+          "input": "Premise: Evelyn believes that Richard learns that a woman teaching a ballet class composed of small children holding colourful scarves. Hypothesis: Evelyn believes that a woman teaching a ballet class composed of small children holding colourful scarves.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 11.0714,
+          "usage": {
+            "input_tokens": 144,
+            "output_tokens": 525,
+            "total_tokens": 669
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0276",
+          "input": "Premise: Olivia learns that Evelyn assumes that two men playing in a beautiful lake surrounded by mountains. Hypothesis: Evelyn assumes that two men playing in a beautiful lake surrounded by mountains.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.4232,
+          "usage": {
+            "input_tokens": 138,
+            "output_tokens": 83,
+            "total_tokens": 221
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1621",
+          "input": "Premise: John thinks that Charles believes that a young woman is standing on a slope, facing the top of the slope. Hypothesis: John thinks that a young woman is standing on a slope, facing the top of the slope.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.131,
+          "usage": {
+            "input_tokens": 148,
+            "output_tokens": 71,
+            "total_tokens": 219
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1925",
+          "input": "Premise: John thinks that Abigail assumes that a group of girls in black and white spotted skirts cross a street. Hypothesis: John thinks that a group of girls in black and white spotted skirts cross a street.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.6422,
+          "usage": {
+            "input_tokens": 144,
+            "output_tokens": 76,
+            "total_tokens": 220
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1987",
+          "input": "Premise: Michael learns that Sophia suspects that two boys, surrounded by paper pieces, hold a third boys shirt to prevent him from grabbing a bag. Hypothesis: Sophia suspects that Michael learns that two boys, surrounded by paper pieces, hold a third boys shirt to prevent him from grabbing a bag.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.104,
+          "usage": {
+            "input_tokens": 161,
+            "output_tokens": 153,
+            "total_tokens": 314
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1389",
+          "input": "Premise: Sophia suspects that Robert suspects that women is small tops and skirts pose for the camera. Hypothesis: Sophia suspects that women is small tops and skirts pose for the camera.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0272,
+          "usage": {
+            "input_tokens": 138,
+            "output_tokens": 96,
+            "total_tokens": 234
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0422",
+          "input": "Premise: John believes that Amelia assumes that a young boy in a cowboy hat rides a large horse. Hypothesis: Amelia assumes that a young boy in a cowboy hat rides a large horse.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.0494,
+          "usage": {
+            "input_tokens": 140,
+            "output_tokens": 61,
+            "total_tokens": 201
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0264",
+          "input": "Premise: William thinks that Michael knows that a woman in an apron is looking for bread. Hypothesis: William thinks that a woman in an apron is looking for bread.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 7.8633,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 280,
+            "total_tokens": 416
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0172",
+          "input": "Premise: Abigail suspects that Amelia sees that a man is steering his ship out at sea. Hypothesis: Amelia sees that a man is steering his ship out at sea.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.1523,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 139,
+            "total_tokens": 275
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0315",
+          "input": "Premise: John learns that Joseph believes that fans are dressed in green and yellow for a major sporting event. Hypothesis: Joseph believes that John learns that fans are dressed in green and yellow for a major sporting event.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.0278,
+          "usage": {
+            "input_tokens": 145,
+            "output_tokens": 98,
+            "total_tokens": 243
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0731",
+          "input": "Premise: Charles understands that three young girls and a baby are sitting in the grass on a blue blanket with baby toys scattered on it. Hypothesis: Charles understands that there are four people outside.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.4629,
+          "usage": {
+            "input_tokens": 141,
+            "output_tokens": 263,
+            "total_tokens": 404
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0253",
+          "input": "Premise: Joseph believes that a man in a gray sweatshirt using a power saw. Hypothesis: Joseph believes that the guy in the sweatshirt uses the power saw.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 10.0837,
+          "usage": {
+            "input_tokens": 134,
+            "output_tokens": 525,
+            "total_tokens": 659
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0964",
+          "input": "Premise: Charlotte remembers that David assumes that a man sits on his throne behind the drums. Hypothesis: David assumes that a man sits on his throne behind the drums.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.7453,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 96,
+            "total_tokens": 232
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0399",
+          "input": "Premise: Joseph assumes that man jumping up in the air and splitting his legs with his mouth open. Hypothesis: Joseph assumes that a man is jumping.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.9197,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 165,
+            "total_tokens": 298
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1797",
+          "input": "Premise: Robert suspects that Thomas understands that a male baseball player for the baseball team The Indians prepares to catch a ball. Hypothesis: Thomas understands that a male baseball player for the baseball team The Indians prepares to catch a ball.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.8148,
+          "usage": {
+            "input_tokens": 148,
+            "output_tokens": 60,
+            "total_tokens": 208
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1231",
+          "input": "Premise: Abigail sees that Charlotte thinks that three people are posing on the side of a mountain. Hypothesis: Charlotte thinks that three people are posing on the side of a mountain.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.7313,
+          "usage": {
+            "input_tokens": 138,
+            "output_tokens": 83,
+            "total_tokens": 221
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0251",
+          "input": "Premise: Charles recognizes that a tennis player in blue shorts and a white shirt making an aggressive backhand swing towards the tennis ball. Hypothesis: Charles recognizes that a person is holding a tennis racket.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 10.8048,
+          "usage": {
+            "input_tokens": 142,
+            "output_tokens": 525,
+            "total_tokens": 667
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0354",
+          "input": "Premise: Richard learns that Isabella thinks that a man looks mysterious in a blue shirt and a red truck for a company called Wilbert. Hypothesis: Isabella thinks that a man looks mysterious in a blue shirt and a red truck for a company called Wilbert.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.6999,
+          "usage": {
+            "input_tokens": 154,
+            "output_tokens": 93,
+            "total_tokens": 247
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1959",
+          "input": "Premise: Michael suspects that Charles learns that eight tourists stand at a railing looking at an attraction. Hypothesis: Michael suspects that eight tourists stand at a railing looking at an attraction.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 80.4085,
+          "usage": {
+            "input_tokens": 138,
+            "output_tokens": 3234,
+            "total_tokens": 3372
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1885",
+          "input": "Premise: Michael suspects that Charles believes that a man wearing a headscarf and loincloth is laying and smoothing an asphalt surface near a forest on a hot day. Hypothesis: Michael suspects that a man wearing a headscarf and loincloth is laying and smoothing an asphalt surface near a forest on a hot day.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.4266,
+          "usage": {
+            "input_tokens": 166,
+            "output_tokens": 78,
+            "total_tokens": 244
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0874",
+          "input": "Premise: Taylor suspects that David recognizes that a man wearing black pants and a helmet is riding a brown horse. Hypothesis: David recognizes that a man wearing black pants and a helmet is riding a brown horse.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 12.1323,
+          "usage": {
+            "input_tokens": 144,
+            "output_tokens": 63,
+            "total_tokens": 207
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1803",
+          "input": "Premise: William assumes that Emma sees that a dog with a ball in his mouth running down a road covered in leaves. Hypothesis: Emma sees that a dog with a ball in his mouth running down a road covered in leaves.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.1208,
+          "usage": {
+            "input_tokens": 148,
+            "output_tokens": 67,
+            "total_tokens": 215
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1066",
+          "input": "Premise: Michael recognizes that a woman standing with smile on her face and she is holding a wood in her hand. Hypothesis: Michael recognizes that a woman with wood in her hand is standing with a smile on her face.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 6.9624,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 325,
+            "total_tokens": 472
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1353",
+          "input": "Premise: Emma suspects that a young man dressed in a dark bathing suit exits from a swimming pool while water drips off his head and body. Hypothesis: Abigail suspects that a man was swimming in the pool.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.8767,
+          "usage": {
+            "input_tokens": 145,
+            "output_tokens": 116,
+            "total_tokens": 261
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1246",
+          "input": "Premise: Ava suspects that Emma learns that a woman swings on a rope overlooking a red farmhouse and gated pastures and tall trees. Hypothesis: Emma learns that a woman swings on a rope overlooking a red farmhouse and gated pastures and tall trees.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 5.2158,
+          "usage": {
+            "input_tokens": 152,
+            "output_tokens": 57,
+            "total_tokens": 209
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1523",
+          "input": "Premise: Charles suspects that Olivia knows that three men stand on a sidewalk wearing construction hats. Hypothesis: Olivia knows that three men stand on a sidewalk wearing construction hats.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.5949,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 91,
+            "total_tokens": 227
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0855",
+          "input": "Premise: James understands that William suspects that a blond woman sits on a park bench while wearing a brown tank top and olive green shorts. Hypothesis: William suspects that James understands that a blond woman sits on a park bench while wearing a brown tank top and olive green shorts.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.208,
+          "usage": {
+            "input_tokens": 157,
+            "output_tokens": 114,
+            "total_tokens": 271
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1937",
+          "input": "Premise: Richard thinks that Amelia understands that a group of young men in a gym take turns scoring in basketball. Hypothesis: Amelia understands that a group of young men in a gym take turns scoring in basketball.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.2358,
+          "usage": {
+            "input_tokens": 144,
+            "output_tokens": 62,
+            "total_tokens": 206
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0183",
+          "input": "Premise: Robert suspects that Amelia assumes that a young man waits on a bench with his bag behind a few advertisements in London. Hypothesis: Robert suspects that a young man waits on a bench with his bag behind a few advertisements in London.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5691,
+          "usage": {
+            "input_tokens": 150,
+            "output_tokens": 87,
+            "total_tokens": 237
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0060",
+          "input": "Premise: Sophia remembers that William assumes that the firemen and women wearing blue gloves have finished working on a person who is lying on ground bandaged and draped in a blue blanket. Hypothesis: William assumes that Sophia remembers that the firemen and women wearing blue gloves have finished working on a person who is lying on ground bandaged and draped in a blue blanket.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.4602,
+          "usage": {
+            "input_tokens": 177,
+            "output_tokens": 118,
+            "total_tokens": 295
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0573",
+          "input": "Premise: Evelyn assumes that there are children playing in the snow and one of them is making a snowball. Hypothesis: Evelyn assumes that children play in the snow.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.5594,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 175,
+            "total_tokens": 311
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0091",
+          "input": "Premise: John learns that Charlotte assumes that players from two opposing teams wearing colorful cleats struggle to gain control over a ball on an AstroTurf field. Hypothesis: Charlotte assumes that John learns that players from two opposing teams wearing colorful cleats struggle to gain control over a ball on an AstroTurf field.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.8864,
+          "usage": {
+            "input_tokens": 165,
+            "output_tokens": 110,
+            "total_tokens": 275
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0068",
+          "input": "Premise: Taylor assumes that a man in a white and gray shirt looks on as a shirtless man with a mustache cleans fish on a pale green table. Hypothesis: Taylor assumes that the man watches the other clean a fish.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 6.158,
+          "usage": {
+            "input_tokens": 149,
+            "output_tokens": 326,
+            "total_tokens": 475
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0738",
+          "input": "Premise: Michael recognizes that Amelia believes that there are two people walking in the sand. Hypothesis: Amelia believes that there are two people walking in the sand.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.0625,
+          "usage": {
+            "input_tokens": 134,
+            "output_tokens": 85,
+            "total_tokens": 219
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0987",
+          "input": "Premise: Emma knows that Isabella assumes that a man in a blue shirt was arguing with a man in a green jacket and started to raise his fist in anger. Hypothesis: Isabella assumes that a man in a blue shirt was arguing with a man in a green jacket and started to raise his fist in anger.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.3369,
+          "usage": {
+            "input_tokens": 164,
+            "output_tokens": 70,
+            "total_tokens": 234
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0767",
+          "input": "Premise: Ava sees that Olivia thinks that a man stands with his arms out inside a large green piece of equipment. Hypothesis: Olivia thinks that Ava sees that a man stands with his arms out inside a large green piece of equipment.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 4.1773,
+          "usage": {
+            "input_tokens": 149,
+            "output_tokens": 100,
+            "total_tokens": 249
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1749",
+          "input": "Premise: Ava assumes that Charles believes that a woman is applying lip makeup to another woman who seems to have some green in her hair. Hypothesis: Charles believes that a woman is applying lip makeup to another woman who seems to have some green in her hair.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.7253,
+          "usage": {
+            "input_tokens": 154,
+            "output_tokens": 63,
+            "total_tokens": 217
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1812",
+          "input": "Premise: William learns that a man throws his young boy playfully into the air standing on a beach. Hypothesis: Evelyn learns that a stranger is playing on the beach with a boy.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.5615,
+          "usage": {
+            "input_tokens": 140,
+            "output_tokens": 123,
+            "total_tokens": 263
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1359",
+          "input": "Premise: Richard understands that a man and a child are laughing at each other. Hypothesis: Joseph understands that two people are laughing.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.6091,
+          "usage": {
+            "input_tokens": 129,
+            "output_tokens": 67,
+            "total_tokens": 196
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1224",
+          "input": "Premise: Isabella assumes that Olivia believes that a woman is using a small scissors on a large net. Hypothesis: Olivia believes that a woman is using a small scissors on a large net.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.8572,
+          "usage": {
+            "input_tokens": 140,
+            "output_tokens": 66,
+            "total_tokens": 206
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0132",
+          "input": "Premise: John believes that Richard suspects that man with a spider web & spiders painted on his face. Hypothesis: John believes that man with a spider web & spiders painted on his face.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 11.7183,
+          "usage": {
+            "input_tokens": 140,
+            "output_tokens": 195,
+            "total_tokens": 335
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1249",
+          "input": "Premise: Olivia knows that people checking out a car with all its doors open in a parking lot in the city. Hypothesis: Olivia knows that a car door has not been shut.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 7.4107,
+          "usage": {
+            "input_tokens": 139,
+            "output_tokens": 409,
+            "total_tokens": 548
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1032",
+          "input": "Premise: Thomas knows that Charles believes that a performance group is staged in one collective motion. Hypothesis: Charles believes that Thomas knows that a performance group is staged in one collective motion.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 1.7329,
+          "usage": {
+            "input_tokens": 139,
+            "output_tokens": 61,
+            "total_tokens": 200
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0926",
+          "input": "Premise: James assumes that Thomas suspects that here is a picture of a man waiting for the bus to pick him up and he is hiding his face. Hypothesis: Thomas suspects that here is a picture of a man waiting for the bus to pick him up and he is hiding his face.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.5836,
+          "usage": {
+            "input_tokens": 160,
+            "output_tokens": 78,
+            "total_tokens": 238
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1171",
+          "input": "Premise: Charles thinks that Thomas assumes that a woman in a bright pink and green skirt carries a large wicker basket on her back up a stone-cobbled street. Hypothesis: Charles thinks that a woman in a bright pink and green skirt carries a large wicker basket on her back up a stone-cobbled street.",
+          "expected_outputs": [
+            "non-entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.8352,
+          "usage": {
+            "input_tokens": 166,
+            "output_tokens": 81,
+            "total_tokens": 247
+          }
+        },
+        {
+          "id": "epistemic_reasoning_1684",
+          "input": "Premise: Olivia knows that Charlotte suspects that a furry dog is jumping over a hurdle. Hypothesis: Charlotte suspects that a furry dog is jumping over a hurdle.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "entailment",
+          "raw_prediction": "entailment",
+          "correct": true,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 2.7915,
+          "usage": {
+            "input_tokens": 134,
+            "output_tokens": 68,
+            "total_tokens": 202
+          }
+        },
+        {
+          "id": "epistemic_reasoning_0122",
+          "input": "Premise: William believes that the man is sweeping with a red broom. Hypothesis: William believes that the man is sweeping dirt.",
+          "expected_outputs": [
+            "entailment"
+          ],
+          "prediction": "non-entailment",
+          "raw_prediction": "non-entailment",
+          "correct": false,
+          "format_compliant": true,
+          "error": null,
+          "latency_seconds": 3.7003,
+          "usage": {
+            "input_tokens": 128,
+            "output_tokens": 123,
+            "total_tokens": 251
+          }
+        }
+      ]
+    }
+  ]
+}

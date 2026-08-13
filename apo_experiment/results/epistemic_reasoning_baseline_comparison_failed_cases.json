@@ -1,0 +1,64 @@
+{
+  "task": "epistemic_reasoning",
+  "dataset_split": "optimization",
+  "best_prompt_id": "manual_seed",
+  "best_prompt": "Determine whether the premise entails the hypothesis. Output exactly entailment or non-entailment.",
+  "best_accuracy": 0.94,
+  "failed_case_count": 3,
+  "failed_cases": [
+    {
+      "id": "epistemic_reasoning_0997",
+      "input": "Premise: Abigail recognizes that the red motocross bike and its rider are airborne above the trees. Hypothesis: Abigail recognizes that a rider is riding his motocross bike.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 10.0366,
+      "usage": {
+        "input_tokens": 63,
+        "output_tokens": 526,
+        "total_tokens": 589
+      }
+    },
+    {
+      "id": "epistemic_reasoning_1796",
+      "input": "Premise: Thomas recognizes that a boy in a green shirt surrounded by toys and another boy, wearing a blue shirt with penguins, to his left. Hypothesis: Thomas recognizes that two boys sit in a classroom at their desks.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 8.6282,
+      "usage": {
+        "input_tokens": 75,
+        "output_tokens": 91,
+        "total_tokens": 166
+      }
+    },
+    {
+      "id": "epistemic_reasoning_1668",
+      "input": "Premise: Olivia suspects that a man dressed only in a towel is in a sauna. Hypothesis: Olivia suspects that a human not wearing any clothes is in a room.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 11.0464,
+      "usage": {
+        "input_tokens": 63,
+        "output_tokens": 526,
+        "total_tokens": 589
+      }
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "contract_version": "factorybench_diagnostic_json_v2",
+  "dataset": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/data/factorybench_l4_subset.json",
+  "dataset_sha256": "e1743f7f93b258975354c4df2b866523316b52f2b47a80c3342520856602b740",
+  "split": "final_test",
+  "case_count": 5,
+  "all_cases_valid": true,
+  "diagnosis_gold_count": 5,
+  "protocol_gold_count": 2,
+  "records": [
+    {
+      "id": "edfc29e1-a8cd-46f3-8973-89076cbded4f",
+      "valid": true,
+      "original_input_sha256": "5c1ec78fb1394d679011a980cd4580a8499734209c7c0521c478f5734ddc2ab3",
+      "target_input_sha256": "c589f0d3e2ddfea37d1420a9c38056e2a4813033faf2b27b4a8baecaf21c674e",
+      "reference_contract_sha256": "74ebd92dbd88c5db5d38ab2e890a4622d4f9769720aa95eebb78bea8145985cc",
+      "original_question_replaced": true,
+      "original_reference_type": "option_letter",
+      "corrective_actions_evaluable": false,
+      "signal_mapping_count": 99,
+      "time_series_rows": 49,
+      "unmapped_time_series_signals": [],
+      "errors": [],
+      "warnings": [
+        "mapping_contains_unused_signals",
+        "protocol_gold_unavailable_option_letter_retained_as_provenance"
+      ]
+    },
+    {
+      "id": "85c46509-1237-4b82-8031-5b8df660d17b",
+      "valid": true,
+      "original_input_sha256": "ff342956cea0711496d808de8226cd3a5a7bfc28ad3be6832c529b4248ff1e44",
+      "target_input_sha256": "42b6ed50db2e81f0c0fe28ddad1a6d0b4bb005de84e5768035de66fb8cf996fc",
+      "reference_contract_sha256": "965fb96bf856a9849a98dd5e1058a9f7d04dc7e57eab276bf6ed3ff128ef6b6b",
+      "original_question_replaced": true,
+      "original_reference_type": "option_letter",
+      "corrective_actions_evaluable": false,
+      "signal_mapping_count": 99,
+      "time_series_rows": 32,
+      "unmapped_time_series_signals": [],
+      "errors": [],
+      "warnings": [
+        "canonical_root_label_present_review_options_or_leakage",
+        "mapping_contains_unused_signals",
+        "protocol_gold_unavailable_option_letter_retained_as_provenance",
+        "canonical_root_label_present_in_nongold_context_review"
+      ]
+    },
+    {
+      "id": "6d351f4a-3042-4998-8b94-89af56f212f5",
+      "valid": true,
+      "original_input_sha256": "3fca5c56aad0690b8d41f7c8e791736236bc8ed1f5690d119d14c494ccb1b1c9",
+      "target_input_sha256": "d5bde09d5207eff569f366f31526ada02eaf22c2be900520467b7c4d9d3b0cc9",
+      "reference_contract_sha256": "dff2a047a94ba3266017a34b90f10067f0c17b9f7c1ffbba42ad8c908375940e",
+      "original_question_replaced": true,
+      "original_reference_type": "option_letter",
+      "corrective_actions_evaluable": false,
+      "signal_mapping_count": 99,
+      "time_series_rows": 50,
+      "unmapped_time_series_signals": [],
+      "errors": [],
+      "warnings": [
+        "mapping_contains_unused_signals",
+        "protocol_gold_unavailable_option_letter_retained_as_provenance"
+      ]
+    },
+    {
+      "id": "353fdb06-257a-4ee0-9c45-ff948a654747",
+      "valid": true,
+      "original_input_sha256": "a89908636c816ea3cdbbe0019ba1e57fa2ee8736a8cb528ae352e9c5a23e263c",
+      "target_input_sha256": "d021e49fc28fa5fbb038b6bede6ac42321eedcb704a464c5de18eebc35a4de25",
+      "reference_contract_sha256": "c6da71a6bc3706dce3ae13a139aa9f6ae4bc0dc04f5aa8b7f1dc98684798b3ea",
+      "original_question_replaced": true,
+      "original_reference_type": "semantic_text",
+      "corrective_actions_evaluable": true,
+      "signal_mapping_count": 30,
+      "time_series_rows": 37,
+      "unmapped_time_series_signals": [],
+      "errors": [],
+      "warnings": [
+        "canonical_root_label_present_review_options_or_leakage",
+        "canonical_root_label_present_in_nongold_context_review"
+      ]
+    },
+    {
+      "id": "69d936dd-9ceb-4520-bb97-bf13ce264ec7",
+      "valid": true,
+      "original_input_sha256": "baa385e713545007666af900a7de79933f0bbde447da704962a4caa5b22c5e7d",
+      "target_input_sha256": "d46114d6d00053993348e519226ae862abc1e15460794af4f122d9360e7820d3",
+      "reference_contract_sha256": "26aed9f24f18cf6de2017ea0b976aeb502b9dfa999fa137b571de72f40da4eb4",
+      "original_question_replaced": true,
+      "original_reference_type": "semantic_text",
+      "corrective_actions_evaluable": true,
+      "signal_mapping_count": 30,
+      "time_series_rows": 33,
+      "unmapped_time_series_signals": [],
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "boundary": "Diagnosis metrics cover every case. Full-protocol metrics cover only cases with semantic corrective-action reference text."
+}

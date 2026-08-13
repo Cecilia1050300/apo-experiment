@@ -1,0 +1,268 @@
+{
+  "task": "liar",
+  "target_model": "gpt-5.5",
+  "dataset_split": "optimization",
+  "prompt_source": "prompts/liar_round_1_prompts.json",
+  "dataset_source": "results/liar_dataset_split.json",
+  "max_cases": 2,
+  "candidate_count": 5,
+  "evaluation": {
+    "primary_metric": "exact_match",
+    "strict_exact": false,
+    "normalization": "strip_and_casefold"
+  },
+  "results": [
+    {
+      "prompt_id": "candidate_2",
+      "prompt": "Judge the truthfulness of the statement by considering the statement together with the provided subject, speaker, speaker job, state, party, and context. Choose exactly one label: pants-fire, false, barely-true, half-true, mostly-true, or true. Output only the label.",
+      "strategy": "context-aware classification",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "average_latency_seconds": 20.2848,
+      "total_latency_seconds": 40.5697,
+      "usage": {
+        "input_tokens": 249,
+        "output_tokens": 2267,
+        "total_tokens": 2516
+      },
+      "records": [
+        {
+          "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+          "expected_outputs": [
+            "mostly-true"
+          ],
+          "prediction": "mostly-true",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 30.4577,
+          "usage": {
+            "input_tokens": 134,
+            "output_tokens": 1743,
+            "total_tokens": 1877
+          }
+        },
+        {
+          "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+          "expected_outputs": [
+            "pants-fire"
+          ],
+          "prediction": "pants-fire",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 10.1119,
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 524,
+            "total_tokens": 639
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_1",
+      "prompt": "Classify the truthfulness of the statement using the provided information. Choose exactly one label: pants-fire, false, barely-true, half-true, mostly-true, or true. Output only the label.",
+      "strategy": "direct truthfulness classification",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "average_latency_seconds": 26.7435,
+      "total_latency_seconds": 53.4869,
+      "usage": {
+        "input_tokens": 217,
+        "output_tokens": 2962,
+        "total_tokens": 3179
+      },
+      "records": [
+        {
+          "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+          "expected_outputs": [
+            "mostly-true"
+          ],
+          "prediction": "mostly-true",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 44.1888,
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 2571,
+            "total_tokens": 2689
+          }
+        },
+        {
+          "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+          "expected_outputs": [
+            "pants-fire"
+          ],
+          "prediction": "pants-fire",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 9.2981,
+          "usage": {
+            "input_tokens": 99,
+            "output_tokens": 391,
+            "total_tokens": 490
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_5",
+      "prompt": "Determine the most appropriate truthfulness label for the statement. Consider the statement itself first, then use the subject, speaker information, political affiliation, location, and context as supporting information when useful. Output only one label: pants-fire, false, barely-true, half-true, mostly-true, or true.",
+      "strategy": "metadata-aware reasoning",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "average_latency_seconds": 41.7677,
+      "total_latency_seconds": 83.5355,
+      "usage": {
+        "input_tokens": 257,
+        "output_tokens": 3481,
+        "total_tokens": 3738
+      },
+      "records": [
+        {
+          "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+          "expected_outputs": [
+            "mostly-true"
+          ],
+          "prediction": "mostly-true",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 75.6699,
+          "usage": {
+            "input_tokens": 138,
+            "output_tokens": 3115,
+            "total_tokens": 3253
+          }
+        },
+        {
+          "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+          "expected_outputs": [
+            "pants-fire"
+          ],
+          "prediction": "pants-fire",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 7.8656,
+          "usage": {
+            "input_tokens": 119,
+            "output_tokens": 366,
+            "total_tokens": 485
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_4",
+      "prompt": "Classify the statement on a six-level truthfulness scale. Distinguish completely false claims from partially true claims and mostly or fully true claims. Use the supplied context and metadata when relevant. Output exactly one of: pants-fire, false, barely-true, half-true, mostly-true, true.",
+      "strategy": "fine-grained truthfulness",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "average_latency_seconds": 39.6261,
+      "total_latency_seconds": 79.2522,
+      "usage": {
+        "input_tokens": 255,
+        "output_tokens": 4266,
+        "total_tokens": 4521
+      },
+      "records": [
+        {
+          "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+          "expected_outputs": [
+            "mostly-true"
+          ],
+          "prediction": "mostly-true",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 61.9699,
+          "usage": {
+            "input_tokens": 137,
+            "output_tokens": 3563,
+            "total_tokens": 3700
+          }
+        },
+        {
+          "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+          "expected_outputs": [
+            "pants-fire"
+          ],
+          "prediction": "pants-fire",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 17.2823,
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 703,
+            "total_tokens": 821
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "candidate_3",
+      "prompt": "Evaluate how well the statement is supported by the available contextual information. Use the statement and metadata together rather than relying on wording alone. Return exactly one label: pants-fire, false, barely-true, half-true, mostly-true, or true.",
+      "strategy": "evidence and context integration",
+      "accuracy": 1.0,
+      "correct_count": 2,
+      "total": 2,
+      "failed_count": 0,
+      "average_latency_seconds": 39.618,
+      "total_latency_seconds": 79.236,
+      "usage": {
+        "input_tokens": 233,
+        "output_tokens": 4436,
+        "total_tokens": 4669
+      },
+      "records": [
+        {
+          "input": "Statement:\nSays Every year air pollution protections are delayed, another 34,000 people will die prematurely.\n\nSubject:\nenvironment,government-regulation,public-health\n\nSpeaker:\nearl-blumenauer\n\nSpeaker job:\nU.S. representative\n\nState:\nOregon\n\nParty:\ndemocrat\n\nContext:\na House floor speech",
+          "expected_outputs": [
+            "mostly-true"
+          ],
+          "prediction": "mostly-true",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 68.8981,
+          "usage": {
+            "input_tokens": 126,
+            "output_tokens": 3912,
+            "total_tokens": 4038
+          }
+        },
+        {
+          "input": "Statement:\nYou must list all your guns on your 2010 tax return.\n\nSubject:\nguns,taxes\n\nSpeaker:\nchain-email\n\nSpeaker job:\n\n\nState:\n\n\nParty:\nnone\n\nContext:\nan e-mail circulated to many people.",
+          "expected_outputs": [
+            "pants-fire"
+          ],
+          "prediction": "pants-fire",
+          "correct": true,
+          "error": null,
+          "latency_seconds": 10.3379,
+          "usage": {
+            "input_tokens": 107,
+            "output_tokens": 524,
+            "total_tokens": 631
+          }
+        }
+      ]
+    }
+  ],
+  "best_prompt_id": "candidate_2",
+  "best_prompt": "Judge the truthfulness of the statement by considering the statement together with the provided subject, speaker, speaker job, state, party, and context. Choose exactly one label: pants-fire, false, barely-true, half-true, mostly-true, or true. Output only the label.",
+  "best_accuracy": 1.0,
+  "best_correct_count": 2,
+  "best_total": 2,
+  "tied_best_prompt_ids": [
+    "candidate_2",
+    "candidate_1",
+    "candidate_5",
+    "candidate_4",
+    "candidate_3"
+  ]
+}

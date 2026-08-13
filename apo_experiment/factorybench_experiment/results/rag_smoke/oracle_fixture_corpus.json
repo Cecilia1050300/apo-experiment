@@ -1,0 +1,23 @@
+{
+  "corpus_type": "oracle_fixture_for_plumbing_only",
+  "dataset_sha256": "e1743f7f93b258975354c4df2b866523316b52f2b47a80c3342520856602b740",
+  "documents": [
+    {
+      "doc_id": "oracle-fixture-353fdb06-257a-4ee0-9c45-ff948a654747",
+      "source_case_id": "353fdb06-257a-4ee0-9c45-ff948a654747",
+      "applicability_context": "The following sensor data comes from a Universal Robots UR3e collaborative robot performing a screwdriving task.\n\nSignal mapping:\n- etto0: effort_target_torque_0\n- etto1: effort_target_torque_1\n- etto2: effort_target_torque_2\n- etto3: effort_target_torque_3\n- etto4: effort_target_torque_4\n- etto5: effort_target_torque_5\n- ecfo0: est_contact_force_0\n- ecfo1: est_contact_force_1\n- ecfo2: est_contact_force_2\n- ecfo3: est_contact_force_3\n- ecfo4: est_contact_force_4\n- ecfo5: est_contact_force_5\n- fpo0: feedback_pos_0\n- fpo1: feedback_pos_1\n- fpo2: feedback_pos_2\n- fpo3: feedback_pos_3\n- fpo4: feedback_pos_4\n- fpo5: feedback_pos_5\n- fsp0: feedback_speed_0\n- fsp1: feedback_speed_1\n- fsp2: feedback_speed_2\n- fsp3: feedback_speed_3\n- fsp4: feedback_speed_4\n- fsp5: feedback_speed_5\n- spo0: setpoint_pos_0\n- spo1: setpoint_pos_1\n- spo2: setpoint_pos_2\n- spo3: setpoint_pos_3\n- spo4: setpoint_pos_4\n- spo5: setpoint_pos_5",
+      "canonical_root_cause": "normal",
+      "corrective_action_reference": "No anomalous behavior detected in the sensor stream. The machine is operating normally; no remediation is required.",
+      "fixture_only": true
+    },
+    {
+      "doc_id": "oracle-fixture-69d936dd-9ceb-4520-bb97-bf13ce264ec7",
+      "source_case_id": "69d936dd-9ceb-4520-bb97-bf13ce264ec7",
+      "applicability_context": "The following sensor data comes from a Universal Robots UR3e collaborative robot performing a screwdriving task.\n\nSignal mapping:\n- etto0: effort_target_torque_0\n- etto1: effort_target_torque_1\n- etto2: effort_target_torque_2\n- etto3: effort_target_torque_3\n- etto4: effort_target_torque_4\n- etto5: effort_target_torque_5\n- ecfo0: est_contact_force_0\n- ecfo1: est_contact_force_1\n- ecfo2: est_contact_force_2\n- ecfo3: est_contact_force_3\n- ecfo4: est_contact_force_4\n- ecfo5: est_contact_force_5\n- fpo0: feedback_pos_0\n- fpo1: feedback_pos_1\n- fpo2: feedback_pos_2\n- fpo3: feedback_pos_3\n- fpo4: feedback_pos_4\n- fpo5: feedback_pos_5\n- fsp0: feedback_speed_0\n- fsp1: feedback_speed_1\n- fsp2: feedback_speed_2\n- fsp3: feedback_speed_3\n- fsp4: feedback_speed_4\n- fsp5: feedback_speed_5\n- spo0: setpoint_pos_0\n- spo1: setpoint_pos_1\n- spo2: setpoint_pos_2\n- spo3: setpoint_pos_3\n- spo4: setpoint_pos_4\n- spo5: setpoint_pos_5",
+      "canonical_root_cause": "loosening_phase",
+      "corrective_action_reference": "Verify the current task phase in the program and confirm whether a loosening step is expected at this point in the sequence. If the loosening is unintended, halt the cycle, check the program logic for incorrect phase ordering, and restart from the correct step. If loosening is expected, no corrective action is required beyond confirming the screw disengages cleanly.",
+      "fixture_only": true
+    }
+  ],
+  "warning": "Contains held-out gold. Never use this corpus for a formal RAG-effect claim."
+}

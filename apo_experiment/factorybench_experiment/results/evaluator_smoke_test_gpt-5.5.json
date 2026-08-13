@@ -1,0 +1,378 @@
+{
+  "status": "completed",
+  "experiment_type": "evaluator_smoke_test_not_formal_result",
+  "dataset": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/data/factorybench_l4_subset.json",
+  "split": "final_test",
+  "case": {
+    "id": "edfc29e1-a8cd-46f3-8973-89076cbded4f",
+    "question": "The following sensor data comes from an industrial robotic platform executing a manufacturing task.\n\nSignal mapping:\n- cou0: control_output_0\n- cou1: control_output_1\n- cou2: control_output_2\n- cou3: control_output_3\n- cou4: control_output_4\n- cou5: control_output_5\n- dibi: digital_input_bits\n- dobi: digital_output_bits\n- ecu0: effort_current_0\n- ecu1: effort_current_1\n- ecu2: effort_current_2\n- ecu3: effort_current_3\n- ecu4: effort_current_4\n- ecu5: effort_current_5\n- etcu0: effort_target_current_0\n- etcu1: effort_target_current_1\n- etcu2: effort_target_current_2\n- etcu3: effort_target_current_3\n- etcu4: effort_target_current_4\n- etcu5: effort_target_current_5\n- ev: event\n- fpo0: feedback_pos_0\n- fpo1: feedback_pos_1\n- fpo2: feedback_pos_2\n- fpo3: feedback_pos_3\n- fpo4: feedback_pos_4\n- fpo5: feedback_pos_5\n- fsp0: feedback_speed_0\n- fsp1: feedback_speed_1\n- fsp2: feedback_speed_2\n- fsp3: feedback_speed_3\n- fsp4: feedback_speed_4\n- fsp5: feedback_speed_5\n- ftc0: feedback_tcp_0\n- ftc1: feedback_tcp_1\n- ftc2: feedback_tcp_2\n- ftc3: feedback_tcp_3\n- ftc4: feedback_tcp_4\n- ftc5: feedback_tcp_5\n- ftsp0: feedback_tcp_speed_0\n- ftsp1: feedback_tcp_speed_1\n- ftsp2: feedback_tcp_speed_2\n- ftsp3: feedback_tcp_speed_3\n- ftsp4: feedback_tcp_speed_4\n- ftsp5: feedback_tcp_speed_5\n- gco: gripper_command\n- jmo0: joint_mode_0\n- jmo1: joint_mode_1\n- jmo2: joint_mode_2\n- jmo3: joint_mode_3\n- jmo4: joint_mode_4\n- jmo5: joint_mode_5\n- jte0: joint_temp_0\n- jte1: joint_temp_1\n- jte2: joint_temp_2\n- jte3: joint_temp_3\n- jte4: joint_temp_4\n- jte5: joint_temp_5\n- mvo: main_voltage\n- rcu: robot_current\n- rmo: robot_mode\n- rvo: robot_voltage\n- rst: runtime_state\n- smo: safety_mode\n- spo0: setpoint_pos_0\n- spo1: setpoint_pos_1\n- spo2: setpoint_pos_2\n- spo3: setpoint_pos_3\n- spo4: setpoint_pos_4\n- spo5: setpoint_pos_5\n- ssp0: setpoint_speed_0\n- ssp1: setpoint_speed_1\n- ssp2: setpoint_speed_2\n- ssp3: setpoint_speed_3\n- ssp4: setpoint_speed_4\n- ssp5: setpoint_speed_5\n- stc0: setpoint_tcp_0\n- stc1: setpoint_tcp_1\n- stc2: setpoint_tcp_2\n- stc3: setpoint_tcp_3\n- stc4: setpoint_tcp_4\n- stc5: setpoint_tcp_5\n- stsp0: setpoint_tcp_speed_0\n- stsp1: setpoint_tcp_speed_1\n- stsp2: setpoint_tcp_speed_2\n- stsp3: setpoint_tcp_speed_3\n- stsp4: setpoint_tcp_speed_4\n- stsp5: setpoint_tcp_speed_5\n- ssc: speed_scaling\n- tsfr: target_speed_fraction\n- tph: task_phase\n- tms: timestamp_ms\n- tmo: tool_momentum\n- tfo0: true_force_0\n- tfo1: true_force_1\n- tfo2: true_force_2\n- tfo3: true_force_3\n- tfo4: true_force_4\n- tfo5: true_force_5\n\nTime series:\nt=4934: cou0=0.0942, cou1=-1.42, cou2=-1.31, cou3=-0.572, cou4=-0.269, cou5=-0.0235, dibi=0, dobi=0, ecu0=0.0875, ecu1=-1.42, ecu2=-1.3, ecu3=-0.577, ecu4=-0.251, ecu5=-0.0235, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.36, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0, fsp4=0, fsp5=-0.00137, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00597, ftsp0=0.000002, ftsp1=-0.000006, ftsp2=0.000006, ftsp3=-0.000023, ftsp4=-0.000008, ftsp5=0.000024, gco=-11, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=1.01, tfo1=-6.29, tfo2=-13.53, tfo3=0.181, tfo4=-1.28, tfo5=-0.101\nt=5035: cou0=0.0965, cou1=-1.43, cou2=-1.32, cou3=-0.573, cou4=-0.269, cou5=0.00671, dibi=0, dobi=0, ecu0=0.101, ecu1=-1.43, ecu2=-1.32, ecu3=-0.576, ecu4=-0.279, ecu5=0.0123, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.36, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0, fsp4=0, fsp5=-0.00137, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00591, ftsp0=0.000002, ftsp1=-0.000006, ftsp2=0.000006, ftsp3=-0.000023, ftsp4=-0.000008, ftsp5=0.000024, gco=-10, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-0.493, tfo1=-6.08, tfo2=-14.4, tfo3=0.118, tfo4=-1.63, tfo5=0.0675\nt=5136: cou0=0.0965, cou1=-1.42, cou2=-1.31, cou3=-0.574, cou4=-0.267, cou5=0.0548, dibi=0, dobi=0, ecu0=0.092, ecu1=-1.4, ecu2=-1.31, ecu3=-0.583, ecu4=-0.262, ecu5=0.0526, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.36, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0, fsp4=0, fsp5=0.00137, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00574, ftsp0=0.000002, ftsp1=-0.000006, ftsp2=0.000006, ftsp3=-0.000023, ftsp4=-0.000008, ftsp5=-0.000024, gco=-11, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.752, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-1.37, tfo1=-5.33, tfo2=-12.92, tfo3=0.14, tfo4=-1.63, tfo5=0.253\nt=5237: cou0=0.092, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.27, cou5=0.109, dibi=0, dobi=0, ecu0=0.0965, ecu1=-1.46, ecu2=-1.31, ecu3=-0.571, ecu4=-0.297, ecu5=0.105, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.36, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.011, fsp4=0, fsp5=0.0371, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00593, ftsp0=-0.000006, ftsp1=0.000019, ftsp2=-0.00001, ftsp3=0.000157, ftsp4=0.000049, ftsp5=-0.000646, gco=-11, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.788, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-0.395, tfo1=-8.03, tfo2=-15.44, tfo3=0.299, tfo4=-1.73, tfo5=0.497\nt=5339: cou0=0.0965, cou1=-1.43, cou2=-1.31, cou3=-0.575, cou4=-0.267, cou5=0.0985, dibi=0, dobi=0, ecu0=0.103, ecu1=-1.4, ecu2=-1.3, ecu3=-0.571, ecu4=-0.278, ecu5=0.094, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.011, fsp4=0, fsp5=0.0343, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00594, ftsp0=-0.000006, ftsp1=0.000019, ftsp2=-0.00001, ftsp3=0.000157, ftsp4=0.000049, ftsp5=-0.000599, gco=10, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-1.92, tfo1=-6.3, tfo2=-13.07, tfo3=0.229, tfo4=-1.79, tfo5=0.446\nt=5440: cou0=0.0965, cou1=-1.43, cou2=-1.31, cou3=-0.575, cou4=-0.267, cou5=0.0985, dibi=0, dobi=0, ecu0=0.103, ecu1=-1.4, ecu2=-1.3, ecu3=-0.571, ecu4=-0.278, ecu5=0.094, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.011, fsp4=0, fsp5=0.0343, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00594, ftsp0=-0.000006, ftsp1=0.000019, ftsp2=-0.00001, ftsp3=0.000157, ftsp4=0.000049, ftsp5=-0.000599, gco=10, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-1.92, tfo1=-6.3, tfo2=-13.07, tfo3=0.229, tfo4=-1.79, tfo5=0.446\nt=5540: cou0=0.0965, cou1=-1.42, cou2=-1.31, cou3=-0.573, cou4=-0.269, cou5=0.0985, dibi=0, dobi=0, ecu0=0.0965, ecu1=-1.46, ecu2=-1.3, ecu3=-0.584, ecu4=-0.261, ecu5=0.101, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.011, fsp4=0, fsp5=0.0179, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00594, ftsp0=-0.000006, ftsp1=0.000019, ftsp2=-0.00001, ftsp3=0.000158, ftsp4=0.000051, ftsp5=-0.000311, gco=8, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=0.0592, tfo1=-8.49, tfo2=-14.75, tfo3=0.424, tfo4=-1.47, tfo5=0.474\nt=5640: cou0=0.0965, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.269, cou5=0.0962, dibi=0, dobi=0, ecu0=0.0852, ecu1=-1.42, ecu2=-1.29, ecu3=-0.574, ecu4=-0.261, ecu5=0.0895, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.00824, fsp4=0, fsp5=0.0179, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.0059, ftsp0=-0.000004, ftsp1=0.000013, ftsp2=-0.000006, ftsp3=0.000113, ftsp4=0.000036, ftsp5=-0.000311, gco=8, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.788, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-0.216, tfo1=-7.18, tfo2=-13.39, tfo3=0.313, tfo4=-1.49, tfo5=0.423\nt=5741: cou0=0.0965, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.269, cou5=0.0985, dibi=0, dobi=0, ecu0=0.0942, ecu1=-1.43, ecu2=-1.31, ecu3=-0.567, ecu4=-0.286, ecu5=0.0951, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=-0.00137, fsp3=0.00549, fsp4=0, fsp5=0.0137, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00608, ftsp0=-0.000002, ftsp1=0.000006, ftsp2=-0.000002, ftsp3=0.000067, ftsp4=0.000021, ftsp5=-0.000239, gco=8, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-1.15, tfo1=-6.72, tfo2=-14.53, tfo3=0.165, tfo4=-1.77, tfo5=0.451\nt=5841: cou0=0.0965, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.269, cou5=0.0985, dibi=0, dobi=0, ecu0=0.092, ecu1=-1.44, ecu2=-1.29, ecu3=-0.574, ecu4=-0.278, ecu5=0.0951, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=0, fsp3=0.00549, fsp4=0, fsp5=0.00961, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00596, ftsp0=-0.000004, ftsp1=0.000012, ftsp2=-0.000008, ftsp3=0.00009, ftsp4=0.000029, ftsp5=-0.000167, gco=9, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=-0.04, tfo1=-7.96, tfo2=-14.44, tfo3=0.358, tfo4=-1.57, tfo5=0.449\nt=5941: cou0=0.0942, cou1=-1.43, cou2=-1.31, cou3=-0.573, cou4=-0.269, cou5=0.0985, dibi=0, dobi=0, ecu0=0.0987, ecu1=-1.44, ecu2=-1.27, ecu3=-0.573, ecu4=-0.256, ecu5=0.0985, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=0, fsp3=0.00412, fsp4=0, fsp5=0.00687, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.0059, ftsp0=-0.000003, ftsp1=0.000009, ftsp2=-0.000006, ftsp3=0.000068, ftsp4=0.000022, ftsp5=-0.00012, gco=9, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=3, tmo=0, tfo0=0.455, tfo1=-9.07, tfo2=-13.88, tfo3=0.519, tfo4=-1.39, tfo5=0.463\nt=6042: cou0=0.0942, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.267, cou5=0.0985, dibi=0, dobi=0, ecu0=0.0965, ecu1=-1.43, ecu2=-1.28, ecu3=-0.576, ecu4=-0.253, ecu5=0.0985, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=0, fsp3=0.00275, fsp4=0, fsp5=0.00549, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00591, ftsp0=-0.000002, ftsp1=0.000006, ftsp2=-0.000004, ftsp3=0.000045, ftsp4=0.000015, ftsp5=-0.000096, gco=9, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.609, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0, tfo0=-0.125, tfo1=-8.21, tfo2=-13.51, tfo3=0.441, tfo4=-1.44, tfo5=0.463\nt=6143: cou0=0.0942, cou1=-1.43, cou2=-1.31, cou3=-0.574, cou4=-0.267, cou5=0.0985, dibi=0, dobi=0, ecu0=0.0965, ecu1=-1.43, ecu2=-1.28, ecu3=-0.576, ecu4=-0.253, ecu5=0.0985, etcu0=0, etcu1=-1.13, etcu2=-1.14, etcu3=-0.563, etcu4=-0.00391, etcu5=0, ev=31, fpo0=108.39, fpo1=-77.46, fpo2=115.85, fpo3=-128.71, fpo4=-90.51, fpo5=311.37, fsp0=0, fsp1=0, fsp2=0, fsp3=0.00275, fsp4=0, fsp5=0.00549, ftc0=0.204, ftc1=-0.254, ftc2=0.121, ftc3=1.73, ftc4=-2.61, ftc5=0.00591, ftsp0=-0.000002, ftsp1=0.000006, ftsp2=-0.000004, ftsp3=0.000045, ftsp4=0.000015, ftsp5=-0.000096, gco=9, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.609, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.46, spo2=115.85, spo3=-128.71, spo4=-90.51, spo5=311.37, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.121, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0, tfo0=-0.125, tfo1=-8.21, tfo2=-13.51, tfo3=0.441, tfo4=-1.44, tfo5=0.463\nt=6243: cou0=0.0493, cou1=-1.5, cou2=-1.8, cou3=-0.589, cou4=-0.248, cou5=0.0604, dibi=0, dobi=0, ecu0=0.083, ecu1=-1.54, ecu2=-1.77, ecu3=-0.537, ecu4=-0.257, ecu5=0.0615, etcu0=-0.0111, etcu1=-1.65, etcu2=-1.5, etcu3=-0.261, etcu4=-0.00166, etcu5=0.0105, ev=31, fpo0=108.39, fpo1=-77.92, fpo2=115.5, fpo3=-127.87, fpo4=-90.52, fpo5=311.38, fsp0=0, fsp1=-10.62, fsp2=-9.1, fsp3=19.54, fsp4=0, fsp5=0.00412, ftc0=0.204, ftc1=-0.254, ftc2=0.124, ftc3=1.73, ftc4=-2.61, ftc5=0.00534, ftsp0=0.000025, ftsp1=0.000709, ftsp2=0.071, ftsp3=0.00527, ftsp4=0.00191, ftsp5=0.00131, gco=12, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.859, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.39, spo1=-77.94, spo2=115.46, spo3=-127.84, spo4=-90.51, spo5=311.37, ssp0=-0.0473, ssp1=-10.77, ssp2=-9.03, ssp3=19.81, ssp4=0.00726, ssp5=0.027, stc0=0.204, stc1=-0.254, stc2=0.125, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.0742, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0.394, tfo0=-15.68, tfo1=14.4, tfo2=6.64, tfo3=0.401, tfo4=-2.55, tfo5=0.226\nt=6343: cou0=-0.074, cou1=-1.75, cou2=-1.91, cou3=-0.161, cou4=-0.211, cou5=0.0974, dibi=0, dobi=0, ecu0=-0.0695, ecu1=-1.76, ecu2=-1.92, ecu3=-0.158, ecu4=-0.226, ecu5=0.0996, etcu0=-0.0414, etcu1=-1.68, etcu2=-1.64, etcu3=-0.15, etcu4=0.000658, etcu5=0.0249, ev=31, fpo0=108.38, fpo1=-79.98, fpo2=113.56, fpo3=-123.94, fpo4=-90.52, fpo5=311.37, fsp0=-0.0703, fsp1=-22.6, fsp2=-23.5, fsp3=45.94, fsp4=0, fsp5=0.00412, ftc0=0.204, ftc1=-0.255, ftc2=0.139, ftc3=1.73, ftc4=-2.61, ftc5=0.00727, ftsp0=0.000882, ftsp1=-0.00174, ftsp2=0.167, ftsp3=-0.00328, ftsp4=-0.000888, ftsp5=0.00206, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=1, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.38, spo1=-80, spo2=113.53, spo3=-123.86, spo4=-90.51, spo5=311.38, ssp0=-0.118, ssp1=-23.35, ssp2=-24.82, ssp3=48.16, ssp4=0.0137, ssp5=0.0645, stc0=0.204, stc1=-0.254, stc2=0.139, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.167, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0.887, tfo0=-5.47, tfo1=6.82, tfo2=-9.08, tfo3=-1.31, tfo4=-1.97, tfo5=0.365\nt=6445: cou0=-0.144, cou1=-1.75, cou2=-2.05, cou3=-0.27, cou4=-0.135, cou5=0.13, dibi=0, dobi=0, ecu0=-0.141, ecu1=-1.76, ecu2=-2.04, ecu3=-0.262, ecu4=-0.169, ecu5=0.129, etcu0=-0.0725, etcu1=-1.51, etcu2=-1.69, etcu3=-0.137, etcu4=-0.000067, etcu5=0.0374, ev=31, fpo0=108.37, fpo1=-83.13, fpo2=109.59, fpo3=-116.82, fpo4=-90.52, fpo5=311.38, fsp0=0.211, fsp1=-28.18, fsp2=-43.05, fsp3=71.52, fsp4=0, fsp5=0.0687, ftc0=0.204, ftc1=-0.254, ftc2=0.162, ftc3=1.73, ftc4=-2.61, ftc5=0.00682, ftsp0=0.00113, ftsp1=0.00308, ftsp2=0.251, ftsp3=0.00464, ftsp4=0.0018, ftsp5=0.00732, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.13, rcu=1.15, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.36, spo1=-83.14, spo2=109.56, spo3=-116.75, spo4=-90.51, spo5=311.39, ssp0=-0.176, ssp1=-27.65, ssp2=-43, ssp3=70.65, ssp4=0.0109, ssp5=0.0974, stc0=0.204, stc1=-0.254, stc2=0.163, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.25, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=1.3, tfo0=0.0431, tfo1=2.18, tfo2=-13.31, tfo3=-0.597, tfo4=-0.9, tfo5=0.43\nt=6546: cou0=-0.197, cou1=-1.52, cou2=-1.88, cou3=-0.173, cou4=-0.0515, cou5=0.142, dibi=0, dobi=0, ecu0=-0.202, ecu1=-1.48, ecu2=-1.87, ecu3=-0.188, ecu4=-0.0481, ecu5=0.141, etcu0=-0.0481, etcu1=-1.24, etcu2=-1.48, etcu3=-0.201, etcu4=-0.00307, etcu5=0.0253, ev=31, fpo0=108.35, fpo1=-85.5, fpo2=105.04, fpo3=-109.92, fpo4=-90.52, fpo5=311.4, fsp0=-2.07, fsp1=-12.86, fsp2=-30.98, fsp3=44.14, fsp4=0, fsp5=0.0467, ftc0=0.204, ftc1=-0.254, ftc2=0.187, ftc3=1.73, ftc4=-2.61, ftc5=0.00724, ftsp0=-0.009, ftsp1=-0.00619, ftsp2=0.158, ftsp3=0.00507, ftsp4=0.00173, ftsp5=-0.0339, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.824, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.34, spo1=-85.48, spo2=105.07, spo3=-109.92, spo4=-90.51, spo5=311.4, ssp0=-0.107, ssp1=-12.76, ssp2=-30.72, ssp3=43.48, ssp4=0.00107, ssp5=0.066, stc0=0.204, stc1=-0.254, stc2=0.187, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.157, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0.796, tfo0=2.01, tfo1=4.51, tfo2=-17.43, tfo3=-2.04, tfo4=-0.4, tfo5=0.544\nt=6646: cou0=-0.218, cou1=-1.57, cou2=-1.74, cou3=-0.294, cou4=-0.0224, cou5=0.135, dibi=0, dobi=0, ecu0=-0.209, ecu1=-1.58, ecu2=-1.74, ecu3=-0.302, ecu4=-0.0269, ecu5=0.133, etcu0=-0.0199, etcu1=-1.22, etcu2=-1.4, etcu3=-0.312, etcu4=-0.00374, etcu5=0.0109, ev=31, fpo0=108.34, fpo1=-86.47, fpo2=102.36, fpo3=-106.23, fpo4=-90.51, fpo5=311.4, fsp0=1.36, fsp1=-4.02, fsp2=-13.76, fsp3=18.03, fsp4=0, fsp5=0.0467, ftc0=0.204, ftc1=-0.254, ftc2=0.2, ftc3=1.73, ftc4=-2.61, ftc5=0.00642, ftsp0=0.00633, ftsp1=0.00462, ftsp2=0.0643, ftsp3=0.00419, ftsp4=0.00137, ftsp5=0.0241, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.859, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.34, spo1=-86.45, spo2=102.39, spo3=-106.27, spo4=-90.51, spo5=311.4, ssp0=-0.0425, ssp1=-4.21, ssp2=-13.35, ssp3=17.56, ssp4=-0.00078, ssp5=0.0288, stc0=0.204, stc1=-0.254, stc2=0.2, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.064, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=4, tmo=0.326, tfo0=8.89, tfo1=-1.97, tfo2=-17.3, tfo3=-1.16, tfo4=0.646, tfo5=0.564\nt=6746: cou0=-0.218, cou1=-1.57, cou2=-1.74, cou3=-0.294, cou4=-0.0224, cou5=0.135, dibi=0, dobi=0, ecu0=-0.209, ecu1=-1.58, ecu2=-1.74, ecu3=-0.302, ecu4=-0.0269, ecu5=0.133, etcu0=-0.0199, etcu1=-1.22, etcu2=-1.4, etcu3=-0.312, etcu4=-0.00374, etcu5=0.0109, ev=31, fpo0=108.34, fpo1=-86.47, fpo2=102.36, fpo3=-106.23, fpo4=-90.51, fpo5=311.4, fsp0=1.36, fsp1=-4.02, fsp2=-13.76, fsp3=18.03, fsp4=0, fsp5=0.0467, ftc0=0.204, ftc1=-0.254, ftc2=0.2, ftc3=1.73, ftc4=-2.61, ftc5=0.00642, ftsp0=0.00633, ftsp1=0.00462, ftsp2=0.0643, ftsp3=0.00419, ftsp4=0.00137, ftsp5=0.0241, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.859, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.34, spo1=-86.45, spo2=102.39, spo3=-106.27, spo4=-90.51, spo5=311.4, ssp0=-0.0425, ssp1=-4.21, ssp2=-13.35, ssp3=17.56, ssp4=-0.00078, ssp5=0.0288, stc0=0.204, stc1=-0.254, stc2=0.2, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0.064, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=5, tmo=0.326, tfo0=8.89, tfo1=-1.97, tfo2=-17.3, tfo3=-1.16, tfo4=0.646, tfo5=0.564\nt=6847: cou0=-0.0381, cou1=-1.32, cou2=-1.53, cou3=-0.897, cou4=0.0336, cou5=0.126, dibi=0, dobi=0, ecu0=-0.0359, ecu1=-1.3, ecu2=-1.53, ecu3=-0.902, ecu4=0.0403, ecu5=0.122, etcu0=0, etcu1=-1.06, etcu2=-1.34, etcu3=-0.563, etcu4=-0.00388, etcu5=0, ev=31, fpo0=108.33, fpo1=-86.62, fpo2=101.83, fpo3=-105.5, fpo4=-90.51, fpo5=311.4, fsp0=-0.171, fsp1=0.151, fsp2=0.151, fsp3=-0.151, fsp4=0, fsp5=0.0247, ftc0=0.204, ftc1=-0.254, ftc2=0.203, ftc3=1.73, ftc4=-2.61, ftc5=0.0051, ftsp0=-0.000575, ftsp1=-0.000361, ftsp2=-0.00106, ftsp3=0.0017, ftsp4=0.000566, ftsp5=-0.00257, gco=13, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=2, smo=1, spo0=108.33, spo1=-86.62, spo2=101.83, spo3=-105.54, spo4=-90.51, spo5=311.4, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.204, stc1=-0.254, stc2=0.203, stc3=1.73, stc4=-2.61, stc5=0.00613, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=1, tsfr=1, tph=5, tmo=0, tfo0=2.76, tfo1=-3.88, tfo2=-2.64, tfo3=1.73, tfo4=0.999, tfo5=0.551\nt=6948: cou0=-0.276, cou1=-1.48, cou2=-1.13, cou3=-0.885, cou4=0.0224, cou5=-0.293, dibi=0, dobi=0, ecu0=-0.33, ecu1=-1.44, ecu2=-1.2, ecu3=-0.856, ecu4=0.00895, ecu5=-0.255, etcu0=-0.475, etcu1=-1.51, etcu2=-1.04, etcu3=-0.77, etcu4=0.00801, etcu5=-0.281, ev=31, fpo0=107.84, fpo1=-87.07, fpo2=102.3, fpo3=-105.59, fpo4=-90.51, fpo5=311, fsp0=-11.69, fsp1=-10.13, fsp2=11.19, fsp3=-0.989, fsp4=0.0563, fsp5=-10.22, ftc0=0.2, ftc1=-0.254, ftc2=0.203, ftc3=1.73, ftc4=-2.61, ftc5=0.00667, ftsp0=-0.0724, ftsp1=0.0022, ftsp2=-0.00191, ftsp3=0.00962, ftsp4=0.00462, ftsp5=-0.0367, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.788, rmo=7, rvo=48.19, rst=2, smo=1, spo0=107.8, spo1=-87.09, spo2=102.33, spo3=-105.57, spo4=-90.5, spo5=310.96, ssp0=-12.19, ssp1=-10.62, ssp2=11.25, ssp3=-0.678, ssp4=0.12, ssp5=-10.04, stc0=0.2, stc1=-0.254, stc2=0.203, stc3=1.73, stc4=-2.61, stc5=0.00612, stsp0=-0.0742, stsp1=0.000828, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.041, ssc=1, tsfr=1, tph=5, tmo=0.319, tfo0=-11.71, tfo1=1.51, tfo2=0.22, tfo3=0.292, tfo4=-1.38, tfo5=0.0146\nt=7048: cou0=-0.424, cou1=-1.64, cou2=-1.16, cou3=-0.825, cou4=0.105, cou5=-0.449, dibi=0, dobi=0, ecu0=-0.422, ecu1=-1.61, ecu2=-1.16, ecu3=-0.821, ecu4=0.102, ecu5=-0.438, etcu0=-0.582, etcu1=-1.54, etcu2=-0.986, etcu3=-0.739, etcu4=0.0698, etcu5=-0.336, ev=31, fpo0=105.36, fpo1=-89.16, fpo2=104.49, fpo3=-105.67, fpo4=-90.48, fpo5=308.94, fsp0=-29.74, fsp1=-23.98, fsp2=24.49, fsp3=-0.523, fsp4=0.201, fsp5=-24.67, ftc0=0.187, ftc1=-0.254, ftc2=0.203, ftc3=1.72, ftc4=-2.62, ftc5=0.00594, ftsp0=-0.159, ftsp1=0.00158, ftsp2=-0.000614, ftsp3=0.00155, ftsp4=0.00195, ftsp5=-0.0887, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.895, rmo=7, rvo=48.19, rst=2, smo=1, spo0=105.28, spo1=-89.2, spo2=104.52, spo3=-105.66, spo4=-90.48, spo5=308.88, ssp0=-30.11, ssp1=-24.35, ssp2=24.72, ssp3=-0.501, ssp4=0.29, ssp5=-25.02, stc0=0.187, stc1=-0.254, stc2=0.203, stc3=1.72, stc4=-2.62, stc5=0.00608, stsp0=-0.161, stsp1=0.00179, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.0889, ssc=1, tsfr=1, tph=5, tmo=0.711, tfo0=-7.19, tfo1=1.22, tfo2=-5.35, tfo3=-0.282, tfo4=-0.866, tfo5=-0.463\nt=7150: cou0=-0.399, cou1=-1.6, cou2=-1.22, cou3=-0.573, cou4=0.17, cou5=-0.404, dibi=0, dobi=0, ecu0=-0.384, ecu1=-1.58, ecu2=-1.22, ecu3=-0.571, ecu4=0.163, ecu5=-0.403, etcu0=-0.689, etcu1=-1.48, etcu2=-0.975, etcu3=-0.32, etcu4=0.136, etcu5=-0.468, ev=31, fpo0=100.53, fpo1=-92.8, fpo2=108.09, fpo3=-105.59, fpo4=-90.44, fpo5=304.89, fsp0=-50.98, fsp1=-35.77, fsp2=33.27, fsp3=1.65, fsp4=0.445, fsp5=-42.85, ftc0=0.162, ftc1=-0.254, ftc2=0.203, ftc3=1.7, ftc4=-2.63, ftc5=0.0044, ftsp0=-0.252, ftsp1=0.000598, ftsp2=0.00241, ftsp3=-0.011, ftsp4=-0.00247, ftsp5=-0.142, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.931, rmo=7, rvo=48.13, rst=2, smo=1, spo0=100.45, spo1=-92.85, spo2=108.09, spo3=-105.6, spo4=-90.43, spo5=304.83, ssp0=-51.14, ssp1=-35.88, ssp2=33.73, ssp3=1.94, ssp4=0.473, ssp5=-43.12, stc0=0.162, stc1=-0.254, stc2=0.203, stc3=1.7, stc4=-2.63, stc5=0.00601, stsp0=-0.254, stsp1=0.00283, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.14, ssc=1, tsfr=1, tph=5, tmo=1.15, tfo0=-17.27, tfo1=0.888, tfo2=-4.63, tfo3=0.602, tfo4=-2.1, tfo5=0.311\nt=7251: cou0=-0.469, cou1=-1.32, cou2=-1.16, cou3=-0.47, cou4=0.0571, cou5=-0.403, dibi=0, dobi=0, ecu0=-0.493, ecu1=-1.32, ecu2=-1.17, ecu3=-0.467, ecu4=0.0526, ecu5=-0.457, etcu0=-0.819, etcu1=-1.32, etcu2=-1.01, etcu3=-0.309, etcu4=0.173, etcu5=-0.513, ev=31, fpo0=92.89, fpo1=-97.58, fpo2=112.34, fpo3=-105.11, fpo4=-90.37, fpo5=298.41, fsp0=-75.74, fsp1=-42.5, fsp2=36.3, fsp3=6.23, fsp4=0.57, fsp5=-64.65, ftc0=0.126, ftc1=-0.253, ftc2=0.203, ftc3=1.68, ftc4=-2.65, ftc5=0.00502, ftsp0=-0.343, ftsp1=0.00627, ftsp2=-0.00205, ftsp3=0.00485, ftsp4=0.00123, ftsp5=-0.194, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=1, rmo=7, rvo=48.19, rst=2, smo=1, spo0=92.83, spo1=-97.62, spo2=112.34, spo3=-105.11, spo4=-90.37, spo5=298.36, ssp0=-76.47, ssp1=-42.5, ssp2=35.81, ssp3=6.43, ssp4=0.672, ssp5=-65.51, stc0=0.126, stc1=-0.254, stc2=0.203, stc3=1.68, stc4=-2.65, stc5=0.00591, stsp0=-0.346, stsp1=0.00386, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.192, ssc=1, tsfr=1, tph=5, tmo=1.63, tfo0=-19.91, tfo1=4.66, tfo2=-2.1, tfo3=-0.0603, tfo4=-3.25, tfo5=0.282\nt=7351: cou0=-0.612, cou1=-1.19, cou2=-1.08, cou3=-0.435, cou4=0.0436, cou5=-0.604, dibi=0, dobi=0, ecu0=-0.606, ecu1=-1.21, ecu2=-1.09, ecu3=-0.432, ecu4=0.0201, ecu5=-0.618, etcu0=-0.904, etcu1=-1.08, etcu2=-1.07, etcu3=-0.316, etcu4=0.173, etcu5=-0.638, ev=31, fpo0=82.95, fpo1=-102.32, fpo2=116.07, fpo3=-104.19, fpo4=-90.29, fpo5=289.79, fsp0=-101.5, fsp1=-39.1, fsp2=30.1, fsp3=9.6, fsp4=0.463, fsp5=-88.8, ftc0=0.083, ftc1=-0.253, ftc2=0.203, ftc3=1.65, ftc4=-2.67, ftc5=0.00609, ftsp0=-0.429, ftsp1=0.00769, ftsp2=-0.00432, ftsp3=0.0161, ftsp4=0.00536, ftsp5=-0.222, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.13, rcu=1.11, rmo=7, rvo=48.19, rst=2, smo=1, spo0=82.81, spo1=-102.32, spo2=116.08, spo3=-104.18, spo4=-90.28, spo5=289.71, ssp0=-102.62, ssp1=-39.25, ssp2=29.39, ssp3=9.61, ssp4=0.844, ssp5=-88.92, stc0=0.0824, stc1=-0.253, stc2=0.203, stc3=1.65, stc4=-2.67, stc5=0.00578, stsp0=-0.433, stsp1=0.00483, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.239, ssc=1, tsfr=1, tph=5, tmo=2.13, tfo0=-14.04, tfo1=-4.7, tfo2=0.296, tfo3=1.12, tfo4=-2.69, tfo5=0.107\nt=7452: cou0=-0.612, cou1=-1.19, cou2=-1.08, cou3=-0.435, cou4=0.0436, cou5=-0.604, dibi=0, dobi=0, ecu0=-0.606, ecu1=-1.21, ecu2=-1.09, ecu3=-0.432, ecu4=0.0201, ecu5=-0.618, etcu0=-0.904, etcu1=-1.08, etcu2=-1.07, etcu3=-0.316, etcu4=0.173, etcu5=-0.638, ev=31, fpo0=82.95, fpo1=-102.32, fpo2=116.07, fpo3=-104.19, fpo4=-90.29, fpo5=289.79, fsp0=-101.5, fsp1=-39.1, fsp2=30.1, fsp3=9.6, fsp4=0.463, fsp5=-88.8, ftc0=0.083, ftc1=-0.253, ftc2=0.203, ftc3=1.65, ftc4=-2.67, ftc5=0.00609, ftsp0=-0.429, ftsp1=0.00769, ftsp2=-0.00432, ftsp3=0.0161, ftsp4=0.00536, ftsp5=-0.222, gco=14, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.13, rcu=1.11, rmo=7, rvo=48.19, rst=2, smo=1, spo0=82.81, spo1=-102.32, spo2=116.08, spo3=-104.18, spo4=-90.28, spo5=289.71, ssp0=-102.62, ssp1=-39.25, ssp2=29.39, ssp3=9.61, ssp4=0.844, ssp5=-88.92, stc0=0.0824, stc1=-0.253, stc2=0.203, stc3=1.65, stc4=-2.67, stc5=0.00578, stsp0=-0.433, stsp1=0.00483, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.239, ssc=1, tsfr=1, tph=5, tmo=2.13, tfo0=-14.04, tfo1=-4.7, tfo2=0.296, tfo3=1.12, tfo4=-2.69, tfo5=0.107\nt=7553: cou0=-1.92, cou1=-1.16, cou2=-1.77, cou3=-1.6, cou4=-2.11, cou5=-0.537, dibi=0, dobi=0, ecu0=-1.92, ecu1=-1.15, ecu2=-1.76, ecu3=-1.59, ecu4=-2.09, ecu5=-0.544, etcu0=-0.87, etcu1=-0.679, etcu2=-1.22, etcu3=-0.364, etcu4=0.175, etcu5=-0.617, ev=31, fpo0=69.29, fpo1=-105.99, fpo2=118.72, fpo3=-103.06, fpo4=-89.96, fpo5=277.81, fsp0=-125.23, fsp1=-17.35, fsp2=13.41, fsp3=7.06, fsp4=3.14, fsp5=-109.27, ftc0=0.0268, ftc1=-0.252, ftc2=0.203, ftc3=1.61, ftc4=-2.69, ftc5=0.0082, ftsp0=-0.518, ftsp1=0.00937, ftsp2=-0.0109, ftsp3=0.032, ftsp4=-0.0574, ftsp5=-0.278, gco=-21, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.13, rcu=2.01, rmo=7, rvo=48.13, rst=2, smo=1, spo0=69.02, spo1=-105.93, spo2=118.66, spo3=-103.17, spo4=-90.17, spo5=277.75, ssp0=-124.98, ssp1=-17.12, ssp2=11.62, ssp3=5.34, ssp4=0.906, ssp5=-108.33, stc0=0.0249, stc1=-0.252, stc2=0.203, stc3=1.6, stc4=-2.69, stc5=0.00561, stsp0=-0.526, stsp1=0.00586, stsp2=0, stsp3=0, stsp4=0, stsp5=-0.291, ssc=1, tsfr=1, tph=7, tmo=2.71, tfo0=54.5, tfo1=-24.06, tfo2=1.62, tfo3=5.07, tfo4=-4.3, tfo5=0.365\nt=7653: cou0=-0.0942, cou1=-1.14, cou2=-2.28, cou3=-1.83, cou4=-1.51, cou5=-0.149, dibi=0, dobi=0, ecu0=-0.108, ecu1=-1.14, ecu2=-2.28, ecu3=-1.82, ecu4=-1.51, ecu5=-0.142, etcu0=0.574, etcu1=-0.957, etcu2=-1.07, etcu3=-0.236, etcu4=0.518, etcu5=0.0335, ev=31, fpo0=61.25, fpo1=-106.45, fpo2=118.99, fpo3=-103.07, fpo4=-84.74, fpo5=271, fsp0=-0.508, fsp1=1.02, fsp2=3.47, fsp3=3.04, fsp4=3.71, fsp5=0.775, ftc0=0.0028, ftc1=-0.258, ftc2=0.204, ftc3=-1.56, ftc4=2.68, ftc5=-0.131, ftsp0=0.0137, ftsp1=0.011, ftsp2=-0.0256, ftsp3=0.0856, ftsp4=-0.12, ftsp5=-0.0218, gco=-4, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.895, rmo=7, rvo=48.19, rst=6, smo=3, spo0=61.36, spo1=-106.46, spo2=118.92, spo3=-103.12, spo4=-84.69, spo5=271.02, ssp0=3.41, ssp1=-0.663, ssp2=1.01, ssp3=2.34, ssp4=9.17, ssp5=0.083, stc0=0.00323, stc1=-0.259, stc2=0.204, stc3=-1.56, stc4=2.68, stc5=-0.134, stsp0=0.0391, stsp1=-0.00198, stsp2=-0.00408, stsp3=-0.0348, stsp4=-0.163, stsp5=0.06, ssc=1, tsfr=1, tph=7, tmo=0.0925, tfo0=36.12, tfo1=20.72, tfo2=-12.01, tfo3=-1.85, tfo4=-6.38, tfo5=-0.623\nt=7755: cou0=-0.292, cou1=-0.664, cou2=-1.62, cou3=-0.8, cou4=-0.252, cou5=-0.00895, dibi=0, dobi=0, ecu0=-0.278, ecu1=-0.662, ecu2=-1.62, ecu3=-0.793, ecu4=-0.257, ecu5=-0.0112, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.12, fpo1=-106.61, fpo2=119.16, fpo3=-102.55, fpo4=-82.41, fpo5=271.03, fsp0=-1.27, fsp1=0.201, fsp2=0.211, fsp3=-1.46, fsp4=-2.32, fsp5=0.0618, ftc0=0.0125, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.012, ftsp1=-0.000347, ftsp2=-0.000444, ftsp3=0.00276, ftsp4=0.0442, ftsp5=-0.0232, gco=-11, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.609, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=14.16, tfo1=0.155, tfo2=-5.67, tfo3=-0.221, tfo4=0.28, tfo5=-0.0961\nt=7855: cou0=-0.213, cou1=-0.637, cou2=-1.48, cou3=-0.525, cou4=0.0683, cou5=0.0325, dibi=0, dobi=0, ecu0=-0.204, ecu1=-0.628, ecu2=-1.48, ecu3=-0.515, ecu4=0.0716, ecu5=0.0291, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.17, fpo1=-106.63, fpo2=119.14, fpo3=-102.58, fpo4=-82.44, fpo5=271.03, fsp0=0.182, fsp1=-0.508, fsp2=-0.437, fsp3=-1.01, fsp4=0.43, fsp5=0.0316, ftc0=0.0126, ftc1=-0.259, ftc2=0.203, ftc3=-1.57, ftc4=2.64, ftc5=-0.175, ftsp0=-0.00242, ftsp1=-0.00114, ftsp2=0.00175, ftsp3=-0.00956, ftsp4=-0.0079, ftsp5=-0.0147, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.537, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-20.23, tfo1=12.03, tfo2=-9.29, tfo3=-2.99, tfo4=-2.24, tfo5=-0.0412\nt=7957: cou0=0.44, cou1=-0.648, cou2=-1.38, cou3=-0.443, cou4=0.214, cou5=0.0918, dibi=0, dobi=0, ecu0=0.437, ecu1=-0.644, ecu2=-1.38, ecu3=-0.443, ecu4=0.21, ecu5=0.0906, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.62, fpo2=119.15, fpo3=-102.57, fpo4=-82.44, fpo5=271.04, fsp0=-0.325, fsp1=-0.0308, fsp2=0.0247, fsp3=0, fsp4=-0.742, fsp5=0.0659, ftc0=0.0126, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.00298, ftsp1=0.00084, ftsp2=-0.000243, ftsp3=0.00604, ftsp4=0.0114, ftsp5=-0.00683, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-23.5, tfo1=10.47, tfo2=-4.17, tfo3=-1.93, tfo4=-2.23, tfo5=0.334\nt=8057: cou0=0.44, cou1=-0.648, cou2=-1.38, cou3=-0.443, cou4=0.214, cou5=0.0918, dibi=0, dobi=0, ecu0=0.437, ecu1=-0.644, ecu2=-1.38, ecu3=-0.443, ecu4=0.21, ecu5=0.0906, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.62, fpo2=119.15, fpo3=-102.57, fpo4=-82.44, fpo5=271.04, fsp0=-0.325, fsp1=-0.0308, fsp2=0.0247, fsp3=0, fsp4=-0.742, fsp5=0.0659, ftc0=0.0126, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.00298, ftsp1=0.00084, ftsp2=-0.000243, ftsp3=0.00604, ftsp4=0.0114, ftsp5=-0.00683, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-23.5, tfo1=10.47, tfo2=-4.17, tfo3=-1.93, tfo4=-2.23, tfo5=0.334\nt=8158: cou0=-0.206, cou1=-0.648, cou2=-1.25, cou3=-0.44, cou4=0.122, cou5=0.0817, dibi=0, dobi=0, ecu0=-0.188, ecu1=-0.644, ecu2=-1.26, ecu3=-0.445, ecu4=0.121, ecu5=0.0806, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.17, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.04, fsp0=-0.131, fsp1=-0.0626, fsp2=0, fsp3=0.15, fsp4=0.608, fsp5=0.0398, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=0.000882, ftsp1=-0.000334, ftsp2=0.000215, ftsp3=-0.00349, ftsp4=-0.0102, ftsp5=-0.00296, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.609, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=8.29, tfo1=-10.13, tfo2=0.439, tfo3=1.08, tfo4=1.62, tfo5=0.403\nt=8259: cou0=-0.0942, cou1=-0.65, cou2=-1.21, cou3=-0.433, cou4=0.11, cou5=0.0817, dibi=0, dobi=0, ecu0=-0.083, ecu1=-0.646, ecu2=-1.22, ecu3=-0.438, ecu4=0.114, ecu5=0.0828, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.04, fsp0=0.813, fsp1=-0.0132, fsp2=0.0522, fsp3=0, fsp4=0.798, fsp5=0.0165, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=0.00544, ftsp1=-0.000541, ftsp2=0.000039, ftsp3=-0.00582, ftsp4=-0.0127, ftsp5=0.0139, gco=1, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=2.82, tfo1=-8.66, tfo2=1.68, tfo3=0.937, tfo4=0.839, tfo5=0.446\nt=8359: cou0=0.206, cou1=-0.648, cou2=-1.2, cou3=-0.434, cou4=0.164, cou5=0.0839, dibi=0, dobi=0, ecu0=0.211, ecu1=-0.646, ecu2=-1.19, ecu3=-0.433, ecu4=0.166, ecu5=0.0906, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.42, fpo5=271.04, fsp0=1.54, fsp1=-0.00659, fsp2=0.0275, fsp3=0, fsp4=1.28, fsp5=0.0165, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=0.0097, ftsp1=-0.00099, ftsp2=0.000295, ftsp3=-0.01, ftsp4=-0.02, ftsp5=0.0266, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.13, rcu=0.645, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-12.33, tfo1=-1.58, tfo2=2.66, tfo3=0.15, tfo4=-1.03, tfo5=0.504\nt=8461: cou0=0.233, cou1=-0.65, cou2=-1.2, cou3=-0.435, cou4=0.145, cou5=0.0817, dibi=0, dobi=0, ecu0=0.229, ecu1=-0.657, ecu2=-1.2, ecu3=-0.431, ecu4=0.145, ecu5=0.0817, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.62, fpo2=119.17, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=-0.958, fsp1=-0.00439, fsp2=0.0165, fsp3=0, fsp4=-0.838, fsp5=0.0137, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=-0.00607, ftsp1=0.000761, ftsp2=-0.000335, ftsp3=0.00699, ftsp4=0.0128, ftsp5=-0.017, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-13.06, tfo1=-1.66, tfo2=2.11, tfo3=0.0625, tfo4=-1.19, tfo5=0.462\nt=8561: cou0=0.144, cou1=-0.65, cou2=-1.2, cou3=-0.433, cou4=0.113, cou5=0.0817, dibi=0, dobi=0, ecu0=0.13, ecu1=-0.655, ecu2=-1.2, ecu3=-0.434, ecu4=0.115, ecu5=0.0739, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.17, fpo1=-106.62, fpo2=119.17, fpo3=-102.54, fpo4=-82.43, fpo5=271.05, fsp0=0.813, fsp1=-0.0033, fsp2=0.011, fsp3=0, fsp4=-0.338, fsp5=0.00961, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.00395, ftsp1=-0.000519, ftsp2=0.000051, ftsp3=-0.00226, ftsp4=-0.00466, ftsp5=-0.0179, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.573, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-7.9, tfo1=-4.24, tfo2=2.25, tfo3=0.374, tfo4=-0.623, tfo5=0.428\nt=8661: cou0=0.442, cou1=-0.653, cou2=-1.2, cou3=-0.435, cou4=0.144, cou5=0.0817, dibi=0, dobi=0, ecu0=0.424, ecu1=-0.659, ecu2=-1.2, ecu3=-0.429, ecu4=0.142, ecu5=0.0794, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.63, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.101, fsp1=-0.0022, fsp2=0.00824, fsp3=0, fsp4=-0.356, fsp5=0.00687, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.000279, ftsp1=0.000439, ftsp2=-0.000147, ftsp3=0.00299, ftsp4=0.00544, ftsp5=0.00164, gco=-1, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-22.96, tfo1=3.32, tfo2=2.15, tfo3=-0.628, tfo4=-2.55, tfo5=0.454\nt=8761: cou0=0.442, cou1=-0.653, cou2=-1.2, cou3=-0.435, cou4=0.144, cou5=0.0817, dibi=0, dobi=0, ecu0=0.424, ecu1=-0.659, ecu2=-1.2, ecu3=-0.429, ecu4=0.142, ecu5=0.0794, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.16, fpo1=-106.63, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.101, fsp1=-0.0022, fsp2=0.00824, fsp3=0, fsp4=-0.356, fsp5=0.00687, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.000279, ftsp1=0.000439, ftsp2=-0.000147, ftsp3=0.00299, ftsp4=0.00544, ftsp5=0.00164, gco=-1, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-22.96, tfo1=3.32, tfo2=2.15, tfo3=-0.628, tfo4=-2.55, tfo5=0.454\nt=8863: cou0=0.155, cou1=-0.65, cou2=-1.2, cou3=-0.434, cou4=0.131, cou5=0.0817, dibi=0, dobi=0, ecu0=0.168, ecu1=-0.646, ecu2=-1.19, ecu3=-0.429, ecu4=0.134, ecu5=0.0806, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.17, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=-0.0824, fsp1=-0.0022, fsp2=0.00549, fsp3=0, fsp4=-0.0522, fsp5=0.00549, ftc0=0.0128, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=-0.000367, ftsp1=0.000055, ftsp2=-0.000034, ftsp3=0.00044, ftsp4=0.00069, ftsp5=-0.00117, gco=-2, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-9.52, tfo1=-3.29, tfo2=2.56, tfo3=0.299, tfo4=-0.797, tfo5=0.461\nt=8963: cou0=0.242, cou1=-0.648, cou2=-1.2, cou3=-0.435, cou4=0.126, cou5=0.0817, dibi=0, dobi=0, ecu0=0.224, ecu1=-0.671, ecu2=-1.19, ecu3=-0.44, ecu4=0.122, ecu5=0.085, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.17, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.0033, fsp1=-0.0022, fsp2=0.00412, fsp3=0, fsp4=-0.0192, fsp5=0.00412, ftc0=0.0127, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=-0.000019, ftsp1=0.000035, ftsp2=-0.000019, ftsp3=0.000194, ftsp4=0.000278, ftsp5=-0.000014, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.645, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-12.95, tfo1=-2.83, tfo2=2.5, tfo3=0.241, tfo4=-1.3, tfo5=0.506\nt=9064: cou0=0.296, cou1=-0.65, cou2=-1.2, cou3=-0.435, cou4=0.126, cou5=0.0806, dibi=0, dobi=0, ecu0=0.319, ecu1=-0.671, ecu2=-1.2, ecu3=-0.435, ecu4=0.129, ecu5=0.0761, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.19, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.167, fsp1=-0.0011, fsp2=0.00412, fsp3=0, fsp4=-0.011, fsp5=0.00412, ftc0=0.0128, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000738, ftsp1=0.000062, ftsp2=-0.00002, ftsp3=0.000144, ftsp4=0.000141, ftsp5=0.00284, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-17.56, tfo1=-0.309, tfo2=2.25, tfo3=-0.128, tfo4=-1.89, tfo5=0.457\nt=9166: cou0=0.285, cou1=-0.644, cou2=-1.2, cou3=-0.438, cou4=0.125, cou5=0.0794, dibi=0, dobi=0, ecu0=0.292, ecu1=-0.642, ecu2=-1.19, ecu3=-0.444, ecu4=0.117, ecu5=0.0761, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.19, fpo1=-106.62, fpo2=119.16, fpo3=-102.54, fpo4=-82.43, fpo5=271.05, fsp0=0.022, fsp1=-0.0011, fsp2=0.00275, fsp3=0, fsp4=-0.00824, fsp5=0.00275, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000086, ftsp1=0.000023, ftsp2=-0.000012, ftsp3=0.000098, ftsp4=0.000111, ftsp5=0.000336, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.573, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-16.22, tfo1=0.842, tfo2=3.01, tfo3=-0.208, tfo4=-1.79, tfo5=0.441\nt=9268: cou0=0.278, cou1=-0.644, cou2=-1.2, cou3=-0.451, cou4=0.125, cou5=0.0839, dibi=0, dobi=0, ecu0=0.305, ecu1=-0.646, ecu2=-1.21, ecu3=-0.45, ecu4=0.124, ecu5=0.0828, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.63, fpo2=119.16, fpo3=-102.54, fpo4=-82.43, fpo5=271.05, fsp0=0.0264, fsp1=-0.0011, fsp2=0.00275, fsp3=0, fsp4=-0.00549, fsp5=0.00275, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000112, ftsp1=0.000021, ftsp2=-0.000012, ftsp3=0.000076, ftsp4=0.000069, ftsp5=0.000413, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-17.01, tfo1=1.55, tfo2=2.44, tfo3=-0.315, tfo4=-1.87, tfo5=0.464\nt=9369: cou0=0.278, cou1=-0.644, cou2=-1.2, cou3=-0.451, cou4=0.125, cou5=0.0839, dibi=0, dobi=0, ecu0=0.305, ecu1=-0.646, ecu2=-1.21, ecu3=-0.45, ecu4=0.124, ecu5=0.0828, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.63, fpo2=119.16, fpo3=-102.54, fpo4=-82.43, fpo5=271.05, fsp0=0.0264, fsp1=-0.0011, fsp2=0.00275, fsp3=0, fsp4=-0.00549, fsp5=0.00275, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000112, ftsp1=0.000021, ftsp2=-0.000012, ftsp3=0.000076, ftsp4=0.000069, ftsp5=0.000413, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-17.01, tfo1=1.55, tfo2=2.44, tfo3=-0.315, tfo4=-1.87, tfo5=0.464\nt=9470: cou0=0.278, cou1=-0.653, cou2=-1.2, cou3=-0.478, cou4=0.125, cou5=0.0817, dibi=0, dobi=0, ecu0=0.269, ecu1=-0.668, ecu2=-1.2, ecu3=-0.482, ecu4=0.126, ecu5=0.0739, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.62, fpo2=119.16, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.0121, fsp1=-0.0011, fsp2=0.00275, fsp3=0, fsp4=-0.00549, fsp5=0.00275, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=0.000047, ftsp1=0.000017, ftsp2=-0.000012, ftsp3=0.000076, ftsp4=0.000069, ftsp5=0.000163, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.609, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-15.16, tfo1=-0.991, tfo2=3.32, tfo3=0.242, tfo4=-1.69, tfo5=0.478\nt=9571: cou0=0.278, cou1=-0.648, cou2=-1.2, cou3=-0.472, cou4=0.125, cou5=0.0817, dibi=0, dobi=0, ecu0=0.28, ecu1=-0.653, ecu2=-1.2, ecu3=-0.474, ecu4=0.124, ecu5=0.0817, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.62, fpo2=119.17, fpo3=-102.55, fpo4=-82.43, fpo5=271.04, fsp0=0.00659, fsp1=-0.0011, fsp2=0.00275, fsp3=0, fsp4=-0.00412, fsp5=0.00275, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000026, ftsp1=0.000015, ftsp2=-0.000011, ftsp3=0.000065, ftsp4=0.000048, ftsp5=0.000067, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.68, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-15.83, tfo1=0.486, tfo2=3.16, tfo3=-0.00905, tfo4=-1.77, tfo5=0.49\nt=9672: cou0=0.271, cou1=-0.65, cou2=-1.2, cou3=-0.476, cou4=0.125, cou5=0.0828, dibi=0, dobi=0, ecu0=0.285, ecu1=-0.637, ecu2=-1.2, ecu3=-0.474, ecu4=0.132, ecu5=0.0817, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.63, fpo2=119.16, fpo3=-102.54, fpo4=-82.43, fpo5=271.05, fsp0=0.00659, fsp1=-0.0011, fsp2=0.00137, fsp3=0, fsp4=-0.00275, fsp5=0.00137, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.175, ftsp0=0.000026, ftsp1=0.000009, ftsp2=-0.000004, ftsp3=0.000029, ftsp4=0.000039, ftsp5=0.000091, gco=1, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.81, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.573, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-16.07, tfo1=1.45, tfo2=3.6, tfo3=-0.0864, tfo4=-1.79, tfo5=0.482\nt=9773: cou0=0.265, cou1=-0.65, cou2=-1.2, cou3=-0.478, cou4=0.125, cou5=0.0794, dibi=0, dobi=0, ecu0=0.271, ecu1=-0.644, ecu2=-1.21, ecu3=-0.486, ecu4=0.126, ecu5=0.0783, etcu0=0, etcu1=-0.616, etcu2=-1.35, etcu3=-0.56, etcu4=0.0576, etcu5=0, ev=31, fpo0=62.2, fpo1=-106.62, fpo2=119.17, fpo3=-102.55, fpo4=-82.43, fpo5=271.05, fsp0=0.00659, fsp1=-0.0011, fsp2=0.00137, fsp3=0, fsp4=-0.00275, fsp5=0.00137, ftc0=0.0129, ftc1=-0.259, ftc2=0.203, ftc3=-1.56, ftc4=2.64, ftc5=-0.174, ftsp0=0.000026, ftsp1=0.000009, ftsp2=-0.000004, ftsp3=0.000029, ftsp4=0.000039, ftsp5=0.000091, gco=0, jmo0=253, jmo1=253, jmo2=253, jmo3=253, jmo4=253, jmo5=253, jte0=33.91, jte1=36.24, jte2=39.16, jte3=40.82, jte4=43.77, jte5=41.33, mvo=48.19, rcu=0.716, rmo=7, rvo=48.19, rst=4, smo=3, spo0=62.19, spo1=-106.62, spo2=119.16, spo3=-102.55, spo4=-82.43, spo5=271.04, ssp0=0, ssp1=0, ssp2=0, ssp3=0, ssp4=0, ssp5=0, stc0=0.0129, stc1=-0.259, stc2=0.203, stc3=-1.56, stc4=2.64, stc5=-0.174, stsp0=0, stsp1=0, stsp2=0, stsp3=0, stsp4=0, stsp5=0, ssc=0, tsfr=1, tph=7, tmo=0, tfo0=-15.34, tfo1=1.01, tfo2=3.42, tfo3=-0.0081, tfo4=-1.73, tfo5=0.472\n\nQuestion:\nGiven the sensor stream below, does the machine show signs of anomalous behavior? If yes, identify the most likely root cause. Answer with the letter of the single best-matching option. Answer only with the letter (e.g. A). Do not output anything else.",
+    "known_root_cause": "collision_rigid_object",
+    "reference_answer": "E"
+  },
+  "judge_model": "gpt-5.5",
+  "judge_repeats_same_model": 1,
+  "independent_judge_models": false,
+  "parser_regression": [
+    {
+      "name": "complete_json",
+      "expected_valid": true,
+      "expected_error": null,
+      "actual_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "collision with a rigid object",
+          "evidence": [
+            "contact force changes during the task"
+          ],
+          "corrective_actions": [
+            "stop and inspect the work area"
+          ]
+        },
+        "raw_sha256_before_parse": "a5bd6c0f907094616ea389164a8d3a2116359cc29b163b8e6ecc7424a284145f",
+        "raw_sha256_after_parse": "a5bd6c0f907094616ea389164a8d3a2116359cc29b163b8e6ecc7424a284145f",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    },
+    {
+      "name": "free_form_response",
+      "expected_valid": false,
+      "expected_error": "invalid_or_incomplete_json",
+      "actual_validation": {
+        "valid": false,
+        "errors": [
+          "invalid_or_incomplete_json: Expecting value: line 1 column 1 (char 0)"
+        ],
+        "parsed": null,
+        "raw_sha256_before_parse": "abe2c4ed809beb5de13504e91a763a47b815212c81bab4aff58010c29d791c47",
+        "raw_sha256_after_parse": "abe2c4ed809beb5de13504e91a763a47b815212c81bab4aff58010c29d791c47",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    },
+    {
+      "name": "blank_response",
+      "expected_valid": false,
+      "expected_error": "empty_response",
+      "actual_validation": {
+        "valid": false,
+        "errors": [
+          "empty_response"
+        ],
+        "parsed": null,
+        "raw_sha256_before_parse": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_sha256_after_parse": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    },
+    {
+      "name": "bare_option_letter",
+      "expected_valid": false,
+      "expected_error": "option_letter_only",
+      "actual_validation": {
+        "valid": false,
+        "errors": [
+          "option_letter_only"
+        ],
+        "parsed": null,
+        "raw_sha256_before_parse": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+        "raw_sha256_after_parse": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    },
+    {
+      "name": "truncated_root_cause_heading",
+      "expected_valid": false,
+      "expected_error": "suspected_truncated_heading",
+      "actual_validation": {
+        "valid": false,
+        "errors": [
+          "suspected_truncated_heading"
+        ],
+        "parsed": {
+          "root_cause": "root cause",
+          "evidence": [],
+          "corrective_actions": []
+        },
+        "raw_sha256_before_parse": "df0f09bec94f68661b2f378a41db2864fd927c6d1af1c4d79cccbad36cfd1abf",
+        "raw_sha256_after_parse": "df0f09bec94f68661b2f378a41db2864fd927c6d1af1c4d79cccbad36cfd1abf",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    },
+    {
+      "name": "markdown_heading_response",
+      "expected_valid": false,
+      "expected_error": "invalid_or_incomplete_json",
+      "actual_validation": {
+        "valid": false,
+        "errors": [
+          "invalid_or_incomplete_json: Expecting value: line 1 column 1 (char 0)"
+        ],
+        "parsed": null,
+        "raw_sha256_before_parse": "06ba573a1f2b0e86f5746215180988697eb399c0e9e5e0aa44c19e1dc0523332",
+        "raw_sha256_after_parse": "06ba573a1f2b0e86f5746215180988697eb399c0e9e5e0aa44c19e1dc0523332",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "passed": true
+    }
+  ],
+  "records": [
+    {
+      "name": "correct_root_and_correct_action",
+      "description": "Correct root cause plus reference corrective answer",
+      "raw_response": "{\n  \"root_cause\": \"collision_rigid_object\",\n  \"evidence\": [],\n  \"corrective_actions\": [\n    \"E\"\n  ]\n}",
+      "expected_deterministic_valid": true,
+      "expected_judge_score": 1.0,
+      "raw_response_sha256_at_save": "7ddb9bd8f525e66a0287228282662a5dffa6a501b0dab74eb0d6b1440067331c",
+      "deterministic_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "collision_rigid_object",
+          "evidence": [],
+          "corrective_actions": [
+            "E"
+          ]
+        },
+        "raw_sha256_before_parse": "7ddb9bd8f525e66a0287228282662a5dffa6a501b0dab74eb0d6b1440067331c",
+        "raw_sha256_after_parse": "7ddb9bd8f525e66a0287228282662a5dffa6a501b0dab74eb0d6b1440067331c",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [
+        {
+          "status": "ok",
+          "raw_response": "{\n  \"score\": 1.0,\n  \"root_cause_correct\": true,\n  \"protocol_correct\": true,\n  \"reason\": \"The model explicitly identifies the root cause as collision_rigid_object, matching the known root cause, and includes the correct option letter E, although not in the requested letter-only format.\"\n}",
+          "parsed": {
+            "score": 1.0,
+            "root_cause_correct": true,
+            "protocol_correct": true,
+            "reason": "The model explicitly identifies the root cause as collision_rigid_object, matching the known root cause, and includes the correct option letter E, although not in the requested letter-only format."
+          },
+          "attempt": 1,
+          "repeat_index": 1
+        }
+      ],
+      "median_score": 1.0,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_errors": [],
+      "judge_status": "ok"
+    },
+    {
+      "name": "correct_root_and_wrong_action",
+      "description": "Correct root cause but materially wrong action",
+      "raw_response": "{\n  \"root_cause\": \"collision_rigid_object\",\n  \"evidence\": [],\n  \"corrective_actions\": [\n    \"Continue operating without inspection, recovery, or verification.\"\n  ]\n}",
+      "expected_deterministic_valid": true,
+      "expected_judge_score": 0.5,
+      "raw_response_sha256_at_save": "966fd6a507fd08485c7e14e505f73995d5bdcc9e714f384b26565c70c28153ca",
+      "deterministic_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "collision_rigid_object",
+          "evidence": [],
+          "corrective_actions": [
+            "Continue operating without inspection, recovery, or verification."
+          ]
+        },
+        "raw_sha256_before_parse": "966fd6a507fd08485c7e14e505f73995d5bdcc9e714f384b26565c70c28153ca",
+        "raw_sha256_after_parse": "966fd6a507fd08485c7e14e505f73995d5bdcc9e714f384b26565c70c28153ca",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [
+        {
+          "status": "ok",
+          "raw_response": "{\n  \"score\": 0.5,\n  \"root_cause_correct\": true,\n  \"protocol_correct\": false,\n  \"reason\": \"The model correctly identifies the root cause as collision with a rigid object, matching the known root cause. However, its corrective action to continue operating without inspection or verification is materially unsafe and incorrect.\"\n}",
+          "parsed": {
+            "score": 0.5,
+            "root_cause_correct": true,
+            "protocol_correct": false,
+            "reason": "The model correctly identifies the root cause as collision with a rigid object, matching the known root cause. However, its corrective action to continue operating without inspection or verification is materially unsafe and incorrect."
+          },
+          "attempt": 1,
+          "repeat_index": 1
+        }
+      ],
+      "median_score": 0.5,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_errors": [],
+      "judge_status": "ok"
+    },
+    {
+      "name": "symptom_only",
+      "description": "Only describes torque/force symptoms",
+      "raw_response": "{\n  \"root_cause\": \"The torque and estimated contact force are abnormal.\",\n  \"evidence\": [],\n  \"corrective_actions\": [\n    \"Inspect the system.\"\n  ]\n}",
+      "expected_deterministic_valid": true,
+      "expected_judge_score": 0.0,
+      "raw_response_sha256_at_save": "e00be753f9b177cf133a8ab4e13999b01e39b4de4766f5c82cd0af4280c75246",
+      "deterministic_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "The torque and estimated contact force are abnormal.",
+          "evidence": [],
+          "corrective_actions": [
+            "Inspect the system."
+          ]
+        },
+        "raw_sha256_before_parse": "e00be753f9b177cf133a8ab4e13999b01e39b4de4766f5c82cd0af4280c75246",
+        "raw_sha256_after_parse": "e00be753f9b177cf133a8ab4e13999b01e39b4de4766f5c82cd0af4280c75246",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [
+        {
+          "status": "ok",
+          "raw_response": "{\n  \"score\": 0.0,\n  \"root_cause_correct\": false,\n  \"protocol_correct\": false,\n  \"reason\": \"The model only identifies abnormal torque/contact force, which is a symptom, not the known root cause of collision with a rigid object. It also does not answer with the required option letter.\"\n}",
+          "parsed": {
+            "score": 0.0,
+            "root_cause_correct": false,
+            "protocol_correct": false,
+            "reason": "The model only identifies abnormal torque/contact force, which is a symptom, not the known root cause of collision with a rigid object. It also does not answer with the required option letter."
+          },
+          "attempt": 1,
+          "repeat_index": 1
+        }
+      ],
+      "median_score": 0.0,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_errors": [],
+      "judge_status": "ok"
+    },
+    {
+      "name": "wrong_root_cause",
+      "description": "Incorrectly claims normal operation",
+      "raw_response": "{\n  \"root_cause\": \"The machine is operating normally and no fault is present.\",\n  \"evidence\": [],\n  \"corrective_actions\": [\n    \"Continue normal operation.\"\n  ]\n}",
+      "expected_deterministic_valid": true,
+      "expected_judge_score": 0.0,
+      "raw_response_sha256_at_save": "b63de6d43931ebb9062cd28a16fcee56ca7f97adc9204646f26573743fcbb644",
+      "deterministic_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "The machine is operating normally and no fault is present.",
+          "evidence": [],
+          "corrective_actions": [
+            "Continue normal operation."
+          ]
+        },
+        "raw_sha256_before_parse": "b63de6d43931ebb9062cd28a16fcee56ca7f97adc9204646f26573743fcbb644",
+        "raw_sha256_after_parse": "b63de6d43931ebb9062cd28a16fcee56ca7f97adc9204646f26573743fcbb644",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [
+        {
+          "status": "ok",
+          "raw_response": "{\"score\":0.0,\"root_cause_correct\":false,\"protocol_correct\":false,\"reason\":\"The known root cause is a collision with a rigid object, but the model states the machine is operating normally with no fault and recommends continuing operation.\"}",
+          "parsed": {
+            "score": 0.0,
+            "root_cause_correct": false,
+            "protocol_correct": false,
+            "reason": "The known root cause is a collision with a rigid object, but the model states the machine is operating normally with no fault and recommends continuing operation."
+          },
+          "attempt": 1,
+          "repeat_index": 1
+        }
+      ],
+      "median_score": 0.0,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_errors": [],
+      "judge_status": "ok"
+    },
+    {
+      "name": "bare_option_letter",
+      "description": "Bare answer choice must be blocked before semantic judging",
+      "raw_response": "B",
+      "expected_deterministic_valid": false,
+      "expected_judge_score": null,
+      "raw_response_sha256_at_save": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+      "deterministic_validation": {
+        "valid": false,
+        "errors": [
+          "option_letter_only"
+        ],
+        "parsed": null,
+        "raw_sha256_before_parse": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+        "raw_sha256_after_parse": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [],
+      "median_score": null,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_status": "skipped_deterministic_invalid"
+    },
+    {
+      "name": "semantic_paraphrase",
+      "description": "Correct semantic paraphrase plus reference corrective answer",
+      "raw_response": "{\n  \"root_cause\": \"The robot collided with a rigid object.\",\n  \"evidence\": [],\n  \"corrective_actions\": [\n    \"E\"\n  ]\n}",
+      "expected_deterministic_valid": true,
+      "expected_judge_score": 1.0,
+      "raw_response_sha256_at_save": "79d870852db20dd99104fa1329354e4a68faa4efeed8d88833d05ea4a8f10277",
+      "deterministic_validation": {
+        "valid": true,
+        "errors": [],
+        "parsed": {
+          "root_cause": "The robot collided with a rigid object.",
+          "evidence": [],
+          "corrective_actions": [
+            "E"
+          ]
+        },
+        "raw_sha256_before_parse": "79d870852db20dd99104fa1329354e4a68faa4efeed8d88833d05ea4a8f10277",
+        "raw_sha256_after_parse": "79d870852db20dd99104fa1329354e4a68faa4efeed8d88833d05ea4a8f10277",
+        "raw_response_unchanged": true,
+        "semantic_score": null
+      },
+      "judge_votes": [
+        {
+          "status": "ok",
+          "raw_response": "{\n  \"score\": 1.0,\n  \"root_cause_correct\": true,\n  \"protocol_correct\": true,\n  \"reason\": \"The model explicitly identifies the root cause as collision with a rigid object, which matches the known root cause, and it includes the correct option E.\"\n}",
+          "parsed": {
+            "score": 1.0,
+            "root_cause_correct": true,
+            "protocol_correct": true,
+            "reason": "The model explicitly identifies the root cause as collision with a rigid object, which matches the known root cause, and it includes the correct option E."
+          },
+          "attempt": 1,
+          "repeat_index": 1
+        }
+      ],
+      "median_score": 1.0,
+      "passed": true,
+      "raw_response_still_matches_saved_digest": true,
+      "deterministic_expectation_met": true,
+      "judge_errors": [],
+      "judge_status": "ok"
+    }
+  ],
+  "summary": {
+    "parser_regression_passed": true,
+    "deterministic_fixtures_passed": true,
+    "semantic_judge_smoke_test_passed": true,
+    "overall_passed": true,
+    "formal_three_independent_judge_result": false
+  }
+}

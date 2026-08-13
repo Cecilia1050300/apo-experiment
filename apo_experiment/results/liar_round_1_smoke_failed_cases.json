@@ -1,0 +1,10 @@
+{
+  "task": "liar",
+  "target_model": "gpt-5.5",
+  "dataset_split": "optimization",
+  "best_prompt_id": "candidate_2",
+  "best_prompt": "Judge the truthfulness of the statement by considering the statement together with the provided subject, speaker, speaker job, state, party, and context. Choose exactly one label: pants-fire, false, barely-true, half-true, mostly-true, or true. Output only the label.",
+  "best_accuracy": 1.0,
+  "failed_case_count": 0,
+  "failed_cases": []
+}

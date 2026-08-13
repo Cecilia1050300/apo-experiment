@@ -1,0 +1,24 @@
+diff --git a/factorybench/adapters/openai.py b/factorybench/adapters/openai.py
+index 7534b76..4eab4ee 100644
+--- a/factorybench/adapters/openai.py
++++ b/factorybench/adapters/openai.py
+@@ -26,8 +26,8 @@ class OpenAIAdapter:
+         api_key: str | None = None,
+         base_url: str | None = None,
+         api_key_env: str = "OPENAI_API_KEY",
+-        max_tokens: int = 1024,
+-        timeout: float = 60.0,
++        max_tokens: int = 8192,
++        timeout: float = 600.0,
+     ):
+         try:
+             from openai import OpenAI
+@@ -63,7 +63,7 @@ class OpenAIAdapter:
+         resp = self._client.chat.completions.create(
+             model=self._model,
+             messages=[{"role": "user", "content": prompt}],
+-            max_tokens=self._max_tokens,
++            max_completion_tokens=self._max_tokens,
+         )
+         text = resp.choices[0].message.content or ""
+         usage = None

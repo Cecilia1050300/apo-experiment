@@ -185,3 +185,16 @@ __pycache__/
 .venv/
 __pycache__/
 *.pyc
+
+# External benchmark repository
+/FactoryBench/
+
+# External repositories and downloaded datasets
+/FactoryBench/
+/apo_experiment/ethos/
+/ethos/
+/liar_dataset/
+/liar_dataset.zip
+
+# Redundant experiment backups
+*.backup.csv

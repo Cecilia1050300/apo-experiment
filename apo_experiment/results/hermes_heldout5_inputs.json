@@ -1,0 +1,22 @@
+[
+  {
+    "id": "causal_judgment_0016",
+    "input": "Joe was feeling quite dehydrated, so he stopped by the local smoothie shop to buy the largest sized drink available. Before ordering, the cashier told him that if he bought a Mega-Sized Smoothie he would get it in a special commemorative cup. Joe replied, 'I don't care about a commemorative cup, I just want the biggest smoothie you have.' Sure enough, Joe received the Mega-Sized Smoothie in a commemorative cup. Did Joe intentionally obtain the commemorative cup?"
+  },
+  {
+    "id": "causal_judgment_0132",
+    "input": "A person, Joe, is playing a casino game where he reaches his hand into two boxes and blindly draws a ball from each box. He wins a dollar if and only if he gets a green ball from the left box and a blue ball from the right box. It is likely that he gets a green ball from the first box. It is very unlikely that he gets a blue ball in the second box. Joe closes his eyes, reaches in, and chooses a green ball from the first box and a blue ball from the second box. So Joe wins a dollar. Did Joe's first choice cause him to win a dollar?"
+  },
+  {
+    "id": "causal_judgment_0095",
+    "input": "In a particular building there are two businesses, a travel agency and a graphic design studio. The building's climate control system is a new design that saves energy by keeping track of the number of people in the building, and only turning on when enough people have entered the building. The climate control system will turn on when the people who work at the travel agency or the people who work in the design studio arrive for work. Each office has enough employees to turn on the climate control system on their own. The travel agency employees almost always arrive at 8:45am, but the design studio employees almost always arrive at 10 am. Today, the travel agency employees arrived at 8:45 am. Unexpectedly, the design studio employees also arrived at 8:45 am to meet a deadline. So, today, the climate control system turned on at 8:45 am. Did the design studio agents cause the climate control system to turn on at 8:45 am?"
+  },
+  {
+    "id": "causal_judgment_0184",
+    "input": "A bear and a hedgehog were shown a box full of colored pencils. Only bears were allowed to take pencils, whereas hedgehogs were not allowed to take them. The hedgehog was present when the new rule about pencil use was announced. Therefore, the hedgehog knew about the new norm. Both animals alternately took pencils out of the box six times. At last, the hedgehog and the bear came to the box and simultaneously took a pencil. A short time later, another animal, a polar bear, approached the box seeking a pencil to do his homework with. However, there were no pencils left in the box. The polar bear could not finish his homework. Did the hedgehog cause the problem?"
+  },
+  {
+    "id": "causal_judgment_0153",
+    "input": "Drew, Kylie, Oliver, and Jen are regular customers at a small, local coffee shop. Given the selling price of the coffee and the cost of daily operation, the coffee shop will turn a profit if anyone orders coffee on a given day. Only one person ordering coffee is needed for the coffee shop to turn a profit that day. Kylie and Oliver usually order coffee on Tuesdays. However, Drew doesn't usually order coffee on Tuesdays. This Tuesday, unexpectedly, Drew ordered coffee. The same day, Kylie ordered coffee, and Oliver also ordered coffee. Since at least one person ordered coffee on Tuesday, the coffee shop made a profit that day. Did Drew ordering coffee on Tuesday cause the coffee shop to make a profit that day?"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "task": "epistemic_reasoning",
+  "dataset_split": "final_test",
+  "best_prompt_id": "manual_seed",
+  "best_prompt": "Determine whether the premise entails the hypothesis. Output exactly entailment or non-entailment.",
+  "best_accuracy": 0.98,
+  "failed_case_count": 1,
+  "failed_cases": [
+    {
+      "id": "epistemic_reasoning_0122",
+      "input": "Premise: William believes that the man is sweeping with a red broom. Hypothesis: William believes that the man is sweeping dirt.",
+      "expected_outputs": [
+        "entailment"
+      ],
+      "prediction": "non-entailment",
+      "raw_prediction": "non-entailment",
+      "correct": false,
+      "format_compliant": true,
+      "error": null,
+      "latency_seconds": 2.5816,
+      "usage": {
+        "input_tokens": 55,
+        "output_tokens": 107,
+        "total_tokens": 162
+      }
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "status": "completed",
+  "contract_version": "factorybench_diagnostic_json_v2",
+  "comparison_type": "descriptive_paired_2x2_model_by_skill_json_contract_v2",
+  "n_diagnosis_cases": 5,
+  "n_full_protocol_cases": 2,
+  "judge_models": [
+    "gpt-5.5"
+  ],
+  "experimental_parity": {
+    "same_case_ids": true,
+    "same_target_input_hashes": true,
+    "same_reference_contract_hashes": true,
+    "same_instruction_hashes_by_role": true,
+    "same_judge_models": true
+  },
+  "diagnosis_mean_scores_all_cases": {
+    "mini_no_skill": 0.4,
+    "mini_skill_v2": 0.4,
+    "gpt55_no_skill": 0.4,
+    "gpt55_skill_v2": 0.6
+  },
+  "diagnosis_skill_effect": {
+    "mini": 0.0,
+    "gpt55": 0.19999999999999996
+  },
+  "diagnosis_model_effect_gpt55_minus_mini": {
+    "no_skill": 0.0,
+    "skill_v2": 0.19999999999999996
+  },
+  "diagnosis_difference_in_differences": 0.19999999999999996,
+  "full_protocol_mean_scores_evaluable_subset": {
+    "mini_no_skill": 0.5,
+    "mini_skill_v2": 0.5,
+    "gpt55_no_skill": 0.0,
+    "gpt55_skill_v2": 0.5
+  },
+  "per_case": [
+    {
+      "id": "353fdb06-257a-4ee0-9c45-ff948a654747",
+      "protocol_evaluable": true,
+      "diagnosis_mini_no_skill": 1.0,
+      "diagnosis_mini_skill_v2": 1.0,
+      "diagnosis_gpt55_no_skill": 0.0,
+      "diagnosis_gpt55_skill_v2": 1.0,
+      "protocol_mini_no_skill": 1.0,
+      "protocol_mini_skill_v2": 1.0,
+      "protocol_gpt55_no_skill": 0.0,
+      "protocol_gpt55_skill_v2": 1.0
+    },
+    {
+      "id": "69d936dd-9ceb-4520-bb97-bf13ce264ec7",
+      "protocol_evaluable": true,
+      "diagnosis_mini_no_skill": 0.0,
+      "diagnosis_mini_skill_v2": 0.0,
+      "diagnosis_gpt55_no_skill": 0.0,
+      "diagnosis_gpt55_skill_v2": 0.0,
+      "protocol_mini_no_skill": 0.0,
+      "protocol_mini_skill_v2": 0.0,
+      "protocol_gpt55_no_skill": 0.0,
+      "protocol_gpt55_skill_v2": 0.0
+    },
+    {
+      "id": "6d351f4a-3042-4998-8b94-89af56f212f5",
+      "protocol_evaluable": false,
+      "diagnosis_mini_no_skill": 0.0,
+      "diagnosis_mini_skill_v2": 0.0,
+      "diagnosis_gpt55_no_skill": 1.0,
+      "diagnosis_gpt55_skill_v2": 1.0,
+      "protocol_mini_no_skill": null,
+      "protocol_mini_skill_v2": null,
+      "protocol_gpt55_no_skill": null,
+      "protocol_gpt55_skill_v2": null
+    },
+    {
+      "id": "85c46509-1237-4b82-8031-5b8df660d17b",
+      "protocol_evaluable": false,
+      "diagnosis_mini_no_skill": 1.0,
+      "diagnosis_mini_skill_v2": 1.0,
+      "diagnosis_gpt55_no_skill": 0.0,
+      "diagnosis_gpt55_skill_v2": 0.0,
+      "protocol_mini_no_skill": null,
+      "protocol_mini_skill_v2": null,
+      "protocol_gpt55_no_skill": null,
+      "protocol_gpt55_skill_v2": null
+    },
+    {
+      "id": "edfc29e1-a8cd-46f3-8973-89076cbded4f",
+      "protocol_evaluable": false,
+      "diagnosis_mini_no_skill": 0.0,
+      "diagnosis_mini_skill_v2": 0.0,
+      "diagnosis_gpt55_no_skill": 1.0,
+      "diagnosis_gpt55_skill_v2": 1.0,
+      "protocol_mini_no_skill": null,
+      "protocol_mini_skill_v2": null,
+      "protocol_gpt55_no_skill": null,
+      "protocol_gpt55_skill_v2": null
+    }
+  ],
+  "limitations": [
+    "The comparison is descriptive for a small held-out subset.",
+    "Full-protocol scores exclude cases whose prepared reference was only an option letter.",
+    "A single same-family Judge is preliminary unless multiple distinct Judge models are configured.",
+    "JSON-contract v1 results are not comparable and must not be pooled with v2."
+  ],
+  "mini_source_file": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/results/json_contract_v2/mini_judged.json",
+  "mini_source_sha256": "fda7dea42c8532b80f9aaf0c5559a73dd29eb5280d88695a9fde7454377a14b5",
+  "gpt55_source_file": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/results/json_contract_v2/gpt55_judged.json",
+  "gpt55_source_sha256": "57d39b5d19a82db4fd8f16e3195320c7f5ee4fe59f27849c4098dc846428028e"
+}

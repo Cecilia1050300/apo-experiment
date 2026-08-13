@@ -1,0 +1,19 @@
+{
+  "audit_status": "completed",
+  "source_file": "/home/training/automatic_prompt_engineer/apo_experiment/factorybench_experiment/results/failure_audit_adjudication.csv",
+  "source_sha256": "5db87397cb2b92257f9861b437c5a1b5bac7dc1eb9bf86c62f3eeaa51bfaf86b",
+  "case_count": 4,
+  "primary_failure_category_counts": {
+    "EVALUATOR_OR_REFERENCE_REVIEW": 2,
+    "INSUFFICIENT_EVIDENCE": 2
+  },
+  "recommended_intervention_counts": {
+    "INPUT_DATA_OR_EVALUATOR_REVIEW": 4
+  },
+  "evidence_in_input_sufficient_counts": {
+    "NO": 4
+  },
+  "descriptive_next_experiment": "INPUT_DATA_OR_EVALUATOR_REVIEW",
+  "decision_basis": "Plurality of reviewer-completed recommended_intervention labels; ties remain unresolved.",
+  "boundary": "This summary reports human adjudication. It does not infer a knowledge gap from model scores alone."
+}
