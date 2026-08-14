@@ -1,0 +1,139 @@
+{
+  "task_name": "factorybench_l123",
+  "status": "AVAILABLE_AFTER_CONTAMINATION_AUDIT",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "contamination_registry_v2_sha256": "37afcbbd97b3489aa8e32eaf78692c2fe3570a806c09b412f84e79d8976bbd19",
+  "selection_rule": "Within each level, SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after corrected actual-exposure and episode exclusions.",
+  "split_provenance": {
+    "L1": "test_episode_disjoint",
+    "L2": "validation",
+    "L3": "validation"
+  },
+  "mixed_split_warning": "L1 uses test while L2/L3 use validation; no aggregate may be described as a pure validation score.",
+  "development_manifest_path": "data_manifests/meta_m0/factorybench_l123_development_v2.json",
+  "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+  "holdout_manifest_path": "data_manifests/meta_m0/factorybench_l123_holdout_v2.json",
+  "holdout_manifest_sha256": "e5bcfff72d27544ff3796397fd1c2b3badf86faed89a61cbd44b3bc5ab5a57a3",
+  "development": [
+    {
+      "id": "f7ba6d15-86e3-44a9-aba7-f23cdafbc225",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "38f52416-267b-4946-87d6-e245e58757d9",
+      "answer_format": "scalar_range",
+      "template_id": 1,
+      "template_type": "predictive",
+      "selection_sha256": "0019db080d8cd2ed38df12fa2d546787544fb2eadd11560fbe3543bad5e14cd2",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "1b9ea101-8cb3-41ac-a539-f649a3bfb890",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "2c3bd17b-2f05-4a08-b6e5-7ada5a67fa3b",
+      "answer_format": "scalar_range",
+      "template_id": 6,
+      "template_type": "predictive",
+      "selection_sha256": "003b22517ff24e3db6b8f8006c0dbb21fa94473f18e5188e858ba82f41049099",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "a4286f63-a25e-42f0-8288-24734d43796e",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "ac98c8e4-2144-4faa-8ac5-1b8676571793",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "selection_sha256": "017a14628c6ead56de5c854779d1e508eaaff5fc3b5516a88c3f509dc6d0635a",
+      "selection_rank_within_level": 1
+    }
+  ],
+  "holdout": [
+    {
+      "id": "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_3200",
+      "answer_format": "single_letter_mcq",
+      "template_id": 6,
+      "template_type": "identification",
+      "selection_sha256": "004431c4b71382e6e223c668ec4e2257a05df207404495de0f72f3091adf180d",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "9bdfa657-f4a5-4641-914e-4cd596f39563",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_1663",
+      "answer_format": "scalar_exact",
+      "template_id": 7,
+      "template_type": "predictive",
+      "selection_sha256": "0071fd37db1af42ef1a9214ddfa9dd9ef6de13d967b05fe8f043e1d48357abcf",
+      "selection_rank_within_level": 2
+    },
+    {
+      "id": "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+      "level": 2,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_1748",
+      "answer_format": "single_letter_mcq",
+      "template_id": 10,
+      "template_type": "identification",
+      "selection_sha256": "001408709552bfeb6d137047aa767398ed13649560860b23f4e5d40803e71c26",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "d4c69d1d-d1a7-4760-8edc-3ff42a86f0a1",
+      "answer_format": "single_letter_mcq",
+      "template_id": 10,
+      "template_type": "identification",
+      "selection_sha256": "001a16ed4b3b1c94ad7dca769dc1f43193b11b0842748fa46483ba2bd4bc307c",
+      "selection_rank_within_level": 2
+    },
+    {
+      "id": "1558f035-fdec-4797-9303-0d0a88e016c6",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "76e250f2-b683-4327-a1a8-17bbcc2a6b8f",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "selection_sha256": "0063f1545820dc79e9d901c86b821239ede527e7e0e68df5759e94415a72ffb2",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "fab5cfdd-32cc-4491-9d6e-89e82c4d9413",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "selection_sha256": "007f84383305858ce93dd26ba03684861e01d84d36a1fa464633b46fbbf70f57",
+      "selection_rank_within_level": 2
+    }
+  ],
+  "counts": {
+    "development": 3,
+    "holdout": 6
+  },
+  "id_disjoint": true,
+  "episode_disjoint": true
+}

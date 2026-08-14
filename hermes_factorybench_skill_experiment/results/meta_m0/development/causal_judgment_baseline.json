@@ -1,0 +1,97 @@
+{
+  "task_name": "causal_judgment",
+  "partition": "development",
+  "condition": "baseline",
+  "model": "gpt-5.5",
+  "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+  "runtime_prompt_path": null,
+  "runtime_prompt_sha256": null,
+  "item_count": 3,
+  "ordered_ids": [
+    "causal_judgment_0122",
+    "causal_judgment_0139",
+    "causal_judgment_0177"
+  ],
+  "canonical_score": 0.0,
+  "fixed_cardinality_score": 0.0,
+  "parse_failures": 3,
+  "by_subgroup": {
+    "causal_attribution": 0.0
+  },
+  "tokens_used": {
+    "candidate": {
+      "model": "gpt-5.5",
+      "input_tokens": 714,
+      "output_tokens": 1239,
+      "calls": 3
+    },
+    "judges": {}
+  },
+  "cost": 0.022155,
+  "wall_time_seconds": 13.278172444552183,
+  "items": [
+    {
+      "id": "causal_judgment_0122",
+      "source_index": 122,
+      "subgroup": "causal_attribution",
+      "raw_output": "Legally and medically, **Mr. Bruce’s attack caused Mr. Wallace’s death**.\n\n- The coroner found that Wallace died from **fatal burns from the car explosion**.\n- The poison was present in his blood and was lethal, but it had not yet killed him; it would likely not have taken effect for roughly another half hour or more.\n- So Mr. Vincent likely committed **attempted murder** by poisoning him.\n- Mr. Bruce likely committed **murder**, because his ramming caused the crash and explosion that actually killed Wallace.\n\nIf you mean “did his criminal lifestyle cause his death?” then only in a broad, indirect sense: his organized-crime life put him around people with motives to kill him. But the direct cause of death was Bruce’s attack, not the poison.",
+      "parsed": "Legally and medically, **Mr. Bruce’s attack caused Mr. Wallace’s death**.\n\n- The coroner found that Wallace died from **fatal burns from the car explosion**.\n- The poison was present in his blood and was lethal, but it had not yet killed him; it would likely not have taken effect for roughly another half hour or more.\n- So Mr. Vincent likely committed **attempted murder** by poisoning him.\n- Mr. Bruce likely committed **murder**, because his ramming caused the crash and explosion that actually killed Wallace.\n\nIf you mean “did his criminal lifestyle cause his death?” then only in a broad, indirect sense: his organized-crime life put him around people with motives to kill him. But the direct cause of death was Bruce’s attack, not the poison.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 13.277116454206407,
+      "candidate_usage": {
+        "input_tokens": 369,
+        "output_tokens": 684
+      },
+      "development_evidence": {
+        "input": "Mr. Wallace is highly influential in the organized crime scene. Although he commands the respect of many, there are also a number of people who stand to benefit from his death. Today, he was having lunch with one of his associates, Mr. Vincent. At one point during their meeting, Mr. Wallace left the table to go to the toilet. While he was gone, Mr. Vincent managed to slip a lethal dose of poison into his martini. The poison is known to take one hour (give or take 10 minutes, depending on the victim's body weight) to kill and would go unnoticed for the first half hour after consumption. When Mr. Wallace returned to the table, he finished his lunch and then drank the rest of his martini. The two men concluded their meeting a few minutes later. Mr. Wallace paid the bill and they both left the restaurant going in different directions. Mr. Wallace had another important business meeting about 15 minutes away in a remote part of the countryside. On an isolated stretch of road, he noticed that he was suddenly being followed by a van that had pulled out from the roadside. The van accelerated and began hitting his car from behind. Mr. Wallace recognized that the driver was Mr. Bruce, an associate of one of Mr. Wallace's rivals. He tried to evade the van but there was no time. The van relentlessly hit his car and pushed it off the side where it fell into a ravine and exploded. The remains of Mr. Wallace's body were discovered later that day. The chief coroner's report later revealed that Mr. Wallace had received fatal burns in the car explosion. The report also indicated, however, that a lethal dose of poison was found in Mr. Wallace's blood. Did the crime life cause Mr. Wallace's death?",
+        "expected_outputs": [
+          "No"
+        ]
+      }
+    },
+    {
+      "id": "causal_judgment_0139",
+      "source_index": 139,
+      "subgroup": "causal_attribution",
+      "raw_output": "No—not in the usual direct or blameworthy sense.\n\nThe neighbor’s decision to drive Joe’s son home was part of the chain of events, but the injury was caused by the drunk driver who struck the car. Unless the neighbor was driving negligently or did something unsafe, he would not normally be considered the cause of the child’s injuries.",
+      "parsed": "No—not in the usual direct or blameworthy sense.\n\nThe neighbor’s decision to drive Joe’s son home was part of the chain of events, but the injury was caused by the drunk driver who struck the car. Unless the neighbor was driving negligently or did something unsafe, he would not normally be considered the cause of the child’s injuries.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 6.820589463226497,
+      "candidate_usage": {
+        "input_tokens": 197,
+        "output_tokens": 307
+      },
+      "development_evidence": {
+        "input": "Joe was about to go pick up his child from a school in the suburbs. In the parking lot, he stopped to talk with friends. Because of this delay in picking up his son, Joe's neighbor, who waited 15 min for Joe to show up, took the child home in his car. On the way home, the neighbor's car was struck by a drunk driver. Joe's son, the only seriously hurt victim, received severe leg injuries. Joe's behavior stems from his talkativeness. He is the type of person who likes to talk to anybody, at any time. Sometimes his friends are bothered by this seemingly excessive talkativeness and they even complain about it occasionally. But, after they got to know him better, they realized that Joe's talkativeness was a basic trait of his personality. Thus, it was something he could not help, even when he tried hard. Did the neighbor cause injury to Joe's son?",
+        "expected_outputs": [
+          "No"
+        ]
+      }
+    },
+    {
+      "id": "causal_judgment_0177",
+      "source_index": 177,
+      "subgroup": "causal_attribution",
+      "raw_output": "Yes. Zoe caused (or at least helped cause) the empty email to be sent.\n\nThe rule is: an email is sent if two people are logged in at the same time. When Alice logged in at 9:30, Zoe was already logged in, so Zoe’s being logged in was a necessary part of the condition that triggered the email. Alice also caused it, but Zoe’s login contributed causally as well.",
+      "parsed": "Yes. Zoe caused (or at least helped cause) the empty email to be sent.\n\nThe rule is: an email is sent if two people are logged in at the same time. When Alice logged in at 9:30, Zoe was already logged in, so Zoe’s being logged in was a necessary part of the condition that triggered the email. Alice also caused it, but Zoe’s login contributed causally as well.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 4.667588074691594,
+      "candidate_usage": {
+        "input_tokens": 148,
+        "output_tokens": 248
+      },
+      "development_evidence": {
+        "input": "Alice and Zoe work for the same company. They work in different rooms and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Zoe logs in to the central computer at 9 am. The same day, Alice logs in at 9:30 am, when Zoe is already logged in. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?",
+        "expected_outputs": [
+          "No"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "partition": "development_fold_a",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "seed": "m1-factorybench-l123-dev-fold-a",
+  "expected_count": 3,
+  "split_provenance": {
+    "L1": "test_episode_disjoint",
+    "L2": "validation",
+    "L3": "validation"
+  },
+  "mixed_split_warning": "L1 test plus L2/L3 validation; not a pure validation score.",
+  "items": [
+    {
+      "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "c5bbf9fa-0470-4487-99be-a24f28e9d264",
+      "answer_format": "scalar_margin",
+      "template_id": 7,
+      "template_type": "predictive",
+      "selection_sha256": "00278af7c021f9a5364c3293521643161e1859dd481818ee76bf8973dd2dbbbb",
+      "selection_rank": 1
+    },
+    {
+      "id": "a6cde6c4-498a-4e60-a6b2-57dac38e7022",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "03ea651d-6e78-4021-8a8d-7240cc156c7a",
+      "answer_format": "single_letter_mcq",
+      "template_id": 7,
+      "template_type": "anomaly detection",
+      "selection_sha256": "001dd72eb8ae0a98eb4b54898511a47cfe04bd814cac79ecd0dfe08f44c001c7",
+      "selection_rank": 1
+    },
+    {
+      "id": "198ae6a7-f1c6-42f5-b6a3-5d058bdeb0e7",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "8fd78e0d-4fc6-4985-874d-0ecd5c232389",
+      "answer_format": "four_letter_tf",
+      "template_id": 2,
+      "template_type": "intervention_outcome",
+      "selection_sha256": "009e3c63399ebc5fa1bbba9f4bd88cea0ef7e42ecaedb0c5ed47abdde84061c1",
+      "selection_rank": 1
+    }
+  ]
+}

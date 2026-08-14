@@ -1,0 +1,203 @@
+{
+  "task_name": "factorybench_l123",
+  "protocol": "mixed_split_l1_test_l2_l3_validation",
+  "partition": "holdout",
+  "condition": "baseline_completion",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "manifest_path": "data_manifests/meta_m0/factorybench_l123_holdout_v2.json",
+  "manifest_sha256": "e5bcfff72d27544ff3796397fd1c2b3badf86faed89a61cbd44b3bc5ab5a57a3",
+  "runtime_prompt_path": null,
+  "runtime_prompt_sha256": null,
+  "item_count": 6,
+  "ordered_ids": [
+    "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+    "9bdfa657-f4a5-4641-914e-4cd596f39563",
+    "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+    "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+    "1558f035-fdec-4797-9303-0d0a88e016c6",
+    "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad"
+  ],
+  "canonical_score": 0.4,
+  "fixed_cardinality_score": 0.4,
+  "parse_failures": 0,
+  "by_level": {
+    "1": 1.0,
+    "2": 0.25,
+    "3": 0.0
+  },
+  "by_split": {
+    "test": 1.0,
+    "validation": 0.1
+  },
+  "by_dataset": {
+    "aursad": 1.0,
+    "factorywave": 0.25,
+    "vorausad": -0.49999999999999994
+  },
+  "by_answer_format": {
+    "scalar_exact": 1.0,
+    "single_letter_mcq": 0.49999999999999994,
+    "tensor_margin": 0.0
+  },
+  "mixed_split_warning": "L1 uses test while L2/L3 use validation; no aggregate may be described as a pure validation score.",
+  "tokens_used": {
+    "candidate": {
+      "model": "gpt-5.5",
+      "input_tokens": 50521,
+      "output_tokens": 9304,
+      "calls": 6
+    },
+    "judges": {}
+  },
+  "cost": 0.392165,
+  "wall_time_seconds": 77.43058508820832,
+  "items": [
+    {
+      "id": "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_3200",
+      "answer_format": "single_letter_mcq",
+      "template_id": 6,
+      "template_type": "identification",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 5521,
+        "output_tokens": 1040
+      },
+      "latency_seconds": 17.229577775113285,
+      "development_evidence": null
+    },
+    {
+      "id": "9bdfa657-f4a5-4641-914e-4cd596f39563",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_1663",
+      "answer_format": "scalar_exact",
+      "template_id": 7,
+      "template_type": "predictive",
+      "raw_output": "-0.7155",
+      "parsed": -0.7155,
+      "score": 1.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 15260,
+        "output_tokens": 366
+      },
+      "latency_seconds": 6.081505060195923,
+      "development_evidence": null
+    },
+    {
+      "id": "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+      "level": 2,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_1748",
+      "answer_format": "single_letter_mcq",
+      "template_id": 10,
+      "template_type": "identification",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 0.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 5627,
+        "output_tokens": 4744
+      },
+      "latency_seconds": 71.34749415982515,
+      "development_evidence": null
+    },
+    {
+      "id": "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "d4c69d1d-d1a7-4760-8edc-3ff42a86f0a1",
+      "answer_format": "single_letter_mcq",
+      "template_id": 10,
+      "template_type": "identification",
+      "raw_output": "C",
+      "parsed": "C",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 12593,
+        "output_tokens": 240
+      },
+      "latency_seconds": 5.650069113820791,
+      "development_evidence": null
+    },
+    {
+      "id": "1558f035-fdec-4797-9303-0d0a88e016c6",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "76e250f2-b683-4327-a1a8-17bbcc2a6b8f",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "raw_output": "[6.22,-60.37,90.31,-120.15,-90.72,330.1]",
+      "parsed": [
+        6.22,
+        -60.37,
+        90.31,
+        -120.15,
+        -90.72,
+        330.1
+      ],
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 5780,
+        "output_tokens": 532
+      },
+      "latency_seconds": 7.057836692780256,
+      "development_evidence": null
+    },
+    {
+      "id": "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "fab5cfdd-32cc-4491-9d6e-89e82c4d9413",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "raw_output": "[29.22,-78.17,116.83,-129.11,-90.19,265.34]",
+      "parsed": [
+        29.22,
+        -78.17,
+        116.83,
+        -129.11,
+        -90.19,
+        265.34
+      ],
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "transport_error": null,
+      "candidate_usage": {
+        "input_tokens": 5740,
+        "output_tokens": 2382
+      },
+      "latency_seconds": 28.434248032979667,
+      "development_evidence": null
+    }
+  ]
+}

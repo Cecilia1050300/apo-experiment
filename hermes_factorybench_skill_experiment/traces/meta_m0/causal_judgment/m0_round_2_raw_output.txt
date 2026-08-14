@@ -1,0 +1,51 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "causal_judgment",
+  "mode": "refine",
+  "decision": "ADAPTER",
+  "task_scope": [
+    "Binary causal attribution judgments",
+    "Binary intentionality judgments"
+  ],
+  "supported_formats": [
+    "exactly Yes or No"
+  ],
+  "applicability_conditions": [
+    "Apply only when the task asks for a binary Yes/No judgment about whether a specified factor caused or intentionally produced an outcome.",
+    "Apply the causal-attribution guidance only when the question is about causation rather than intentionality.",
+    "Apply the intentionality guidance only when the question asks whether an outcome was intentionally produced."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "format_noncompliance",
+      "evidence_count": 3,
+      "description": "Core-only responses provided explanations or punctuation instead of exactly one allowed label, causing exact-match parse failures."
+    },
+    {
+      "category": "overinclusive_but_for_causation",
+      "evidence_count": 2,
+      "description": "Core-only responses treated a broad background condition or passive standing condition as causal merely because it was part of the chain leading to the outcome."
+    },
+    {
+      "category": "proximate_cause_displacement",
+      "evidence_count": 2,
+      "description": "Development items show that when a later independent action or event directly produces the outcome, earlier background or enabling factors should not automatically be labeled as causes."
+    }
+  ],
+  "adapter_text": "For this task, output exactly one token: Yes or No. Do not include punctuation, qualifiers, or explanation.\n\nFor causal-attribution questions: answer Yes only when the specified factor is the direct/proximate or normatively salient producer of the outcome. Answer No when the specified factor is merely a broad background condition, passive standing condition, or incidental enabling link, especially when a later independent action or event directly produces the outcome. Do not answer Yes solely because the factor is part of a but-for chain.\n\nFor intentionality questions, make the intentionality judgment using the Core Skill, while preserving the exact Yes/No-only output format.",
+  "fallback_policy": "Outside binary causal-attribution or intentionality questions with the required Yes/No output contract, use Core-only behavior and do not apply these causal-attribution heuristics.",
+  "changes_from_previous": [
+    "Retained the exact-output rule associated with resolving all observed parse failures.",
+    "Retained the proximate/normatively salient causation rule associated with observed causal-attribution errors.",
+    "Narrowed the list of non-causal factors by removing unsupported examples not needed for the observed recurring mechanism."
+  ],
+  "predicted_regression_risks": [
+    "The proximate-cause heuristic could underpredict Yes in cases where the task expects attribution to a background factor despite an intervening event.",
+    "The passive-standing-condition rule could underpredict Yes in cases where simultaneous standing conditions are treated as jointly causal by the dataset."
+  ],
+  "evidence_limitations": [
+    "Only three development items are available.",
+    "Development evidence covers only the causal_attribution subgroup; intentionality behavior is constrained only by the output contract.",
+    "No holdout data or holdout results were used."
+  ]
+}

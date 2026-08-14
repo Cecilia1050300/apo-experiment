@@ -1,0 +1,117 @@
+{
+  "task_name": "causal_judgment",
+  "partition": "holdout",
+  "condition": "core_only",
+  "model": "gpt-5.5",
+  "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+  "runtime_prompt_path": "prompts/adapters/causal_judgment/runtime_core_only.txt",
+  "runtime_prompt_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "item_count": 5,
+  "ordered_ids": [
+    "causal_judgment_0021",
+    "causal_judgment_0046",
+    "causal_judgment_0088",
+    "causal_judgment_0117",
+    "causal_judgment_0165"
+  ],
+  "canonical_score": 0.0,
+  "fixed_cardinality_score": 0.0,
+  "parse_failures": 5,
+  "by_subgroup": {
+    "causal_attribution": 0.0,
+    "intentionality": 0.0
+  },
+  "tokens_used": {
+    "candidate": {
+      "model": "gpt-5.5",
+      "input_tokens": 1523,
+      "output_tokens": 1658,
+      "calls": 5
+    },
+    "judges": {}
+  },
+  "cost": 0.032485,
+  "wall_time_seconds": 20.011175972409546,
+  "items": [
+    {
+      "id": "causal_judgment_0021",
+      "source_index": 21,
+      "subgroup": "intentionality",
+      "raw_output": "No.",
+      "parsed": "No.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 4.779141006991267,
+      "candidate_usage": {
+        "input_tokens": 319,
+        "output_tokens": 170
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0046",
+      "source_index": 46,
+      "subgroup": "intentionality",
+      "raw_output": "Yes. Frank T. intended to shoot his neighbor in the body, and the bullet did in fact hit the neighbor’s body, even though it reached him by an unintended ricochet. The accidental path of the bullet does not negate Frank’s intent.",
+      "parsed": "Yes. Frank T. intended to shoot his neighbor in the body, and the bullet did in fact hit the neighbor’s body, even though it reached him by an unintended ricochet. The accidental path of the bullet does not negate Frank’s intent.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 4.658053777180612,
+      "candidate_usage": {
+        "input_tokens": 237,
+        "output_tokens": 191
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0088",
+      "source_index": 88,
+      "subgroup": "causal_attribution",
+      "raw_output": "Yes. Billy caused the car to be able to start by obtaining and installing a Bartlett battery. However, his action was not necessary, because Suzy’s battery alone would also have been enough to start the car.",
+      "parsed": "Yes. Billy caused the car to be able to start by obtaining and installing a Bartlett battery. However, his action was not necessary, because Suzy’s battery alone would also have been enough to start the car.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 8.345435352995992,
+      "candidate_usage": {
+        "input_tokens": 363,
+        "output_tokens": 493
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0117",
+      "source_index": 117,
+      "subgroup": "causal_attribution",
+      "raw_output": "No.",
+      "parsed": "No.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 5.089196320623159,
+      "candidate_usage": {
+        "input_tokens": 340,
+        "output_tokens": 236
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0165",
+      "source_index": 165,
+      "subgroup": "causal_attribution",
+      "raw_output": "Yes. The short circuit required both wires to touch the battery at the same time, and the black wire was one of those required conditions. If the black wire had not been touching the battery, the short circuit would not have occurred.",
+      "parsed": "Yes. The short circuit required both wires to touch the battery at the same time, and the black wire was one of those required conditions. If the black wire had not been touching the battery, the short circuit would not have occurred.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 10.141831086017191,
+      "candidate_usage": {
+        "input_tokens": 264,
+        "output_tokens": 568
+      },
+      "development_evidence": null
+    }
+  ]
+}

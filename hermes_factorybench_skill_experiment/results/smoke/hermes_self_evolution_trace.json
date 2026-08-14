@@ -1,0 +1,312 @@
+{
+  "experiment": "FactoryBench controlled smoke self-evolution",
+  "status": "completed_candidate_budget_exhausted_audit_corrected",
+  "selection_audit_status": "corrected_fixed_cardinality",
+  "optimization_set_only": true,
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "blocked_attempts_preserved": [
+    {
+      "candidate": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+      "status": "not_started",
+      "message": "OPENAI_API_KEY was not set in the earlier process environment; FactoryBench was not started.",
+      "factorybench_exit_status": 78,
+      "log_path": "hermes_factorybench_skill_experiment/logs/l123_skill_v2_gpt55.log",
+      "original_log_sha256_before_continuation": "d8e20df420ffd5cd49915d50715fd29db8ae4abb86c0732d92eee946f74277dc",
+      "preservation": "The original four-line blocked record remains at the start of the append-only v2 log."
+    },
+    {
+      "candidate": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+      "status": "not_started",
+      "message": "A later preflight again found no API key in the inherited process environment; no experiment artifact was overwritten.",
+      "factorybench_exit_status": 78,
+      "historical_session": "@session:default/20260814_011025_d67eef"
+    }
+  ],
+  "frozen_evaluation_configuration": {
+    "command_template": "factorybench evaluate --model gpt-5.5 --level all --split mini --max-items 5 --dataset-version b3863519ccedbceab54dfa7600104eb42b985ed7 --output <candidate-result>",
+    "model": "gpt-5.5",
+    "level": "all",
+    "effective_levels_without_judges": [1, 2, 3],
+    "split": "mini",
+    "max_items_per_level": 5,
+    "expected_items": 15,
+    "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+    "resume": false,
+    "only_experimental_variable": "FACTORYBENCH_SKILL_FILE contents"
+  },
+  "fixed_cardinality_policy": {
+    "expected_item_count": 15,
+    "eligibility_gates": [
+      "all 15 expected item IDs are present",
+      "every item score is finite",
+      "parse failures equal zero"
+    ],
+    "conservative_scoring": "Assign raw score zero to each parse-failed or non-finite item while retaining its original chance value and denominator contribution.",
+    "selection_rule": "Exclude ineligible candidates before comparing fixed-cardinality conservative scores."
+  },
+  "verified_existing_results": {
+    "baseline": {
+      "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "result_sha256": "10123b00423178db865f28b783b2949dff45449c828136245426b34bbd76d62a",
+      "total_score": 0.7439024390243903,
+      "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+      "parse_failures": 0,
+      "cost": 1.355615,
+      "wall_time_seconds": 472.708674
+    },
+    "skill_v1": {
+      "skill_path": "hermes_factorybench_skill_experiment/prompts/seed/factorybench_skill_v1.txt",
+      "skill_sha256": "b52e08b51c8e3dbe8df51dd3a1629f06d3b27edd30c1753e94a168d653a3b644",
+      "skill_bytes": 1847,
+      "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "result_sha256": "db6e6e6fe320e4549884764f46bfcadd7353728609e0ebe901b6fc5f7aee1ce3",
+      "total_score": 0.7439024390243903,
+      "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+      "parse_failures": 0,
+      "cost": 1.274825,
+      "wall_time_seconds": 381.362966,
+      "improved_ids_vs_baseline": [],
+      "regressed_ids_vs_baseline": [],
+      "unchanged_score_changed_output_ids": [
+        "1639eeed-82bb-438f-bdc2-54c319f25006",
+        "fbfbc913-a9e0-4178-9852-86aa6663f9f3"
+      ]
+    }
+  },
+  "ordered_item_id_validation": {
+    "valid": true,
+    "item_count": 15,
+    "compared_runs": ["baseline", "skill_v1", "skill_v2", "skill_v3", "skill_v4"],
+    "ordered_ids": [
+      "bc087859-a978-4e47-9aa3-91588efa3817",
+      "dabaeddb-0ecd-405f-9e97-59307af18954",
+      "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+      "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+      "3f9426d7-175f-4f99-a5c9-ae6799abebae",
+      "0483f6d3-8a46-4bbe-8d54-22bda5c3c859",
+      "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6",
+      "8155904c-423f-4caa-95e8-b07102f065e7",
+      "aa0b4843-97e3-4346-9323-e28752a88046",
+      "0719a8d1-e104-47e6-837d-114b2ce1ce64",
+      "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3",
+      "7f00a63a-6813-4507-95ca-d2b0c318402b",
+      "b511733e-83b4-4a39-87ce-ab3e90d5db34",
+      "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d"
+    ]
+  },
+  "rounds": [
+    {
+      "round": 2,
+      "parent_skill": "hermes_factorybench_skill_experiment/prompts/seed/factorybench_skill_v1.txt",
+      "parent_sha256": "b52e08b51c8e3dbe8df51dd3a1629f06d3b27edd30c1753e94a168d653a3b644",
+      "candidate_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+      "candidate_sha256": "96a45d81cc3723902bdf2aa718627970598cee7789265dd7bbacaeb7d9710001",
+      "candidate_bytes": 3268,
+      "failure_analysis": [
+        {"id": "1639eeed-82bb-438f-bdc2-54c319f25006", "confirmed": "phase localization remained outside the accepted optimization range", "hypothesis": "over-anchoring on a later conspicuous transition", "principle": "test whether the phase is already active at the first sample"},
+        {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "confirmed": "lift localization remained outside the accepted optimization range", "hypothesis": "semantic onset was confused with visible motion or window placement", "principle": "search backward for a coherent precursor boundary"},
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "confirmed": "four future-state decisions were wrong in v1", "hypothesis": "uncertainty was mapped to False and thresholds were not independently extrapolated", "principle": "make a most-likely decision for each clause"},
+        {"id": "aa0b4843-97e3-4346-9323-e28752a88046", "confirmed": "two T/F decisions were wrong in v1", "hypothesis": "compound peak-relax and cumulative path were misapplied", "principle": "require every compound clause and sum absolute increments"}
+      ],
+      "changes_made": [
+        "Added first-regime and backward-boundary localization procedures.",
+        "Added most-likely future extrapolation and explicit metric/quantifier handling.",
+        "Preserved ranking procedures and strict output contracts."
+      ],
+      "evaluation_configuration": {
+        "skill_environment_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+        "resume": false
+      },
+      "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "result_sha256": "8ea856c8bb002a4b4ae5998214f6971403a6397bff0b8f469acedf802946ecec",
+      "log_path": "hermes_factorybench_skill_experiment/logs/l123_skill_v2_gpt55.log",
+      "log_sha256_after_append": "2e4c29644947fb5fe493713bad6e5bf44ddc68d33921bba4e95dedf4764fad0b",
+      "evaluation_status": "evaluated",
+      "factorybench_exit_status": 0,
+      "total_score": 0.810126582278481,
+      "score_semantics": "original FactoryBench-reported score excluding the non-finite row",
+      "fixed_cardinality_conservative_score": 0.7439024390243903,
+      "fixed_cardinality_conservative_by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+      "by_level": {"L1": 0.6, "L2": 0.8518518518518519, "L3": 1.0},
+      "parse_failures": 1,
+      "valid_scored_items": 14,
+      "nonfinite_score_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+      "selection_eligible": false,
+      "selection_ineligibility_reasons": ["one parse failure", "one non-finite item score"],
+      "improved_ids_vs_baseline": [],
+      "regressed_ids_vs_baseline": [],
+      "unchanged_score_changed_output_ids_vs_baseline": ["fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+      "exact_output_changes_vs_baseline": [
+        {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline": "2768", "candidate": "1780", "baseline_score": 0.0, "candidate_score": 0.0},
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "baseline": "FFFF", "candidate": "", "baseline_score": 0.0, "candidate_score": null, "parse_error": "expected 4 T/F chars, got ''"}
+      ],
+      "cost": 1.581065,
+      "wall_time_seconds": 577.149806,
+      "aggregate_caveat": "The reported aggregate excludes the parse-failure row; no item score improved.",
+      "selection_decision": "Ineligible under the corrected fixed-cardinality policy because one item has a parse failure and non-finite score. The earlier eligibility statement is superseded by the audit correction."
+    },
+    {
+      "round": 3,
+      "parent_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+      "parent_sha256": "96a45d81cc3723902bdf2aa718627970598cee7789265dd7bbacaeb7d9710001",
+      "candidate_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+      "candidate_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+      "candidate_bytes": 3557,
+      "failure_analysis": [
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "confirmed": "v2 returned an empty output", "hypothesis": "completion-budget exhaustion is consistent with timing and aggregate usage but not directly recorded", "principle": "bound deliberation and always reserve a valid answer"},
+        {"id": "1639eeed-82bb-438f-bdc2-54c319f25006", "confirmed": "v2 still chose an interior timestamp", "hypothesis": "the first-regime gate was too conditional", "principle": "prefer the first timestamp when no inbound transition is visible"},
+        {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "confirmed": "v2 backtracked too far and remained wrong", "hypothesis": "the precursor search crossed an unrelated stable regime", "principle": "stop at the nearest contiguous coordinated boundary"},
+        {"id": "aa0b4843-97e3-4346-9323-e28752a88046", "confirmed": "v2 remained at 0.5", "hypothesis": "compound-event and full-horizon path rules were still not applied", "principle": "require same-channel chronological clauses and full-continuation path"}
+      ],
+      "changes_made": [
+        "Added bounded one-pass reasoning and explicit non-empty output safeguards.",
+        "Strengthened first-sample and nearest-contiguous-boundary localization.",
+        "Clarified future horizon, compound-event, and accumulated-path handling."
+      ],
+      "evaluation_configuration": {
+        "skill_environment_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+        "resume": false
+      },
+      "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "result_sha256": "cd6776aeb60df09595004f68dddaef7b6c6a1b92b1fddddd2cca1c20752112c6",
+      "log_path": "hermes_factorybench_skill_experiment/logs/l123_skill_v3_gpt55.log",
+      "log_sha256": "8081c86fa4d110d55e5880295c80eaec0cff167e4a6cdce5e60fb624530faa33",
+      "evaluation_status": "evaluated",
+      "factorybench_exit_status": 0,
+      "total_score": 0.7804878048780488,
+      "score_semantics": "original FactoryBench-reported score; all 15 rows are finite",
+      "fixed_cardinality_conservative_score": 0.7804878048780488,
+      "fixed_cardinality_conservative_by_level": {"L1": 0.6, "L2": 0.7419354838709679, "L3": 1.0},
+      "by_level": {"L1": 0.6, "L2": 0.7419354838709679, "L3": 1.0},
+      "parse_failures": 0,
+      "nonfinite_score_ids": [],
+      "selection_eligible": true,
+      "improved_ids_vs_baseline": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+      "regressed_ids_vs_baseline": [],
+      "unchanged_score_changed_output_ids_vs_baseline": ["fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+      "exact_output_changes_vs_baseline": [
+        {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline": "2768", "candidate": "1978", "baseline_score": 0.0, "candidate_score": 0.0},
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "baseline": "FFFF", "candidate": "FTFT", "baseline_score": 0.0, "candidate_score": 0.5}
+      ],
+      "cost": 1.41734,
+      "wall_time_seconds": 450.024934,
+      "selection_decision": "Did not meet the +0.05 early-stop threshold; advanced to the final allowed candidate because it had zero parse failures, one improved item, and no regressions."
+    },
+    {
+      "round": 4,
+      "parent_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+      "parent_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+      "candidate_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v4.txt",
+      "candidate_sha256": "41306a107af8acbf2ee21efe634b363ae29939b02fba00faf940885326852734",
+      "candidate_bytes": 3945,
+      "failure_analysis": [
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "confirmed": "v3 corrected two T/F decisions but left TCP-space and joint-space tracking decisions wrong", "hypothesis": "collision command-versus-response persistence was not explicit enough", "principle": "infer elevated tracking error when commands persist against impeded response unless recovery is visible"}
+      ],
+      "changes_made": [
+        "Added a class-level collision/contact command-versus-response tracking rule.",
+        "Required independent TCP-space and joint-space tracking decisions.",
+        "Preserved v3 safeguards and output contracts."
+      ],
+      "evaluation_configuration": {
+        "skill_environment_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v4.txt",
+        "resume": false
+      },
+      "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json",
+      "result_sha256": "9aafff9a5fd94e1c7114ab75a73845a205aef89b91fbc8086ab3141d3b37628a",
+      "log_path": "hermes_factorybench_skill_experiment/logs/l123_skill_v4_gpt55.log",
+      "log_sha256": "80fef4e0ef1b5cf083044e0602bd106df14557961c33629234c36af7f993961c",
+      "evaluation_status": "evaluated",
+      "factorybench_exit_status": 0,
+      "total_score": 0.6890243902439025,
+      "score_semantics": "original FactoryBench-reported score; all 15 rows are finite",
+      "fixed_cardinality_conservative_score": 0.6890243902439024,
+      "fixed_cardinality_conservative_by_level": {"L1": 0.6, "L2": 0.4193548387096775, "L3": 1.0},
+      "by_level": {"L1": 0.6, "L2": 0.4193548387096775, "L3": 1.0},
+      "parse_failures": 0,
+      "nonfinite_score_ids": [],
+      "selection_eligible": true,
+      "improved_ids_vs_baseline": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+      "regressed_ids_vs_baseline": ["ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6"],
+      "unchanged_score_changed_output_ids_vs_baseline": ["1639eeed-82bb-438f-bdc2-54c319f25006", "fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+      "exact_output_changes_vs_baseline": [
+        {"id": "1639eeed-82bb-438f-bdc2-54c319f25006", "baseline": "692", "candidate": "2472", "baseline_score": 0.0, "candidate_score": 0.0},
+        {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline": "2768", "candidate": "1978", "baseline_score": 0.0, "candidate_score": 0.0},
+        {"id": "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6", "baseline": "ADBC", "candidate": "DABC", "baseline_score": 1.0, "candidate_score": 0.0},
+        {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "baseline": "FFFF", "candidate": "FFFT", "baseline_score": 0.0, "candidate_score": 0.25}
+      ],
+      "cost": 1.45742,
+      "wall_time_seconds": 480.127204,
+      "selection_decision": "Rejected by the deterministic ranking because its total score is below v2 and v3; the candidate budget is exhausted."
+    }
+  ],
+  "superseded_selection_policy": [
+    "highest total chance-corrected score",
+    "fewer parse failures",
+    "highest minimum by-level score",
+    "fewer regressions from the fresh baseline",
+    "shorter skill text"
+  ],
+  "superseded_selection_ranking": [
+    {"candidate": "skill_v2", "total_score": 0.810126582278481, "parse_failures": 1, "minimum_by_level": 0.6, "regressions_vs_baseline": 0, "skill_bytes": 3268},
+    {"candidate": "skill_v3", "total_score": 0.7804878048780488, "parse_failures": 0, "minimum_by_level": 0.6, "regressions_vs_baseline": 0, "skill_bytes": 3557},
+    {"candidate": "skill_v1", "total_score": 0.7439024390243903, "parse_failures": 0, "minimum_by_level": 0.6, "regressions_vs_baseline": 0, "skill_bytes": 1847},
+    {"candidate": "skill_v4", "total_score": 0.6890243902439025, "parse_failures": 0, "minimum_by_level": 0.4193548387096775, "regressions_vs_baseline": 1, "skill_bytes": 3945}
+  ],
+  "superseded_selection": {
+    "status": "superseded_by_fixed_cardinality_audit_correction",
+    "selected_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_smoke_best.txt",
+    "selected_source": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+    "selected_sha256": "96a45d81cc3723902bdf2aa718627970598cee7789265dd7bbacaeb7d9710001",
+    "selected_bytes": 3268,
+    "reason": "Skill v2 has the highest reported chance-corrected total score, which is the first deterministic selection criterion. Its parse failure is a material caveat but is only the second tie-break criterion and no total-score tie occurred.",
+    "aggregate_caveat": "FactoryBench excluded v2's parse-failure row, so its aggregate is based on 14 valid items and no individual item improved versus baseline. Skill v3 is the strongest fully parsed candidate but ranks second under the prescribed ordering.",
+    "smoke_target_met": false,
+    "golden_skill": false
+  },
+  "fixed_cardinality_audit": {
+    "correction_reason": "The original selection compared a 14-row FactoryBench aggregate for Skill v2 against complete 15-row runs. The excluded row had an empty raw output, a non-finite score, and a parse failure.",
+    "candidate_scores": [
+      {"candidate": "skill_v1", "factorybench_reported_score": 0.7439024390243903, "fixed_cardinality_conservative_score": 0.7439024390243903, "present_items": 15, "finite_scores": 15, "parse_failures": 0, "eligible": true},
+      {"candidate": "skill_v2", "factorybench_reported_score": 0.810126582278481, "fixed_cardinality_conservative_score": 0.7439024390243903, "present_items": 15, "finite_scores": 14, "parse_failures": 1, "eligible": false},
+      {"candidate": "skill_v3", "factorybench_reported_score": 0.7804878048780488, "fixed_cardinality_conservative_score": 0.7804878048780488, "present_items": 15, "finite_scores": 15, "parse_failures": 0, "eligible": true},
+      {"candidate": "skill_v4", "factorybench_reported_score": 0.6890243902439025, "fixed_cardinality_conservative_score": 0.6890243902439024, "present_items": 15, "finite_scores": 15, "parse_failures": 0, "eligible": true}
+    ],
+    "failed_item": {
+      "candidate": "skill_v2",
+      "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+      "raw_output": "",
+      "original_score": null,
+      "original_score_semantics": "NaN in result JSON",
+      "conservative_raw_score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected 4 T/F chars, got ''",
+      "cause": "unknown; per-call finish metadata was not retained"
+    }
+  },
+  "corrected_selection_policy": [
+    "hard gate: all 15 expected IDs present",
+    "hard gate: all 15 item scores finite",
+    "hard gate: zero parse failures",
+    "rank eligible candidates by fixed-cardinality conservative score",
+    "then apply the remaining declared tie-breaks if needed"
+  ],
+  "corrected_selection_ranking": [
+    {"candidate": "skill_v3", "fixed_cardinality_conservative_score": 0.7804878048780488, "eligible": true},
+    {"candidate": "skill_v1", "fixed_cardinality_conservative_score": 0.7439024390243903, "eligible": true},
+    {"candidate": "skill_v4", "fixed_cardinality_conservative_score": 0.6890243902439024, "eligible": true},
+    {"candidate": "skill_v2", "fixed_cardinality_conservative_score": 0.7439024390243903, "eligible": false, "exclusion_reason": "parse failure and non-finite score"}
+  ],
+  "selection": {
+    "selected_skill": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_smoke_best.txt",
+    "selected_source": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+    "selected_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+    "selected_bytes": 3557,
+    "factorybench_reported_score": 0.7804878048780488,
+    "fixed_cardinality_conservative_score": 0.7804878048780488,
+    "reason": "Skill v3 is the highest-scoring candidate that passes all fixed-cardinality eligibility gates.",
+    "supersedes": "the original Skill v2 selection",
+    "smoke_target_met": false,
+    "golden_skill": false
+  }
+}

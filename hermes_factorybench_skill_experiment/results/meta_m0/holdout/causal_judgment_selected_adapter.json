@@ -1,0 +1,117 @@
+{
+  "task_name": "causal_judgment",
+  "partition": "holdout",
+  "condition": "selected_adapter",
+  "model": "gpt-5.5",
+  "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+  "runtime_prompt_path": "prompts/adapters/causal_judgment/runtime_selected_adapter.txt",
+  "runtime_prompt_sha256": "e640dbd35f26a8e874d58bc0f6cf7b28c4b92a7d4c62641737e238de9e0824a6",
+  "item_count": 5,
+  "ordered_ids": [
+    "causal_judgment_0021",
+    "causal_judgment_0046",
+    "causal_judgment_0088",
+    "causal_judgment_0117",
+    "causal_judgment_0165"
+  ],
+  "canonical_score": 0.8,
+  "fixed_cardinality_score": 0.8,
+  "parse_failures": 0,
+  "by_subgroup": {
+    "causal_attribution": 1.0,
+    "intentionality": 0.5
+  },
+  "tokens_used": {
+    "candidate": {
+      "model": "gpt-5.5",
+      "input_tokens": 2183,
+      "output_tokens": 1187,
+      "calls": 5
+    },
+    "judges": {}
+  },
+  "cost": 0.02872,
+  "wall_time_seconds": 12.242922227829695,
+  "items": [
+    {
+      "id": "causal_judgment_0021",
+      "source_index": 21,
+      "subgroup": "intentionality",
+      "raw_output": "No",
+      "parsed": "No",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "latency_seconds": 4.236908940598369,
+      "candidate_usage": {
+        "input_tokens": 451,
+        "output_tokens": 201
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0046",
+      "source_index": 46,
+      "subgroup": "intentionality",
+      "raw_output": "No",
+      "parsed": "No",
+      "score": 1.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "latency_seconds": 9.362935629673302,
+      "candidate_usage": {
+        "input_tokens": 369,
+        "output_tokens": 522
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0088",
+      "source_index": 88,
+      "subgroup": "causal_attribution",
+      "raw_output": "Yes",
+      "parsed": "Yes",
+      "score": 1.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "latency_seconds": 3.581150065176189,
+      "candidate_usage": {
+        "input_tokens": 495,
+        "output_tokens": 147
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0117",
+      "source_index": 117,
+      "subgroup": "causal_attribution",
+      "raw_output": "No",
+      "parsed": "No",
+      "score": 1.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "latency_seconds": 3.604977692477405,
+      "candidate_usage": {
+        "input_tokens": 472,
+        "output_tokens": 171
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0165",
+      "source_index": 165,
+      "subgroup": "causal_attribution",
+      "raw_output": "No",
+      "parsed": "No",
+      "score": 1.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "latency_seconds": 2.877080255188048,
+      "candidate_usage": {
+        "input_tokens": 396,
+        "output_tokens": 146
+      },
+      "development_evidence": null
+    }
+  ]
+}

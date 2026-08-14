@@ -1,0 +1,10 @@
+{
+  "artifact": "FactoryBench Skill v3 status",
+  "status": "REJECTED_AFTER_GENERALIZATION",
+  "reason": "The stratified frozen-v3 Task A smoke produced FAIL_REGRESSION on A1 and NEGATIVE_SIGNAL on A2, yielding NO_GENERALIZATION_SIGNAL.",
+  "skill_path": "prompts/generated/factorybench_skill_v3.txt",
+  "skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+  "task_a1_manifest_sha256": "1d4169a4c10bac4602509e2bbe979d33d37f36ab2a20d85ea46b8222526b5404",
+  "task_a2_manifest_sha256": "eb3be4837eb0d13a73a968607f9c3482dddf0d8bd51538b4aaccd4465eb10490",
+  "preservation": "This is a new status artifact only. Skill v3 and all hashed Task A artifacts remain unchanged in place."
+}

@@ -1,0 +1,105 @@
+{
+  "baseline_file": "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+  "skill_v1_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+  "candidate_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+  "same_ordered_item_ids": true,
+  "item_count": 15,
+  "ordered_item_ids": [
+    "bc087859-a978-4e47-9aa3-91588efa3817",
+    "dabaeddb-0ecd-405f-9e97-59307af18954",
+    "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+    "1639eeed-82bb-438f-bdc2-54c319f25006",
+    "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+    "3f9426d7-175f-4f99-a5c9-ae6799abebae",
+    "0483f6d3-8a46-4bbe-8d54-22bda5c3c859",
+    "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6",
+    "8155904c-423f-4caa-95e8-b07102f065e7",
+    "aa0b4843-97e3-4346-9323-e28752a88046",
+    "0719a8d1-e104-47e6-837d-114b2ce1ce64",
+    "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3",
+    "7f00a63a-6813-4507-95ca-d2b0c318402b",
+    "b511733e-83b4-4a39-87ce-ab3e90d5db34",
+    "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d"
+  ],
+  "recalculated": {
+    "baseline": {
+      "total_score": 0.7439024390243903,
+      "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+      "parse_failures": 0
+    },
+    "skill_v1": {
+      "total_score": 0.7439024390243903,
+      "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+      "parse_failures": 0
+    },
+    "skill_v2": {
+      "total_score": 0.810126582278481,
+      "by_level": {"L1": 0.6, "L2": 0.8518518518518519, "L3": 1.0},
+      "parse_failures": 1,
+      "valid_scored_items": 14
+    }
+  },
+  "aggregate_caveat": "FactoryBench excludes parse failures from chance-corrected aggregation. Skill v2's higher aggregate is caused by excluding a previously zero-score L2 item; no item score improved.",
+  "vs_baseline": {
+    "absolute_total_score_delta": 0.06622414325409065,
+    "improved_ids": [],
+    "regressed_ids": [],
+    "new_parse_failure_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "unchanged_score_changed_output_ids": ["fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+    "exact_output_changes": [
+      {
+        "id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+        "baseline_output": "2768",
+        "candidate_output": "1780",
+        "baseline_score": 0.0,
+        "candidate_score": 0.0
+      },
+      {
+        "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+        "baseline_output": "FFFF",
+        "candidate_output": "",
+        "baseline_score": 0.0,
+        "candidate_score": null,
+        "candidate_parse_error": "expected 4 T/F chars, got ''"
+      }
+    ]
+  },
+  "vs_skill_v1": {
+    "absolute_total_score_delta": 0.06622414325409065,
+    "improved_ids": [],
+    "regressed_ids": [],
+    "new_parse_failure_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "unchanged_score_changed_output_ids": [
+      "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "fbfbc913-a9e0-4178-9852-86aa6663f9f3"
+    ]
+  },
+  "candidate_partition": {
+    "fully_correct_ids": [
+      "bc087859-a978-4e47-9aa3-91588efa3817",
+      "dabaeddb-0ecd-405f-9e97-59307af18954",
+      "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+      "3f9426d7-175f-4f99-a5c9-ae6799abebae",
+      "0483f6d3-8a46-4bbe-8d54-22bda5c3c859",
+      "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6",
+      "0719a8d1-e104-47e6-837d-114b2ce1ce64",
+      "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3",
+      "7f00a63a-6813-4507-95ca-d2b0c318402b",
+      "b511733e-83b4-4a39-87ce-ab3e90d5db34",
+      "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d"
+    ],
+    "partial_credit_ids": ["aa0b4843-97e3-4346-9323-e28752a88046"],
+    "zero_score_ids": [
+      "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "fbfbc913-a9e0-4178-9852-86aa6663f9f3"
+    ],
+    "parse_failure_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"]
+  },
+  "reported_cost": 1.581065,
+  "reported_wall_time_seconds": 577.149806,
+  "candidate_sha256": "96a45d81cc3723902bdf2aa718627970598cee7789265dd7bbacaeb7d9710001",
+  "candidate_bytes": 3268,
+  "result_sha256": "8ea856c8bb002a4b4ae5998214f6971403a6397bff0b8f469acedf802946ecec",
+  "evaluation_exit_status": 0,
+  "stopping_criterion_met": false
+}

@@ -1,0 +1,30 @@
+{
+  "task_name": "m1_factorybench_l4",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "manifests": {
+    "development_fold_a": {
+      "path": "data_manifests/meta_m1/factorybench_l4_dev_fold_a.json",
+      "sha256": "ab460927176dd712c71bbb8e2048b3f20406126789e390adc0b44f8a26804f78",
+      "count": 2
+    },
+    "development_fold_b": {
+      "path": "data_manifests/meta_m1/factorybench_l4_dev_fold_b.json",
+      "sha256": "44e3a6b53ed4561123cea50d2e6ef72f9754779236e5a09721d59650c396fa4a",
+      "count": 2
+    },
+    "holdout": {
+      "path": "data_manifests/meta_m1/factorybench_l4_holdout.json",
+      "sha256": "68412bf54906372e0bf4d38827c8f60f88453a1368f424643d2f2a4b3ca84830",
+      "count": 6
+    }
+  },
+  "all_ids_disjoint": true,
+  "all_episodes_disjoint": true,
+  "judge_model": "gpt-5.5",
+  "judge_count": 1
+}

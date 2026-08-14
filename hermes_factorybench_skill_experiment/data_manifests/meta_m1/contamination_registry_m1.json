@@ -1,0 +1,694 @@
+{
+  "protocol": "manufacturing_meta_prompt_m1_semantic_contamination",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "base_registry_path": "data_manifests/meta_m0/contamination_registry_v2.json",
+  "base_registry_sha256": "37afcbbd97b3489aa8e32eaf78692c2fe3570a806c09b412f84e79d8976bbd19",
+  "semantic_rule": "Only actual model, optimizer, judge, or executed-manifest exposure counts. Inventory/source/prospective UUIDs and episode UUIDs are not item contamination.",
+  "excluded_item_ids": {
+    "0483f6d3-8a46-4bbe-8d54-22bda5c3c859": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "0719a8d1-e104-47e6-837d-114b2ce1ce64": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "14b816fb-e301-4161-b5e4-282d5e5a835c": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a2_l1_episode_disjoint7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "14ba181a-506a-451f-ae4c-658b5b44946d": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "1558f035-fdec-4797-9303-0d0a88e016c6": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ],
+    "1639eeed-82bb-438f-bdc2-54c319f25006": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v3_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "17a5b4aa-d917-4e44-8d04-4eb223fb3c00": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "1b9ea101-8cb3-41ac-a539-f649a3bfb890": [
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v1_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v2_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_core_only_completion_v2data.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_1_input_completion.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_2_input_completion.json"
+    ],
+    "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ],
+    "27bdc2a2-fea5-402a-985e-8676a19eb615": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "27f70f84-afd1-47a5-b5c0-3fb1e97a2579": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a2_l1_episode_disjoint7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "2c8a84f0-d3fd-43f7-87ee-4cff44c40633": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "333de97c-1eb8-47b0-a79e-68046c8e6a72": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ],
+    "3b6c40df-ce88-4977-b4a0-42dc22d9593b": [
+      "results/meta_m0/holdout/factorybench_l4_baseline.json",
+      "results/meta_m0/holdout/factorybench_l4_core_only.json",
+      "results/meta_m0/holdout/factorybench_l4_summary.json"
+    ],
+    "3f9426d7-175f-4f99-a5c9-ae6799abebae": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "42a2175f-6a56-4390-9c2f-a0fd96d1dc7e": [
+      "results/meta_m0/holdout/factorybench_l4_baseline.json",
+      "results/meta_m0/holdout/factorybench_l4_core_only.json",
+      "results/meta_m0/holdout/factorybench_l4_summary.json"
+    ],
+    "485feba7-8c87-48b1-a027-5b25361204dc": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a1_l23_validation7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "48f922f0-721c-4d3d-b11e-9798c19fe38f": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ],
+    "510c0f0c-4a6d-4b76-b038-64ba3a95f73b": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "5255ae6d-57d1-4532-b25f-d2dab1557179": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a2_l1_episode_disjoint7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "5372d137-caed-4ca7-9e24-239182e3ace9": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a2_l1_episode_disjoint7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "55b80023-de58-4ccb-a387-0c565697cfab": [
+      "results/meta_m0/development/factorybench_l4_baseline.json",
+      "results/meta_m0/development/factorybench_l4_core_only.json",
+      "traces/meta_m0/factorybench_l4/m0_round_1_input.json",
+      "traces/meta_m0/factorybench_l4/m0_round_2_input.json"
+    ],
+    "5f44af3e-26ee-40ce-a4e9-36c7f6a1fa9f": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a1_l23_validation7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "662d2e41-b0ff-4e44-b024-28c6f8c424b8": [
+      "results/meta_m0/development/factorybench_l4_baseline.json",
+      "results/meta_m0/development/factorybench_l4_core_only.json",
+      "traces/meta_m0/factorybench_l4/m0_round_1_input.json",
+      "traces/meta_m0/factorybench_l4/m0_round_2_input.json"
+    ],
+    "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "70346496-3321-4592-9085-b247dad6b254": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/reports/task_a2_l1_episode_disjoint7_report.md",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "7f00a63a-6813-4507-95ca-d2b0c318402b": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "8155904c-423f-4caa-95e8-b07102f065e7": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v3_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v4_input.json",
+      "hermes_factorybench_skill_experiment/reports/smoke_selection_correction.md",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "871b7950-15d5-4210-8e3e-d99f5ae1900c": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "896b4f07-0e29-407f-a84f-51b490faa37c": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "9650a4ca-deb0-422a-97f8-463a56541610": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "9bdfa657-f4a5-4641-914e-4cd596f39563": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ],
+    "a4286f63-a25e-42f0-8288-24734d43796e": [
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v1_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v2_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_core_only_completion_v2data.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_1_input_completion.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_2_input_completion.json"
+    ],
+    "aa0b4843-97e3-4346-9323-e28752a88046": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v3_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v4_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "ae43d5e3-3146-4dbe-98e8-1eb650af665f": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json"
+    ],
+    "b511733e-83b4-4a39-87ce-ab3e90d5db34": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "ba66158d-97fe-4b9c-a6b1-2a3649b5d470": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "bc087859-a978-4e47-9aa3-91588efa3817": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "be215a16-d37b-4222-a23e-2fa0c38ef3f4": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "c0d66eac-b183-4731-acb4-256a0095253e": [
+      "results/meta_m0/holdout/factorybench_l4_baseline.json",
+      "results/meta_m0/holdout/factorybench_l4_core_only.json",
+      "results/meta_m0/holdout/factorybench_l4_summary.json"
+    ],
+    "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "dabaeddb-0ecd-405f-9e97-59307af18954": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "db758369-0b6c-44ea-8bc6-486a5ab52169": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "ec50396d-1325-405b-b4f2-0c0256260ee2": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "ede7a6d8-7a0b-4faa-9191-7b5683f60008": [
+      "hermes_factorybench_skill_experiment/data_manifests/task_a1_l23_validation7_manifest.json",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "hermes_factorybench_skill_experiment/logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_comparison.json",
+      "hermes_factorybench_skill_experiment/results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json"
+    ],
+    "f7ba6d15-86e3-44a9-aba7-f23cdafbc225": [
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v1_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_adapter_v2_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/development/factorybench_l123_completion_core_only_completion_v2data.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_1_input_completion.json",
+      "traces/meta_m0/factorybench_l123_completion/m0_round_2_input_completion.json"
+    ],
+    "fbfbc913-a9e0-4178-9852-86aa6663f9f3": [
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke.json",
+      "apo_experiment/factorybench_experiment/results/l123_smoke/gpt55_l123_smoke_retry.json",
+      "hermes_factorybench_skill_experiment/data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v2_input.json",
+      "hermes_factorybench_skill_experiment/optimizer_inputs/hermes_skill_v3_input.json",
+      "hermes_factorybench_skill_experiment/results/smoke/gpt55_l123_baseline.json",
+      "hermes_factorybench_skill_experiment/results/smoke/hermes_self_evolution_trace.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_comparison.json",
+      "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json"
+    ],
+    "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad": [
+      "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json"
+    ]
+  },
+  "exposed_episodes": [
+    "0439d98b-114b-4853-b992-1789c22b0828",
+    "175acedb-aed6-4410-a0d4-1f587f82893f",
+    "1c2dd612-53e1-4509-950a-19ae8548c4d5",
+    "26adcf84-03f5-4e60-81c6-1c0c73f21696",
+    "2c3bd17b-2f05-4a08-b6e5-7ada5a67fa3b",
+    "2dc2baf2-4396-44ac-bb58-0f208d451491",
+    "30a5c98d-cea7-4600-b406-64db472f5400",
+    "330e5c55-2c7e-4b1e-9532-94fb39a73942",
+    "38f52416-267b-4946-87d6-e245e58757d9",
+    "4eb92490-ce51-475b-a051-ae2a14b0b33c",
+    "4f099e27-fc6d-412f-9dca-c4a57b83f0f1",
+    "5a482ce1-3b1e-48f1-9f87-20570153db33",
+    "6207b68a-a6d1-457c-847e-34328355684c",
+    "6a5d4294-cb1e-4396-93a0-55c5d2deacf9",
+    "6ad11cb1-47c3-4bdd-8729-75eddcb77496",
+    "74ec7f24-6b82-4737-8bc8-82090defc408",
+    "75455ac3-c5e8-4967-b80d-48e2ccdcb588",
+    "76e250f2-b683-4327-a1a8-17bbcc2a6b8f",
+    "7919657f-8cef-44cc-8d32-54f40d22e753",
+    "7a829fdb-7eef-4d07-9660-d0e7bb287617",
+    "8ed1b05d-f0b7-40b0-bd75-63556f6da045",
+    "948f67fb-260a-4080-99b5-22268a6200a9",
+    "9685e7c8-66eb-43a9-b8de-49759fa904d3",
+    "a13da1df-fb40-4ffe-990a-eb6fc46845c7",
+    "a51496de-9f40-44fe-9bde-e4ab0af33056",
+    "ac98c8e4-2144-4faa-8ac5-1b8676571793",
+    "ad50fe20-abe1-498d-b7e1-619eb0179ace",
+    "b7b3a827-59a1-4f4d-8f28-e1f008d8d99a",
+    "bec6a6be-8b9a-4bc6-913c-af828c70d637",
+    "c169b15d-44eb-4943-b171-faad40265995",
+    "d4c69d1d-d1a7-4760-8edc-3ff42a86f0a1",
+    "d53bed19-9757-49fd-8bf8-633ab9bb3c42",
+    "e6c68afe-eef7-44d9-92b0-d883aa0ee935",
+    "ebaed824-cef2-47d4-87a3-82970a76a233",
+    "experiment_1055",
+    "experiment_1057",
+    "experiment_1091",
+    "experiment_1121",
+    "experiment_1663",
+    "experiment_1715",
+    "experiment_1748",
+    "experiment_3200",
+    "experiment_3763",
+    "experiment_4012",
+    "experiment_4032",
+    "experiment_689",
+    "f30ce432-72ad-4194-9ca9-1e939c64ec75",
+    "fab5cfdd-32cc-4491-9d6e-89e82c4d9413"
+  ],
+  "counts": {
+    "excluded_item_ids": 50,
+    "exposed_episodes": 48,
+    "m0_result_or_optimizer_sources_added": 17
+  },
+  "m0_exposure_sources": [
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l123_completion_adapter_v1_completion_v2data.json",
+      "source_sha256": "d55068741e0b1154dd7a69bf53857fd8336269e97ad3019b2cf7d13e2ee45c05",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l123_completion_adapter_v2_completion_v2data.json",
+      "source_sha256": "909e7506979956c62091e1e2abe14f8374a2a4fb3a32d12b2a33420444bb9cd6",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l123_completion_baseline_completion_v2data.json",
+      "source_sha256": "6a76699b9bea2505ddb3e1d75dbe78c47988738d5a9c3253174066901f4d8648",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l123_completion_core_only_completion_v2data.json",
+      "source_sha256": "03d5bd0b54de3789ddb8bb66e23039fc9232ecdaa4dee0d580f78db7fb960b7a",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l4_baseline.json",
+      "source_sha256": "e53d964d2ca5dbfd072505f6222f05b20ba93f6c169bf25ceaecec004cf60968",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 2,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/development/factorybench_l4_core_only.json",
+      "source_sha256": "80f01b8733ae90ae3e1fd03d54f900158f7ba4a0f4d4aef1092094fa4f27f011",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 2,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l123_completion_baseline_completion_v2data.json",
+      "source_sha256": "43067da334a4db418a41711407d34b8e8f2f4f48a346e97d09bd197a6e249787",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 6,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l123_completion_core_only_completion_v2data.json",
+      "source_sha256": "d689310c17c8297ddb0faa0ef7d3bc5a7cba46196dfb852a7c7b845258a003d3",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 6,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l123_completion_selected_adapter_completion_v2data.json",
+      "source_sha256": "e34ecdf5a230b1b3af9313169fb6dd785d904f532415c31d7d99a35626c3dae7",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 6,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l123_completion_summary_v2data.json",
+      "source_sha256": "1eb4141847389efd3cbe4da6a9003eed0c880cdd5e49a92da6d32df553576946",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 6,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l4_baseline.json",
+      "source_sha256": "2705ea53dc108130cecb7e7ff7758c140312764d21bc457546ff618a3ae6d58b",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l4_core_only.json",
+      "source_sha256": "99602b357820aa0488a2547a0a4271f7dfb036c17f67b2c0d1d66bec0749f132",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "results/meta_m0/holdout/factorybench_l4_summary.json",
+      "source_sha256": "e41fe1c42c8e60d6f2e916105d1a39e027ad786cd152492cc8d30f2a9f7ca64e",
+      "classification": "ACTUAL_MODEL_EVALUATION",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Frozen M0 result contains executed model outputs/scores for these item IDs."
+    },
+    {
+      "source_artifact": "traces/meta_m0/factorybench_l123_completion/m0_round_1_input_completion.json",
+      "source_sha256": "6ccd31682ad51dd0b536c9ab03f2d33ca73665de71eba8ef4c942c4e6e21a18a",
+      "classification": "ACTUAL_OPTIMIZER_EXPOSURE",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Exact M0 optimization input exposed development item content/results."
+    },
+    {
+      "source_artifact": "traces/meta_m0/factorybench_l123_completion/m0_round_2_input_completion.json",
+      "source_sha256": "1acaba3b339cd15ef4d3d3ecae89e61f1ce4f6d3d1f966c9981ab3ab0a1711d8",
+      "classification": "ACTUAL_OPTIMIZER_EXPOSURE",
+      "item_id_count": 3,
+      "remain_excluded": true,
+      "evidence": "Exact M0 optimization input exposed development item content/results."
+    },
+    {
+      "source_artifact": "traces/meta_m0/factorybench_l4/m0_round_1_input.json",
+      "source_sha256": "b32412fbdd7dec379e58fff320c4b149c5fd5a737cda147397b575dfe13f9014",
+      "classification": "ACTUAL_OPTIMIZER_EXPOSURE",
+      "item_id_count": 2,
+      "remain_excluded": true,
+      "evidence": "Exact M0 optimization input exposed development item content/results."
+    },
+    {
+      "source_artifact": "traces/meta_m0/factorybench_l4/m0_round_2_input.json",
+      "source_sha256": "96773ab5e5baa8d5a0a61244544445c162450d25242d6f7ebdb44217c800f90c",
+      "classification": "ACTUAL_OPTIMIZER_EXPOSURE",
+      "item_id_count": 2,
+      "remain_excluded": true,
+      "evidence": "Exact M0 optimization input exposed development item content/results."
+    }
+  ]
+}

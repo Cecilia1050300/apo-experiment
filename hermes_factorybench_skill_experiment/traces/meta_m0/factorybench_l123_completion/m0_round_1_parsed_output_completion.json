@@ -1,0 +1,62 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "factorybench_l123",
+  "mode": "generate",
+  "decision": "ADAPTER",
+  "task_scope": [
+    "FactoryBench machine-telemetry questions with acronym-mapped time_series rows",
+    "Scalar timestamp answers for fixed-length phase-isolation windows",
+    "Tensor numeric answers for predicted or expected telemetry values at a relative time"
+  ],
+  "supported_formats": [
+    "scalar_range",
+    "tensor_margin"
+  ],
+  "applicability_conditions": [
+    "Apply only when the prompt provides a time_series and asks for the beginning timestamp of a fixed-length window that isolates a named phase.",
+    "Apply only when the prompt asks for expected or predicted numeric telemetry values at a timestamp defined relative to an event time, such as T plus an offset.",
+    "Do not apply these rules to MCQ, ranking, Boolean, or unrelated scalar questions unless their prompt explicitly matches the above patterns."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "window_alignment_error",
+      "evidence_count": 2,
+      "description": "For fixed-length phase-isolation timestamp questions, the model selected a salient point inside the phase rather than the start timestamp of the contiguous window requested by the item."
+    },
+    {
+      "category": "predictive_tensor_copying",
+      "evidence_count": 1,
+      "description": "For a relative-time expected-value tensor question, the model copied readily visible initial telemetry values instead of computing the target time and predicting the requested variables."
+    }
+  ],
+  "adapter_text": "FactoryBench telemetry adapter, use only under the stated applicability conditions:\n\n1. Fixed-window phase-isolation scalar questions: the requested answer is the timestamp where the contiguous window begins, not the timestamp of the strongest signal, peak, midpoint, or event label. Map timestamps to row order, identify the sustained interval corresponding to the named phase using the available telemetry, then choose the earliest row whose W-timestep window best isolates/covers that phase. If the phase appears to begin before or at the visible context start and the requested W-timestep window can cover it from there, use the first row timestamp. Output only the numeric timestamp.\n\n2. Relative-time expected/predicted tensor questions: first compute the target time as event time plus the stated offset. Return the requested variables in the requested order and length. If the target time is present, use that row; if between rows, interpolate or choose the closest justified values; if beyond the provided context, forecast from the observed dynamics rather than copying initial stationary/default values. For joint velocities, use feedback_speed fields when present for actual joint velocities; use setpoint_speed only if the question asks for setpoints or feedback speeds are unavailable. Output exactly the requested JSON array and nothing else.\n\nOutside these patterns, follow Core-only behavior.",
+  "fallback_policy": "If the item does not explicitly match a fixed-length phase-window timestamp question or a relative-time expected/predicted tensor question, ignore this adapter and use Core-only behavior while preserving the item-specific output contract.",
+  "changes_from_previous": [
+    "Initial adapter; no previous adapter was supplied."
+  ],
+  "predicted_regression_risks": [
+    "The fixed-window rule may over-prefer early timestamps when a phase has multiple distinct subphases or when the target phase starts later than the first visible motion.",
+    "The tensor rule may encourage uncertain forecasting for items where exact lookup from the context is sufficient unless the target-time check is followed carefully.",
+    "Preference for feedback_speed over setpoint_speed could be wrong if a prompt uses different terminology for velocity fields."
+  ],
+  "evidence_limitations": [
+    "Only three development examples were available.",
+    "No development examples covered MCQ, ranking, Boolean, four-letter, or other FactoryBench output contracts.",
+    "The tensor prediction pattern is supported by a single development example.",
+    "No previous adapter comparison or regression data is available."
+  ],
+  "_trace_validation": {
+    "valid": true,
+    "errors": [],
+    "input_sha256": "6ccd31682ad51dd0b536c9ab03f2d33ca73665de71eba8ef4c942c4e6e21a18a",
+    "raw_output_sha256": "389005a35471c6c7b1a2b318ebfe77bfab1f40ed5a50fa52ebba39cf8a50f8ef",
+    "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+    "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+    "usage": {
+      "input_tokens": 38191,
+      "output_tokens": 2082
+    },
+    "cost": 0.222185,
+    "wall_time_seconds": 30.054503297433257
+  }
+}

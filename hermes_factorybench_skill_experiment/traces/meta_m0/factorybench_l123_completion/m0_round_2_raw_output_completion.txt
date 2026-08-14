@@ -1,0 +1,53 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "factorybench_l123",
+  "mode": "refine",
+  "decision": "ADAPTER",
+  "task_scope": [
+    "FactoryBench machine-telemetry questions",
+    "Fixed-window phase-isolation questions asking for a scalar timestamp"
+  ],
+  "supported_formats": [
+    "A single integer or decimal timestamp"
+  ],
+  "applicability_conditions": [
+    "The prompt asks for the timestamp where a fixed-length contiguous window should begin.",
+    "The answer format is a scalar numeric timestamp.",
+    "The item provides a row-ordered time series with timestamps."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "fixed_window_start_vs_event_point",
+      "evidence_count": 2,
+      "description": "Core-only scalar answers selected a salient point within the telemetry rather than reliably treating the requested value as the beginning timestamp of a W-timestep contiguous window."
+    },
+    {
+      "category": "overbroad_visible_start_rule",
+      "evidence_count": 1,
+      "description": "The previous adapter's visible-context-start fallback could force an earliest-row answer even when the named phase is better isolated by a later window."
+    },
+    {
+      "category": "unverified_tensor_forecasting_rule",
+      "evidence_count": 1,
+      "description": "The previous relative-time tensor guidance changed the tensor answer but did not improve score on the available development item, so it is not retained."
+    }
+  ],
+  "adapter_text": "FactoryBench fixed-window phase-isolation adapter, use only under the stated applicability conditions:\n\nWhen the question asks where a fixed-length W-timestep window should begin, answer the timestamp of the first row of the chosen W-row contiguous window. Do not answer the timestamp of the strongest signal, anomaly peak, midpoint, or event label unless that timestamp is also the best window start. Work in row order: compare candidate W-row windows and choose the earliest window whose full span best isolates the named phase using the provided telemetry. Avoid a blanket rule that the first visible row is correct; use the first row only when the phase is already represented throughout the start of the context and no later W-row window isolates the named phase better. Output only the numeric timestamp.",
+  "fallback_policy": "Outside scalar fixed-window phase-isolation questions, follow Core-only behavior and the item-specific output contract exactly.",
+  "changes_from_previous": [
+    "Removed the relative-time tensor forecasting rule because the available development evidence did not show a score gain.",
+    "Narrowed the fixed-window rule to avoid a blanket first-visible-row fallback.",
+    "Retained only the procedural distinction between a window start timestamp and a salient event or peak timestamp."
+  ],
+  "predicted_regression_risks": [
+    "If some hidden scalar items truly require choosing the first visible row despite ambiguous phase evidence, the narrowed first-row condition may reduce those early-start choices.",
+    "If tensor items benefit from the removed forecasting guidance, those potential gains are not covered by this adapter.",
+    "The adapter may still be ineffective when the named phase cannot be inferred from the visible telemetry."
+  ],
+  "evidence_limitations": [
+    "Only three development items are available.",
+    "Only one development item showed a clear score change under the previous adapter.",
+    "No held-out data or held-out answers were used.",
+    "The retained rule is procedural and does not encode item-specific timestamps or answer values."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "factorybench_l4",
+  "mode": "generate",
+  "decision": "NO_ADAPTER",
+  "task_scope": [
+    "FactoryBench Level 4 industrial troubleshooting from machine telemetry",
+    "Single-letter MCQ outputs",
+    "Free-form diagnosis and remediation outputs"
+  ],
+  "supported_formats": [
+    "single_letter_mcq: exactly one allowed option letter",
+    "free_form: direct concise diagnosis/root-cause/remediation answer"
+  ],
+  "applicability_conditions": [
+    "Use only when the item is a FactoryBench L4 telemetry troubleshooting prompt",
+    "For MCQ items, preserve the single-letter-only contract",
+    "For free-form items, answer the requested diagnosis and remediation directly"
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "free_form_root_cause_misclassification",
+      "evidence_count": 1,
+      "description": "Core-only output identified a static-hold contact-force-estimation drift, while the development reference expected a process-sequence/task-phase interpretation. This is a single-item content error and does not establish a recurring supported rule."
+    },
+    {
+      "category": "mcq_behavior_already_correct_under_core",
+      "evidence_count": 1,
+      "description": "Core-only behavior satisfied the single-letter MCQ contract and matched the reference on the available MCQ development item, so no format or reasoning adapter is justified for this subgroup."
+    }
+  ],
+  "adapter_text": "",
+  "fallback_policy": "Use Core-only behavior for all FactoryBench L4 items.",
+  "changes_from_previous": [],
+  "predicted_regression_risks": [
+    "Adding a rule from the single free-form miss could overfit to one telemetry pattern and incorrectly override valid sensor-drift diagnoses.",
+    "Adding domain-specific task-phase or loosening heuristics from one example could weaken previously correct behavior on other anomaly types.",
+    "Any broad change to anomaly detection could regress the already-correct MCQ subgroup."
+  ],
+  "evidence_limitations": [
+    "Only two development items are available.",
+    "Only one Core-only failure is present, so no repeated failure mechanism is established.",
+    "The available failed free-form item alone is insufficient to justify a task adapter without risking case-specific memorization or unsupported domain assumptions.",
+    "No previous adapter exists for comparison."
+  ]
+}

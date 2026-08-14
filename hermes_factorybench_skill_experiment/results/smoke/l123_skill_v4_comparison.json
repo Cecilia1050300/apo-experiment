@@ -1,0 +1,40 @@
+{
+  "baseline_file": "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+  "skill_v1_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+  "parent_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+  "candidate_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v4_gpt55.json",
+  "same_ordered_item_ids": true,
+  "item_count": 15,
+  "recalculated": {
+    "baseline": {"total_score": 0.7439024390243903, "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0}, "parse_failures": 0},
+    "skill_v1": {"total_score": 0.7439024390243903, "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0}, "parse_failures": 0},
+    "skill_v3": {"total_score": 0.7804878048780488, "by_level": {"L1": 0.6, "L2": 0.7419354838709679, "L3": 1.0}, "parse_failures": 0},
+    "skill_v4": {"total_score": 0.6890243902439025, "by_level": {"L1": 0.6, "L2": 0.4193548387096775, "L3": 1.0}, "parse_failures": 0}
+  },
+  "vs_baseline": {
+    "absolute_total_score_delta": -0.05487804878048785,
+    "improved_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "regressed_ids": ["ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6"],
+    "unchanged_score_changed_output_ids": ["1639eeed-82bb-438f-bdc2-54c319f25006", "fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+    "exact_output_changes": [
+      {"id": "1639eeed-82bb-438f-bdc2-54c319f25006", "baseline_output": "692", "candidate_output": "2472", "baseline_score": 0.0, "candidate_score": 0.0},
+      {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline_output": "2768", "candidate_output": "1978", "baseline_score": 0.0, "candidate_score": 0.0},
+      {"id": "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6", "baseline_output": "ADBC", "candidate_output": "DABC", "baseline_score": 1.0, "candidate_score": 0.0},
+      {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "baseline_output": "FFFF", "candidate_output": "FFFT", "baseline_score": 0.0, "candidate_score": 0.25}
+    ]
+  },
+  "vs_skill_v3": {
+    "absolute_total_score_delta": -0.09146341463414631,
+    "improved_ids": [],
+    "regressed_ids": ["ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6", "8155904c-423f-4caa-95e8-b07102f065e7"],
+    "unchanged_score_changed_output_ids": ["1639eeed-82bb-438f-bdc2-54c319f25006"]
+  },
+  "reported_cost": 1.45742,
+  "reported_wall_time_seconds": 480.127204,
+  "candidate_sha256": "41306a107af8acbf2ee21efe634b363ae29939b02fba00faf940885326852734",
+  "candidate_bytes": 3945,
+  "result_sha256": "9aafff9a5fd94e1c7114ab75a73845a205aef89b91fbc8086ab3141d3b37628a",
+  "evaluation_exit_status": 0,
+  "stopping_criterion_met": false,
+  "candidate_budget_exhausted": true
+}

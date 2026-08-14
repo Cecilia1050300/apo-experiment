@@ -1,0 +1,19 @@
+{
+  "task": "Original Task A — Frozen v3 Generalization Smoke",
+  "status": "INVALID_PREFLIGHT",
+  "recorded_at_utc": "2026-08-14T05:57:22.635478+00:00",
+  "preserved": true,
+  "no_evaluation_started": true,
+  "required_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "required_split": "validation",
+  "required_levels": [1, 2, 3],
+  "required_items_per_level": 7,
+  "required_total": 21,
+  "blocker": "Pinned revision has no factorybench_qa/level_1/validation.jsonl; the required 21-item L1-L3 validation manifest cannot be resolved without changing protocol.",
+  "repository_validation_files": [
+    "factorybench_qa/level_2/validation.jsonl",
+    "factorybench_qa/level_3/validation.jsonl",
+    "factorybench_qa/level_4/validation.jsonl"
+  ],
+  "frozen_skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e"
+}

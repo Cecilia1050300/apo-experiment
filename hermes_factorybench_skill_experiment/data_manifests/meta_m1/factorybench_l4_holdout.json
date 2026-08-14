@@ -1,0 +1,102 @@
+{
+  "task_name": "m1_factorybench_l4",
+  "partition": "holdout",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "seed": "m1-factorybench-l4-holdout",
+  "expected_count": 6,
+  "split": "validation",
+  "answer_format_filter": "free_form",
+  "output_contract": {
+    "type": "factorybench_diagnostic_json_v2",
+    "required_keys": [
+      "root_cause",
+      "evidence",
+      "corrective_actions"
+    ]
+  },
+  "evaluator": {
+    "deterministic_validator": "factorybench_evaluator_smoke_test.validate_deterministically",
+    "judge_pipeline": "factorybench_evaluator_smoke_test.call_judge",
+    "judge_model": "gpt-5.5",
+    "judge_count": 1
+  },
+  "items": [
+    {
+      "id": "cf93f060-2fb8-4728-b632-fe58de01c833",
+      "level": 4,
+      "split": "validation",
+      "dataset": "aursad",
+      "episode": "experiment_843",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "00dcdc8912ca0362946fbc401290ecdb118f5f5a13f38f5a7958c779bed98494",
+      "selection_rank": 1
+    },
+    {
+      "id": "a5dba9aa-4706-419b-ae64-998a0555739e",
+      "level": 4,
+      "split": "validation",
+      "dataset": "aursad",
+      "episode": "experiment_2486",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "0120628a267b14b7ed73b13b83a620d526e44a209a6e7374f806e979c634d356",
+      "selection_rank": 2
+    },
+    {
+      "id": "5a878566-8b0a-48e4-ad4c-9adf5d1eaf73",
+      "level": 4,
+      "split": "validation",
+      "dataset": "aursad",
+      "episode": "experiment_21",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "028fb19cd9fe0fadf1f7991ae20194de4f95ea576744a3b9e071d2521aea2338",
+      "selection_rank": 3
+    },
+    {
+      "id": "1b9fdc29-4685-4534-ac6b-701193a13d90",
+      "level": 4,
+      "split": "validation",
+      "dataset": "aursad",
+      "episode": "experiment_3073",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "029b66d547111555548639b4ffa89735de8e57a8479bd10c62b5b0778a48d15a",
+      "selection_rank": 4
+    },
+    {
+      "id": "07330f3e-fa5b-4fad-9eeb-85feb8e58994",
+      "level": 4,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_126",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "03b38f9ac6d73cf21632f1fc3e7f7a12cf944bc44010ecaf837be5894bcd8253",
+      "selection_rank": 5
+    },
+    {
+      "id": "da285aa9-391d-4273-b20d-073cee82a968",
+      "level": 4,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_566",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "0425e8373a73707d8b189717dd258cb7f217993b53841c18f5317ef464c3444e",
+      "selection_rank": 6
+    }
+  ]
+}

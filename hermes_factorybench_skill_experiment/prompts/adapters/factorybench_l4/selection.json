@@ -1,0 +1,31 @@
+{
+  "task_name": "factorybench_l4",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "core_only",
+  "selected_adapter_sha256": null,
+  "development_manifest_sha256": "08f0c809a3ff1df2511bcd409c084c099b7135510114457a24f54fae0fa88010",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "selection_rule": [
+    "hard eligibility gates",
+    "adapter must strictly beat Core-only",
+    "highest fixed-cardinality score",
+    "highest worst-subgroup score",
+    "lowest parse failures",
+    "shortest adapter bytes",
+    "v1 before v2"
+  ],
+  "core_only_score": 0.4545454545454546,
+  "candidates": [
+    {
+      "candidate": "core_only",
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "fixed_cardinality_score": 0.4545454545454546,
+      "worst_subgroup_score": 0.0,
+      "parse_failures": 0,
+      "adapter_path": null,
+      "adapter_sha256": null,
+      "adapter_bytes": 0
+    }
+  ]
+}

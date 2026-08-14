@@ -1,0 +1,69 @@
+{
+  "task_name": "causal_judgment",
+  "status": "DEVELOPMENT_COMPLETE",
+  "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+  "baseline_score": 0.0,
+  "core_only_score": 0.0,
+  "adapter_v1_decision": "ADAPTER",
+  "adapter_v1_sha256": "101f899983a1fd2d9eecba19089a14c713534e2ff14cbd8dbb55f1f437d75886",
+  "adapter_v1_score": 1.0,
+  "adapter_v2_decision": "ADAPTER",
+  "adapter_v2_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+  "adapter_v2_score": 1.0,
+  "selection": {
+    "task_name": "causal_judgment",
+    "decision": "ADAPTER",
+    "selected_candidate": "adapter_v2",
+    "selected_adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+    "development_manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+    "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+    "selection_rule": [
+      "hard eligibility gates",
+      "adapter must strictly beat Core-only",
+      "highest fixed-cardinality score",
+      "highest worst-subgroup score",
+      "lowest parse failures",
+      "shortest adapter bytes",
+      "v1 before v2"
+    ],
+    "core_only_score": 0.0,
+    "candidates": [
+      {
+        "candidate": "core_only",
+        "eligible": false,
+        "ineligibility_reasons": [
+          "parse failure",
+          "invalid output contract"
+        ],
+        "fixed_cardinality_score": 0.0,
+        "worst_subgroup_score": 0.0,
+        "parse_failures": 3,
+        "adapter_path": null,
+        "adapter_sha256": null,
+        "adapter_bytes": 0
+      },
+      {
+        "candidate": "adapter_v1",
+        "eligible": true,
+        "ineligibility_reasons": [],
+        "fixed_cardinality_score": 1.0,
+        "worst_subgroup_score": 1.0,
+        "parse_failures": 0,
+        "adapter_path": "prompts/adapters/causal_judgment/adapter_v1.txt",
+        "adapter_sha256": "101f899983a1fd2d9eecba19089a14c713534e2ff14cbd8dbb55f1f437d75886",
+        "adapter_bytes": 687
+      },
+      {
+        "candidate": "adapter_v2",
+        "eligible": true,
+        "ineligibility_reasons": [],
+        "fixed_cardinality_score": 1.0,
+        "worst_subgroup_score": 1.0,
+        "parse_failures": 0,
+        "adapter_path": "prompts/adapters/causal_judgment/adapter_v2.txt",
+        "adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+        "adapter_bytes": 684
+      }
+    ]
+  }
+}

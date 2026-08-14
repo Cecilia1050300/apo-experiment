@@ -1,0 +1,279 @@
+{
+  "name": "factorybench_l123_expanded_smoke_30",
+  "role": "unseen_expanded_smoke",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "selection_rule": "First 10 records per level after excluding the original five optimization IDs.",
+  "item_count": 30,
+  "items": [
+    {
+      "id": "d1f931b3-498b-4f4d-8fab-b334d5fc3c4d",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1129"
+    },
+    {
+      "id": "ec945641-7e01-44d0-84f8-f95a08934e8f",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1141"
+    },
+    {
+      "id": "8a9191b9-cb02-464b-90b2-860f3e67e40f",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1141"
+    },
+    {
+      "id": "32a494ec-8bfb-4dc9-9629-12dcf7a3a674",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1169"
+    },
+    {
+      "id": "8c85247a-6c31-42c7-9920-ea20623a6f72",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1169"
+    },
+    {
+      "id": "b73b1553-ca6b-475a-ad8c-37cc31984a87",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1179"
+    },
+    {
+      "id": "7d27bbf4-ff39-4d2f-b57e-cdafd02af151",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1181"
+    },
+    {
+      "id": "89b9efbf-56f1-4bed-9025-6c075da1d936",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1221"
+    },
+    {
+      "id": "2cb61897-a47d-45d4-a7e0-1b6d13ba9600",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_1221"
+    },
+    {
+      "id": "69e08c8b-95ba-4c06-be3d-b633370f9b54",
+      "level": 1,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "aursad",
+      "episode": "experiment_124"
+    },
+    {
+      "id": "18a5bb49-419e-46b8-b4a5-5bf5abc3941d",
+      "level": 2,
+      "template_id": 3,
+      "template_type": "anomaly detection",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "0968ae12-ea78-464b-b29a-13664bd571f6"
+    },
+    {
+      "id": "eddf3507-f1d3-413f-9a9d-017749edcf5a",
+      "level": 2,
+      "template_id": 3,
+      "template_type": "anomaly detection",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "43b3e809-90eb-4999-8e3b-811c0618a3d9"
+    },
+    {
+      "id": "3f59342f-4d80-4144-bcd1-b27eb005e5c9",
+      "level": 2,
+      "template_id": 4,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "40f32682-410b-497b-a2c8-68c92bafcfdd"
+    },
+    {
+      "id": "f808eb2b-af45-4a17-a9b4-c075bd093f0e",
+      "level": 2,
+      "template_id": 4,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "43ed72ad-707b-4438-8343-906fada30974"
+    },
+    {
+      "id": "30dda675-8a16-4393-96e8-3d1642bb027a",
+      "level": 2,
+      "template_id": 4,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "20679c9d-9af7-4f63-aa8a-827944e86023"
+    },
+    {
+      "id": "822c84f3-19bf-4742-a07a-805d68f0f92d",
+      "level": 2,
+      "template_id": 4,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "5cde1ef4-571d-4fea-8a56-3239054419fe"
+    },
+    {
+      "id": "6b5c84b1-80af-4c61-92e7-cd4449c8f086",
+      "level": 2,
+      "template_id": 5,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "cc778b1a-4e6d-453e-8960-b566f720a6a1"
+    },
+    {
+      "id": "279a0297-775d-40d7-9586-ccbda1083e1b",
+      "level": 2,
+      "template_id": 5,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "c9ce110b-79ce-47ec-b7b3-5ce634440d8c"
+    },
+    {
+      "id": "aaebcabe-55c1-4f92-89ae-ecd925e470d0",
+      "level": 2,
+      "template_id": 5,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "f92422a9-7c33-4dfe-abc3-492e7c99ca95"
+    },
+    {
+      "id": "6ca64a4e-576a-4808-947f-315f97f39769",
+      "level": 2,
+      "template_id": 5,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "0e9c203c-2b70-4401-9d25-ca0c86e16440"
+    },
+    {
+      "id": "3c009792-c413-4104-90f4-b6e5964c344f",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "923fb3c8-fbe2-4330-b2bf-024ef31bf040"
+    },
+    {
+      "id": "db5f7a74-81ac-43d4-9035-364dd3194581",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "34ef4627-301d-4504-8d98-f40c05a37d48"
+    },
+    {
+      "id": "1619641b-5526-40c4-a287-87146e0ec234",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "e77d9acd-4dc6-4f31-ae6e-3d75baf3cea5"
+    },
+    {
+      "id": "5f941a61-537a-42c1-af66-519e70ec022a",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "ab3653a3-557b-4765-8421-bf54e50d6390"
+    },
+    {
+      "id": "8f62d560-fb10-42e5-b6ab-db50a16fafe2",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "2b8a2050-d6de-4905-a66f-8aa6dac8958b"
+    },
+    {
+      "id": "12486ddb-8e91-49b3-b67d-2f9d4147b15f",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "b3d3d0d0-2ed7-4ffc-8d98-9f3d2ee88ff2"
+    },
+    {
+      "id": "cb335420-7558-4601-8948-6f82dd4db7e0",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "cdd810b2-cf1b-4654-978a-d5da716599a5"
+    },
+    {
+      "id": "2f6a3991-95a4-4918-a399-3b8c75033a80",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "b97a2831-3c1f-413e-983b-a377a87ac18e"
+    },
+    {
+      "id": "11202635-0f31-4324-bd13-d7fd032cdb71",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "fd1e18fb-fe1b-461a-b767-98b4ce0c4949"
+    },
+    {
+      "id": "0e78df9e-5ce5-428d-98cc-cb8bbc941778",
+      "level": 3,
+      "template_id": 1,
+      "template_type": "predictive",
+      "answer_format": null,
+      "dataset": "factorywave",
+      "episode": "c9ce110b-79ce-47ec-b7b3-5ce634440d8c"
+    }
+  ]
+}

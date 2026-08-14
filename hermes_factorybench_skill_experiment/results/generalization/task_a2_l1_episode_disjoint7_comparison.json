@@ -1,0 +1,403 @@
+{
+  "task": "Task A2 \u2014 L1 Episode-Disjoint Holdout",
+  "protocol": "frozen_skill_v3_generalization_smoke",
+  "configuration": {
+    "dataset": "FactoryBench/FactoryBench",
+    "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+    "split": "test",
+    "levels": [
+      1
+    ],
+    "expected_total": 7,
+    "model": "gpt-5.5",
+    "concurrency": 2,
+    "frozen_skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e"
+  },
+  "pairing": {
+    "item_count": 7,
+    "exact_ordered_id_match": true,
+    "manifest_preflight_valid": true
+  },
+  "selection_preflight": {
+    "seed": "task-a-l1-episode-disjoint-v1",
+    "rule": "Require a non-empty provenance episode; exclude optimization IDs, all items sharing an original L1 optimization episode, and trace-established L1 IDs; sort remaining items by SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break; take first 7.",
+    "source_l1_test_count": 1309,
+    "exclusion_counts": {
+      "original_l1_ids": 5,
+      "items_sharing_original_l1_episode": 13,
+      "trace_l1_ids": 5,
+      "missing_provenance_episode": 38,
+      "union_excluded_l1_items": 51
+    },
+    "eligible_item_count": 1258,
+    "selected_ids": [
+      "27f70f84-afd1-47a5-b5c0-3fb1e97a2579",
+      "871b7950-15d5-4210-8e3e-d99f5ae1900c",
+      "5372d137-caed-4ca7-9e24-239182e3ace9",
+      "ae43d5e3-3146-4dbe-98e8-1eb650af665f",
+      "5255ae6d-57d1-4532-b25f-d2dab1557179",
+      "14b816fb-e301-4161-b5e4-282d5e5a835c",
+      "70346496-3321-4592-9085-b247dad6b254"
+    ],
+    "selected_episodes": [
+      "1c2dd612-53e1-4509-950a-19ae8548c4d5",
+      "experiment_4012",
+      "5a482ce1-3b1e-48f1-9f87-20570153db33",
+      "ebaed824-cef2-47d4-87a3-82970a76a233",
+      "experiment_689",
+      "experiment_1715",
+      "experiment_4032"
+    ]
+  },
+  "scores": {
+    "baseline_factorybench_reported": 0.6842105263157895,
+    "v3_factorybench_reported": 0.21052631578947367,
+    "baseline_fixed_cardinality": 0.6842105263157895,
+    "v3_fixed_cardinality": 0.21052631578947367,
+    "absolute_delta": -0.4736842105263158,
+    "absolute_percentage_point_delta": -47.36842105263158,
+    "relative_percentage_change": -69.23076923076924
+  },
+  "by_level": {
+    "L1": {
+      "baseline": 0.6842105263157895,
+      "v3": 0.21052631578947367,
+      "delta": -0.4736842105263158
+    }
+  },
+  "by_dataset": {
+    "aursad": {
+      "baseline": 0.7272727272727273,
+      "v3": 0.18181818181818185,
+      "delta": -0.5454545454545454
+    },
+    "factorywave": {
+      "baseline": 0.6250000000000001,
+      "v3": 0.25,
+      "delta": -0.3750000000000001
+    }
+  },
+  "by_answer_format": {
+    "scalar_exact": {
+      "baseline": 1.0,
+      "v3": 1.0,
+      "delta": 0.0
+    },
+    "scalar_range": {
+      "baseline": 0.5,
+      "v3": 0.25,
+      "delta": -0.25
+    },
+    "single_letter_mcq": {
+      "baseline": 1.0,
+      "v3": -0.49999999999999994,
+      "delta": -1.5
+    }
+  },
+  "counts": {
+    "improved": 0,
+    "worse": 3,
+    "unchanged": 4,
+    "invalid": 0
+  },
+  "parse_failures": {
+    "baseline": 0,
+    "v3": 0
+  },
+  "cost": {
+    "baseline": 0.360545,
+    "v3": 0.445455,
+    "delta": 0.08490999999999999
+  },
+  "token_usage": {
+    "baseline": {
+      "candidate": {
+        "model": "gpt-5.5",
+        "input_tokens": 48481,
+        "output_tokens": 7876,
+        "calls": 7
+      },
+      "judges": {}
+    },
+    "v3": {
+      "candidate": {
+        "model": "gpt-5.5",
+        "input_tokens": 53220,
+        "output_tokens": 11957,
+        "calls": 7
+      },
+      "judges": {}
+    }
+  },
+  "wall_time_seconds": {
+    "baseline": 64.309768,
+    "v3": 89.65353,
+    "delta": 25.343761999999998
+  },
+  "changed_case_count": 5,
+  "changed_cases": [
+    {
+      "id": "27f70f84-afd1-47a5-b5c0-3fb1e97a2579",
+      "level": 1,
+      "dataset": "factorywave",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "381",
+      "v3_raw_output": "0",
+      "baseline_parsed_output": 381.0,
+      "v3_parsed_output": 0.0,
+      "baseline_score": 0.0,
+      "v3_score": 0.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    },
+    {
+      "id": "5372d137-caed-4ca7-9e24-239182e3ace9",
+      "level": 1,
+      "dataset": "factorywave",
+      "answer_format": "single_letter_mcq",
+      "baseline_raw_output": "A",
+      "v3_raw_output": "B",
+      "baseline_parsed_output": "A",
+      "v3_parsed_output": "B",
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "5255ae6d-57d1-4532-b25f-d2dab1557179",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "single_letter_mcq",
+      "baseline_raw_output": "C",
+      "v3_raw_output": "A",
+      "baseline_parsed_output": "C",
+      "v3_parsed_output": "A",
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "14b816fb-e301-4161-b5e4-282d5e5a835c",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "0",
+      "v3_raw_output": "890",
+      "baseline_parsed_output": 0.0,
+      "v3_parsed_output": 890.0,
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "70346496-3321-4592-9085-b247dad6b254",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "494",
+      "v3_raw_output": "2877",
+      "baseline_parsed_output": 494.0,
+      "v3_parsed_output": 2877.0,
+      "baseline_score": 0.0,
+      "v3_score": 0.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    }
+  ],
+  "items": [
+    {
+      "id": "27f70f84-afd1-47a5-b5c0-3fb1e97a2579",
+      "level": 1,
+      "dataset": "factorywave",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "381",
+      "v3_raw_output": "0",
+      "baseline_parsed_output": 381.0,
+      "v3_parsed_output": 0.0,
+      "baseline_score": 0.0,
+      "v3_score": 0.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    },
+    {
+      "id": "871b7950-15d5-4210-8e3e-d99f5ae1900c",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "scalar_exact",
+      "baseline_raw_output": "-1.1256",
+      "v3_raw_output": "-1.1256",
+      "baseline_parsed_output": -1.1256,
+      "v3_parsed_output": -1.1256,
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "5372d137-caed-4ca7-9e24-239182e3ace9",
+      "level": 1,
+      "dataset": "factorywave",
+      "answer_format": "single_letter_mcq",
+      "baseline_raw_output": "A",
+      "v3_raw_output": "B",
+      "baseline_parsed_output": "A",
+      "v3_parsed_output": "B",
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "ae43d5e3-3146-4dbe-98e8-1eb650af665f",
+      "level": 1,
+      "dataset": "factorywave",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "0",
+      "v3_raw_output": "0",
+      "baseline_parsed_output": 0.0,
+      "v3_parsed_output": 0.0,
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "5255ae6d-57d1-4532-b25f-d2dab1557179",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "single_letter_mcq",
+      "baseline_raw_output": "C",
+      "v3_raw_output": "A",
+      "baseline_parsed_output": "C",
+      "v3_parsed_output": "A",
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "14b816fb-e301-4161-b5e4-282d5e5a835c",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "0",
+      "v3_raw_output": "890",
+      "baseline_parsed_output": 0.0,
+      "v3_parsed_output": 890.0,
+      "baseline_score": 1.0,
+      "v3_score": 0.0,
+      "score_delta": -1.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "70346496-3321-4592-9085-b247dad6b254",
+      "level": 1,
+      "dataset": "aursad",
+      "answer_format": "scalar_range",
+      "baseline_raw_output": "494",
+      "v3_raw_output": "2877",
+      "baseline_parsed_output": 494.0,
+      "v3_parsed_output": 2877.0,
+      "baseline_score": 0.0,
+      "v3_score": 0.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    }
+  ],
+  "valid": true,
+  "verdict": "NEGATIVE_SIGNAL",
+  "artifact_hashes": {
+    "frozen_skill_v3": {
+      "path": "prompts/generated/factorybench_skill_v3.txt",
+      "sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e"
+    },
+    "original_invalid_preflight": {
+      "path": "data_manifests/task_a_validation7_invalid_preflight.json",
+      "sha256": "e17a605c5dc8c644fd518c82f67f0b0041af8e2a3a4ae7aa7a8af1dd925cb259"
+    },
+    "original_invalid_preflight_report": {
+      "path": "reports/task_a_validation7_invalid_preflight.md",
+      "sha256": "550b0c728f93bc3af28e13fc33c864c203f6518dc77bd9b6515514aa75a92316"
+    },
+    "optimization_id_source": {
+      "path": "results/smoke/l123_baseline_fresh_gpt55.json",
+      "sha256": "10123b00423178db865f28b783b2949dff45449c828136245426b34bbd76d62a"
+    },
+    "manifest": {
+      "path": "data_manifests/task_a2_l1_episode_disjoint7_manifest.json",
+      "sha256": "eb3be4837eb0d13a73a968607f9c3482dddf0d8bd51538b4aaccd4465eb10490"
+    },
+    "baseline_result": {
+      "path": "results/generalization/task_a2_l1_episode_disjoint7_baseline_gpt55.json",
+      "sha256": "980256e276cf682846d47719126b88a2f17fc3713f802d54b54998725eea96e2"
+    },
+    "v3_result": {
+      "path": "results/generalization/task_a2_l1_episode_disjoint7_skill_v3_gpt55.json",
+      "sha256": "a06b3ce4d96c994df78dcc00ca907da4e5a0c05521989e6675f95796649fbc66"
+    },
+    "baseline_log": {
+      "path": "logs/task_a2_l1_episode_disjoint7_baseline_gpt55.log",
+      "sha256": "500934646303f6eccf39abed5d332ad9a1324902531fc21415c2582f3d0f6779"
+    },
+    "v3_log": {
+      "path": "logs/task_a2_l1_episode_disjoint7_skill_v3_gpt55.log",
+      "sha256": "f18d49941a5e6179d816cdf7df7763b9eb8502c856a4734da37318310f3eb46d"
+    },
+    "exact_id_runner": {
+      "path": "scripts/task_a_exact_id_runner.py",
+      "sha256": "a77f4fd2359ddd57dae4701a76d881010a32eaade15be9156fdd0e8cb2fd4ef8"
+    },
+    "comparison_builder": {
+      "path": "scripts/task_a_build_comparison.py",
+      "sha256": "58802c7b9485761eac3b316196c4f63a80300a591f89c54a9475802af0df3b95"
+    },
+    "refinement_trace": {
+      "path": "results/smoke/hermes_self_evolution_trace.json",
+      "sha256": "0ced7e068caaf6db4f764f22cbac6cba8ad0acf925bc8035c9830041169bebc4"
+    }
+  },
+  "final_hash_registry": "results/generalization/task_a_stratified_integrity_hashes.json",
+  "notes": [
+    "No parse failure occurred, so reported and fixed-cardinality scores are identical.",
+    "Final hashes of this comparison JSON and its Markdown report are recorded in the external final hash registry to avoid self-referential hashing."
+  ]
+}

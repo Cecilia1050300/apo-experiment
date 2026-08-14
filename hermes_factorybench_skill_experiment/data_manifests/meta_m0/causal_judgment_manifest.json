@@ -1,0 +1,86 @@
+{
+  "task_name": "causal_judgment",
+  "status": "AVAILABLE",
+  "source": "data/bigbench-ii/causal_judgment/task.json",
+  "source_sha256": "5bb2eec8e448d1784ed43c24409cc6b97932fcaa3039bf8ba43cfc5f7faabdb0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after contamination exclusions.",
+  "seeds": {
+    "development": "meta-m0-causal-judgment-dev",
+    "holdout": "meta-m0-causal-judgment-holdout"
+  },
+  "contamination_registry_sha256": "b516d21adb2c7e3d2273325a5467b36d1984feb5da647d1b1ccb537d27ab9210",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+  "availability": {
+    "source_total": 190,
+    "contaminated_ids": 100,
+    "eligible_before_dev": 90,
+    "eligible_before_holdout": 87
+  },
+  "development": [
+    {
+      "id": "causal_judgment_0122",
+      "source_index": 122,
+      "selection_sha256": "014992f363f095fde83db4b69429a950b60440222801014f6f331b6d6c5f9e4d",
+      "selection_rank": 1
+    },
+    {
+      "id": "causal_judgment_0139",
+      "source_index": 139,
+      "selection_sha256": "04acad4fd10a94b8d53e38118422a743ed6465e89e157674bb8cd24b30cc64f0",
+      "selection_rank": 2
+    },
+    {
+      "id": "causal_judgment_0177",
+      "source_index": 177,
+      "selection_sha256": "0b2b61bb57fea19395199de9763e684c645db74fc81feb3f46a2b14497e9bf7a",
+      "selection_rank": 3
+    }
+  ],
+  "holdout": [
+    {
+      "id": "causal_judgment_0021",
+      "source_index": 21,
+      "selection_sha256": "03ec6db50e620cf9550f1d48932ccaa21f0d7317eff9691dd64d990feff6dd80",
+      "selection_rank": 1
+    },
+    {
+      "id": "causal_judgment_0046",
+      "source_index": 46,
+      "selection_sha256": "053f269d43f4cda8dcf8ef15277b4ad4ff5091972c793d1e8d6e08f031d351a5",
+      "selection_rank": 2
+    },
+    {
+      "id": "causal_judgment_0088",
+      "source_index": 88,
+      "selection_sha256": "05e97fce8c01b817cc825c3fd4c1d62d9b45b56ded9ff0c2283a1cae2e5d918f",
+      "selection_rank": 3
+    },
+    {
+      "id": "causal_judgment_0117",
+      "source_index": 117,
+      "selection_sha256": "0977a03833e1faa6c042125b02fe6412bec2521ae18a1d6cf1e7076426c40f6c",
+      "selection_rank": 4
+    },
+    {
+      "id": "causal_judgment_0165",
+      "source_index": 165,
+      "selection_sha256": "09ff7402ad5406b8742b77553e4c268cccf3c0a7b9e6b4fa3f1e6db66a8d69a0",
+      "selection_rank": 5
+    }
+  ],
+  "counts": {
+    "development": 3,
+    "holdout": 5
+  },
+  "id_disjoint": true,
+  "evaluator": {
+    "type": "deterministic_exact_match",
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "case_insensitive": true,
+    "format_requires_single_label": true
+  }
+}

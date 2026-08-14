@@ -1,0 +1,48 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "factorybench_l4",
+  "mode": "refine",
+  "decision": "NO_ADAPTER",
+  "task_scope": [
+    "FactoryBench Level 4 industrial troubleshooting from machine telemetry",
+    "Single-letter multiple-choice anomaly/root-cause selection",
+    "Concise free-form diagnosis and remediation"
+  ],
+  "supported_formats": [
+    "single_letter_mcq: exactly one allowed option letter",
+    "free_form: direct diagnosis/root-cause/remediation answer"
+  ],
+  "applicability_conditions": [
+    "No adapter is applied because the available development evidence does not support a recurring task-level rule.",
+    "Use Core-only behavior for all supported FactoryBench L4 inputs."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "isolated_free_form_root_cause_misattribution",
+      "evidence_count": 1,
+      "description": "On one free-form telemetry item, the model attributed static-position force-estimate changes to sensing or estimator drift rather than considering a process/program phase explanation. This is a single observed case and does not justify a general adapter rule."
+    },
+    {
+      "category": "baseline_mcq_false_positive_anomaly",
+      "evidence_count": 1,
+      "description": "The baseline selected an anomaly option for one multiple-choice stream that Core-only handled correctly. Adding broad anomaly-detection heuristics could regress this already-correct behavior."
+    }
+  ],
+  "adapter_text": "",
+  "fallback_policy": "Use the fixed Core Skill without any task adapter.",
+  "changes_from_previous": [
+    "No previous adapter text was provided.",
+    "No new adapter rule is added because the only remaining Core-only failure is not recurrent enough to support a task-level instruction."
+  ],
+  "predicted_regression_risks": [
+    "A rule telling the model to prefer program-phase explanations for static telemetry could incorrectly override valid sensor, payload, contact, or calibration diagnoses in other free-form items.",
+    "A rule changing anomaly thresholds could regress the multiple-choice normal-operation item that Core-only answered correctly.",
+    "A dataset-specific rule would be overfit to one development case and may weaken behavior on unseen FactoryBench streams."
+  ],
+  "evidence_limitations": [
+    "Only two development items are available.",
+    "Only one Core-only failure is observed.",
+    "There is no previous non-empty adapter to compare against.",
+    "The free-form failure is a single case, so it does not establish a repeated failure mechanism."
+  ]
+}

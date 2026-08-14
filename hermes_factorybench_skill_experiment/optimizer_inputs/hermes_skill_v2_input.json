@@ -1,0 +1,114 @@
+{
+  "status": "verified_before_skill_v2",
+  "dataset_role": "15-item smoke optimization/development set only",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "configuration": {
+    "model": "gpt-5.5",
+    "level": "all (L1-L3 because no judges are configured)",
+    "split": "mini",
+    "max_items_per_level": 5,
+    "expected_items": 15,
+    "resume": false
+  },
+  "verification": {
+    "same_ordered_item_ids": true,
+    "item_count": 15,
+    "baseline_score_recalculated": 0.7439024390243903,
+    "skill_v1_score_recalculated": 0.7439024390243903,
+    "absolute_delta": 0.0,
+    "baseline_by_level_recalculated": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+    "skill_v1_by_level_recalculated": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0},
+    "baseline_parse_failures": 0,
+    "skill_v1_parse_failures": 0,
+    "score_changed_items": [],
+    "exact_output_identical_count": 13,
+    "exact_output_changed_count": 2,
+    "exact_output_changes": [
+      {"id": "1639eeed-82bb-438f-bdc2-54c319f25006", "baseline": "692", "skill_v1": "3658", "baseline_score": 0.0, "skill_v1_score": 0.0},
+      {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline": "2768", "skill_v1": "3658", "baseline_score": 0.0, "skill_v1_score": 0.0}
+    ],
+    "source_records": "The first five records from each pinned L1-L3 test JSONL resolve to exactly the same 15 IDs."
+  },
+  "case_partition": {
+    "fully_correct_ids": [
+      "bc087859-a978-4e47-9aa3-91588efa3817",
+      "dabaeddb-0ecd-405f-9e97-59307af18954",
+      "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+      "3f9426d7-175f-4f99-a5c9-ae6799abebae",
+      "0483f6d3-8a46-4bbe-8d54-22bda5c3c859",
+      "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6",
+      "0719a8d1-e104-47e6-837d-114b2ce1ce64",
+      "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3",
+      "7f00a63a-6813-4507-95ca-d2b0c318402b",
+      "b511733e-83b4-4a39-87ce-ab3e90d5db34",
+      "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d"
+    ],
+    "partial_credit_ids": ["aa0b4843-97e3-4346-9323-e28752a88046"],
+    "zero_score_ids": [
+      "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+      "8155904c-423f-4caa-95e8-b07102f065e7"
+    ]
+  },
+  "failure_analysis": [
+    {
+      "id": "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "task_type": "L1 phase/timestamp localization (approach)",
+      "required_output_contract": "one integer or decimal timestamp only",
+      "expected_reasoning_operation": "identify the semantic start of the requested phase within a fixed-window localization task, including the possibility that the phase is already active at the first visible sample",
+      "baseline_behavior": "692; parsed, but outside the accepted source-record range",
+      "skill_v1_behavior": "3658; parsed, but outside the accepted source-record range",
+      "likely_reasoning_failure": "Confirmed localization mismatch. Hypothesis: Skill v1 over-anchored on the first conspicuous motion transition near the end and did not treat the leading regime as an already-active phase. The source annotation places the phase at the leading regime, but that annotation is not exposed in the model prompt, so the precise causal diagnosis remains uncertain.",
+      "effect_of_skill_v1": "no measurable score effect; raw output changed and moved to a later transition",
+      "failure_classes": ["phase or timestamp localization failure", "failure to distinguish manufacturing phases"],
+      "generalizable_corrective_principle": "Before searching for an inbound transition, test whether the requested phase is already underway at the first sample; do not equate the first large speed change with the requested phase."
+    },
+    {
+      "id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+      "task_type": "L1 phase/timestamp localization (lift)",
+      "required_output_contract": "one integer or decimal timestamp only",
+      "expected_reasoning_operation": "locate the semantic lift-window start, distinguishing preparatory phase onset from the first conspicuous motion sample",
+      "baseline_behavior": "2768; parsed, but outside the accepted source-record range",
+      "skill_v1_behavior": "3658; parsed, but outside the accepted source-record range",
+      "likely_reasoning_failure": "Confirmed localization mismatch. Hypothesis: both runs used an observable proxy rather than the semantic phase boundary; Skill v1 chose first conspicuous motion, although a manufacturing phase can include a preparatory dwell or load-transfer interval before obvious speed. The visible channels do not sharply identify the annotated boundary, so insufficient observable evidence is also plausible.",
+      "effect_of_skill_v1": "no measurable score effect; raw output changed but remained wrong",
+      "failure_classes": ["phase or timestamp localization failure", "failure to distinguish manufacturing phases", "incorrect window interpretation", "insufficient observable evidence"],
+      "generalizable_corrective_principle": "Distinguish semantic phase onset from first nonzero motion and from the latest feasible full-window start; search backward from the clearest signature for a stable precursor or preparatory boundary."
+    },
+    {
+      "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+      "task_type": "L2 four-statement future-state inference after collision",
+      "required_output_contract": "exactly four uppercase T/F letters in A-D order",
+      "expected_reasoning_operation": "evaluate each thresholded future statement independently, including a negated universal statement, using pre-event baseline, event regime, trend continuation, and manufacturing dynamics",
+      "baseline_behavior": "FFFF; format-correct; zero of four statements correct",
+      "skill_v1_behavior": "FFFF; identical and zero of four statements correct",
+      "likely_reasoning_failure": "Confirmed future-state decision failure, not a parser failure. Hypothesis: the evidence-only wording encouraged defaulting unobserved future claims to false instead of making the requested most-likely inference. A separate hypothesis is failure to compute each threshold and the negated universal independently.",
+      "effect_of_skill_v1": "no measurable effect",
+      "failure_classes": ["future-state inference failure", "threshold calculation failure", "instruction conflict or ambiguity"],
+      "generalizable_corrective_principle": "For 'most likely next' tasks, do not map uncertainty to false. Extrapolate only supported regime trends, calculate each metric independently, and handle negations and universal quantifiers literally."
+    },
+    {
+      "id": "aa0b4843-97e3-4346-9323-e28752a88046",
+      "task_type": "L2 four-statement future-state inference after collision",
+      "required_output_contract": "exactly four uppercase T/F letters in A-D order",
+      "expected_reasoning_operation": "independently test peak-and-relax, accumulated path, tracking-error, and torque-range claims against threshold definitions and trajectory evidence",
+      "baseline_behavior": "TFTF; format-correct; two of four statements correct",
+      "skill_v1_behavior": "TFTF; identical; two of four statements correct",
+      "likely_reasoning_failure": "Confirmed errors on the first two statement decisions. Hypothesis: a rising current was mistaken for the compound peak-then-relax condition, while cumulative path length was underestimated by using net displacement or one interval rather than summing absolute increments. The exact future is not fully observable, so these mechanisms are hypotheses.",
+      "effect_of_skill_v1": "no measurable effect",
+      "failure_classes": ["future-state inference failure", "threshold calculation failure"],
+      "generalizable_corrective_principle": "Translate compound clauses into all required inequalities; distinguish peak-then-relax from a rise, and cumulative path length from net displacement."
+    }
+  ],
+  "preserve": [
+    "strict output-only contracts and zero parse failures",
+    "successful chronological ranking procedure (all eight ranking items fully correct)",
+    "first-sample timestamp remained correct on three L1 cases",
+    "independent A-D evaluation structure"
+  ],
+  "candidate_v2_hypotheses": [
+    "An explicit already-in-progress check and backward boundary search may recover phase starts without damaging correct first-sample cases.",
+    "Explicit compound-metric formulas and negation handling may improve T/F decisions.",
+    "Separating evidence-supported future extrapolation from a default-false policy may improve predictive T/F tasks."
+  ]
+}

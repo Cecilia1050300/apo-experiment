@@ -1,0 +1,44 @@
+{
+  "baseline_file": "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+  "skill_v1_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+  "parent_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+  "candidate_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+  "same_ordered_item_ids": true,
+  "item_count": 15,
+  "recalculated": {
+    "baseline": {"total_score": 0.7439024390243903, "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0}, "parse_failures": 0},
+    "skill_v1": {"total_score": 0.7439024390243903, "by_level": {"L1": 0.6, "L2": 0.6129032258064515, "L3": 1.0}, "parse_failures": 0},
+    "skill_v2": {"total_score": 0.810126582278481, "by_level": {"L1": 0.6, "L2": 0.8518518518518519, "L3": 1.0}, "parse_failures": 1, "valid_scored_items": 14},
+    "skill_v3": {"total_score": 0.7804878048780488, "by_level": {"L1": 0.6, "L2": 0.7419354838709679, "L3": 1.0}, "parse_failures": 0, "valid_scored_items": 15}
+  },
+  "vs_baseline": {
+    "absolute_total_score_delta": 0.03658536585365857,
+    "improved_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "regressed_ids": [],
+    "unchanged_score_changed_output_ids": ["fbfbc913-a9e0-4178-9852-86aa6663f9f3"],
+    "exact_output_changes": [
+      {"id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3", "baseline_output": "2768", "candidate_output": "1978", "baseline_score": 0.0, "candidate_score": 0.0},
+      {"id": "8155904c-423f-4caa-95e8-b07102f065e7", "baseline_output": "FFFF", "candidate_output": "FTFT", "baseline_score": 0.0, "candidate_score": 0.5}
+    ]
+  },
+  "vs_skill_v1": {
+    "absolute_total_score_delta": 0.03658536585365857,
+    "improved_ids": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "regressed_ids": [],
+    "unchanged_score_changed_output_ids": ["1639eeed-82bb-438f-bdc2-54c319f25006", "fbfbc913-a9e0-4178-9852-86aa6663f9f3"]
+  },
+  "vs_skill_v2": {
+    "aggregate_score_delta": -0.029638777400432193,
+    "parse_failures_removed": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "scored_item_improvements": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "scored_item_regressions": [],
+    "note": "The parent aggregate used only 14 valid items; direct aggregate comparison is therefore not a paired performance comparison."
+  },
+  "reported_cost": 1.41734,
+  "reported_wall_time_seconds": 450.024934,
+  "candidate_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+  "candidate_bytes": 3557,
+  "result_sha256": "cd6776aeb60df09595004f68dddaef7b6c6a1b92b1fddddd2cca1c20752112c6",
+  "evaluation_exit_status": 0,
+  "stopping_criterion_met": false
+}

@@ -1,0 +1,28 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "manifests": {
+    "development_fold_a": {
+      "path": "data_manifests/meta_m1/factorybench_l123_dev_fold_a.json",
+      "sha256": "fa34802b22cec32df90e59ac3db64b952c35706ef998d70f013d6298affbaec1",
+      "count": 3
+    },
+    "development_fold_b": {
+      "path": "data_manifests/meta_m1/factorybench_l123_dev_fold_b.json",
+      "sha256": "95cec7a9285b7c079c8f6e243fcdfca23990c79e3c0606f606250c19e05e327c",
+      "count": 3
+    },
+    "holdout": {
+      "path": "data_manifests/meta_m1/factorybench_l123_holdout.json",
+      "sha256": "c1a6a29ad240a2585f2dcda7d3332924f43085a95d510dab4b9a2980cead2082",
+      "count": 9
+    }
+  },
+  "all_ids_disjoint": true,
+  "all_episodes_disjoint": true
+}

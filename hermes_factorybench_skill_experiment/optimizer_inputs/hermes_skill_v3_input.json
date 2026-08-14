@@ -1,0 +1,86 @@
+{
+  "status": "ready_before_skill_v3_evaluation",
+  "dataset_role": "15-item smoke optimization/development set only",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "configuration": {
+    "model": "gpt-5.5",
+    "level": "all (effective L1-L3 without judges)",
+    "split": "mini",
+    "max_items_per_level": 5,
+    "expected_items": 15,
+    "resume": false
+  },
+  "parent": {
+    "skill_path": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v2.txt",
+    "skill_sha256": "96a45d81cc3723902bdf2aa718627970598cee7789265dd7bbacaeb7d9710001",
+    "skill_bytes": 3268,
+    "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v2_gpt55.json",
+    "result_sha256": "8ea856c8bb002a4b4ae5998214f6971403a6397bff0b8f469acedf802946ecec"
+  },
+  "verified_v2_observations": {
+    "same_15_ordered_ids_as_baseline_and_skill_v1": true,
+    "reported_and_recalculated_total_score": 0.810126582278481,
+    "by_level": {"L1": 0.6, "L2": 0.8518518518518519, "L3": 1.0},
+    "parse_failures": 1,
+    "valid_scored_items": 14,
+    "improved_ids_vs_baseline": [],
+    "regressed_scored_ids_vs_baseline": [],
+    "aggregate_caveat": "FactoryBench excludes parse failures from aggregation. The apparent +0.06622414325409065 increase results from excluding a formerly zero-score L2 item, not from any per-item score gain.",
+    "output_tokens_per_call": {
+      "fresh_baseline": 2245.6,
+      "skill_v1": 1766.5333333333333,
+      "skill_v2": 3039.266666666667
+    }
+  },
+  "failure_analysis": [
+    {
+      "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+      "task_type": "L2 four-statement future-state T/F inference",
+      "confirmed_failure": "Skill v2 returned an empty raw output, producing the only parse failure.",
+      "hypothesis": "The adapter does not retain finish_reason or per-item usage, so the cause is not observable. The higher aggregate output-token use and long request time are consistent with, but do not prove, completion-budget exhaustion.",
+      "corrective_principle": "Bound internal deliberation, reserve completion budget for the answer, and require a valid decision for every T/F letter even under uncertainty."
+    },
+    {
+      "id": "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "task_type": "L1 approach localization",
+      "confirmed_failure": "Skill v2 returned 692, outside the pinned optimization source range 0-297; score remained zero.",
+      "hypothesis": "The existing first-regime test was too conditional and still permitted anchoring on a later conspicuous transition.",
+      "corrective_principle": "When the leading regime plausibly matches the requested phase and no inbound transition is visible, prefer the first supplied timestamp."
+    },
+    {
+      "id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+      "task_type": "L1 lift localization",
+      "confirmed_failure": "Skill v2 changed the answer from 3658 to 1780 but remained outside the pinned optimization source range 2966-3559.",
+      "hypothesis": "The backward precursor search became too permissive and crossed an unrelated stable regime.",
+      "corrective_principle": "Backtrack only through the nearest contiguous precursor and stop at the closest coordinated boundary."
+    },
+    {
+      "id": "aa0b4843-97e3-4346-9323-e28752a88046",
+      "task_type": "L2 four-statement future-state T/F inference",
+      "confirmed_failure": "Skill v2 remained TFTF with 0.5 item score; the first two decisions remained wrong.",
+      "hypothesis": "The model still treated a rise as sufficient for a compound peak-and-relax event and evaluated accumulated path over too short a continuation or as displacement.",
+      "corrective_principle": "Require support for every compound-event clause and evaluate accumulated path over the full implied continuation, including reversals and continued motion."
+    }
+  ],
+  "preserve": [
+    "all eleven fully correct Skill v2 items",
+    "all eight fully correct ranking items",
+    "strict scalar and ranking contracts",
+    "independent A-D T/F evaluation",
+    "no use of validation or generalization data"
+  ],
+  "candidate": {
+    "skill_path": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+    "skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+    "skill_bytes": 3557,
+    "prohibited_identifier_scan_matches": 0,
+    "changes": [
+      "Added bounded one-pass reasoning and explicit non-empty output safeguards.",
+      "Strengthened the first-sample localization gate.",
+      "Bounded backward localization to the nearest contiguous precursor.",
+      "Clarified the implied future horizon, compound-event support, and full-continuation path accumulation.",
+      "Preserved ranking logic and all strict output contracts."
+    ]
+  },
+  "stopping_criterion_after_v2": false
+}

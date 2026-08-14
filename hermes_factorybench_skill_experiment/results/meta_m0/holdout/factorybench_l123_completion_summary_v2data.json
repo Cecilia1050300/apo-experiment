@@ -1,0 +1,400 @@
+{
+  "task_name": "factorybench_l123",
+  "status": "HOLDOUT_COMPLETION_COMPLETE",
+  "holdout_manifest_sha256": "e5bcfff72d27544ff3796397fd1c2b3badf86faed89a61cbd44b3bc5ab5a57a3",
+  "selection_sha256": "c32f60a69da78440baf6905afd7e2edd19c3a21ddd8e09b8ce269cb84e93e786",
+  "selection_decision": "ADAPTER",
+  "baseline": {
+    "condition": "baseline_completion",
+    "item_count": 6,
+    "ordered_ids": [
+      "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+      "9bdfa657-f4a5-4641-914e-4cd596f39563",
+      "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+      "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+      "1558f035-fdec-4797-9303-0d0a88e016c6",
+      "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad"
+    ],
+    "canonical_score": 0.4,
+    "fixed_cardinality_score": 0.4,
+    "parse_failures": 0,
+    "subgroups": {
+      "by_level": {
+        "1": 1.0,
+        "2": 0.25,
+        "3": 0.0
+      },
+      "by_split": {
+        "test": 1.0,
+        "validation": 0.1
+      },
+      "by_dataset": {
+        "aursad": 1.0,
+        "factorywave": 0.25,
+        "vorausad": -0.49999999999999994
+      },
+      "by_answer_format": {
+        "scalar_exact": 1.0,
+        "single_letter_mcq": 0.49999999999999994,
+        "tensor_margin": 0.0
+      }
+    },
+    "items": [
+      {
+        "id": "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "9bdfa657-f4a5-4641-914e-4cd596f39563",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "scalar_exact",
+        "raw_output": "-0.7155",
+        "parsed": -0.7155,
+        "score": 1.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+        "level": 2,
+        "split": "validation",
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+        "level": 2,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "1558f035-fdec-4797-9303-0d0a88e016c6",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[6.22,-60.37,90.31,-120.15,-90.72,330.1]",
+        "parsed": [
+          6.22,
+          -60.37,
+          90.31,
+          -120.15,
+          -90.72,
+          330.1
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[29.22,-78.17,116.83,-129.11,-90.19,265.34]",
+        "parsed": [
+          29.22,
+          -78.17,
+          116.83,
+          -129.11,
+          -90.19,
+          265.34
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      }
+    ]
+  },
+  "core_only": {
+    "condition": "core_only_completion",
+    "item_count": 6,
+    "ordered_ids": [
+      "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+      "9bdfa657-f4a5-4641-914e-4cd596f39563",
+      "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+      "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+      "1558f035-fdec-4797-9303-0d0a88e016c6",
+      "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad"
+    ],
+    "canonical_score": 0.4,
+    "fixed_cardinality_score": 0.4,
+    "parse_failures": 0,
+    "subgroups": {
+      "by_level": {
+        "1": 1.0,
+        "2": 0.25,
+        "3": 0.0
+      },
+      "by_split": {
+        "test": 1.0,
+        "validation": 0.1
+      },
+      "by_dataset": {
+        "aursad": 1.0,
+        "factorywave": 0.25,
+        "vorausad": -0.49999999999999994
+      },
+      "by_answer_format": {
+        "scalar_exact": 1.0,
+        "single_letter_mcq": 0.49999999999999994,
+        "tensor_margin": 0.0
+      }
+    },
+    "items": [
+      {
+        "id": "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "9bdfa657-f4a5-4641-914e-4cd596f39563",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "scalar_exact",
+        "raw_output": "-0.7155",
+        "parsed": -0.7155,
+        "score": 1.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+        "level": 2,
+        "split": "validation",
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+        "level": 2,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "1558f035-fdec-4797-9303-0d0a88e016c6",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[6.22,-60.37,90.31,-120.15,-90.72,330.1]",
+        "parsed": [
+          6.22,
+          -60.37,
+          90.31,
+          -120.15,
+          -90.72,
+          330.1
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[29.22,-78.17,116.83,-129.11,-90.19,265.34]",
+        "parsed": [
+          29.22,
+          -78.17,
+          116.83,
+          -129.11,
+          -90.19,
+          265.34
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      }
+    ]
+  },
+  "selected_adapter": {
+    "condition": "selected_adapter_completion",
+    "item_count": 6,
+    "ordered_ids": [
+      "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+      "9bdfa657-f4a5-4641-914e-4cd596f39563",
+      "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+      "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+      "1558f035-fdec-4797-9303-0d0a88e016c6",
+      "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad"
+    ],
+    "canonical_score": 0.4,
+    "fixed_cardinality_score": 0.4,
+    "parse_failures": 0,
+    "subgroups": {
+      "by_level": {
+        "1": 1.0,
+        "2": 0.25,
+        "3": 0.0
+      },
+      "by_split": {
+        "test": 1.0,
+        "validation": 0.1
+      },
+      "by_dataset": {
+        "aursad": 1.0,
+        "factorywave": 0.25,
+        "vorausad": -0.49999999999999994
+      },
+      "by_answer_format": {
+        "scalar_exact": 1.0,
+        "single_letter_mcq": 0.49999999999999994,
+        "tensor_margin": 0.0
+      }
+    },
+    "items": [
+      {
+        "id": "26d7d8f5-4ec0-44ea-ad68-c5f325e33df7",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "9bdfa657-f4a5-4641-914e-4cd596f39563",
+        "level": 1,
+        "split": "test",
+        "dataset": "aursad",
+        "answer_format": "scalar_exact",
+        "raw_output": "-0.7155",
+        "parsed": -0.7155,
+        "score": 1.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "333de97c-1eb8-47b0-a79e-68046c8e6a72",
+        "level": 2,
+        "split": "validation",
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "48f922f0-721c-4d3d-b11e-9798c19fe38f",
+        "level": 2,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "1558f035-fdec-4797-9303-0d0a88e016c6",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[6.22,-60.37,90.31,-120.15,-90.72,330.1]",
+        "parsed": [
+          6.22,
+          -60.37,
+          90.31,
+          -120.15,
+          -90.72,
+          330.1
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "fc0d35ae-9d9b-41e2-b51e-b46e2a618dad",
+        "level": 3,
+        "split": "validation",
+        "dataset": "factorywave",
+        "answer_format": "tensor_margin",
+        "raw_output": "[29.22,-78.17,116.83,-129.11,-90.19,265.34]",
+        "parsed": [
+          29.22,
+          -78.17,
+          116.83,
+          -129.11,
+          -90.19,
+          265.34
+        ],
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      }
+    ]
+  },
+  "selected_condition_label": "selected_adapter",
+  "no_holdout_feedback_to_m0": true,
+  "post_holdout_refinement": false
+}

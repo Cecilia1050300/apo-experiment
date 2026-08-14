@@ -1,0 +1,15 @@
+{
+  "task_name": "factorybench_l123",
+  "status": "INSUFFICIENT_UNSEEN_DATA",
+  "reason": "need 1 eligible items, found 0",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "contamination_registry_sha256": "b516d21adb2c7e3d2273325a5467b36d1984feb5da647d1b1ccb537d27ab9210",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+  "development": [],
+  "holdout": [],
+  "counts": {
+    "development": 0,
+    "holdout": 0
+  }
+}

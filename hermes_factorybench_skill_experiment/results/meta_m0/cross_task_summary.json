@@ -1,0 +1,593 @@
+{
+  "experiment": "Golden Meta-Prompt Candidate M0 — Cross-Task Adapter Generation Smoke",
+  "qualification": "M0 is a candidate only and is not Golden.",
+  "frozen_artifacts": {
+    "meta_prompt_m0": {
+      "path": "prompts/meta/meta_prompt_m0_candidate.txt",
+      "sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+      "bytes": 3012
+    },
+    "core_skill_v0": {
+      "path": "prompts/core/evidence_grounded_core_v0.txt",
+      "sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+      "bytes": 773
+    }
+  },
+  "contamination_registry": {
+    "path": "data_manifests/meta_m0/contamination_registry.json",
+    "sha256": "b516d21adb2c7e3d2273325a5467b36d1984feb5da647d1b1ccb537d27ab9210",
+    "counts": {
+      "factorybench": 7607,
+      "causal_judgment": 100,
+      "total": 7707
+    }
+  },
+  "manifests": {
+    "factorybench_l123": {
+      "status": "INSUFFICIENT_UNSEEN_DATA",
+      "sha256": "8d7a7d7b0b77ba2d946d4f5d3a448e55a574b7be935b63da1877d7690a58dc82",
+      "development_count": 0,
+      "holdout_count": 0
+    },
+    "factorybench_l4": {
+      "status": "AVAILABLE",
+      "sha256": "08f0c809a3ff1df2511bcd409c084c099b7135510114457a24f54fae0fa88010",
+      "development_count": 2,
+      "holdout_count": 3
+    },
+    "causal_judgment": {
+      "status": "AVAILABLE",
+      "sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+      "development_count": 3,
+      "holdout_count": 5
+    }
+  },
+  "unavailable_tasks": {
+    "factorybench_l123": {
+      "status": "INSUFFICIENT_UNSEEN_DATA",
+      "reason": "need 1 eligible items, found 0"
+    }
+  },
+  "tasks": {
+    "factorybench_l4": {
+      "development": {
+        "task_name": "factorybench_l4",
+        "status": "DEVELOPMENT_COMPLETE",
+        "manifest_sha256": "08f0c809a3ff1df2511bcd409c084c099b7135510114457a24f54fae0fa88010",
+        "baseline_score": -0.09090909090909091,
+        "core_only_score": 0.4545454545454546,
+        "adapter_v1_decision": "NO_ADAPTER",
+        "adapter_v1_sha256": null,
+        "adapter_v1_score": null,
+        "adapter_v2_decision": "NO_ADAPTER",
+        "adapter_v2_sha256": null,
+        "adapter_v2_score": null,
+        "selection": {
+          "task_name": "factorybench_l4",
+          "decision": "NO_ADAPTER",
+          "selected_candidate": "core_only",
+          "selected_adapter_sha256": null,
+          "development_manifest_sha256": "08f0c809a3ff1df2511bcd409c084c099b7135510114457a24f54fae0fa88010",
+          "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+          "selection_rule": [
+            "hard eligibility gates",
+            "adapter must strictly beat Core-only",
+            "highest fixed-cardinality score",
+            "highest worst-subgroup score",
+            "lowest parse failures",
+            "shortest adapter bytes",
+            "v1 before v2"
+          ],
+          "core_only_score": 0.4545454545454546,
+          "candidates": [
+            {
+              "candidate": "core_only",
+              "eligible": true,
+              "ineligibility_reasons": [],
+              "fixed_cardinality_score": 0.4545454545454546,
+              "worst_subgroup_score": 0.0,
+              "parse_failures": 0,
+              "adapter_path": null,
+              "adapter_sha256": null,
+              "adapter_bytes": 0
+            }
+          ]
+        }
+      },
+      "selection": {
+        "task_name": "factorybench_l4",
+        "decision": "NO_ADAPTER",
+        "selected_candidate": "core_only",
+        "selected_adapter_sha256": null,
+        "development_manifest_sha256": "08f0c809a3ff1df2511bcd409c084c099b7135510114457a24f54fae0fa88010",
+        "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+        "selection_rule": [
+          "hard eligibility gates",
+          "adapter must strictly beat Core-only",
+          "highest fixed-cardinality score",
+          "highest worst-subgroup score",
+          "lowest parse failures",
+          "shortest adapter bytes",
+          "v1 before v2"
+        ],
+        "core_only_score": 0.4545454545454546,
+        "candidates": [
+          {
+            "candidate": "core_only",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 0.4545454545454546,
+            "worst_subgroup_score": 0.0,
+            "parse_failures": 0,
+            "adapter_path": null,
+            "adapter_sha256": null,
+            "adapter_bytes": 0
+          }
+        ]
+      },
+      "baseline": {
+        "canonical_score": 0.19999999999999998,
+        "fixed_cardinality_score": 0.19999999999999998,
+        "parse_failures": 0,
+        "by_answer_format": {
+          "single_letter_mcq": 0.19999999999999998
+        },
+        "by_dataset": {
+          "factorywave": 0.19999999999999998
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 95481,
+            "output_tokens": 4042,
+            "calls": 3
+          },
+          "judges": {
+            "gpt-5.5": {
+              "model": "gpt-5.5",
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "calls": 0
+            }
+          }
+        },
+        "cost": 0.538035,
+        "wall_time_seconds": 39.0606685904786
+      },
+      "core_only": {
+        "canonical_score": -0.19999999999999998,
+        "fixed_cardinality_score": -0.19999999999999998,
+        "parse_failures": 0,
+        "by_answer_format": {
+          "single_letter_mcq": -0.19999999999999998
+        },
+        "by_dataset": {
+          "factorywave": -0.19999999999999998
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 95910,
+            "output_tokens": 5050,
+            "calls": 3
+          },
+          "judges": {
+            "gpt-5.5": {
+              "model": "gpt-5.5",
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "calls": 0
+            }
+          }
+        },
+        "cost": 0.5553,
+        "wall_time_seconds": 39.16406126972288
+      },
+      "selected_adapter": null,
+      "baseline_vs_core": {
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 1,
+          "unchanged": 2,
+          "invalid": 0
+        },
+        "raw_output_changed_count": 2,
+        "changed_cases": [
+          {
+            "id": "c0d66eac-b183-4731-acb4-256a0095253e",
+            "left_output": "F",
+            "right_output": "C",
+            "left_score": 1.0,
+            "right_score": 0.0,
+            "status": "worse"
+          },
+          {
+            "id": "42a2175f-6a56-4390-9c2f-a0fd96d1dc7e",
+            "left_output": "D",
+            "right_output": "A",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "unchanged"
+          }
+        ]
+      },
+      "core_vs_selected_adapter": {
+        "label": "NO_ADAPTER",
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 0,
+          "unchanged": 3,
+          "invalid": 0
+        },
+        "raw_output_changed_count": 0,
+        "changed_cases": []
+      },
+      "no_holdout_feedback_to_m0": true
+    },
+    "causal_judgment": {
+      "development": {
+        "task_name": "causal_judgment",
+        "status": "DEVELOPMENT_COMPLETE",
+        "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+        "baseline_score": 0.0,
+        "core_only_score": 0.0,
+        "adapter_v1_decision": "ADAPTER",
+        "adapter_v1_sha256": "101f899983a1fd2d9eecba19089a14c713534e2ff14cbd8dbb55f1f437d75886",
+        "adapter_v1_score": 1.0,
+        "adapter_v2_decision": "ADAPTER",
+        "adapter_v2_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+        "adapter_v2_score": 1.0,
+        "selection": {
+          "task_name": "causal_judgment",
+          "decision": "ADAPTER",
+          "selected_candidate": "adapter_v2",
+          "selected_adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+          "development_manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+          "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+          "selection_rule": [
+            "hard eligibility gates",
+            "adapter must strictly beat Core-only",
+            "highest fixed-cardinality score",
+            "highest worst-subgroup score",
+            "lowest parse failures",
+            "shortest adapter bytes",
+            "v1 before v2"
+          ],
+          "core_only_score": 0.0,
+          "candidates": [
+            {
+              "candidate": "core_only",
+              "eligible": false,
+              "ineligibility_reasons": [
+                "parse failure",
+                "invalid output contract"
+              ],
+              "fixed_cardinality_score": 0.0,
+              "worst_subgroup_score": 0.0,
+              "parse_failures": 3,
+              "adapter_path": null,
+              "adapter_sha256": null,
+              "adapter_bytes": 0
+            },
+            {
+              "candidate": "adapter_v1",
+              "eligible": true,
+              "ineligibility_reasons": [],
+              "fixed_cardinality_score": 1.0,
+              "worst_subgroup_score": 1.0,
+              "parse_failures": 0,
+              "adapter_path": "prompts/adapters/causal_judgment/adapter_v1.txt",
+              "adapter_sha256": "101f899983a1fd2d9eecba19089a14c713534e2ff14cbd8dbb55f1f437d75886",
+              "adapter_bytes": 687
+            },
+            {
+              "candidate": "adapter_v2",
+              "eligible": true,
+              "ineligibility_reasons": [],
+              "fixed_cardinality_score": 1.0,
+              "worst_subgroup_score": 1.0,
+              "parse_failures": 0,
+              "adapter_path": "prompts/adapters/causal_judgment/adapter_v2.txt",
+              "adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+              "adapter_bytes": 684
+            }
+          ]
+        }
+      },
+      "selection": {
+        "task_name": "causal_judgment",
+        "decision": "ADAPTER",
+        "selected_candidate": "adapter_v2",
+        "selected_adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+        "development_manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+        "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+        "selection_rule": [
+          "hard eligibility gates",
+          "adapter must strictly beat Core-only",
+          "highest fixed-cardinality score",
+          "highest worst-subgroup score",
+          "lowest parse failures",
+          "shortest adapter bytes",
+          "v1 before v2"
+        ],
+        "core_only_score": 0.0,
+        "candidates": [
+          {
+            "candidate": "core_only",
+            "eligible": false,
+            "ineligibility_reasons": [
+              "parse failure",
+              "invalid output contract"
+            ],
+            "fixed_cardinality_score": 0.0,
+            "worst_subgroup_score": 0.0,
+            "parse_failures": 3,
+            "adapter_path": null,
+            "adapter_sha256": null,
+            "adapter_bytes": 0
+          },
+          {
+            "candidate": "adapter_v1",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 1.0,
+            "worst_subgroup_score": 1.0,
+            "parse_failures": 0,
+            "adapter_path": "prompts/adapters/causal_judgment/adapter_v1.txt",
+            "adapter_sha256": "101f899983a1fd2d9eecba19089a14c713534e2ff14cbd8dbb55f1f437d75886",
+            "adapter_bytes": 687
+          },
+          {
+            "candidate": "adapter_v2",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 1.0,
+            "worst_subgroup_score": 1.0,
+            "parse_failures": 0,
+            "adapter_path": "prompts/adapters/causal_judgment/adapter_v2.txt",
+            "adapter_sha256": "b7ac408b3b208d6a6c2e6cf2e0571baddb3a424c95bd69d260de8fb9c9e933d8",
+            "adapter_bytes": 684
+          }
+        ]
+      },
+      "baseline": {
+        "canonical_score": 0.0,
+        "fixed_cardinality_score": 0.0,
+        "parse_failures": 5,
+        "by_subgroup": {
+          "causal_attribution": 0.0,
+          "intentionality": 0.0
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 808,
+            "output_tokens": 2459,
+            "calls": 5
+          },
+          "judges": {}
+        },
+        "cost": 0.040925,
+        "wall_time_seconds": 25.943645597435534
+      },
+      "core_only": {
+        "canonical_score": 0.0,
+        "fixed_cardinality_score": 0.0,
+        "parse_failures": 5,
+        "by_subgroup": {
+          "causal_attribution": 0.0,
+          "intentionality": 0.0
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 1523,
+            "output_tokens": 1658,
+            "calls": 5
+          },
+          "judges": {}
+        },
+        "cost": 0.032485,
+        "wall_time_seconds": 20.011175972409546
+      },
+      "selected_adapter": {
+        "canonical_score": 0.8,
+        "fixed_cardinality_score": 0.8,
+        "parse_failures": 0,
+        "by_subgroup": {
+          "causal_attribution": 1.0,
+          "intentionality": 0.5
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 2183,
+            "output_tokens": 1187,
+            "calls": 5
+          },
+          "judges": {}
+        },
+        "cost": 0.02872,
+        "wall_time_seconds": 12.242922227829695
+      },
+      "baseline_vs_core": {
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 0,
+          "unchanged": 0,
+          "invalid": 5
+        },
+        "raw_output_changed_count": 5,
+        "changed_cases": [
+          {
+            "id": "causal_judgment_0021",
+            "left_output": "No. Susan knowingly increased the prominence of the Atlantic division as a side effect of implementing the program, but that was not her goal or a means to her goal. Her intention was to increase sales in the Atlantic division, not to change its prominence relative to the Pacific division.",
+            "right_output": "No.",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0046",
+            "left_output": "Yes—legally, Frank T. would be treated as having intentionally shot his neighbor.\n\nEven though the shot went wild and hit the neighbor only after ricocheting off a boulder, Frank had the purpose of shooting his neighbor in the body. His poor aim, lack of gun experience, or the unusual path of the bullet does not negate his intent. The harmful bodily contact he intended actually occurred, just by an unexpected route.\n\nSo the injury was not merely accidental in the legal sense; Frank intentionally attempted to shoot the neighbor, and the bullet did in fact hit the neighbor.",
+            "right_output": "Yes. Frank T. intended to shoot his neighbor in the body, and the bullet did in fact hit the neighbor’s body, even though it reached him by an unintended ricochet. The accidental path of the bullet does not negate Frank’s intent.",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0088",
+            "left_output": "Yes — Billy helped cause the car to be able to start, because he obtained and installed a Bartlett battery, and having at least one Bartlett battery is enough for the car to start.\n\nHowever, Billy was not a necessary cause: even if Billy had not bought his battery, Suzy’s battery alone would still have allowed the car to start. So this is a case of redundant or overdetermined causation: Billy’s action was sufficient to help make the car startable, but Suzy’s action was independently sufficient too.",
+            "right_output": "Yes. Billy caused the car to be able to start by obtaining and installing a Bartlett battery. However, his action was not necessary, because Suzy’s battery alone would also have been enough to start the car.",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0117",
+            "left_output": "No — not in the ordinary norm-sensitive sense.\n\nSuzy’s morning login was permitted and expected under company policy. The deletion happened because Billy also logged in at 9 am, even though he was not permitted to log in during the morning. Since the dangerous deletion requires two simultaneous logins, Billy’s unauthorized login is the abnormal factor that made the event occur.\n\nSo although Suzy’s login was part of the conditions necessary for the deletion, Billy is the one who caused it in the relevant sense.",
+            "right_output": "No.",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0165",
+            "left_output": "It depends on what you mean by “cause.”\n\n- **Physically / but-for causation:** Yes. The short circuit happened only because **both** wires touched the battery. If the black wire had not touched the battery, there would have been no short circuit.\n\n- **Ordinary blame/explanatory sense:** Usually, **no**. Since the black wire was supposed to touch the battery, we would typically say the **red wire caused the short circuit**, because it was the abnormal thing that went wrong.\n\nSo: **the black wire was a necessary physical condition for the short circuit, but the red wire is the cause we would normally single out.**",
+            "right_output": "Yes. The short circuit required both wires to touch the battery at the same time, and the black wire was one of those required conditions. If the black wire had not been touching the battery, the short circuit would not have occurred.",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          }
+        ]
+      },
+      "core_vs_selected_adapter": {
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 0,
+          "unchanged": 0,
+          "invalid": 5
+        },
+        "raw_output_changed_count": 5,
+        "changed_cases": [
+          {
+            "id": "causal_judgment_0021",
+            "left_output": "No.",
+            "right_output": "No",
+            "left_score": 0.0,
+            "right_score": 0.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0046",
+            "left_output": "Yes. Frank T. intended to shoot his neighbor in the body, and the bullet did in fact hit the neighbor’s body, even though it reached him by an unintended ricochet. The accidental path of the bullet does not negate Frank’s intent.",
+            "right_output": "No",
+            "left_score": 0.0,
+            "right_score": 1.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0088",
+            "left_output": "Yes. Billy caused the car to be able to start by obtaining and installing a Bartlett battery. However, his action was not necessary, because Suzy’s battery alone would also have been enough to start the car.",
+            "right_output": "Yes",
+            "left_score": 0.0,
+            "right_score": 1.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0117",
+            "left_output": "No.",
+            "right_output": "No",
+            "left_score": 0.0,
+            "right_score": 1.0,
+            "status": "invalid"
+          },
+          {
+            "id": "causal_judgment_0165",
+            "left_output": "Yes. The short circuit required both wires to touch the battery at the same time, and the black wire was one of those required conditions. If the black wire had not been touching the battery, the short circuit would not have occurred.",
+            "right_output": "No",
+            "left_score": 0.0,
+            "right_score": 1.0,
+            "status": "invalid"
+          }
+        ]
+      },
+      "no_holdout_feedback_to_m0": true
+    }
+  },
+  "verdicts": {
+    "core_skill_result": "CORE_NEGATIVE",
+    "core_skill_note": "Core regresses without compensating evidence on completed tasks.",
+    "task_adapter_necessity": "NO_ADAPTER_EVIDENCE",
+    "meta_prompt_result": "M0_INVALID",
+    "meta_prompt_invalid_reason": "FactoryBench L1-L3 lacks sufficient defensibly unseen data under the frozen contamination registry; completed holdouts also contain 10 baseline/Core parse failures."
+  },
+  "adapter_holdout_improvements": [
+    "causal_judgment"
+  ],
+  "adapter_holdout_regressions": [],
+  "totals": {
+    "api_calls": 43,
+    "cost": 2.804425,
+    "summed_condition_wall_time_seconds": 308.1083540711552
+  },
+  "m0_generation_traces": [
+    {
+      "path": "traces/meta_m0/causal_judgment/m0_round_1_parsed_output.json",
+      "sha256": "90b1ca401381631c4e15fe81d59ddcb8aa5c3de6dd3f5bce67d7bfbdc0075e43",
+      "usage": {
+        "input_tokens": 4061,
+        "output_tokens": 1120
+      },
+      "cost": 0.037105,
+      "wall_time_seconds": 16.044992841780186
+    },
+    {
+      "path": "traces/meta_m0/causal_judgment/m0_round_2_parsed_output.json",
+      "sha256": "83c30d0f68a1151ad3e12346629feaea7bffdf2908860d78b64967fee25081b3",
+      "usage": {
+        "input_tokens": 5344,
+        "output_tokens": 1222
+      },
+      "cost": 0.04505,
+      "wall_time_seconds": 16.33897726610303
+    },
+    {
+      "path": "traces/meta_m0/factorybench_l4/m0_round_1_parsed_output.json",
+      "sha256": "f75464fdf930a8a880f755b028bde8a5f2504e3a10cd80e90d298ca76b39f6cc",
+      "usage": {
+        "input_tokens": 88153,
+        "output_tokens": 1027
+      },
+      "cost": 0.45617,
+      "wall_time_seconds": 14.911213485524058
+    },
+    {
+      "path": "traces/meta_m0/factorybench_l4/m0_round_2_parsed_output.json",
+      "sha256": "2cd2114683a3a82ac45e9faabdb1d24e3ebb7b645ec5fab76cbe87437ed572b1",
+      "usage": {
+        "input_tokens": 88167,
+        "output_tokens": 1056
+      },
+      "cost": 0.456675,
+      "wall_time_seconds": 15.32644238974899
+    }
+  ],
+  "integrity_assertions": {
+    "manual_adapter_editing": false,
+    "holdout_feedback_to_m0": false,
+    "post_holdout_refinement": false,
+    "skill_v3_and_task_a_unchanged": true
+  },
+  "limitations": [
+    "FactoryBench L1-L3 was not run because the frozen registry left no eligible item in at least one required stratum.",
+    "Completed development and holdout samples are very small.",
+    "FactoryBench L4 free-form items use one gpt-5.5 judge rather than the three-provider paper-default ensemble.",
+    "No statistical significance is claimed."
+  ],
+  "next_stage_recommendation": "Do not promote M0 to Golden. Resolve the L1-L3 contamination/data-availability boundary prospectively, then repeat a fully complete cross-task holdout without changing M0 or Core v0."
+}

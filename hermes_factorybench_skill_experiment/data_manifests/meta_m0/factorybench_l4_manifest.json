@@ -1,0 +1,98 @@
+{
+  "task_name": "factorybench_l4",
+  "status": "AVAILABLE",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after ID and episode exclusions.",
+  "seeds": {
+    "development": "meta-m0-factorybench-l4-dev",
+    "holdout": "meta-m0-factorybench-l4-holdout"
+  },
+  "split_protocol": {
+    "L4": "validation"
+  },
+  "contamination_registry_sha256": "b516d21adb2c7e3d2273325a5467b36d1984feb5da647d1b1ccb537d27ab9210",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+  "availability": {
+    "validation_total": 1250,
+    "eligible_before_dev": 1019,
+    "eligible_before_holdout": 1017
+  },
+  "development": [
+    {
+      "id": "55b80023-de58-4ccb-a387-0c565697cfab",
+      "level": 4,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "26adcf84-03f5-4e60-81c6-1c0c73f21696",
+      "answer_format": "single_letter_mcq",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "005b3b486b10f922d2378a0951a67f9f2e51d16da73def6d6e1bd8569b689a36",
+      "selection_rank_within_stratum": 1
+    },
+    {
+      "id": "662d2e41-b0ff-4e44-b024-28c6f8c424b8",
+      "level": 4,
+      "split": "validation",
+      "dataset": "aursad",
+      "episode": "experiment_3763",
+      "answer_format": "free_form",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "0060ac420ebd7ad6328d4cc81dc6d336964be2a9eea1133a0ab35f218825d18a",
+      "selection_rank_within_stratum": 2
+    }
+  ],
+  "holdout": [
+    {
+      "id": "c0d66eac-b183-4731-acb4-256a0095253e",
+      "level": 4,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "30a5c98d-cea7-4600-b406-64db472f5400",
+      "answer_format": "single_letter_mcq",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "009d738b87a07d8fa304d2223c4578bd76a77f884dd1d73ccadf2b6cce754687",
+      "selection_rank_within_stratum": 1
+    },
+    {
+      "id": "3b6c40df-ce88-4977-b4a0-42dc22d9593b",
+      "level": 4,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "74ec7f24-6b82-4737-8bc8-82090defc408",
+      "answer_format": "single_letter_mcq",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "009ee97a51a712dd191586d01b4bdb3731617d6d565fe30def6184f9171c42d2",
+      "selection_rank_within_stratum": 2
+    },
+    {
+      "id": "42a2175f-6a56-4390-9c2f-a0fd96d1dc7e",
+      "level": 4,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "d53bed19-9757-49fd-8bf8-633ab9bb3c42",
+      "answer_format": "single_letter_mcq",
+      "template_id": 1,
+      "template_type": "troubleshooting",
+      "selection_sha256": "00bec88e4ceda1311a52fffbbc9cbe9a8ab85d0a614ac2ec34ae135d2d6bb762",
+      "selection_rank_within_stratum": 3
+    }
+  ],
+  "counts": {
+    "development": 2,
+    "holdout": 3
+  },
+  "id_disjoint": true,
+  "episode_disjoint": true,
+  "evaluator": {
+    "deterministic_validator": "apo_experiment/factorybench_experiment/factorybench_evaluator_smoke_test.py:validate_deterministically",
+    "judge_pipeline": "FactoryBench factorybench.judges.JudgePanel",
+    "judge_models": [
+      "gpt-5.5"
+    ]
+  }
+}

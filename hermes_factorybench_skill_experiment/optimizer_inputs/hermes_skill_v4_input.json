@@ -1,0 +1,61 @@
+{
+  "status": "ready_before_skill_v4_evaluation",
+  "dataset_role": "15-item smoke optimization/development set only",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "configuration": {
+    "model": "gpt-5.5",
+    "level": "all (effective L1-L3 without judges)",
+    "split": "mini",
+    "max_items_per_level": 5,
+    "expected_items": 15,
+    "resume": false
+  },
+  "parent": {
+    "skill_path": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+    "skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+    "skill_bytes": 3557,
+    "result_path": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v3_gpt55.json",
+    "result_sha256": "cd6776aeb60df09595004f68dddaef7b6c6a1b92b1fddddd2cca1c20752112c6"
+  },
+  "verified_v3_observations": {
+    "same_15_ordered_ids": true,
+    "total_score": 0.7804878048780488,
+    "absolute_delta_vs_fresh_baseline": 0.03658536585365857,
+    "by_level": {"L1": 0.6, "L2": 0.7419354838709679, "L3": 1.0},
+    "parse_failures": 0,
+    "improved_ids_vs_baseline": ["8155904c-423f-4caa-95e8-b07102f065e7"],
+    "regressed_ids_vs_baseline": [],
+    "stopping_criterion_met": false
+  },
+  "failure_analysis": [
+    {
+      "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+      "task_type": "L2 collision future-state T/F inference",
+      "baseline_output": "FFFF",
+      "skill_v2_output": "",
+      "skill_v3_output": "FTFT",
+      "skill_v3_score": 0.5,
+      "confirmed_failure": "Skill v3 restored valid output and corrected the second and fourth decisions, but the TCP-space and joint-space tracking-error decisions remained wrong.",
+      "hypothesis": "The procedure did not make the collision command-versus-response mechanism explicit enough, so it assumed tracking recovery rather than persistent or growing divergence.",
+      "corrective_principle": "For collision/contact disturbances, compare persistent commands against impeded measured response and infer elevated tracking error unless recovery is visible; evaluate TCP and joint spaces independently."
+    },
+    {
+      "id": "aa0b4843-97e3-4346-9323-e28752a88046",
+      "task_type": "L2 collision future-state T/F inference",
+      "confirmed_failure": "Skill v3 remained at 0.5 on the separate collision item.",
+      "preservation_risk": "Its tracking-error decision was already correct, so the new rule must preserve independent option evaluation and avoid changing compound-current or path decisions by lookup."
+    }
+  ],
+  "candidate": {
+    "skill_path": "hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v4.txt",
+    "skill_sha256": "41306a107af8acbf2ee21efe634b363ae29939b02fba00faf940885326852734",
+    "skill_bytes": 3945,
+    "prohibited_identifier_scan_matches": 0,
+    "changes": [
+      "Added one class-level collision/contact command-versus-response tracking rule.",
+      "Required separate TCP-space and joint-space tracking decisions.",
+      "Preserved Skill v3 output-budget safeguards, localization rules, metric rules, ranking logic, and strict contracts."
+    ]
+  },
+  "candidate_budget_after_this_round": "exhausted"
+}

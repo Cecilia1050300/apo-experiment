@@ -1,0 +1,128 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "partition": "holdout",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "seed": "m1-factorybench-l123-holdout",
+  "expected_count": 9,
+  "split_provenance": {
+    "L1": "test_episode_disjoint",
+    "L2": "validation",
+    "L3": "validation"
+  },
+  "mixed_split_warning": "L1 test plus L2/L3 validation; not a pure validation score.",
+  "items": [
+    {
+      "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_2166",
+      "answer_format": "single_letter_mcq",
+      "template_id": 6,
+      "template_type": "identification",
+      "selection_sha256": "001aba0423df7800c4161e490e0a9563d14430cf979431dd6f2d2999d86a8510",
+      "selection_rank": 1
+    },
+    {
+      "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "14462b5b-4295-4cd6-b4cf-683cd65e4531",
+      "answer_format": "single_letter_mcq",
+      "template_id": 6,
+      "template_type": "identification",
+      "selection_sha256": "0043cbd1a858fc214777264d99ab37b150b2f10744ddba1c3b3cd0b8380daf41",
+      "selection_rank": 2
+    },
+    {
+      "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "5b7c79b7-f97b-4a8c-bbf6-2ee1c384dcc2",
+      "answer_format": "single_letter_mcq",
+      "template_id": 6,
+      "template_type": "identification",
+      "selection_sha256": "006186368c83a4ca563d33b53ad4d89251e29c66bc456216ecde6dfb5f59824f",
+      "selection_rank": 3
+    },
+    {
+      "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "level": 2,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_466",
+      "answer_format": "single_letter_mcq",
+      "template_id": 10,
+      "template_type": "identification",
+      "selection_sha256": "00112b2022a323324226a2ab796556d84545b42bfad216a71e8285cfe788681e",
+      "selection_rank": 1
+    },
+    {
+      "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "f94cbb5c-9b75-4684-884d-8b5ab483f3ee",
+      "answer_format": "scalar_range",
+      "template_id": 6,
+      "template_type": "predictive",
+      "selection_sha256": "00188298c528a7aeecf7c4008c00e7c5cdd5257e98e5d34e0f03b0ea9914f0c7",
+      "selection_rank": 2
+    },
+    {
+      "id": "138f1721-16e4-4189-8d29-80967dc83807",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "9cf37c0b-7f4e-4566-ac2c-78b54f556f46",
+      "answer_format": "scalar_range",
+      "template_id": 6,
+      "template_type": "predictive",
+      "selection_sha256": "003e42c3b7f5a4fc2675181ae3e21287c6c238d090daa36466ba41bbb7eaf2b2",
+      "selection_rank": 3
+    },
+    {
+      "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "04b1d79c-4221-407d-9c69-f23f2b64c5ae",
+      "answer_format": "four_letter_tf",
+      "template_id": 3,
+      "template_type": "trajectory_outcome_multiselect",
+      "selection_sha256": "01c33d9e1af5e16e7c95cc1c6f798332abe4fe28196c8c5d88b1813f4e560966",
+      "selection_rank": 1
+    },
+    {
+      "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "fbeefcfd-fd77-401d-9baf-25195f0477a4",
+      "answer_format": "four_letter_tf",
+      "template_id": 3,
+      "template_type": "trajectory_outcome_multiselect",
+      "selection_sha256": "02212ab98ea8846ae29714359bb730497afc4ec0104044ccde8170c375847d56",
+      "selection_rank": 2
+    },
+    {
+      "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "e18b779b-4f74-4d4d-b2ea-3d8a2d07b38d",
+      "answer_format": "four_letter_ranking",
+      "template_id": 1,
+      "template_type": "predictive",
+      "selection_sha256": "02f9afa6a97231c0ee9a3b2e7afc8021838277ca25d471065fa59c4a38aff376",
+      "selection_rank": 3
+    }
+  ]
+}

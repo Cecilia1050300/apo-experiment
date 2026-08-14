@@ -1,0 +1,68 @@
+{
+  "task_name": "factorybench_l123",
+  "status": "DEVELOPMENT_COMPLETION_COMPLETE",
+  "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+  "baseline_score": 0.05555555555555555,
+  "core_only_score": 0.05555555555555555,
+  "adapter_v1_decision": "ADAPTER",
+  "adapter_v1_sha256": "d1b87a625713975c315cd259e5a4b5536cf8403c2f0c370eefe323079bc7c22c",
+  "adapter_v1_score": 0.3888888888888889,
+  "adapter_v2_decision": "ADAPTER",
+  "adapter_v2_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+  "adapter_v2_score": 0.3888888888888889,
+  "selection": {
+    "task_name": "factorybench_l123",
+    "continuation": "v2data_completion",
+    "decision": "ADAPTER",
+    "selected_candidate": "adapter_v2",
+    "selected_adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+    "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+    "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+    "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+    "core_only_score": 0.05555555555555555,
+    "candidates": [
+      {
+        "candidate": "core_only",
+        "eligible": true,
+        "ineligibility_reasons": [],
+        "fixed_cardinality_score": 0.05555555555555555,
+        "worst_level_score": 0.0,
+        "parse_failures": 0,
+        "adapter_path": null,
+        "adapter_sha256": null,
+        "adapter_bytes": 0
+      },
+      {
+        "candidate": "adapter_v1",
+        "eligible": true,
+        "ineligibility_reasons": [],
+        "fixed_cardinality_score": 0.3888888888888889,
+        "worst_level_score": 0.0,
+        "parse_failures": 0,
+        "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v1_completion.txt",
+        "adapter_sha256": "d1b87a625713975c315cd259e5a4b5536cf8403c2f0c370eefe323079bc7c22c",
+        "adapter_bytes": 1409
+      },
+      {
+        "candidate": "adapter_v2",
+        "eligible": true,
+        "ineligibility_reasons": [],
+        "fixed_cardinality_score": 0.3888888888888889,
+        "worst_level_score": 0.0,
+        "parse_failures": 0,
+        "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v2_completion.txt",
+        "adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+        "adapter_bytes": 810
+      }
+    ],
+    "selection_rule": [
+      "eligibility gates",
+      "strictly beat Core-only",
+      "highest fixed score",
+      "highest worst-level score",
+      "fewest parses",
+      "shortest bytes",
+      "v1 before v2"
+    ]
+  }
+}

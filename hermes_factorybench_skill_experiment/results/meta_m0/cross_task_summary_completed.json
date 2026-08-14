@@ -1,0 +1,369 @@
+{
+  "experiment": "Meta-Prompt M0 cross-task smoke — corrected data-availability continuation",
+  "relationship_to_original": {
+    "original_summary_path": "results/meta_m0/cross_task_summary.json",
+    "original_summary_sha256": "ed290006b9eb73f3cf6668846904b33d917fb64e5389f15f892c2a2403e6df8c",
+    "original_verdict": "M0_INVALID",
+    "original_report_remains_authoritative_for_incomplete_attempt": true
+  },
+  "frozen_artifacts": {
+    "meta_prompt_m0": {
+      "sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+      "bytes": 3012
+    },
+    "core_v0": {
+      "sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+      "bytes": 773
+    }
+  },
+  "contamination_correction": {
+    "original_registry_sha256": "b516d21adb2c7e3d2273325a5467b36d1984feb5da647d1b1ccb537d27ab9210",
+    "corrected_registry_sha256": "37afcbbd97b3489aa8e32eaf78692c2fe3570a806c09b412f84e79d8976bbd19",
+    "audit_report_sha256": "6c3d91b99ec3fc5c4d9496c18e9c505cb734ac8773c8fa8e8d51e514f08b337f"
+  },
+  "factorybench_l123": {
+    "development": {
+      "task_name": "factorybench_l123",
+      "status": "DEVELOPMENT_COMPLETION_COMPLETE",
+      "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+      "baseline_score": 0.05555555555555555,
+      "core_only_score": 0.05555555555555555,
+      "adapter_v1_decision": "ADAPTER",
+      "adapter_v1_sha256": "d1b87a625713975c315cd259e5a4b5536cf8403c2f0c370eefe323079bc7c22c",
+      "adapter_v1_score": 0.3888888888888889,
+      "adapter_v2_decision": "ADAPTER",
+      "adapter_v2_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+      "adapter_v2_score": 0.3888888888888889,
+      "selection": {
+        "task_name": "factorybench_l123",
+        "continuation": "v2data_completion",
+        "decision": "ADAPTER",
+        "selected_candidate": "adapter_v2",
+        "selected_adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+        "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+        "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+        "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+        "core_only_score": 0.05555555555555555,
+        "candidates": [
+          {
+            "candidate": "core_only",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 0.05555555555555555,
+            "worst_level_score": 0.0,
+            "parse_failures": 0,
+            "adapter_path": null,
+            "adapter_sha256": null,
+            "adapter_bytes": 0
+          },
+          {
+            "candidate": "adapter_v1",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 0.3888888888888889,
+            "worst_level_score": 0.0,
+            "parse_failures": 0,
+            "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v1_completion.txt",
+            "adapter_sha256": "d1b87a625713975c315cd259e5a4b5536cf8403c2f0c370eefe323079bc7c22c",
+            "adapter_bytes": 1409
+          },
+          {
+            "candidate": "adapter_v2",
+            "eligible": true,
+            "ineligibility_reasons": [],
+            "fixed_cardinality_score": 0.3888888888888889,
+            "worst_level_score": 0.0,
+            "parse_failures": 0,
+            "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v2_completion.txt",
+            "adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+            "adapter_bytes": 810
+          }
+        ],
+        "selection_rule": [
+          "eligibility gates",
+          "strictly beat Core-only",
+          "highest fixed score",
+          "highest worst-level score",
+          "fewest parses",
+          "shortest bytes",
+          "v1 before v2"
+        ]
+      }
+    },
+    "selection": {
+      "task_name": "factorybench_l123",
+      "continuation": "v2data_completion",
+      "decision": "ADAPTER",
+      "selected_candidate": "adapter_v2",
+      "selected_adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+      "development_manifest_sha256": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+      "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+      "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+      "core_only_score": 0.05555555555555555,
+      "candidates": [
+        {
+          "candidate": "core_only",
+          "eligible": true,
+          "ineligibility_reasons": [],
+          "fixed_cardinality_score": 0.05555555555555555,
+          "worst_level_score": 0.0,
+          "parse_failures": 0,
+          "adapter_path": null,
+          "adapter_sha256": null,
+          "adapter_bytes": 0
+        },
+        {
+          "candidate": "adapter_v1",
+          "eligible": true,
+          "ineligibility_reasons": [],
+          "fixed_cardinality_score": 0.3888888888888889,
+          "worst_level_score": 0.0,
+          "parse_failures": 0,
+          "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v1_completion.txt",
+          "adapter_sha256": "d1b87a625713975c315cd259e5a4b5536cf8403c2f0c370eefe323079bc7c22c",
+          "adapter_bytes": 1409
+        },
+        {
+          "candidate": "adapter_v2",
+          "eligible": true,
+          "ineligibility_reasons": [],
+          "fixed_cardinality_score": 0.3888888888888889,
+          "worst_level_score": 0.0,
+          "parse_failures": 0,
+          "adapter_path": "prompts/adapters/factorybench_l123_completion/adapter_v2_completion.txt",
+          "adapter_sha256": "f9070205ccb74f8dd20b2847ab872808cc0857ef7a561a157deb1a85f344707c",
+          "adapter_bytes": 810
+        }
+      ],
+      "selection_rule": [
+        "eligibility gates",
+        "strictly beat Core-only",
+        "highest fixed score",
+        "highest worst-level score",
+        "fewest parses",
+        "shortest bytes",
+        "v1 before v2"
+      ]
+    },
+    "holdout": {
+      "baseline": {
+        "canonical_score": 0.4,
+        "fixed_cardinality_score": 0.4,
+        "parse_failures": 0,
+        "by_level": {
+          "1": 1.0,
+          "2": 0.25,
+          "3": 0.0
+        },
+        "by_split": {
+          "test": 1.0,
+          "validation": 0.1
+        },
+        "by_dataset": {
+          "aursad": 1.0,
+          "factorywave": 0.25,
+          "vorausad": -0.49999999999999994
+        },
+        "by_answer_format": {
+          "scalar_exact": 1.0,
+          "single_letter_mcq": 0.49999999999999994,
+          "tensor_margin": 0.0
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 50521,
+            "output_tokens": 9304,
+            "calls": 6
+          },
+          "judges": {}
+        },
+        "cost": 0.392165,
+        "wall_time_seconds": 77.43058508820832
+      },
+      "core_only": {
+        "canonical_score": 0.4,
+        "fixed_cardinality_score": 0.4,
+        "parse_failures": 0,
+        "by_level": {
+          "1": 1.0,
+          "2": 0.25,
+          "3": 0.0
+        },
+        "by_split": {
+          "test": 1.0,
+          "validation": 0.1
+        },
+        "by_dataset": {
+          "aursad": 1.0,
+          "factorywave": 0.25,
+          "vorausad": -0.49999999999999994
+        },
+        "by_answer_format": {
+          "scalar_exact": 1.0,
+          "single_letter_mcq": 0.49999999999999994,
+          "tensor_margin": 0.0
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 51379,
+            "output_tokens": 4601,
+            "calls": 6
+          },
+          "judges": {}
+        },
+        "cost": 0.32591,
+        "wall_time_seconds": 44.22244674526155
+      },
+      "selected_adapter": {
+        "canonical_score": 0.4,
+        "fixed_cardinality_score": 0.4,
+        "parse_failures": 0,
+        "by_level": {
+          "1": 1.0,
+          "2": 0.25,
+          "3": 0.0
+        },
+        "by_split": {
+          "test": 1.0,
+          "validation": 0.1
+        },
+        "by_dataset": {
+          "aursad": 1.0,
+          "factorywave": 0.25,
+          "vorausad": -0.49999999999999994
+        },
+        "by_answer_format": {
+          "scalar_exact": 1.0,
+          "single_letter_mcq": 0.49999999999999994,
+          "tensor_margin": 0.0
+        },
+        "tokens_used": {
+          "candidate": {
+            "model": "gpt-5.5",
+            "input_tokens": 52303,
+            "output_tokens": 6321,
+            "calls": 6
+          },
+          "judges": {}
+        },
+        "cost": 0.35633,
+        "wall_time_seconds": 45.6627401560545
+      },
+      "baseline_vs_core": {
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 0,
+          "unchanged": 6,
+          "invalid": 0
+        },
+        "raw_output_changed_count": 0,
+        "changed_cases": []
+      },
+      "core_vs_selected": {
+        "exact_ordered_id_match": true,
+        "counts": {
+          "improved": 0,
+          "worse": 0,
+          "unchanged": 6,
+          "invalid": 0
+        },
+        "raw_output_changed_count": 0,
+        "changed_cases": []
+      }
+    },
+    "manifest_hashes": {
+      "combined": "5f25e9d8fe2ba883183889908ab1b2027c267036a0483868e8315063a0e66c3d",
+      "development": "f31c76239fe03fa64b2870ebed9b5d1cbbd7c40a5d6280e3642ca48f74dc2d50",
+      "holdout": "e5bcfff72d27544ff3796397fd1c2b3badf86faed89a61cbd44b3bc5ab5a57a3"
+    }
+  },
+  "reused_frozen_l4_and_causal_hashes": {
+    "results/meta_m0/holdout/factorybench_l4_baseline.json": "2705ea53dc108130cecb7e7ff7758c140312764d21bc457546ff618a3ae6d58b",
+    "results/meta_m0/holdout/factorybench_l4_core_only.json": "99602b357820aa0488a2547a0a4271f7dfb036c17f67b2c0d1d66bec0749f132",
+    "results/meta_m0/holdout/factorybench_l4_summary.json": "e41fe1c42c8e60d6f2e916105d1a39e027ad786cd152492cc8d30f2a9f7ca64e",
+    "results/meta_m0/holdout/causal_judgment_baseline.json": "9ff8455a8f72c6fc0d12980f59324e9dc37a01d75ab9b66acadeaf8b57af4582",
+    "results/meta_m0/holdout/causal_judgment_core_only.json": "1f4896133fc6a1baf922c23e8288e21cb979eb61d04aef3e9dbabe85f8c54ff9",
+    "results/meta_m0/holdout/causal_judgment_selected_adapter.json": "12ddb2b2bd4da7146f0b153f123236bdc1d822e3cae352aa193228de24d4cc1e",
+    "results/meta_m0/holdout/causal_judgment_summary.json": "f20d0114343395b9104aeb2f506d7fd485ce8dd3eb8618b3b0688681fa127b83"
+  },
+  "cross_task_scores": {
+    "factorybench_l123": {
+      "baseline": 0.4,
+      "core_only": 0.4,
+      "selected_adapter": 0.4,
+      "selection": "ADAPTER"
+    },
+    "factorybench_l4": {
+      "baseline": 0.19999999999999998,
+      "core_only": -0.19999999999999998,
+      "selected_adapter": null,
+      "selection": "NO_ADAPTER"
+    },
+    "causal_judgment": {
+      "baseline": 0.0,
+      "core_only": 0.0,
+      "selected_adapter": 0.8,
+      "selection": "ADAPTER"
+    }
+  },
+  "verdicts": {
+    "core_skill_result": "CORE_NEGATIVE",
+    "task_adapter_necessity": "NO_ADAPTER_EVIDENCE",
+    "meta_prompt_result": "M0_INVALID",
+    "meta_prompt_reason": "Completed protocol contains 10 parse failures in frozen baseline/Core/selected conditions."
+  },
+  "adapter_holdout_improvements": [
+    "causal_judgment"
+  ],
+  "adapter_holdout_regressions": [],
+  "usage": {
+    "additional_calls": 32,
+    "additional_cost": 2.668265,
+    "additional_summed_wall_time_seconds": 565.3166622919962,
+    "original_calls": 43,
+    "original_cost": 2.804425,
+    "combined_calls": 75,
+    "combined_cost": 5.47269
+  },
+  "m0_completion_traces": [
+    {
+      "path": "traces/meta_m0/factorybench_l123_completion/m0_round_1_parsed_output_completion.json",
+      "sha256": "e08c3defd0a138f251fe9a8735d5fbe5cfa6bde8a08e3d53e24f0387d5e1cdb3",
+      "usage": {
+        "input_tokens": 38191,
+        "output_tokens": 2082
+      },
+      "cost": 0.222185,
+      "wall_time_seconds": 30.054503297433257
+    },
+    {
+      "path": "traces/meta_m0/factorybench_l123_completion/m0_round_2_parsed_output_completion.json",
+      "sha256": "694372372442e873fea621bfb1c5a1165700530684168cde6dbb0cf6f950a0f4",
+      "usage": {
+        "input_tokens": 57094,
+        "output_tokens": 1768
+      },
+      "cost": 0.31199,
+      "wall_time_seconds": 27.58731792960316
+    }
+  ],
+  "integrity_assertions": {
+    "m0_unchanged": true,
+    "core_unchanged": true,
+    "l4_not_rerun": true,
+    "causal_not_rerun": true,
+    "manual_adapter_editing": false,
+    "holdout_feedback_to_m0": false,
+    "post_holdout_refinement": false
+  },
+  "limitations": [
+    "Very small development and holdout samples.",
+    "L1 uses test while L2/L3 use validation; the mixed aggregate is not a pure validation score.",
+    "Frozen Causal baseline/Core results contain parse failures, which triggers M0_INVALID under the original rule.",
+    "No statistical significance is claimed."
+  ],
+  "recommendation": "Do not promote M0 to Golden while the completed protocol remains invalid under the predeclared parse-failure rule."
+}

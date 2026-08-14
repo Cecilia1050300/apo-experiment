@@ -1,0 +1,165 @@
+{
+  "baseline_file": "hermes_factorybench_skill_experiment/results/smoke/l123_baseline_fresh_gpt55.json",
+  "skill_file": "hermes_factorybench_skill_experiment/results/smoke/l123_skill_v1_gpt55.json",
+  "same_item_ids": true,
+  "item_count": 15,
+  "baseline_score": 0.7439024390243903,
+  "skill_score": 0.7439024390243903,
+  "absolute_delta": 0.0,
+  "relative_change": 0.0,
+  "improved_count": 0,
+  "worse_count": 0,
+  "unchanged_count": 15,
+  "items": [
+    {
+      "id": "0483f6d3-8a46-4bbe-8d54-22bda5c3c859",
+      "level": 2,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "CBDA",
+      "skill_output": "CBDA",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "0719a8d1-e104-47e6-837d-114b2ce1ce64",
+      "level": 3,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "DCBA",
+      "skill_output": "DCBA",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "1639eeed-82bb-438f-bdc2-54c319f25006",
+      "level": 1,
+      "answer_format": "scalar_range",
+      "baseline_output": "692",
+      "skill_output": "3658",
+      "baseline_score": 0.0,
+      "skill_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "id": "3f9426d7-175f-4f99-a5c9-ae6799abebae",
+      "level": 2,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "ABCD",
+      "skill_output": "ABCD",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "6bd72a9f-3499-4f5c-8a9f-a621abea7e9d",
+      "level": 3,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "BADC",
+      "skill_output": "BADC",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "7f00a63a-6813-4507-95ca-d2b0c318402b",
+      "level": 3,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "BDAC",
+      "skill_output": "BDAC",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "8155904c-423f-4caa-95e8-b07102f065e7",
+      "level": 2,
+      "answer_format": "four_letter_tf",
+      "baseline_output": "FFFF",
+      "skill_output": "FFFF",
+      "baseline_score": 0.0,
+      "skill_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "id": "8aa2a703-7282-4c08-a5eb-18ffa4f1f1c3",
+      "level": 3,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "DBCA",
+      "skill_output": "DBCA",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "aa0b4843-97e3-4346-9323-e28752a88046",
+      "level": 2,
+      "answer_format": "four_letter_tf",
+      "baseline_output": "TFTF",
+      "skill_output": "TFTF",
+      "baseline_score": 0.5,
+      "skill_score": 0.5,
+      "delta": 0.0
+    },
+    {
+      "id": "b511733e-83b4-4a39-87ce-ab3e90d5db34",
+      "level": 3,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "CADB",
+      "skill_output": "CADB",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "bc087859-a978-4e47-9aa3-91588efa3817",
+      "level": 1,
+      "answer_format": "scalar_range",
+      "baseline_output": "0",
+      "skill_output": "0",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+      "level": 1,
+      "answer_format": "scalar_range",
+      "baseline_output": "0",
+      "skill_output": "0",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "dabaeddb-0ecd-405f-9e97-59307af18954",
+      "level": 1,
+      "answer_format": "scalar_range",
+      "baseline_output": "0",
+      "skill_output": "0",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "ec3cb0f3-62f6-42b5-9bbd-d682f2d603e6",
+      "level": 2,
+      "answer_format": "four_letter_ranking",
+      "baseline_output": "ADBC",
+      "skill_output": "ADBC",
+      "baseline_score": 1.0,
+      "skill_score": 1.0,
+      "delta": 0.0
+    },
+    {
+      "id": "fbfbc913-a9e0-4178-9852-86aa6663f9f3",
+      "level": 1,
+      "answer_format": "scalar_range",
+      "baseline_output": "2768",
+      "skill_output": "3658",
+      "baseline_score": 0.0,
+      "skill_score": 0.0,
+      "delta": 0.0
+    }
+  ]
+}

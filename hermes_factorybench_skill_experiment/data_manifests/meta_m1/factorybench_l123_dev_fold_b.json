@@ -1,0 +1,56 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "partition": "development_fold_b",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "contamination_registry_m1_sha256": "7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0",
+  "selection_rule": "SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after item and episode exclusions.",
+  "seed": "m1-factorybench-l123-dev-fold-b",
+  "expected_count": 3,
+  "split_provenance": {
+    "L1": "test_episode_disjoint",
+    "L2": "validation",
+    "L3": "validation"
+  },
+  "mixed_split_warning": "L1 test plus L2/L3 validation; not a pure validation score.",
+  "items": [
+    {
+      "id": "2653bd29-dd50-440e-8588-86bec72412b6",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_867",
+      "answer_format": "scalar_range",
+      "template_id": 1,
+      "template_type": "predictive",
+      "selection_sha256": "00198a19392bf1c93949139794c1e57b306c6c3c76d0fc305c9a68dfad35a1c1",
+      "selection_rank": 1
+    },
+    {
+      "id": "fbe4ccd6-f2d4-474c-b722-45165ebaa8ec",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "63eed6aa-f865-4fde-b4b4-178bd7158f08",
+      "answer_format": "scalar_range",
+      "template_id": 6,
+      "template_type": "predictive",
+      "selection_sha256": "00079ff21033022cd732886f812e3a5028ac79562eed68cf880bc78b0490637e",
+      "selection_rank": 1
+    },
+    {
+      "id": "50e3fa11-63ec-4e98-97e0-9bd2544af9be",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "03b38a5b-7775-4b0f-b004-bffaeb849d69",
+      "answer_format": "four_letter_tf",
+      "template_id": 3,
+      "template_type": "trajectory_outcome_multiselect",
+      "selection_sha256": "00dd22cf031113a4dcd3ef716671b78398fb01d32ee5dbc3da08c103d3484082",
+      "selection_rank": 1
+    }
+  ]
+}

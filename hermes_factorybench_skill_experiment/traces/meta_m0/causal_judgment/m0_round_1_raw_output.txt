@@ -1,0 +1,42 @@
+{
+  "meta_prompt_version": "m0",
+  "task_name": "causal_judgment",
+  "mode": "generate",
+  "decision": "ADAPTER",
+  "task_scope": [
+    "Binary causal attribution questions requiring exactly Yes or No",
+    "Binary intentionality questions requiring exactly Yes or No"
+  ],
+  "supported_formats": [
+    "Exactly one label: Yes or No"
+  ],
+  "applicability_conditions": [
+    "Apply when the prompt asks whether a specified factor, person, action, condition, or mental state caused or intentionally produced a specified outcome.",
+    "Apply only to binary outputs where the evaluator requires exactly Yes or No.",
+    "Use the causal-attribution rule only for causation questions, not for intentionality questions."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "format_noncompliance",
+      "evidence_count": 3,
+      "description": "Outputs included explanations or qualified labels instead of exactly one allowed label, causing parse failures even when the implied answer was correct."
+    },
+    {
+      "category": "overbroad_causal_attribution",
+      "evidence_count": 2,
+      "description": "The model treated broad background conditions, passive standing conditions, or mere enabling links in a causal chain as causes, rather than focusing on the direct or normatively salient producer of the outcome."
+    }
+  ],
+  "adapter_text": "For this task, output exactly one token: Yes or No. Do not include punctuation, qualifiers, or explanation.\n\nFor causal-attribution questions: answer Yes only when the specified factor is the direct/proximate or normatively salient producer of the outcome. Answer No when the specified factor is merely a broad background condition, lifestyle/status/trait, passive standing condition, or incidental enabling link, especially when a later independent action or event directly produces the outcome. Do not answer Yes solely because the factor is part of a but-for chain.\n\nFor intentionality questions, make the intentionality judgment using the Core Skill, but still output only Yes or No.",
+  "fallback_policy": "Outside binary causal-attribution or intentionality questions with the exact Yes/No contract, ignore this adapter and use Core-only behavior.",
+  "changes_from_previous": [],
+  "predicted_regression_risks": [
+    "The causal-attribution rule could undercount legitimate but-for causes in tasks where the expected convention treats enabling conditions as causes.",
+    "Narrowing broad background causes may be harmful if a prompt explicitly asks about indirect or broad causal responsibility."
+  ],
+  "evidence_limitations": [
+    "Development set contains only three items, all in the causal_attribution subgroup.",
+    "No development evidence is available for intentionality beyond the shared output-format requirement.",
+    "Substantive causal guidance is supported by a small number of recurring failures and should remain narrow."
+  ]
+}

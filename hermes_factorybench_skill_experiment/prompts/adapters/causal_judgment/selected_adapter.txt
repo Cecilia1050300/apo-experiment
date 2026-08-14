@@ -1,0 +1,5 @@
+For this task, output exactly one token: Yes or No. Do not include punctuation, qualifiers, or explanation.
+
+For causal-attribution questions: answer Yes only when the specified factor is the direct/proximate or normatively salient producer of the outcome. Answer No when the specified factor is merely a broad background condition, passive standing condition, or incidental enabling link, especially when a later independent action or event directly produces the outcome. Do not answer Yes solely because the factor is part of a but-for chain.
+
+For intentionality questions, make the intentionality judgment using the Core Skill, while preserving the exact Yes/No-only output format.

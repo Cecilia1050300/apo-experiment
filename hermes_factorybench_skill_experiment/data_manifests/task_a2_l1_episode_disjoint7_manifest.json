@@ -1,0 +1,63 @@
+{
+  "task": "Task A2 — L1 Episode-Disjoint Holdout",
+  "protocol": "frozen_skill_v3_generalization_smoke",
+  "created_at_utc": "2026-08-14T05:57:58.646495+00:00",
+  "dataset": "FactoryBench/FactoryBench",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "split": "test",
+  "levels": [1],
+  "expected_total": 7,
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "baseline_skill_environment": "FACTORYBENCH_SKILL_FILE unset",
+  "frozen_skill_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/prompts/generated/factorybench_skill_v3.txt",
+  "frozen_skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e",
+  "optimization_id_source": "results/smoke/l123_baseline_fresh_gpt55.json",
+  "trace_source": "results/smoke/hermes_self_evolution_trace.json",
+  "selection_seed": "task-a-l1-episode-disjoint-v1",
+  "selection_rule": "Require a non-empty provenance episode; exclude optimization IDs, all items sharing an original L1 optimization episode, and trace-established L1 IDs; sort remaining items by SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break; take first 7.",
+  "source_l1_test_count": 1309,
+  "original_optimization_id_count": 15,
+  "original_l1_optimization_ids": [
+    "1639eeed-82bb-438f-bdc2-54c319f25006",
+    "bc087859-a978-4e47-9aa3-91588efa3817",
+    "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+    "dabaeddb-0ecd-405f-9e97-59307af18954",
+    "fbfbc913-a9e0-4178-9852-86aa6663f9f3"
+  ],
+  "original_l1_optimization_episodes": ["experiment_1055", "experiment_1057", "experiment_1091", "experiment_1121"],
+  "trace_uuid_count": 15,
+  "trace_l1_id_count": 5,
+  "trace_l1_ids": [
+    "1639eeed-82bb-438f-bdc2-54c319f25006",
+    "bc087859-a978-4e47-9aa3-91588efa3817",
+    "c7f9f90e-95c2-4cd2-ac0a-6b2dd6d7428f",
+    "dabaeddb-0ecd-405f-9e97-59307af18954",
+    "fbfbc913-a9e0-4178-9852-86aa6663f9f3"
+  ],
+  "extra_trace_l1_ids": [],
+  "exclusion_counts": {
+    "original_l1_ids": 5,
+    "items_sharing_original_l1_episode": 13,
+    "trace_l1_ids": 5,
+    "missing_provenance_episode": 38,
+    "union_excluded_l1_items": 51
+  },
+  "eligible_item_count": 1258,
+  "selected_item_count": 7,
+  "selected_unique_id_count": 7,
+  "selected_episode_overlap_with_optimization": [],
+  "selected_id_overlap_with_optimization": [],
+  "selected_id_overlap_with_trace": [],
+  "selected_missing_episode_ids": [],
+  "preflight_valid": true,
+  "items": [
+    {"id": "27f70f84-afd1-47a5-b5c0-3fb1e97a2579", "level": 1, "answer_format": "scalar_range", "dataset": "factorywave", "episode": "1c2dd612-53e1-4509-950a-19ae8548c4d5", "selection_sha256": "0031c9fecbfc24a48ecdb928efcadd2d1ffbd7b42e4b85f240507dd61b684cbc", "selection_rank": 1},
+    {"id": "871b7950-15d5-4210-8e3e-d99f5ae1900c", "level": 1, "answer_format": "scalar_exact", "dataset": "aursad", "episode": "experiment_4012", "selection_sha256": "0038125cb3f67ec05c97163c4438782f27c0ff5c407d444c89e342365e8968b0", "selection_rank": 2},
+    {"id": "5372d137-caed-4ca7-9e24-239182e3ace9", "level": 1, "answer_format": "single_letter_mcq", "dataset": "factorywave", "episode": "5a482ce1-3b1e-48f1-9f87-20570153db33", "selection_sha256": "006f76063686ba12c1843b0aafea3dc2c145360637fdcd6a6ca3750b58b6af44", "selection_rank": 3},
+    {"id": "ae43d5e3-3146-4dbe-98e8-1eb650af665f", "level": 1, "answer_format": "scalar_range", "dataset": "factorywave", "episode": "ebaed824-cef2-47d4-87a3-82970a76a233", "selection_sha256": "007c2367d8005caff6047b4f138060311f110fde5e4bff90ef590c1a0aa2d238", "selection_rank": 4},
+    {"id": "5255ae6d-57d1-4532-b25f-d2dab1557179", "level": 1, "answer_format": "single_letter_mcq", "dataset": "aursad", "episode": "experiment_689", "selection_sha256": "00e83a3cd28d5641b7e4d0ef0b7a210aed1848110978f097cccbef228662b408", "selection_rank": 5},
+    {"id": "14b816fb-e301-4161-b5e4-282d5e5a835c", "level": 1, "answer_format": "scalar_range", "dataset": "aursad", "episode": "experiment_1715", "selection_sha256": "010350a81d7be2da2e1acb5c8ece819c3ffb80c751c0e6a6db24764a3e127786", "selection_rank": 6},
+    {"id": "70346496-3321-4592-9085-b247dad6b254", "level": 1, "answer_format": "scalar_range", "dataset": "aursad", "episode": "experiment_4032", "selection_sha256": "0199e20802b53cc19dc4c47791e4d11e759d48da56b01d254b6808d799327a11", "selection_rank": 7}
+  ]
+}

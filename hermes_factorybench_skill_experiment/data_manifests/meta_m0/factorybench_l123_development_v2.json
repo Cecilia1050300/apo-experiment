@@ -1,0 +1,57 @@
+{
+  "task_name": "factorybench_l123",
+  "partition": "development",
+  "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "model": "gpt-5.5",
+  "concurrency": 2,
+  "meta_prompt_sha256": "e4bef66552518e4a1206aaa3b14b9d34335c046499291e70dfdc33a79f243257",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "contamination_registry_v2_sha256": "37afcbbd97b3489aa8e32eaf78692c2fe3570a806c09b412f84e79d8976bbd19",
+  "selection_rule": "Within each level, SHA-256(UTF-8(seed + item_id)) ascending with item_id tie-break after corrected actual-exposure and episode exclusions.",
+  "split_provenance": {
+    "L1": "test_episode_disjoint",
+    "L2": "validation",
+    "L3": "validation"
+  },
+  "mixed_split_warning": "L1 uses test while L2/L3 use validation; no aggregate may be described as a pure validation score.",
+  "seed": "meta-m0-factorybench-l123-dev",
+  "expected_count": 3,
+  "items": [
+    {
+      "id": "f7ba6d15-86e3-44a9-aba7-f23cdafbc225",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "38f52416-267b-4946-87d6-e245e58757d9",
+      "answer_format": "scalar_range",
+      "template_id": 1,
+      "template_type": "predictive",
+      "selection_sha256": "0019db080d8cd2ed38df12fa2d546787544fb2eadd11560fbe3543bad5e14cd2",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "1b9ea101-8cb3-41ac-a539-f649a3bfb890",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "2c3bd17b-2f05-4a08-b6e5-7ada5a67fa3b",
+      "answer_format": "scalar_range",
+      "template_id": 6,
+      "template_type": "predictive",
+      "selection_sha256": "003b22517ff24e3db6b8f8006c0dbb21fa94473f18e5188e858ba82f41049099",
+      "selection_rank_within_level": 1
+    },
+    {
+      "id": "a4286f63-a25e-42f0-8288-24734d43796e",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "ac98c8e4-2144-4faa-8ac5-1b8676571793",
+      "answer_format": "tensor_margin",
+      "template_id": 5,
+      "template_type": "predictive",
+      "selection_sha256": "017a14628c6ead56de5c854779d1e508eaaff5fc3b5516a88c3f509dc6d0635a",
+      "selection_rank_within_level": 1
+    }
+  ]
+}

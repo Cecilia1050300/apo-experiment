@@ -1,0 +1,117 @@
+{
+  "task_name": "causal_judgment",
+  "partition": "holdout",
+  "condition": "baseline",
+  "model": "gpt-5.5",
+  "manifest_sha256": "5e85686501d8150ffa934eb51c82929d3cb35bfb66dd49949b03572fd8f759d5",
+  "runtime_prompt_path": null,
+  "runtime_prompt_sha256": null,
+  "item_count": 5,
+  "ordered_ids": [
+    "causal_judgment_0021",
+    "causal_judgment_0046",
+    "causal_judgment_0088",
+    "causal_judgment_0117",
+    "causal_judgment_0165"
+  ],
+  "canonical_score": 0.0,
+  "fixed_cardinality_score": 0.0,
+  "parse_failures": 5,
+  "by_subgroup": {
+    "causal_attribution": 0.0,
+    "intentionality": 0.0
+  },
+  "tokens_used": {
+    "candidate": {
+      "model": "gpt-5.5",
+      "input_tokens": 808,
+      "output_tokens": 2459,
+      "calls": 5
+    },
+    "judges": {}
+  },
+  "cost": 0.040925,
+  "wall_time_seconds": 25.943645597435534,
+  "items": [
+    {
+      "id": "causal_judgment_0021",
+      "source_index": 21,
+      "subgroup": "intentionality",
+      "raw_output": "No. Susan knowingly increased the prominence of the Atlantic division as a side effect of implementing the program, but that was not her goal or a means to her goal. Her intention was to increase sales in the Atlantic division, not to change its prominence relative to the Pacific division.",
+      "parsed": "No. Susan knowingly increased the prominence of the Atlantic division as a side effect of implementing the program, but that was not her goal or a means to her goal. Her intention was to increase sales in the Atlantic division, not to change its prominence relative to the Pacific division.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 7.476537953130901,
+      "candidate_usage": {
+        "input_tokens": 176,
+        "output_tokens": 299
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0046",
+      "source_index": 46,
+      "subgroup": "intentionality",
+      "raw_output": "Yes—legally, Frank T. would be treated as having intentionally shot his neighbor.\n\nEven though the shot went wild and hit the neighbor only after ricocheting off a boulder, Frank had the purpose of shooting his neighbor in the body. His poor aim, lack of gun experience, or the unusual path of the bullet does not negate his intent. The harmful bodily contact he intended actually occurred, just by an unexpected route.\n\nSo the injury was not merely accidental in the legal sense; Frank intentionally attempted to shoot the neighbor, and the bullet did in fact hit the neighbor.",
+      "parsed": "Yes—legally, Frank T. would be treated as having intentionally shot his neighbor.\n\nEven though the shot went wild and hit the neighbor only after ricocheting off a boulder, Frank had the purpose of shooting his neighbor in the body. His poor aim, lack of gun experience, or the unusual path of the bullet does not negate his intent. The harmful bodily contact he intended actually occurred, just by an unexpected route.\n\nSo the injury was not merely accidental in the legal sense; Frank intentionally attempted to shoot the neighbor, and the bullet did in fact hit the neighbor.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 12.374110805802047,
+      "candidate_usage": {
+        "input_tokens": 94,
+        "output_tokens": 638
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0088",
+      "source_index": 88,
+      "subgroup": "causal_attribution",
+      "raw_output": "Yes — Billy helped cause the car to be able to start, because he obtained and installed a Bartlett battery, and having at least one Bartlett battery is enough for the car to start.\n\nHowever, Billy was not a necessary cause: even if Billy had not bought his battery, Suzy’s battery alone would still have allowed the car to start. So this is a case of redundant or overdetermined causation: Billy’s action was sufficient to help make the car startable, but Suzy’s action was independently sufficient too.",
+      "parsed": "Yes — Billy helped cause the car to be able to start, because he obtained and installed a Bartlett battery, and having at least one Bartlett battery is enough for the car to start.\n\nHowever, Billy was not a necessary cause: even if Billy had not bought his battery, Suzy’s battery alone would still have allowed the car to start. So this is a case of redundant or overdetermined causation: Billy’s action was sufficient to help make the car startable, but Suzy’s action was independently sufficient too.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 9.378189296461642,
+      "candidate_usage": {
+        "input_tokens": 220,
+        "output_tokens": 479
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0117",
+      "source_index": 117,
+      "subgroup": "causal_attribution",
+      "raw_output": "No — not in the ordinary norm-sensitive sense.\n\nSuzy’s morning login was permitted and expected under company policy. The deletion happened because Billy also logged in at 9 am, even though he was not permitted to log in during the morning. Since the dangerous deletion requires two simultaneous logins, Billy’s unauthorized login is the abnormal factor that made the event occur.\n\nSo although Suzy’s login was part of the conditions necessary for the deletion, Billy is the one who caused it in the relevant sense.",
+      "parsed": "No — not in the ordinary norm-sensitive sense.\n\nSuzy’s morning login was permitted and expected under company policy. The deletion happened because Billy also logged in at 9 am, even though he was not permitted to log in during the morning. Since the dangerous deletion requires two simultaneous logins, Billy’s unauthorized login is the abnormal factor that made the event occur.\n\nSo although Suzy’s login was part of the conditions necessary for the deletion, Billy is the one who caused it in the relevant sense.",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 13.56801921594888,
+      "candidate_usage": {
+        "input_tokens": 197,
+        "output_tokens": 622
+      },
+      "development_evidence": null
+    },
+    {
+      "id": "causal_judgment_0165",
+      "source_index": 165,
+      "subgroup": "causal_attribution",
+      "raw_output": "It depends on what you mean by “cause.”\n\n- **Physically / but-for causation:** Yes. The short circuit happened only because **both** wires touched the battery. If the black wire had not touched the battery, there would have been no short circuit.\n\n- **Ordinary blame/explanatory sense:** Usually, **no**. Since the black wire was supposed to touch the battery, we would typically say the **red wire caused the short circuit**, because it was the abnormal thing that went wrong.\n\nSo: **the black wire was a necessary physical condition for the short circuit, but the red wire is the cause we would normally single out.**",
+      "parsed": "It depends on what you mean by “cause.”\n\n- **Physically / but-for causation:** Yes. The short circuit happened only because **both** wires touched the battery. If the black wire had not touched the battery, there would have been no short circuit.\n\n- **Ordinary blame/explanatory sense:** Usually, **no**. Since the black wire was supposed to touch the battery, we would typically say the **red wire caused the short circuit**, because it was the abnormal thing that went wrong.\n\nSo: **the black wire was a necessary physical condition for the short circuit, but the red wire is the cause we would normally single out.**",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": "expected exactly Yes or No",
+      "latency_seconds": 8.211877490393817,
+      "candidate_usage": {
+        "input_tokens": 121,
+        "output_tokens": 421
+      },
+      "development_evidence": null
+    }
+  ]
+}

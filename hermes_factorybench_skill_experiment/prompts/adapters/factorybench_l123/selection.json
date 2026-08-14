@@ -1,0 +1,9 @@
+{
+  "task_name": "factorybench_l123",
+  "decision": "INSUFFICIENT_UNSEEN_DATA",
+  "selected_candidate": null,
+  "selected_adapter_sha256": null,
+  "development_manifest_sha256": "8d7a7d7b0b77ba2d946d4f5d3a448e55a574b7be935b63da1877d7690a58dc82",
+  "core_skill_sha256": "463692cd0a201d916c3f0e39d10cda4c50d2a9a1ca3305cd9de804c295e482b3",
+  "reason": "The frozen contamination registry leaves no eligible item in at least one required L1-L3 development stratum. No model call was made and no substitute data was used."
+}

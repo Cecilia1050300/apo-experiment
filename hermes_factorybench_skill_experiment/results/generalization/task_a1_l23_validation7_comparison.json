@@ -1,0 +1,485 @@
+{
+  "task": "Task A1 \u2014 Split-Disjoint L2/L3 Validation",
+  "protocol": "frozen_skill_v3_generalization_smoke",
+  "configuration": {
+    "dataset": "FactoryBench/FactoryBench",
+    "revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+    "split": "validation",
+    "levels": [
+      2,
+      3
+    ],
+    "expected_total": 14,
+    "model": "gpt-5.5",
+    "concurrency": 2,
+    "frozen_skill_sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e"
+  },
+  "pairing": {
+    "item_count": 14,
+    "exact_ordered_id_match": true,
+    "manifest_preflight_valid": true
+  },
+  "selection_preflight": null,
+  "scores": {
+    "baseline_factorybench_reported": 0.8349834983498351,
+    "v3_factorybench_reported": 0.8151815181518152,
+    "baseline_fixed_cardinality": 0.8349834983498351,
+    "v3_fixed_cardinality": 0.8151815181518152,
+    "absolute_delta": -0.01980198019801993,
+    "absolute_percentage_point_delta": -1.980198019801993,
+    "relative_percentage_change": -2.3715415019762998
+  },
+  "by_level": {
+    "L2": {
+      "baseline": 0.647887323943662,
+      "v3": 0.6056338028169015,
+      "delta": -0.04225352112676051
+    },
+    "L3": {
+      "baseline": 1.0,
+      "v3": 1.0,
+      "delta": 0.0
+    }
+  },
+  "by_dataset": {
+    "factorywave": {
+      "baseline": 0.8349834983498351,
+      "v3": 0.8151815181518152,
+      "delta": -0.01980198019801993
+    }
+  },
+  "by_answer_format": {
+    "four_letter_ranking": {
+      "baseline": 1.0,
+      "v3": 1.0,
+      "delta": 0.0
+    },
+    "four_letter_tf": {
+      "baseline": 0.25,
+      "v3": 0.0,
+      "delta": -0.25
+    },
+    "scalar_margin": {
+      "baseline": 1.0,
+      "v3": 1.0,
+      "delta": 0.0
+    },
+    "tensor_margin": {
+      "baseline": 0.3333333333333333,
+      "v3": 0.3333333333333333,
+      "delta": 0.0
+    }
+  },
+  "counts": {
+    "improved": 0,
+    "worse": 1,
+    "unchanged": 13,
+    "invalid": 0
+  },
+  "parse_failures": {
+    "baseline": 0,
+    "v3": 0
+  },
+  "cost": {
+    "baseline": 1.25569,
+    "v3": 1.22904,
+    "delta": -0.026650000000000063
+  },
+  "token_usage": {
+    "baseline": {
+      "candidate": {
+        "model": "gpt-5.5",
+        "input_tokens": 165476,
+        "output_tokens": 28554,
+        "calls": 14
+      },
+      "judges": {}
+    },
+    "v3": {
+      "candidate": {
+        "model": "gpt-5.5",
+        "input_tokens": 174954,
+        "output_tokens": 23618,
+        "calls": 14
+      },
+      "judges": {}
+    }
+  },
+  "wall_time_seconds": {
+    "baseline": 211.062842,
+    "v3": 181.423916,
+    "delta": -29.638925999999998
+  },
+  "changed_case_count": 2,
+  "changed_cases": [
+    {
+      "id": "5f44af3e-26ee-40ce-a4e9-36c7f6a1fa9f",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_tf",
+      "baseline_raw_output": "TFTT",
+      "v3_raw_output": "TFFT",
+      "baseline_parsed_output": "TFTT",
+      "v3_parsed_output": "TFFT",
+      "baseline_score": 0.75,
+      "v3_score": 0.5,
+      "score_delta": -0.25,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "485feba7-8c87-48b1-a027-5b25361204dc",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "tensor_margin",
+      "baseline_raw_output": "[-0.0129,-1.716,5.157,-3.442,0.000279,0.0344]",
+      "v3_raw_output": "[-0.01292,-1.71644,5.15731,-3.44154,0.000278,0.03435]",
+      "baseline_parsed_output": [
+        -0.0129,
+        -1.716,
+        5.157,
+        -3.442,
+        0.000279,
+        0.0344
+      ],
+      "v3_parsed_output": [
+        -0.01292,
+        -1.71644,
+        5.15731,
+        -3.44154,
+        0.000278,
+        0.03435
+      ],
+      "baseline_score": 0.6666666666666666,
+      "v3_score": 0.6666666666666666,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    }
+  ],
+  "items": [
+    {
+      "id": "db758369-0b6c-44ea-8bc6-486a5ab52169",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "BADC",
+      "v3_raw_output": "BADC",
+      "baseline_parsed_output": "BADC",
+      "v3_parsed_output": "BADC",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "2c8a84f0-d3fd-43f7-87ee-4cff44c40633",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "BDAC",
+      "v3_raw_output": "BDAC",
+      "baseline_parsed_output": "BDAC",
+      "v3_parsed_output": "BDAC",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "ec50396d-1325-405b-b4f2-0c0256260ee2",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_tf",
+      "baseline_raw_output": "FFFT",
+      "v3_raw_output": "FFFT",
+      "baseline_parsed_output": "FFFT",
+      "v3_parsed_output": "FFFT",
+      "baseline_score": 0.5,
+      "v3_score": 0.5,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "5f44af3e-26ee-40ce-a4e9-36c7f6a1fa9f",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_tf",
+      "baseline_raw_output": "TFTT",
+      "v3_raw_output": "TFFT",
+      "baseline_parsed_output": "TFTT",
+      "v3_parsed_output": "TFFT",
+      "baseline_score": 0.75,
+      "v3_score": 0.5,
+      "score_delta": -0.25,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "worse",
+      "raw_output_changed": true
+    },
+    {
+      "id": "14ba181a-506a-451f-ae4c-658b5b44946d",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "scalar_margin",
+      "baseline_raw_output": "1",
+      "v3_raw_output": "1",
+      "baseline_parsed_output": 1.0,
+      "v3_parsed_output": 1.0,
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "485feba7-8c87-48b1-a027-5b25361204dc",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "tensor_margin",
+      "baseline_raw_output": "[-0.0129,-1.716,5.157,-3.442,0.000279,0.0344]",
+      "v3_raw_output": "[-0.01292,-1.71644,5.15731,-3.44154,0.000278,0.03435]",
+      "baseline_parsed_output": [
+        -0.0129,
+        -1.716,
+        5.157,
+        -3.442,
+        0.000279,
+        0.0344
+      ],
+      "v3_parsed_output": [
+        -0.01292,
+        -1.71644,
+        5.15731,
+        -3.44154,
+        0.000278,
+        0.03435
+      ],
+      "baseline_score": 0.6666666666666666,
+      "v3_score": 0.6666666666666666,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": true
+    },
+    {
+      "id": "ede7a6d8-7a0b-4faa-9191-7b5683f60008",
+      "level": 2,
+      "dataset": "factorywave",
+      "answer_format": "tensor_margin",
+      "baseline_raw_output": "[0.0269,-1.57,-1.22,-0.891,-0.19,0.0157]",
+      "v3_raw_output": "[0.0269,-1.57,-1.22,-0.891,-0.19,0.0157]",
+      "baseline_parsed_output": [
+        0.0269,
+        -1.57,
+        -1.22,
+        -0.891,
+        -0.19,
+        0.0157
+      ],
+      "v3_parsed_output": [
+        0.0269,
+        -1.57,
+        -1.22,
+        -0.891,
+        -0.19,
+        0.0157
+      ],
+      "baseline_score": 0.0,
+      "v3_score": 0.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "9650a4ca-deb0-422a-97f8-463a56541610",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "DBAC",
+      "v3_raw_output": "DBAC",
+      "baseline_parsed_output": "DBAC",
+      "v3_parsed_output": "DBAC",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "510c0f0c-4a6d-4b76-b038-64ba3a95f73b",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "ADCB",
+      "v3_raw_output": "ADCB",
+      "baseline_parsed_output": "ADCB",
+      "v3_parsed_output": "ADCB",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "ba66158d-97fe-4b9c-a6b1-2a3649b5d470",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "DCBA",
+      "v3_raw_output": "DCBA",
+      "baseline_parsed_output": "DCBA",
+      "v3_parsed_output": "DCBA",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "896b4f07-0e29-407f-a84f-51b490faa37c",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "ABCD",
+      "v3_raw_output": "ABCD",
+      "baseline_parsed_output": "ABCD",
+      "v3_parsed_output": "ABCD",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "17a5b4aa-d917-4e44-8d04-4eb223fb3c00",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "DABC",
+      "v3_raw_output": "DABC",
+      "baseline_parsed_output": "DABC",
+      "v3_parsed_output": "DABC",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "27bdc2a2-fea5-402a-985e-8676a19eb615",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "DACB",
+      "v3_raw_output": "DACB",
+      "baseline_parsed_output": "DACB",
+      "v3_parsed_output": "DACB",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    },
+    {
+      "id": "be215a16-d37b-4222-a23e-2fa0c38ef3f4",
+      "level": 3,
+      "dataset": "factorywave",
+      "answer_format": "four_letter_ranking",
+      "baseline_raw_output": "CDBA",
+      "v3_raw_output": "CDBA",
+      "baseline_parsed_output": "CDBA",
+      "v3_parsed_output": "CDBA",
+      "baseline_score": 1.0,
+      "v3_score": 1.0,
+      "score_delta": 0.0,
+      "baseline_parse_error": null,
+      "v3_parse_error": null,
+      "status": "unchanged",
+      "raw_output_changed": false
+    }
+  ],
+  "valid": true,
+  "verdict": "FAIL_REGRESSION",
+  "artifact_hashes": {
+    "frozen_skill_v3": {
+      "path": "prompts/generated/factorybench_skill_v3.txt",
+      "sha256": "cc83006d7a2e24aaf86ee7de16900cad71cd668563fb0ac2d8ef62b03ccb527e"
+    },
+    "original_invalid_preflight": {
+      "path": "data_manifests/task_a_validation7_invalid_preflight.json",
+      "sha256": "e17a605c5dc8c644fd518c82f67f0b0041af8e2a3a4ae7aa7a8af1dd925cb259"
+    },
+    "original_invalid_preflight_report": {
+      "path": "reports/task_a_validation7_invalid_preflight.md",
+      "sha256": "550b0c728f93bc3af28e13fc33c864c203f6518dc77bd9b6515514aa75a92316"
+    },
+    "optimization_id_source": {
+      "path": "results/smoke/l123_baseline_fresh_gpt55.json",
+      "sha256": "10123b00423178db865f28b783b2949dff45449c828136245426b34bbd76d62a"
+    },
+    "manifest": {
+      "path": "data_manifests/task_a1_l23_validation7_manifest.json",
+      "sha256": "1d4169a4c10bac4602509e2bbe979d33d37f36ab2a20d85ea46b8222526b5404"
+    },
+    "baseline_result": {
+      "path": "results/generalization/task_a1_l23_validation7_baseline_gpt55.json",
+      "sha256": "cd817920a9081afd182da188e3a1f7ed9702a1c771c3484ac1bc78fd3c18a3dd"
+    },
+    "v3_result": {
+      "path": "results/generalization/task_a1_l23_validation7_skill_v3_gpt55.json",
+      "sha256": "aac3f9a952f5c1b9e5803f504728950758ffd5fe888636c3f6478c4bb8581a4a"
+    },
+    "baseline_log": {
+      "path": "logs/task_a1_l23_validation7_baseline_gpt55.log",
+      "sha256": "840301c7bcdb1ba3c2ba660b24e07b376513989e3a99a01d7e4bde4ed04a6d5b"
+    },
+    "v3_log": {
+      "path": "logs/task_a1_l23_validation7_skill_v3_gpt55.log",
+      "sha256": "3fd95cb43f8365314bd618b529941f1c6b12448dc5d4af7279f3761b51fd3154"
+    },
+    "exact_id_runner": {
+      "path": "scripts/task_a_exact_id_runner.py",
+      "sha256": "a77f4fd2359ddd57dae4701a76d881010a32eaade15be9156fdd0e8cb2fd4ef8"
+    },
+    "comparison_builder": {
+      "path": "scripts/task_a_build_comparison.py",
+      "sha256": "58802c7b9485761eac3b316196c4f63a80300a591f89c54a9475802af0df3b95"
+    }
+  },
+  "final_hash_registry": "results/generalization/task_a_stratified_integrity_hashes.json",
+  "notes": [
+    "No parse failure occurred, so reported and fixed-cardinality scores are identical.",
+    "Final hashes of this comparison JSON and its Markdown report are recorded in the external final hash registry to avoid self-referential hashing."
+  ]
+}
