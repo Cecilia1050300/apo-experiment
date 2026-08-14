@@ -1,0 +1,8 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "baseline",
+  "selected_adapter_sha256": null,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "candidates": []
+}

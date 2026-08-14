@@ -1,0 +1,61 @@
+{
+  "meta_prompt_version": "m1",
+  "task_name": "m1_factorybench_l123",
+  "mode": "refine",
+  "decision": "INSUFFICIENT_DATA",
+  "task_scope": [
+    "FactoryBench L1-L3 manufacturing telemetry tasks with item-specific output contracts"
+  ],
+  "supported_subtasks": [],
+  "supported_formats": [],
+  "applicability_conditions": [],
+  "failure_taxonomy": [
+    {
+      "category": "missing_refinement_evidence",
+      "development_fold_count": 2,
+      "evidence_count": 2,
+      "description": "Refine mode requires comparison of a previous Adapter against Baseline on both development folds, but no previous Adapter text or Adapter v1 fold results are available."
+    },
+    {
+      "category": "isolated_scalar_prediction_error",
+      "development_fold_count": 1,
+      "evidence_count": 1,
+      "description": "A single scalar temporal prediction item was incorrect, but the evidence is case-specific and does not support a reusable procedural rule without risking harm."
+    },
+    {
+      "category": "isolated_four_letter_tf_parse_failure",
+      "development_fold_count": 1,
+      "evidence_count": 1,
+      "description": "One four-letter T/F item produced an empty output, while another item of the same format was correct; this is insufficient to establish stable benefit from an adapter in refine mode."
+    }
+  ],
+  "adapter_text": "",
+  "fallback_policy": "Use the original task specification and each item-specific exact output contract without any added adapter.",
+  "changes_from_previous": [
+    "No previous adapter was provided, and no Adapter v1 development results were available for refinement."
+  ],
+  "predicted_regression_risks": [
+    "Adding temporal-prediction heuristics from a single scalar miss could overfit and harm other scalar tasks.",
+    "Adding broad four-letter T/F reasoning rules from one parse failure could interfere with already correct four-letter outputs.",
+    "Any adapter cannot be validated for stable improvement across folds without Adapter v1 results."
+  ],
+  "evidence_limitations": [
+    "Only development data was considered.",
+    "The available development set is very small.",
+    "Adapter v1 outputs, scores, and fold comparisons are absent.",
+    "Observed failures are isolated rather than recurring across both folds."
+  ],
+  "_trace_validation": {
+    "valid": true,
+    "errors": [],
+    "input_sha256": "0fe151cf8e6beff47a3c4be9e22951262196b7e1a9870c2750c97d2f4bacb4cd",
+    "raw_output_sha256": "c0922d2b27379883ec140be3fbd511bf6cd09e1cc0c9e905f5575756eae6b7a7",
+    "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+    "usage": {
+      "input_tokens": 130578,
+      "output_tokens": 1020
+    },
+    "cost": 0.66819,
+    "wall_time_seconds": 14.715635660104454
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "phase": "development",
+  "attempt": 1,
+  "status": "FAILED_AFTER_MODEL_CALLS_BEFORE_RESULT_SERIALIZATION",
+  "candidate_calls_completed": 3,
+  "result_file_created": false,
+  "usage": null,
+  "cost": null,
+  "wall_time_seconds": null,
+  "error": "A parse-failure item carried an in-memory NaN score that strict JSON serialization rejected.",
+  "preservation": "The original failure log is retained and the retry appends to it. No holdout call occurred."
+}

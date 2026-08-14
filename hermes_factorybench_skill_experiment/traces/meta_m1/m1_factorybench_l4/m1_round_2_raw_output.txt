@@ -1,0 +1,50 @@
+{
+  "meta_prompt_version": "m1",
+  "task_name": "m1_factorybench_l4",
+  "mode": "refine",
+  "decision": "NO_ADAPTER",
+  "task_scope": [
+    "FactoryBench L4 industrial troubleshooting",
+    "diagnostic_json telemetry grounded in spo/fpo/fsp/etto/ecfo time-series channels"
+  ],
+  "supported_subtasks": [],
+  "supported_formats": [],
+  "applicability_conditions": [],
+  "failure_taxonomy": [
+    {
+      "category": "ecfo_overdiagnosis_as_obstruction",
+      "development_fold_count": 2,
+      "evidence_count": 3,
+      "description": "Baseline often treated estimated contact-force changes as external obstruction/contact even when positions tracked setpoints and motion or phase context could explain the pattern."
+    },
+    {
+      "category": "previous_adapter_instability",
+      "development_fold_count": 2,
+      "evidence_count": 3,
+      "description": "Adapter v1 improved one development case involving normal operation but regressed a previously correct contact-related case and did not reliably correct phase-related cases."
+    },
+    {
+      "category": "no_schema_failure",
+      "development_fold_count": 2,
+      "evidence_count": 8,
+      "description": "Baseline and previous adapter outputs were valid diagnostic JSON, so there is no recurring format problem requiring an adapter."
+    }
+  ],
+  "adapter_text": "",
+  "fallback_policy": "Use the original task specification without an additional adapter.",
+  "changes_from_previous": [
+    "Removed the previous adapter because its behavioral rule was not supported by stable improvement across development folds.",
+    "Avoided adding a new phase-diagnosis rule because the available refinement evidence is inconsistent and could further harm previously correct contact-related behavior."
+  ],
+  "predicted_regression_risks": [
+    "Broadly downgrading contact-force events to normal or programmed phases can suppress real obstruction or extra-component diagnoses.",
+    "Broadly treating sustained contact-force rises as obstruction can miss intended phase-related behavior.",
+    "Adding task-phase heuristics from very few development cases may overfit telemetry patterns and harm unseen cases."
+  ],
+  "evidence_limitations": [
+    "Only two development items per fold are available.",
+    "Adapter v1 did not show stable fold-level improvement over Baseline.",
+    "Observed failures involve multiple root-cause classes with similar telemetry signatures, so a reusable rule is not sufficiently supported.",
+    "No holdout data or holdout scores were used."
+  ]
+}

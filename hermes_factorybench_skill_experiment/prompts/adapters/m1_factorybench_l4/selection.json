@@ -1,0 +1,24 @@
+{
+  "task_name": "m1_factorybench_l4",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "baseline",
+  "selected_adapter_sha256": null,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "candidates": [
+    {
+      "candidate": "adapter_v1",
+      "eligible": false,
+      "reasons": [
+        "fold A regression"
+      ],
+      "fold_a_score": 0.0,
+      "fold_b_score": 0.5,
+      "macro_score": 0.25,
+      "minimum_fold_score": 0.0,
+      "worst_subgroup_score": 0.25,
+      "parse_failures": 0,
+      "adapter_sha256": "a81238f18b5c42376e38e2fa7707289095ff8b320a76b26290c2685bd6f6153b",
+      "adapter_bytes": 1343
+    }
+  ]
+}

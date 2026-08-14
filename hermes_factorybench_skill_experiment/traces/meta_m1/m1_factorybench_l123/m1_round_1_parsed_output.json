@@ -1,0 +1,64 @@
+{
+  "meta_prompt_version": "m1",
+  "task_name": "m1_factorybench_l123",
+  "mode": "generate",
+  "decision": "NO_ADAPTER",
+  "task_scope": [
+    "FactoryBench L1-L3 manufacturing telemetry tasks using time-series sensor streams and item-specific output contracts"
+  ],
+  "supported_subtasks": [
+    "L1 predictive/identification",
+    "L2 predictive/identification",
+    "L3 predictive"
+  ],
+  "supported_formats": [
+    "scalar_margin",
+    "scalar_range",
+    "single_letter_mcq",
+    "four_letter_tf"
+  ],
+  "applicability_conditions": [],
+  "failure_taxonomy": [
+    {
+      "category": "isolated numeric prediction error",
+      "development_fold_count": 1,
+      "evidence_count": 1,
+      "description": "One scalar numeric prediction item was incorrect, but other scalar items were correct and the development evidence does not support a reusable calculation rule without risking case-specific overfitting."
+    },
+    {
+      "category": "isolated strict-format failure",
+      "development_fold_count": 1,
+      "evidence_count": 1,
+      "description": "One four-letter T/F item produced an empty output, while another four-letter T/F item was parsed and scored correctly; this is an isolated output failure rather than a recurring format mechanism."
+    }
+  ],
+  "adapter_text": "",
+  "fallback_policy": "Use the original item-specific task specification and output contract exactly.",
+  "changes_from_previous": [
+    "No previous adapter was provided."
+  ],
+  "predicted_regression_risks": [
+    "A broad formatting reminder could interfere with already-correct scalar, MCQ, and T/F outputs.",
+    "A procedural rule for numeric prediction could overfit a single failed scalar case and harm correct scalar-range behavior.",
+    "A rule specialized to post-event Boolean telemetry could disturb a previously correct four-letter T/F response because development evidence is inconsistent."
+  ],
+  "evidence_limitations": [
+    "Only six development items are available across two folds.",
+    "Observed failures are isolated by format and fold rather than recurring across folds.",
+    "No adapter-v1 results are available for comparison.",
+    "The development set contains mixed datasets, levels, formats, and task types, limiting support for a narrow reusable adapter."
+  ],
+  "_trace_validation": {
+    "valid": true,
+    "errors": [],
+    "input_sha256": "83c8cb79c8b812860662abd1a49efefd5ac579b8337dded5439107ebc89ca95b",
+    "raw_output_sha256": "4b459dccd597979d750463cfc87f72183754fc132f8e519c6d157366a5eb343b",
+    "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+    "usage": {
+      "input_tokens": 130564,
+      "output_tokens": 910
+    },
+    "cost": 0.66647,
+    "wall_time_seconds": 14.652765807695687
+  }
+}

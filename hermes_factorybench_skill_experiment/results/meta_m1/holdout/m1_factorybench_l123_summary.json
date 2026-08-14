@@ -1,0 +1,154 @@
+{
+  "task_name": "m1_factorybench_l123",
+  "status": "HOLDOUT_COMPLETE",
+  "selection_sha256": "02196562daf3e0bceff6f4e2f185e6f0ef9bae9f8fff40ad223a25453d07fd6f",
+  "selection_decision": "NO_ADAPTER",
+  "baseline": {
+    "condition": "baseline",
+    "item_count": 9,
+    "ordered_ids": [
+      "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "138f1721-16e4-4189-8d29-80967dc83807",
+      "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "65c3d538-c526-4ecd-8dfd-99d9764df838"
+    ],
+    "canonical_score": 0.7142857142857143,
+    "fixed_cardinality_score": 0.5849056603773585,
+    "parse_failures": 1,
+    "by_format": {
+      "four_letter_ranking": 1.0,
+      "four_letter_tf": -0.75,
+      "scalar_range": 1.0,
+      "single_letter_mcq": 0.625
+    },
+    "by_dataset": {
+      "aursad": 1.0,
+      "factorywave": 0.6692913385826772,
+      "vorausad": -0.49999999999999994
+    },
+    "by_level": {
+      "1": 1.0,
+      "2": 0.6250000000000001,
+      "3": 0.10638297872340423
+    },
+    "items": [
+      {
+        "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+        "level": 1,
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "B",
+        "parsed": "B",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+        "level": 2,
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "1175",
+        "parsed": 1175.0,
+        "score": 1.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "138f1721-16e4-4189-8d29-80967dc83807",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "0",
+        "parsed": 0.0,
+        "score": 1.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "TFFF",
+        "parsed": "TFFF",
+        "score": 0.25,
+        "chance": 0.5,
+        "parse_error": null,
+        "development_evidence": null
+      },
+      {
+        "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "",
+        "parsed": null,
+        "score": null,
+        "chance": 0.5,
+        "parse_error": "expected 4 T/F chars, got ''",
+        "development_evidence": null
+      },
+      {
+        "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_ranking",
+        "raw_output": "CDAB",
+        "parsed": "CDAB",
+        "score": 1.0,
+        "chance": 0.041666666666666664,
+        "parse_error": null,
+        "development_evidence": null
+      }
+    ]
+  },
+  "selected_adapter": null,
+  "selected_label": "NO_ADAPTER (baseline reused; no duplicate call)",
+  "no_holdout_feedback": true,
+  "core_prompt_used": false
+}

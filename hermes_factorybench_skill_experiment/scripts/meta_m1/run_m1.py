@@ -94,7 +94,7 @@ def fixed(rows):
         scores.append(float(r['score']) if clean else 0.0); chances.append(float(r.get('chance',0)))
     mc=sum(chances)/len(chances); return (sum(scores)/len(scores)-mc)/(1-mc)
 def canonical(rows):
-    clean=[r for r in rows if r.get('parse_error') is None and math.isfinite(float(r['score']))]
+    clean=[r for r in rows if r.get('parse_error') is None and isinstance(r.get('score'),(int,float)) and math.isfinite(float(r['score']))]
     if not clean:return None
     mc=sum(float(r.get('chance',0)) for r in clean)/len(clean); return (sum(float(r['score']) for r in clean)/len(clean)-mc)/(1-mc)
 def grouped(rows,field):
@@ -123,7 +123,7 @@ def evaluate_l123(client,manifest_path,part,condition,adapter):
     if path.exists():return load(path)
     m,items=source_items(manifest_path); system=adapter if adapter else None; start=time.perf_counter(); calls=parallel(client,system,[render_prompt(x) for x in items]); rows=[]
     for item,(raw,u,lat,err) in zip(items,calls):
-        s=_score_one(item,raw); rows.append({'id':item.id,'level':item.level,'split':next(r['split'] for r in m['items'] if r['id']==item.id),'dataset':item.dataset,'episode':item.provenance.get('episode'),'answer_format':item.answer_format.value,'raw_output':raw,'parsed':s.parsed,'score':s.score,'chance':s.chance,'parse_error':s.parse_error,'transport_error':err,'usage':u,'latency_seconds':lat,'development_evidence':{'rendered_input':render_prompt(item),'reference_answer':item.answer} if part=='development' else None})
+        s=_score_one(item,raw); finite_score=s.score if isinstance(s.score,(int,float)) and math.isfinite(float(s.score)) else None; rows.append({'id':item.id,'level':item.level,'split':next(r['split'] for r in m['items'] if r['id']==item.id),'dataset':item.dataset,'episode':item.provenance.get('episode'),'answer_format':item.answer_format.value,'raw_output':raw,'parsed':s.parsed,'score':finite_score,'chance':s.chance,'parse_error':s.parse_error or ('non_finite_score' if finite_score is None else None),'transport_error':err,'usage':u,'latency_seconds':lat,'development_evidence':{'rendered_input':render_prompt(item),'reference_answer':item.answer} if part=='development' else None})
     tokens={'candidate':{'model':MODEL,'input_tokens':sum(c[1]['input_tokens'] for c in calls),'output_tokens':sum(c[1]['output_tokens'] for c in calls),'calls':sum(bool(c[1]['input_tokens'] or c[1]['output_tokens']) for c in calls)},'judges':{}}
     payload={'task_name':'m1_factorybench_l123','partition':part,'condition':condition,'manifest_path':str(manifest_path.relative_to(ROOT)),'manifest_sha256':sha(manifest_path),'adapter_sha256':hashlib.sha256(adapter.encode()).hexdigest() if adapter else None,'core_prompt_used':False,'ordered_ids':[r['id'] for r in rows],'item_count':len(rows),'canonical_score':canonical(rows),'fixed_cardinality_score':fixed(rows),'parse_failures':sum(r['parse_error'] is not None for r in rows),'by_level':grouped(rows,'level'),'by_format':grouped(rows,'answer_format'),'by_dataset':grouped(rows,'dataset'),'tokens_used':tokens,'cost':compute_cost_from_usage(tokens),'wall_time_seconds':time.perf_counter()-start,'items':rows}
     write_json(path,payload);return payload

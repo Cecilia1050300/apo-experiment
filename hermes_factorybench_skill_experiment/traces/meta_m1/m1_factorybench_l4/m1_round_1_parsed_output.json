@@ -1,0 +1,70 @@
+{
+  "meta_prompt_version": "m1",
+  "task_name": "m1_factorybench_l4",
+  "mode": "generate",
+  "decision": "ADAPTER",
+  "task_scope": [
+    "FactoryBench L4 AURSAD-style industrial troubleshooting from time-series telemetry"
+  ],
+  "supported_subtasks": [
+    "anomaly diagnosis",
+    "root cause identification",
+    "evidence grounding",
+    "corrective action and verification"
+  ],
+  "supported_formats": [
+    "diagnostic_json"
+  ],
+  "applicability_conditions": [
+    "Use only when the input provides time-series rows with mapped telemetry acronyms including setpoint position, feedback position, feedback speed, effort target torque, and estimated contact force channels.",
+    "Use for diagnostic_json responses requiring exactly root_cause, evidence, and corrective_actions.",
+    "Apply the temporal-pattern checks before diagnosing external contact or obstruction from contact-force channels."
+  ],
+  "failure_taxonomy": [
+    {
+      "category": "contact-force overdiagnosis",
+      "development_fold_count": 2,
+      "evidence_count": 3,
+      "description": "Baseline repeatedly treated elevated estimated contact-force channels as physical obstruction even when setpoints and feedback tracked coherently or the pattern fit a task phase/normal release rather than a fault."
+    },
+    {
+      "category": "task-phase ambiguity",
+      "development_fold_count": 2,
+      "evidence_count": 2,
+      "description": "Baseline did not sufficiently consider that coordinated motion, changing commanded positions, matching feedback, and evolving torque can indicate an expected operation phase such as loosening rather than anomalous interference."
+    },
+    {
+      "category": "normal recovery under tracking",
+      "development_fold_count": 1,
+      "evidence_count": 1,
+      "description": "Baseline flagged a high-force segment as interference despite later force recovery and continued position tracking, where the development label treated the stream as normal."
+    }
+  ],
+  "adapter_text": "Applicable only to FactoryBench L4 diagnostic_json telemetry with spo/fpo/fsp/etto/ecfo channels. Before naming obstruction or external contact, compare the temporal pattern: (1) If feedback positions track setpoints and feedback speeds/torques are consistent with a coherent commanded operation, do not infer obstruction solely from moderate or transient estimated contact-force changes; describe the likely programmed task phase and include a verification action to confirm the phase is intended. (2) If an elevated contact-force state is already present or releases/decays while positions continue to track setpoints and the stream then proceeds normally, consider normal operation/no remediation unless there is independent evidence of failed tracking, stalled motion, or a sustained new force rise. (3) Reserve obstruction/extra-component/contact diagnoses for cases where contact force rises abruptly from a prior low baseline and remains sustained without a corresponding commanded phase explanation or recovery. Always ground evidence in trends across spo versus fpo, fsp, etto, and ecfo; do not rely on ecfo alone. Output exactly one JSON object with exactly the keys root_cause, evidence, and corrective_actions; evidence and corrective_actions should be arrays of strings. Outside this scope, follow the original task specification.",
+  "fallback_policy": "If the input lacks the supported telemetry channels, is not diagnostic_json, or the temporal pattern does not match the adapter conditions, follow the original task specification without applying these additional rules.",
+  "changes_from_previous": [],
+  "predicted_regression_risks": [
+    "May under-call true external contact if a real obstruction occurs during otherwise well-tracked commanded motion.",
+    "May overuse task-phase explanations when telemetry lacks enough context to distinguish intended from unintended phase sequencing.",
+    "May reduce specificity for physical faults if force-channel evidence is strong but not accompanied by tracking errors."
+  ],
+  "evidence_limitations": [
+    "Development evidence contains only four items across two folds.",
+    "Only diagnostic_json AURSAD-style telemetry was observed.",
+    "No previous adapter results are available for comparison.",
+    "The adapter is based on recurring failure mechanisms, not on holdout data."
+  ],
+  "_trace_validation": {
+    "valid": true,
+    "errors": [],
+    "input_sha256": "45c498a600fac8286eca8e58c1ff3c8c889d67d4e218485cbb437814a21cee9a",
+    "raw_output_sha256": "daeb6d0e4de6152e9c7e27100e53fad381e7448f237e6f26fdc05a95922be90f",
+    "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+    "usage": {
+      "input_tokens": 58480,
+      "output_tokens": 1894
+    },
+    "cost": 0.32081,
+    "wall_time_seconds": 27.587700984440744
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "task_name": "m1_factorybench_l4",
+  "status": "HOLDOUT_COMPLETE",
+  "selection_sha256": "2ca4b6806db4b7bb17437adc5cf9f8875994dcd19a82618b3105c70ffa5ad670",
+  "selection_decision": "NO_ADAPTER",
+  "baseline": {
+    "condition": "baseline",
+    "item_count": 6,
+    "ordered_ids": [
+      "cf93f060-2fb8-4728-b632-fe58de01c833",
+      "a5dba9aa-4706-419b-ae64-998a0555739e",
+      "5a878566-8b0a-48e4-ad4c-9adf5d1eaf73",
+      "1b9fdc29-4685-4534-ac6b-701193a13d90",
+      "07330f3e-fa5b-4fad-9eeb-85feb8e58994",
+      "da285aa9-391d-4273-b20d-073cee82a968"
+    ],
+    "canonical_score": 0.0,
+    "fixed_cardinality_score": 0.0,
+    "parse_failures": 0,
+    "by_format": {
+      "diagnostic_json": 0.0
+    },
+    "by_dataset": {
+      "aursad": 0.0,
+      "vorausad": 0.0
+    },
+    "by_level": {
+      "4": 0.0
+    },
+    "items": [
+      {
+        "id": "cf93f060-2fb8-4728-b632-fe58de01c833",
+        "level": 4,
+        "dataset": "aursad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"Unexpected external contact or obstruction applying a sustained load primarily on axis/link 2 while the machine is stationary; the telemetry does not identify the exact object or mechanism causing the contact.\",\n  \"evidence\": [\n    \"After t=1986161 all feedback speeds are zero and the positions remain fixed, with feedback positions matching setpoint positions, so the machine is not commanded to move during the later event.\",\n    \"Effort target torques stay essentially constant during the event, for example etto1=8.51 and etto2=5.18 from t=1986260 through t=1990609, so the force increase is not explained by a new torque command.\",\n    \"Estimated contact force on axis 2 is low or near zero while stationary before the event, such as ecfo2=-0.07 at t=1987248, 0.02 at t=1987347, and -0.10 at t=1987940.\",\n    \"Estimated contact force on axis 2 then rises abruptly while the machine remains stopped: ecfo2=3.92 at t=1988435, 20.82 at t=1988533, 30.49 at t=1988632, and remains high around 26-28 through t=1990609.\",\n    \"A secondary force increase appears on axis 4 at the same time, with ecfo4 rising from near 0 before the event to 1.44 at t=1988533 and about 2.1-2.3 afterward, consistent with a physical contact load propagating through the structure.\",\n    \"The supplied telemetry supports a force/contact anomaly but does not uniquely identify whether the external cause is a jammed part, fixture interference, dropped object, or another physical obstruction.\"\n  ],\n  \"corrective_actions\": [\n    \"Stop or keep the machine inhibited, inspect the work envelope around axis/link 2, the end effector, fixtures, and nearby parts for interference or a jammed object; remove the obstruction and verify ecfo2 and ecfo4 return to their pre-event near-zero/stable levels while stationary.\",\n    \"Inspect the affected link, tooling, and mounting hardware for damage or displacement from the contact; repair or realign as needed and verify feedback positions still match setpoints without abnormal contact force.\",\n    \"Run a slow, supervised dry cycle after clearing the area; verify all feedback speeds and positions follow setpoints normally and that estimated contact forces do not reproduce the ecfo2 spike.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "Unexpected external contact or obstruction applying a sustained load primarily on axis/link 2 while the machine is stationary; the telemetry does not identify the exact object or mechanism causing the contact.",
+          "evidence": [
+            "After t=1986161 all feedback speeds are zero and the positions remain fixed, with feedback positions matching setpoint positions, so the machine is not commanded to move during the later event.",
+            "Effort target torques stay essentially constant during the event, for example etto1=8.51 and etto2=5.18 from t=1986260 through t=1990609, so the force increase is not explained by a new torque command.",
+            "Estimated contact force on axis 2 is low or near zero while stationary before the event, such as ecfo2=-0.07 at t=1987248, 0.02 at t=1987347, and -0.10 at t=1987940.",
+            "Estimated contact force on axis 2 then rises abruptly while the machine remains stopped: ecfo2=3.92 at t=1988435, 20.82 at t=1988533, 30.49 at t=1988632, and remains high around 26-28 through t=1990609.",
+            "A secondary force increase appears on axis 4 at the same time, with ecfo4 rising from near 0 before the event to 1.44 at t=1988533 and about 2.1-2.3 afterward, consistent with a physical contact load propagating through the structure.",
+            "The supplied telemetry supports a force/contact anomaly but does not uniquely identify whether the external cause is a jammed part, fixture interference, dropped object, or another physical obstruction."
+          ],
+          "corrective_actions": [
+            "Stop or keep the machine inhibited, inspect the work envelope around axis/link 2, the end effector, fixtures, and nearby parts for interference or a jammed object; remove the obstruction and verify ecfo2 and ecfo4 return to their pre-event near-zero/stable levels while stationary.",
+            "Inspect the affected link, tooling, and mounting hardware for damage or displacement from the contact; repair or realign as needed and verify feedback positions still match setpoints without abnormal contact force.",
+            "Run a slow, supervised dry cycle after clearing the area; verify all feedback speeds and positions follow setpoints normally and that estimated contact forces do not reproduce the ecfo2 spike."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      },
+      {
+        "id": "a5dba9aa-4706-419b-ae64-998a0555739e",
+        "level": 4,
+        "dataset": "aursad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"Unexpected loss of contact/load while the machine was holding a fixed pose, most likely a workpiece/contact interface slipping or being released rather than a motion-control tracking fault.\",\n  \"evidence\": [\n    \"feedback_pos_0 through feedback_pos_5 stayed essentially equal to setpoint_pos_0 through setpoint_pos_5 for the entire stream, and feedback_speed_0 through feedback_speed_5 were 0 or near 0, so the machine was commanded to hold position rather than move.\",\n    \"effort_target_torque values were nearly constant throughout, for example etto1 stayed at -13.65 and etto2 stayed about -6.4, so the large force change was not accompanied by a commanded torque change.\",\n    \"est_contact_force_2 was high and stable near 25-26 early in the stream, for example ecfo2=26.18 at t=9717495 and ecfo2=25.11 at t=9719769, then collapsed rapidly to ecfo2=17.94 at t=9720263, ecfo2=1.44 at t=9720362, and near zero/negative afterward such as ecfo2=-0.12 at t=9721054.\",\n    \"Other contact-force components changed at the same time: ecfo0 moved from positive values around 1-2 before t=9719868 to -6.15 at t=9720263 and -8.19 at t=9720362, while ecfo1 shifted from about -4.9 at t=9719868 to 0.86 at t=9720362, consistent with a contact/load state change.\",\n    \"The telemetry does not include gripper, clamp, vacuum, fixture, or operator-state signals, so it supports loss of contact/load but does not uniquely identify the exact mechanism that caused it.\"\n  ],\n  \"corrective_actions\": [\n    \"Stop the cycle and inspect the workpiece/contact interface for a slipped, dropped, released, or displaced load; resecure or replace the part and clear any displaced material, then verify that the machine can hold the same pose with feedback positions matching setpoints and contact forces stable instead of collapsing.\",\n    \"Inspect the holding/contact hardware applicable to this station for looseness, contamination, wear, or failed actuation; after correction, repeat a static hold test and confirm est_contact_force_2 remains near its prior stable level around 25-26 instead of falling to near zero.\",\n    \"Check the logged event around t=9720263 to t=9720461 for any unintended external interaction or release action; verify no repeat transient occurs in ecfo0, ecfo1, and ecfo2 during a controlled restart.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "Unexpected loss of contact/load while the machine was holding a fixed pose, most likely a workpiece/contact interface slipping or being released rather than a motion-control tracking fault.",
+          "evidence": [
+            "feedback_pos_0 through feedback_pos_5 stayed essentially equal to setpoint_pos_0 through setpoint_pos_5 for the entire stream, and feedback_speed_0 through feedback_speed_5 were 0 or near 0, so the machine was commanded to hold position rather than move.",
+            "effort_target_torque values were nearly constant throughout, for example etto1 stayed at -13.65 and etto2 stayed about -6.4, so the large force change was not accompanied by a commanded torque change.",
+            "est_contact_force_2 was high and stable near 25-26 early in the stream, for example ecfo2=26.18 at t=9717495 and ecfo2=25.11 at t=9719769, then collapsed rapidly to ecfo2=17.94 at t=9720263, ecfo2=1.44 at t=9720362, and near zero/negative afterward such as ecfo2=-0.12 at t=9721054.",
+            "Other contact-force components changed at the same time: ecfo0 moved from positive values around 1-2 before t=9719868 to -6.15 at t=9720263 and -8.19 at t=9720362, while ecfo1 shifted from about -4.9 at t=9719868 to 0.86 at t=9720362, consistent with a contact/load state change.",
+            "The telemetry does not include gripper, clamp, vacuum, fixture, or operator-state signals, so it supports loss of contact/load but does not uniquely identify the exact mechanism that caused it."
+          ],
+          "corrective_actions": [
+            "Stop the cycle and inspect the workpiece/contact interface for a slipped, dropped, released, or displaced load; resecure or replace the part and clear any displaced material, then verify that the machine can hold the same pose with feedback positions matching setpoints and contact forces stable instead of collapsing.",
+            "Inspect the holding/contact hardware applicable to this station for looseness, contamination, wear, or failed actuation; after correction, repeat a static hold test and confirm est_contact_force_2 remains near its prior stable level around 25-26 instead of falling to near zero.",
+            "Check the logged event around t=9720263 to t=9720461 for any unintended external interaction or release action; verify no repeat transient occurs in ecfo0, ecfo1, and ecfo2 during a controlled restart."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      },
+      {
+        "id": "5a878566-8b0a-48e4-ad4c-9adf5d1eaf73",
+        "level": 4,
+        "dataset": "aursad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"Unexpected sustained external contact or obstruction loading the stationary robot, most strongly reflected on estimated contact force channel 2\",\n  \"evidence\": [\n    \"The robot is commanded to hold position: feedback_pos_0 through feedback_pos_5 match setpoint_pos_0 through setpoint_pos_5 at every timestep.\",\n    \"All feedback_speed channels are zero or effectively zero throughout the stream, so the force change is not associated with commanded motion.\",\n    \"Estimated contact force_2 rises sharply from 2.56 at t=21225422 to 20.16 at t=21225527 and peaks at 32.72 at t=21225727, then remains elevated around the mid-20s through the end of the data.\",\n    \"Estimated contact force_1 also rises from 0.86 at t=21225422 to 11.59 at t=21225727 before remaining elevated for much of the stream.\",\n    \"Effort target torques stay essentially constant, so the observed anomaly is the contact-force estimate increasing while the machine is stationary rather than a commanded torque or position change.\",\n    \"The telemetry supports anomalous sustained contact/loading, but it does not uniquely identify the exact physical object or location causing the contact.\"\n  ],\n  \"corrective_actions\": [\n    \"Stop or keep the robot inhibited, inspect the workcell and end-effector path for a trapped part, fixture interference, or other obstruction; remove or correct the obstruction, then verify estimated contact_force_2 and contact_force_1 return near their initial low values while positions remain on setpoint.\",\n    \"Check the tool/workpiece seating and fixture alignment for unintended preload against the robot; reseat or realign as needed, then run a slow monitored hold/approach test and confirm contact-force channels stay stable without the sharp rise seen in the stream.\",\n    \"If no physical contact is found, inspect and recalibrate the contact-force estimation/sensing path; verify by holding the same setpoints with no load and confirming the estimated contact forces do not drift upward.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "Unexpected sustained external contact or obstruction loading the stationary robot, most strongly reflected on estimated contact force channel 2",
+          "evidence": [
+            "The robot is commanded to hold position: feedback_pos_0 through feedback_pos_5 match setpoint_pos_0 through setpoint_pos_5 at every timestep.",
+            "All feedback_speed channels are zero or effectively zero throughout the stream, so the force change is not associated with commanded motion.",
+            "Estimated contact force_2 rises sharply from 2.56 at t=21225422 to 20.16 at t=21225527 and peaks at 32.72 at t=21225727, then remains elevated around the mid-20s through the end of the data.",
+            "Estimated contact force_1 also rises from 0.86 at t=21225422 to 11.59 at t=21225727 before remaining elevated for much of the stream.",
+            "Effort target torques stay essentially constant, so the observed anomaly is the contact-force estimate increasing while the machine is stationary rather than a commanded torque or position change.",
+            "The telemetry supports anomalous sustained contact/loading, but it does not uniquely identify the exact physical object or location causing the contact."
+          ],
+          "corrective_actions": [
+            "Stop or keep the robot inhibited, inspect the workcell and end-effector path for a trapped part, fixture interference, or other obstruction; remove or correct the obstruction, then verify estimated contact_force_2 and contact_force_1 return near their initial low values while positions remain on setpoint.",
+            "Check the tool/workpiece seating and fixture alignment for unintended preload against the robot; reseat or realign as needed, then run a slow monitored hold/approach test and confirm contact-force channels stay stable without the sharp rise seen in the stream.",
+            "If no physical contact is found, inspect and recalibrate the contact-force estimation/sensing path; verify by holding the same setpoints with no load and confirming the estimated contact forces do not drift upward."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      },
+      {
+        "id": "1b9fdc29-4685-4534-ac6b-701193a13d90",
+        "level": 4,
+        "dataset": "aursad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"No anomalous behavior is indicated by the supplied telemetry; the motion appears commanded and tracked, with no uniquely identifiable physical fault.\",\n  \"evidence\": [\n    \"feedback_pos_0 through feedback_pos_5 closely match setpoint_pos_0 through setpoint_pos_5 at each timestep, including during the move from about t=12658801 to t=12661174.\",\n    \"feedback_speed_0 through feedback_speed_5 are zero during the initial and final dwell periods, then change smoothly during the commanded motion and return to zero at t=12661174.\",\n    \"effort_target_torque values change with the motion profile, but there is no supplied threshold or fault documentation showing these torque levels are abnormal.\",\n    \"est_contact_force values vary during motion, for example ecfo0 reaches about -2.08 at t=12659889 and ecfo1 reaches about 1.24 at t=12660087, but the telemetry does not show a simultaneous position-tracking loss or speed collapse that would uniquely indicate collision or obstruction.\",\n    \"The supplied telemetry does not uniquely identify a fault cause.\"\n  ],\n  \"corrective_actions\": [\n    \"Do not replace components based on this stream alone; continue monitoring and compare future runs against known-good baselines, verifying that feedback positions continue to track setpoints and speeds return to zero at dwell.\",\n    \"If operators report abnormal noise, vibration, or contact not visible in these signals, perform a controlled inspection of the work area and robot path, then verify with a repeat cycle while monitoring position error, speed profile, torque, and estimated contact force.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "No anomalous behavior is indicated by the supplied telemetry; the motion appears commanded and tracked, with no uniquely identifiable physical fault.",
+          "evidence": [
+            "feedback_pos_0 through feedback_pos_5 closely match setpoint_pos_0 through setpoint_pos_5 at each timestep, including during the move from about t=12658801 to t=12661174.",
+            "feedback_speed_0 through feedback_speed_5 are zero during the initial and final dwell periods, then change smoothly during the commanded motion and return to zero at t=12661174.",
+            "effort_target_torque values change with the motion profile, but there is no supplied threshold or fault documentation showing these torque levels are abnormal.",
+            "est_contact_force values vary during motion, for example ecfo0 reaches about -2.08 at t=12659889 and ecfo1 reaches about 1.24 at t=12660087, but the telemetry does not show a simultaneous position-tracking loss or speed collapse that would uniquely indicate collision or obstruction.",
+            "The supplied telemetry does not uniquely identify a fault cause."
+          ],
+          "corrective_actions": [
+            "Do not replace components based on this stream alone; continue monitoring and compare future runs against known-good baselines, verifying that feedback positions continue to track setpoints and speeds return to zero at dwell.",
+            "If operators report abnormal noise, vibration, or contact not visible in these signals, perform a controlled inspection of the work area and robot path, then verify with a repeat cycle while monitoring position error, speed profile, torque, and estimated contact force."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      },
+      {
+        "id": "07330f3e-fa5b-4fad-9eeb-85feb8e58994",
+        "level": 4,
+        "dataset": "vorausad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"Yes. The most likely cause is an unexpected mechanical load or binding in the arm/wrist load path, most evident around axis 4 while other axes move; the telemetry supports excessive load/resistance but does not uniquely identify whether it is a collision, payload issue, brake drag, bearing friction, or other mechanical obstruction.\",\n  \"evidence\": [\n    \"From t=4185 to t=5081 the machine is stationary with feedback positions matching setpoint positions and speeds at zero, while effort target torques are small, establishing a low-load baseline.\",\n    \"During later motion, feedback positions continue to closely track setpoint positions, so the main observed symptom is not loss of position control.\",\n    \"At t=7867 to t=8464, feedback_pos_4 and setpoint_pos_4 remain essentially constant around -1.55 while feedback_speed_4 is 0 to 0.02, but effort_target_torque_4 rises in magnitude from -6.02 to -16.71, indicating high holding/compensation torque without commanded axis-4 motion.\",\n    \"At the same interval, axes 0 and 5 are moving substantially: feedback_pos_0 changes from 0.98 at t=7867 to 0.09 at t=8464 and feedback_pos_5 changes from 0.47 to -0.41, suggesting the high axis-4 torque is load/coupling related during arm movement.\",\n    \"The supplied telemetry does not include current limits, fault codes, payload state, collision sensors, brake status, or mechanical inspection data, so the exact physical source of the excessive load cannot be uniquely identified from the stream alone.\"\n  ],\n  \"corrective_actions\": [\n    \"Stop the machine and inspect the arm/wrist area for obstruction, collision contact, cable snagging, payload interference, or tooling contact; after removal or correction, rerun the same motion and verify effort_target_torque_4 no longer spikes while feedback_pos_4 remains stationary.\",\n    \"Check the payload/tooling configuration and confirm the carried load and center of mass are correct for the programmed motion; then repeat the cycle and verify feedback positions still track setpoints with reduced torque demand.\",\n    \"Inspect axis-4 mechanical components and brake/drive train for binding, drag, or damage; after repair or adjustment, command a controlled motion sequence and verify speeds, positions, and effort torques return to the low-load pattern seen during the initial stationary baseline.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "Yes. The most likely cause is an unexpected mechanical load or binding in the arm/wrist load path, most evident around axis 4 while other axes move; the telemetry supports excessive load/resistance but does not uniquely identify whether it is a collision, payload issue, brake drag, bearing friction, or other mechanical obstruction.",
+          "evidence": [
+            "From t=4185 to t=5081 the machine is stationary with feedback positions matching setpoint positions and speeds at zero, while effort target torques are small, establishing a low-load baseline.",
+            "During later motion, feedback positions continue to closely track setpoint positions, so the main observed symptom is not loss of position control.",
+            "At t=7867 to t=8464, feedback_pos_4 and setpoint_pos_4 remain essentially constant around -1.55 while feedback_speed_4 is 0 to 0.02, but effort_target_torque_4 rises in magnitude from -6.02 to -16.71, indicating high holding/compensation torque without commanded axis-4 motion.",
+            "At the same interval, axes 0 and 5 are moving substantially: feedback_pos_0 changes from 0.98 at t=7867 to 0.09 at t=8464 and feedback_pos_5 changes from 0.47 to -0.41, suggesting the high axis-4 torque is load/coupling related during arm movement.",
+            "The supplied telemetry does not include current limits, fault codes, payload state, collision sensors, brake status, or mechanical inspection data, so the exact physical source of the excessive load cannot be uniquely identified from the stream alone."
+          ],
+          "corrective_actions": [
+            "Stop the machine and inspect the arm/wrist area for obstruction, collision contact, cable snagging, payload interference, or tooling contact; after removal or correction, rerun the same motion and verify effort_target_torque_4 no longer spikes while feedback_pos_4 remains stationary.",
+            "Check the payload/tooling configuration and confirm the carried load and center of mass are correct for the programmed motion; then repeat the cycle and verify feedback positions still track setpoints with reduced torque demand.",
+            "Inspect axis-4 mechanical components and brake/drive train for binding, drag, or damage; after repair or adjustment, command a controlled motion sequence and verify speeds, positions, and effort torques return to the low-load pattern seen during the initial stationary baseline."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      },
+      {
+        "id": "da285aa9-391d-4273-b20d-073cee82a968",
+        "level": 4,
+        "dataset": "vorausad",
+        "answer_format": "diagnostic_json",
+        "raw_output": "{\n  \"root_cause\": \"No uniquely confirmed physical fault from the supplied telemetry; the most defensible diagnosis is an abrupt/aggressive commanded motion profile causing transient high torque demand while the axes still track position normally.\",\n  \"evidence\": [\n    \"From t=3286 to t=5177, setpoint positions and feedback positions are effectively identical on all axes, feedback speeds are zero or near zero, and target torques remain small, indicating stable idle behavior before the move.\",\n    \"At t=5276 to t=5475, the setpoints begin changing and feedback positions follow them closely, while target torques spike strongly, especially ett1=-35.51 to -39.21, ett2=41.38 to 49.01, ett3=23.69 to 27.4, and ett4=9.88 to 10.44.\",\n    \"During the high-torque interval, feedback speeds increase in the commanded direction, for example fs2 rises to 0.68, fs3 to 0.75, and fs4 to 0.88 at t=5475, so the axes are moving rather than stalled.\",\n    \"After t=6172, the setpoints become constant again, feedback positions remain close to setpoints, and feedback speeds return to approximately zero, while torques settle to smaller holding values.\",\n    \"The telemetry does not uniquely identify a mechanical root cause such as a jam, collision, or encoder fault because there is no sustained position-following error and no axis shows high torque with zero motion during an active commanded move.\"\n  ],\n  \"corrective_actions\": [\n    \"Review the commanded trajectory for this move and reduce acceleration, jerk, or velocity limits; verify by rerunning the cycle and confirming the torque peaks on ett1, ett2, ett3, and ett4 are reduced while feedback positions still track setpoints.\",\n    \"Check that the programmed payload/gravity-compensation parameters match the actual load; verify by comparing stationary holding torques after the move with expected values for the same pose.\",\n    \"If high torque peaks persist after trajectory and payload checks, inspect the affected axes and drivetrains for friction or binding; verify by jogging the same axes through the move range and confirming smooth speed response with no abnormal torque spikes.\"\n  ]\n}",
+        "parsed": {
+          "root_cause": "No uniquely confirmed physical fault from the supplied telemetry; the most defensible diagnosis is an abrupt/aggressive commanded motion profile causing transient high torque demand while the axes still track position normally.",
+          "evidence": [
+            "From t=3286 to t=5177, setpoint positions and feedback positions are effectively identical on all axes, feedback speeds are zero or near zero, and target torques remain small, indicating stable idle behavior before the move.",
+            "At t=5276 to t=5475, the setpoints begin changing and feedback positions follow them closely, while target torques spike strongly, especially ett1=-35.51 to -39.21, ett2=41.38 to 49.01, ett3=23.69 to 27.4, and ett4=9.88 to 10.44.",
+            "During the high-torque interval, feedback speeds increase in the commanded direction, for example fs2 rises to 0.68, fs3 to 0.75, and fs4 to 0.88 at t=5475, so the axes are moving rather than stalled.",
+            "After t=6172, the setpoints become constant again, feedback positions remain close to setpoints, and feedback speeds return to approximately zero, while torques settle to smaller holding values.",
+            "The telemetry does not uniquely identify a mechanical root cause such as a jam, collision, or encoder fault because there is no sustained position-following error and no axis shows high torque with zero motion during an active commanded move."
+          ],
+          "corrective_actions": [
+            "Review the commanded trajectory for this move and reduce acceleration, jerk, or velocity limits; verify by rerunning the cycle and confirming the torque peaks on ett1, ett2, ett3, and ett4 are reduced while feedback positions still track setpoints.",
+            "Check that the programmed payload/gravity-compensation parameters match the actual load; verify by comparing stationary holding torques after the move with expected values for the same pose.",
+            "If high torque peaks persist after trajectory and payload checks, inspect the affected axes and drivetrains for friction or binding; verify by jogging the same axes through the move range and confirming smooth speed response with no abnormal torque spikes."
+          ]
+        },
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "schema_valid": true,
+        "root_cause_correct": false,
+        "corrective_actions_correct": false,
+        "development_evidence": null
+      }
+    ]
+  },
+  "selected_adapter": null,
+  "selected_label": "NO_ADAPTER (baseline reused; no duplicate call)",
+  "no_holdout_feedback": true,
+  "core_prompt_used": false
+}
