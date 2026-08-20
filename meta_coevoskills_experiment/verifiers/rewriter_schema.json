@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "skill_fixable_failures",
+    "capability_limitations",
+    "ambiguous_or_insufficient",
+    "preserved_rules",
+    "minimum_generalizable_change",
+    "regression_risks",
+    "new_skill"
+  ],
+  "properties": {
+    "skill_fixable_failures": {"type": "array", "items": {"type": "string"}},
+    "capability_limitations": {"type": "array", "items": {"type": "string"}},
+    "ambiguous_or_insufficient": {"type": "array", "items": {"type": "string"}},
+    "preserved_rules": {"type": "array", "items": {"type": "string"}},
+    "minimum_generalizable_change": {"type": "array", "items": {"type": "string"}},
+    "regression_risks": {"type": "array", "items": {"type": "string"}},
+    "new_skill": {"type": "string", "minLength": 1}
+  }
+}

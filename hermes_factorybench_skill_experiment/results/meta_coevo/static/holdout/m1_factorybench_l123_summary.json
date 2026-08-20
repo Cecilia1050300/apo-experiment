@@ -1,0 +1,512 @@
+{
+  "arm": "surrogate_static",
+  "task_name": "m1_factorybench_l123",
+  "status": "HOLDOUT_COMPLETE",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "optimizer_model": "gpt-5.6-luna"
+  },
+  "selection_sha256": "7836c5a4aef73c660f36fd1979670927f57daff80027e7306f68250493fd1623",
+  "selection_decision": "ADAPTER",
+  "baseline": {
+    "condition": "baseline",
+    "item_count": 9,
+    "ordered_ids": [
+      "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "138f1721-16e4-4189-8d29-80967dc83807",
+      "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "65c3d538-c526-4ecd-8dfd-99d9764df838"
+    ],
+    "canonical_score": 0.16981132075471705,
+    "fixed_cardinality_score": 0.16981132075471705,
+    "parse_failures": 0,
+    "by_format": {
+      "four_letter_ranking": -0.043478260869565216,
+      "four_letter_tf": -0.5,
+      "scalar_range": 0.0,
+      "single_letter_mcq": 0.625
+    },
+    "by_dataset": {
+      "aursad": 1.0,
+      "factorywave": 0.14960629921259844,
+      "vorausad": -0.49999999999999994
+    },
+    "by_level": {
+      "1": 1.0,
+      "2": -0.125,
+      "3": -0.2765957446808512
+    },
+    "surrogate_summary": {
+      "valid_count": 9,
+      "parse_or_transport_failures": 0,
+      "agreement_rate": 1.0,
+      "false_pass_count": 0,
+      "false_reject_count": 0,
+      "false_pass_rate_on_gt_fail": 0.0,
+      "false_reject_rate_on_gt_pass": 0.0
+    },
+    "items": [
+      {
+        "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+        "level": 1,
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The six-joint sensor trajectory is consistent with a Universal Robots UR3e configuration; no arithmetic or formatting issue is present."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The agent answer follows the required single-letter MCQ format.",
+          "The six-joint position data is consistent with the Universal Robots UR3e option, with no identifiable arithmetic or formatting issue."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "B",
+        "parsed": "B",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The six-joint trajectory and setpoint/feedback data are consistent with the Universal Robots UR3e option; no arithmetic or formatting issue is present."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+        "level": 2,
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The time-series values provide no explicit or uniquely identifiable information linking the data to option C; all three listed robots could plausibly produce six-axis joint position data."
+        ],
+        "surrogate_failed_checks": [
+          "unsupported assumptions not justified by task input"
+        ]
+      },
+      {
+        "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "4032",
+        "parsed": 4032.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The proposed start timestamp 4032 is already inside the apparent grasp/payload phase; the force and effort-current changes begin earlier, around 3845–3930, so it is unlikely to be the correct window start."
+        ],
+        "surrogate_failed_checks": [
+          "temporal window interpretation"
+        ]
+      },
+      {
+        "id": "138f1721-16e4-4189-8d29-80967dc83807",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "5089.0",
+        "parsed": 5089.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "A 41-timestep window cannot begin at timestamp 5089.0 in the supplied series: timestamp 5089 is near the end, leaving only about 9 listed timesteps through 5905, and it is not itself a timestep timestamp."
+        ],
+        "surrogate_failed_checks": [
+          "temporal window interpretation",
+          "unsupported assumption"
+        ]
+      },
+      {
+        "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "FTTF",
+        "parsed": "FTTF",
+        "score": 0.5,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The first character is incorrect: after the event, measured and commanded TCP speeds differ substantially, so the mean TCP tracking error exceeds 0.0023.",
+          "The remaining classifications appear consistent: no joint sweeps more than 62 degrees, no joint mean speed drops to 51% or less of its pre-event mean, and the mean summed joint tracking error exceeds 0.1464."
+        ],
+        "surrogate_failed_checks": [
+          "operator application",
+          "multi-element output correctness"
+        ]
+      },
+      {
+        "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "FTFT",
+        "parsed": "FTFT",
+        "score": 0.0,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The response marks B false, but the post-event commanded-versus-measured joint position and speed deviations clearly exceed 0.1852 on average.",
+          "The response marks C false, although the TCP tracking deviations are generally below the 0.0033 mean threshold across the post-event window.",
+          "The response marks D true, but the most active joint's accumulated post-event path length is well below 100 degrees."
+        ],
+        "surrogate_failed_checks": [
+          "operator application",
+          "comparison and threshold evaluation"
+        ]
+      },
+      {
+        "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_ranking",
+        "raw_output": "DBCA",
+        "parsed": "DBCA",
+        "score": 0.0,
+        "chance": 0.041666666666666664,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The signal segments form a continuous progression C → D → A → B based on matching endpoint and starting values, but the agent answered DBCA."
+        ],
+        "surrogate_failed_checks": [
+          "operator application",
+          "ranking/comparison"
+        ]
+      }
+    ]
+  },
+  "selected_adapter": {
+    "condition": "selected_adapter",
+    "item_count": 9,
+    "ordered_ids": [
+      "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "138f1721-16e4-4189-8d29-80967dc83807",
+      "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "65c3d538-c526-4ecd-8dfd-99d9764df838"
+    ],
+    "canonical_score": 0.16981132075471705,
+    "fixed_cardinality_score": 0.16981132075471705,
+    "parse_failures": 0,
+    "by_format": {
+      "four_letter_ranking": -0.043478260869565216,
+      "four_letter_tf": -0.5,
+      "scalar_range": 0.0,
+      "single_letter_mcq": 0.625
+    },
+    "by_dataset": {
+      "aursad": 1.0,
+      "factorywave": 0.14960629921259844,
+      "vorausad": -0.49999999999999994
+    },
+    "by_level": {
+      "1": 1.0,
+      "2": -0.125,
+      "3": -0.2765957446808512
+    },
+    "surrogate_summary": {
+      "valid_count": 9,
+      "parse_or_transport_failures": 0,
+      "agreement_rate": 1.0,
+      "false_pass_count": 0,
+      "false_reject_count": 0,
+      "false_pass_rate_on_gt_fail": 0.0,
+      "false_reject_rate_on_gt_pass": 0.0
+    },
+    "items": [
+      {
+        "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+        "level": 1,
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The six-joint position trajectory is consistent with a Universal Robots UR3e trace, and no arithmetic or formatting issue is present."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The agent answer is exactly the required single-letter format.",
+          "The six-joint trajectory, including the continuous wrist-axis value around 435 degrees, is consistent with the Universal Robots UR3e option."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "B",
+        "parsed": "B",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "PASS",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The joint-angle pattern is consistent with a six-axis Universal Robots UR3e configuration."
+        ],
+        "surrogate_failed_checks": []
+      },
+      {
+        "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+        "level": 2,
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer uses the required single-letter format, but the supplied sensor values and acronym mapping do not provide enough information to distinguish among the three robot models.",
+          "Selecting option C is unsupported by the task input."
+        ],
+        "surrogate_failed_checks": [
+          "unsupported assumptions"
+        ]
+      },
+      {
+        "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "1800",
+        "parsed": 1800.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "Timestamp 1800 lies within a long stationary segment with nearly constant position, speed, and effort values, not the apparent later interaction/payload phase."
+        ],
+        "surrogate_failed_checks": [
+          "operator/phase isolation"
+        ]
+      },
+      {
+        "id": "138f1721-16e4-4189-8d29-80967dc83807",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "3671",
+        "parsed": 3671.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "A 41-timestep window beginning at timestamp 3671 would require 41 rows from that point, but only 23 timesteps remain in the supplied series."
+        ],
+        "surrogate_failed_checks": [
+          "temporal window interpretation",
+          "unsupported assumption"
+        ]
+      },
+      {
+        "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "TFTF",
+        "parsed": "TFTF",
+        "score": 0.0,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The second character is incorrect: after the event, no joint sweeps more than 62 degrees; the joint position changes are all far below that threshold. The third character is also incorrect because joint mean speed magnitudes do drop to 51% or less of their pre-event means.",
+          "The likely applicable pattern is TFFF, not TFTF."
+        ],
+        "surrogate_failed_checks": [
+          "operator application",
+          "threshold comparison",
+          "multi-element output correctness"
+        ]
+      },
+      {
+        "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "FFFF",
+        "parsed": "FFFF",
+        "score": 0.5,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "Option B is true: immediately after the event, the mean absolute joint tracking error from commanded-versus-measured positions and speeds exceeds 0.1852, so the answer cannot be FFFF.",
+          "Option C also does not hold at the event-following timestep because the TCP tracking deviations exceed the stated 0.0033 bound."
+        ],
+        "surrogate_failed_checks": [
+          "operator application",
+          "threshold comparison",
+          "multi-element output correctness"
+        ]
+      },
+      {
+        "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_ranking",
+        "raw_output": "DCAB",
+        "parsed": "DCAB",
+        "score": 0.0,
+        "chance": 0.041666666666666664,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The segments form a continuous chronological sequence C→D→A→B based on matching endpoint and start values, not D→C→A→B."
+        ],
+        "surrogate_failed_checks": [
+          "ranking/comparison"
+        ]
+      }
+    ]
+  },
+  "selected_label": "selected_adapter",
+  "no_holdout_feedback": true,
+  "optimizer_called_on_holdout": false,
+  "verifier_revision_on_holdout": false,
+  "core_prompt_used": false
+}

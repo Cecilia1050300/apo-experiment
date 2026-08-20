@@ -1,0 +1,94 @@
+experiment:
+  name: meta_coevoskills_factorybench_l123
+  description: Controlled shared-Skill optimization on FactoryBench L1-L3 mixed-split evaluation.
+  generations: 3
+  fold_schedule:
+    - {round: 1, optimization: A, validation: B}
+    - {round: 2, optimization: B, validation: A}
+    - {round: 3, optimization: A, validation: B}
+
+models:
+  target:
+    model: gpt-4o-mini
+    reasoning_mode: null
+    reasoning_effort: null
+    temperature: 0
+    seed: 0
+    max_completion_tokens: 2048
+  verifier:
+    model: gpt-5.6-luna
+    reasoning_mode: standard
+    reasoning_effort: high
+    max_output_tokens: 4096
+  rewriter:
+    model: gpt-5.6-luna
+    reasoning_mode: pro
+    reasoning_effort: xhigh
+    max_output_tokens: 8192
+
+execution:
+  concurrency: 1
+  max_retries: 0
+  timeout_seconds: 180
+  dataset_revision: b3863519ccedbceab54dfa7600104eb42b985ed7
+  repository_git_commit_at_design: f234110632683c9602d21b6c9974900792b3fffa
+  dotenv_path: ../.env
+  checkpoint_each_call: true
+  atomic_writes: true
+
+manifests:
+  A:
+    path: manifests/dev_fold_a.json
+    sha256: fa34802b22cec32df90e59ac3db64b952c35706ef998d70f013d6298affbaec1
+    expected_count: 3
+  B:
+    path: manifests/dev_fold_b.json
+    sha256: 95cec7a9285b7c079c8f6e243fcdfca23990c79e3c0606f606250c19e05e327c
+    expected_count: 3
+  holdout:
+    path: manifests/holdout.json
+    sha256: c1a6a29ad240a2585f2dcda7d3332924f43085a95d510dab4b9a2980cead2082
+    expected_count: 9
+
+skills:
+  control_v0: skills/control/skill_v0.txt
+  surrogate_v0: skills/surrogate/skill_v0.txt
+  expected_v0_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  m1_resolution: M1 L1-L3 used no Core and no Adapter; v0 is the byte-empty baseline system prompt.
+
+verifier:
+  prompt: verifiers/verifier_system_prompt.txt
+  schema: verifiers/diagnosis_schema.json
+  allowed_failure_types:
+    - FORMAT_ERROR
+    - INSTRUCTION_MISREAD
+    - TEMPORAL_REASONING_ERROR
+    - NUMERIC_REASONING_ERROR
+    - EVIDENCE_MISUSE
+    - UNSUPPORTED_INFERENCE
+    - MISSING_CONSTRAINT
+    - OVER_GENERALIZATION
+    - TASK_STRATEGY_ERROR
+    - UNKNOWN
+
+rewriter:
+  prompt: verifiers/rewriter_system_prompt.txt
+  schema: verifiers/rewriter_schema.json
+
+pricing_per_million_usd:
+  source: Hermes official-docs snapshot; estimates only.
+  version: openai-gpt-5.6-2026-07 and openai-pricing-2026-03-16
+  gpt-4o-mini: {input: 0.15, output: 0.60}
+  gpt-5.6-luna: {input: 1.00, output: 6.00}
+
+frozen_m1:
+  root: ../hermes_factorybench_skill_experiment
+  runner_sha256: aca8337e54fc7d32c1f6c760f7f5aac7788d54a7871692573467d568b9499cd5
+  preparation_sha256: 4b714d200277ed811332ea1680347a847dad03722f363e17476eb6aeb9f54618
+  combined_manifest_sha256: 187d208c6a432acffcbfd497c2af9051d4fd0256092597a89e36173449df8dd1
+  contamination_registry_sha256: 7c0d61e99b4a859151493b65eba7f16e316ee82ba033b49204fa64456ef6f9d0
+  selection_sha256: 02196562daf3e0bceff6f4e2f185e6f0ef9bae9f8fff40ad223a25453d07fd6f
+  factorybench_evaluate_sha256: 49f18ba39301a5143dc59c47aeab27324d5dceff90b2efc9db2094fc2ce565ac
+  factorybench_prompt_sha256: 71832ea6f68019898b6405eafb14c90c0c669e06ed610d7956d9a7113d109b19
+  factorybench_parse_sha256: 204c5417caca5f48bd6a111f66f55fb68d05d87a0bce0328236fc79873b93ad8
+  factorybench_score_sha256: aa12643aab5ee33fb027873f4f25e404123c8f96f768ef1bd913419d095d7887

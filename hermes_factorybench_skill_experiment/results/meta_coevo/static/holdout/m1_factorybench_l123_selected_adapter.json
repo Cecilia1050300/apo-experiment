@@ -1,0 +1,576 @@
+{
+  "arm": "surrogate_static",
+  "task_name": "m1_factorybench_l123",
+  "partition": "holdout",
+  "condition": "selected_adapter",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "optimizer_model": "gpt-5.6-luna"
+  },
+  "manifest_path": "data_manifests/meta_m1/factorybench_l123_holdout.json",
+  "manifest_sha256": "c1a6a29ad240a2585f2dcda7d3332924f43085a95d510dab4b9a2980cead2082",
+  "adapter_sha256": "4b819fe1efaa70023df048cce07a0ed0be42769a44de4a8c38ffa77a5d067b3a",
+  "surrogate_prompt_path": "prompts/meta_coevo/surrogate_verifier_v0.txt",
+  "surrogate_prompt_sha256": "5ea8358c18e8621a047ff917e9d26358bc7538cc133876563e5df6f708961969",
+  "surrogate_static": true,
+  "core_prompt_used": false,
+  "ordered_ids": [
+    "aedd52a6-a510-417b-8de8-48177cdb1c02",
+    "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+    "60c9a20e-d082-491a-8e5c-1601fb71c367",
+    "3e594c96-8b27-405d-9af8-17334cf34ea3",
+    "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+    "138f1721-16e4-4189-8d29-80967dc83807",
+    "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+    "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+    "65c3d538-c526-4ecd-8dfd-99d9764df838"
+  ],
+  "item_count": 9,
+  "canonical_score": 0.16981132075471705,
+  "fixed_cardinality_score": 0.16981132075471705,
+  "parse_failures": 0,
+  "by_level": {
+    "1": 1.0,
+    "2": -0.125,
+    "3": -0.2765957446808512
+  },
+  "by_format": {
+    "four_letter_ranking": -0.043478260869565216,
+    "four_letter_tf": -0.5,
+    "scalar_range": 0.0,
+    "single_letter_mcq": 0.625
+  },
+  "by_dataset": {
+    "aursad": 1.0,
+    "factorywave": 0.14960629921259844,
+    "vorausad": -0.49999999999999994
+  },
+  "surrogate_summary": {
+    "valid_count": 9,
+    "parse_or_transport_failures": 0,
+    "agreement_rate": 1.0,
+    "false_pass_count": 0,
+    "false_reject_count": 0,
+    "false_pass_rate_on_gt_fail": 0.0,
+    "false_reject_rate_on_gt_pass": 0.0
+  },
+  "tokens_used": {
+    "agent": {
+      "model": "gpt-4o-mini",
+      "input_tokens": 113970,
+      "output_tokens": 14,
+      "calls": 9
+    },
+    "surrogate": {
+      "model": "gpt-5.6-luna",
+      "input_tokens": 115223,
+      "output_tokens": 10734,
+      "calls": 9
+    }
+  },
+  "cost": {
+    "agent": 0.017104,
+    "surrogate": 0.737125,
+    "known_total": 0.754229
+  },
+  "wall_time_seconds": 127.1021666135639,
+  "items": [
+    {
+      "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_2166",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"PASS\",\n  \"confidence\": 0.78,\n  \"diagnosis\": [\n    \"The answer follows the required single-letter MCQ format.\",\n    \"The six-joint position trajectory is consistent with a Universal Robots UR3e trace, and no arithmetic or formatting issue is present.\"\n  ],\n  \"failed_checks\": []\n}",
+        "parsed": {
+          "verdict": "PASS",
+          "confidence": 0.78,
+          "diagnosis": [
+            "The answer follows the required single-letter MCQ format.",
+            "The six-joint position trajectory is consistent with a Universal Robots UR3e trace, and no arithmetic or formatting issue is present."
+          ],
+          "failed_checks": []
+        },
+        "verdict": "PASS",
+        "diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The six-joint position trajectory is consistent with a Universal Robots UR3e trace, and no arithmetic or formatting issue is present."
+        ],
+        "failed_checks": [],
+        "confidence": 0.78,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6227,
+          "output_tokens": 595
+        },
+        "latency_seconds": 6.642828813754022
+      },
+      "surrogate_verdict": "PASS",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 6087,
+        "output_tokens": 1
+      },
+      "latency_seconds": 0.7648161482065916,
+      "development_evidence": null
+    },
+    {
+      "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "14462b5b-4295-4cd6-b4cf-683cd65e4531",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"PASS\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\n    \"The agent answer is exactly the required single-letter format.\",\n    \"The six-joint trajectory, including the continuous wrist-axis value around 435 degrees, is consistent with the Universal Robots UR3e option.\"\n  ],\n  \"failed_checks\": []\n}",
+        "parsed": {
+          "verdict": "PASS",
+          "confidence": 0.98,
+          "diagnosis": [
+            "The agent answer is exactly the required single-letter format.",
+            "The six-joint trajectory, including the continuous wrist-axis value around 435 degrees, is consistent with the Universal Robots UR3e option."
+          ],
+          "failed_checks": []
+        },
+        "verdict": "PASS",
+        "diagnosis": [
+          "The agent answer is exactly the required single-letter format.",
+          "The six-joint trajectory, including the continuous wrist-axis value around 435 degrees, is consistent with the Universal Robots UR3e option."
+        ],
+        "failed_checks": [],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6227,
+          "output_tokens": 452
+        },
+        "latency_seconds": 5.2502753008157015
+      },
+      "surrogate_verdict": "PASS",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 6087,
+        "output_tokens": 1
+      },
+      "latency_seconds": 1.0472810762003064,
+      "development_evidence": null
+    },
+    {
+      "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "5b7c79b7-f97b-4a8c-bbf6-2ee1c384dcc2",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "B",
+      "parsed": "B",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"PASS\",\n  \"confidence\": 0.9,\n  \"diagnosis\": [\n    \"The answer follows the required single-letter MCQ format.\",\n    \"The joint-angle pattern is consistent with a six-axis Universal Robots UR3e configuration.\"\n  ],\n  \"failed_checks\": []\n}",
+        "parsed": {
+          "verdict": "PASS",
+          "confidence": 0.9,
+          "diagnosis": [
+            "The answer follows the required single-letter MCQ format.",
+            "The joint-angle pattern is consistent with a six-axis Universal Robots UR3e configuration."
+          ],
+          "failed_checks": []
+        },
+        "verdict": "PASS",
+        "diagnosis": [
+          "The answer follows the required single-letter MCQ format.",
+          "The joint-angle pattern is consistent with a six-axis Universal Robots UR3e configuration."
+        ],
+        "failed_checks": [],
+        "confidence": 0.9,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6132,
+          "output_tokens": 334
+        },
+        "latency_seconds": 4.200418614782393
+      },
+      "surrogate_verdict": "PASS",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 5992,
+        "output_tokens": 1
+      },
+      "latency_seconds": 0.6703136516734958,
+      "development_evidence": null
+    },
+    {
+      "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "level": 2,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_466",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "C",
+      "parsed": "C",
+      "score": 0.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.87,\n  \"diagnosis\": [\n    \"The answer uses the required single-letter format, but the supplied sensor values and acronym mapping do not provide enough information to distinguish among the three robot models.\",\n    \"Selecting option C is unsupported by the task input.\"\n  ],\n  \"failed_checks\": [\n    \"unsupported assumptions\"\n  ]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.87,
+          "diagnosis": [
+            "The answer uses the required single-letter format, but the supplied sensor values and acronym mapping do not provide enough information to distinguish among the three robot models.",
+            "Selecting option C is unsupported by the task input."
+          ],
+          "failed_checks": [
+            "unsupported assumptions"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The answer uses the required single-letter format, but the supplied sensor values and acronym mapping do not provide enough information to distinguish among the three robot models.",
+          "Selecting option C is unsupported by the task input."
+        ],
+        "failed_checks": [
+          "unsupported assumptions"
+        ],
+        "confidence": 0.87,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 4288,
+          "output_tokens": 605
+        },
+        "latency_seconds": 7.135735271498561
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 4148,
+        "output_tokens": 1
+      },
+      "latency_seconds": 0.7268217885866761,
+      "development_evidence": null
+    },
+    {
+      "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "f94cbb5c-9b75-4684-884d-8b5ab483f3ee",
+      "answer_format": "scalar_range",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "1800",
+      "parsed": 1800.0,
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.96,\n  \"diagnosis\": [\n    \"Timestamp 1800 lies within a long stationary segment with nearly constant position, speed, and effort values, not the apparent later interaction/payload phase.\"\n  ],\n  \"failed_checks\": [\n    \"operator/phase isolation\"\n  ]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.96,
+          "diagnosis": [
+            "Timestamp 1800 lies within a long stationary segment with nearly constant position, speed, and effort values, not the apparent later interaction/payload phase."
+          ],
+          "failed_checks": [
+            "operator/phase isolation"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "Timestamp 1800 lies within a long stationary segment with nearly constant position, speed, and effort values, not the apparent later interaction/payload phase."
+        ],
+        "failed_checks": [
+          "operator/phase isolation"
+        ],
+        "confidence": 0.96,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 10044,
+          "output_tokens": 550
+        },
+        "latency_seconds": 6.585737047716975
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 9910,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.1457188511267304,
+      "development_evidence": null
+    },
+    {
+      "id": "138f1721-16e4-4189-8d29-80967dc83807",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "9cf37c0b-7f4e-4566-ac2c-78b54f556f46",
+      "answer_format": "scalar_range",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "3671",
+      "parsed": 3671.0,
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.95,\n  \"diagnosis\": [\n    \"A 41-timestep window beginning at timestamp 3671 would require 41 rows from that point, but only 23 timesteps remain in the supplied series.\"\n  ],\n  \"failed_checks\": [\n    \"temporal window interpretation\",\n    \"unsupported assumption\"\n  ]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.95,
+          "diagnosis": [
+            "A 41-timestep window beginning at timestamp 3671 would require 41 rows from that point, but only 23 timesteps remain in the supplied series."
+          ],
+          "failed_checks": [
+            "temporal window interpretation",
+            "unsupported assumption"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "A 41-timestep window beginning at timestamp 3671 would require 41 rows from that point, but only 23 timesteps remain in the supplied series."
+        ],
+        "failed_checks": [
+          "temporal window interpretation",
+          "unsupported assumption"
+        ],
+        "confidence": 0.95,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 13373,
+          "output_tokens": 1973
+        },
+        "latency_seconds": 19.568606599234045
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 13239,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.158909149467945,
+      "development_evidence": null
+    },
+    {
+      "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "04b1d79c-4221-407d-9c69-f23f2b64c5ae",
+      "answer_format": "four_letter_tf",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "TFTF",
+      "parsed": "TFTF",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\"verdict\":\"FAIL\",\"confidence\":0.99,\"diagnosis\":[\"The second character is incorrect: after the event, no joint sweeps more than 62 degrees; the joint position changes are all far below that threshold. The third character is also incorrect because joint mean speed magnitudes do drop to 51% or less of their pre-event means.\",\"The likely applicable pattern is TFFF, not TFTF.\"],\"failed_checks\":[\"operator application\",\"threshold comparison\",\"multi-element output correctness\"]}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.99,
+          "diagnosis": [
+            "The second character is incorrect: after the event, no joint sweeps more than 62 degrees; the joint position changes are all far below that threshold. The third character is also incorrect because joint mean speed magnitudes do drop to 51% or less of their pre-event means.",
+            "The likely applicable pattern is TFFF, not TFTF."
+          ],
+          "failed_checks": [
+            "operator application",
+            "threshold comparison",
+            "multi-element output correctness"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The second character is incorrect: after the event, no joint sweeps more than 62 degrees; the joint position changes are all far below that threshold. The third character is also incorrect because joint mean speed magnitudes do drop to 51% or less of their pre-event means.",
+          "The likely applicable pattern is TFFF, not TFTF."
+        ],
+        "failed_checks": [
+          "operator application",
+          "threshold comparison",
+          "multi-element output correctness"
+        ],
+        "confidence": 0.99,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 26321,
+          "output_tokens": 1139
+        },
+        "latency_seconds": 11.641591196879745
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 26177,
+        "output_tokens": 3
+      },
+      "latency_seconds": 8.594091790728271,
+      "development_evidence": null
+    },
+    {
+      "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "fbeefcfd-fd77-401d-9baf-25195f0477a4",
+      "answer_format": "four_letter_tf",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "FFFF",
+      "parsed": "FFFF",
+      "score": 0.5,
+      "chance": 0.5,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.97,\n  \"diagnosis\": [\n    \"Option B is true: immediately after the event, the mean absolute joint tracking error from commanded-versus-measured positions and speeds exceeds 0.1852, so the answer cannot be FFFF.\",\n    \"Option C also does not hold at the event-following timestep because the TCP tracking deviations exceed the stated 0.0033 bound.\"\n  ],\n  \"failed_checks\": [\n    \"operator application\",\n    \"threshold comparison\",\n    \"multi-element output correctness\"\n  ]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.97,
+          "diagnosis": [
+            "Option B is true: immediately after the event, the mean absolute joint tracking error from commanded-versus-measured positions and speeds exceeds 0.1852, so the answer cannot be FFFF.",
+            "Option C also does not hold at the event-following timestep because the TCP tracking deviations exceed the stated 0.0033 bound."
+          ],
+          "failed_checks": [
+            "operator application",
+            "threshold comparison",
+            "multi-element output correctness"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "Option B is true: immediately after the event, the mean absolute joint tracking error from commanded-versus-measured positions and speeds exceeds 0.1852, so the answer cannot be FFFF.",
+          "Option C also does not hold at the event-following timestep because the TCP tracking deviations exceed the stated 0.0033 bound."
+        ],
+        "failed_checks": [
+          "operator application",
+          "threshold comparison",
+          "multi-element output correctness"
+        ],
+        "confidence": 0.97,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 34672,
+          "output_tokens": 4531
+        },
+        "latency_seconds": 49.50250190123916
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 34531,
+        "output_tokens": 1
+      },
+      "latency_seconds": 2.291572544723749,
+      "development_evidence": null
+    },
+    {
+      "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "e18b779b-4f74-4d4d-b2ea-3d8a2d07b38d",
+      "answer_format": "four_letter_ranking",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "DCAB",
+      "parsed": "DCAB",
+      "score": 0.0,
+      "chance": 0.041666666666666664,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 1.0,\n  \"diagnosis\": [\n    \"The segments form a continuous chronological sequence C→D→A→B based on matching endpoint and start values, not D→C→A→B.\"\n  ],\n  \"failed_checks\": [\n    \"ranking/comparison\"\n  ]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 1.0,
+          "diagnosis": [
+            "The segments form a continuous chronological sequence C→D→A→B based on matching endpoint and start values, not D→C→A→B."
+          ],
+          "failed_checks": [
+            "ranking/comparison"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The segments form a continuous chronological sequence C→D→A→B based on matching endpoint and start values, not D→C→A→B."
+        ],
+        "failed_checks": [
+          "ranking/comparison"
+        ],
+        "confidence": 1.0,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 7939,
+          "output_tokens": 555
+        },
+        "latency_seconds": 5.394279045984149
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 7799,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.2668531946837902,
+      "development_evidence": null
+    }
+  ]
+}

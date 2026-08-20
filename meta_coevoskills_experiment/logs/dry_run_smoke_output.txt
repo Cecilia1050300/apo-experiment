@@ -1,0 +1,101 @@
+========================================================================
+RUN PLAN — NO API CALL HAS BEEN MADE
+========================================================================
+{
+  "experiment": "meta_coevoskills_factorybench_l123",
+  "evaluation_label": "FactoryBench L1-L3 mixed-split evaluation",
+  "mode": "smoke",
+  "arms": [
+    "surrogate"
+  ],
+  "rounds": 1,
+  "models": {
+    "target": "gpt-4o-mini",
+    "verifier": "gpt-5.6-luna",
+    "rewriter": "gpt-5.6-luna"
+  },
+  "inference_settings": {
+    "target": {
+      "reasoning_mode": null,
+      "reasoning_effort": null,
+      "temperature": 0,
+      "seed": 0,
+      "max_completion_tokens": 2048
+    },
+    "verifier": {
+      "reasoning_mode": "standard",
+      "reasoning_effort": "high",
+      "max_output_tokens": 4096
+    },
+    "rewriter": {
+      "reasoning_mode": "pro",
+      "reasoning_effort": "xhigh",
+      "max_output_tokens": 8192
+    }
+  },
+  "reasoning": {
+    "verifier": {
+      "mode": "standard",
+      "effort": "high"
+    },
+    "rewriter": {
+      "mode": "pro",
+      "effort": "xhigh"
+    }
+  },
+  "concurrency": 1,
+  "fold_schedule": [
+    {
+      "round": 1,
+      "optimization": "A",
+      "validation": "B"
+    }
+  ],
+  "sample_levels": [
+    1,
+    2,
+    3
+  ],
+  "manifests": {
+    "A": {
+      "path": "/home/training/automatic_prompt_engineer/meta_coevoskills_experiment/manifests/dev_fold_a.json",
+      "sha256": "fa34802b22cec32df90e59ac3db64b952c35706ef998d70f013d6298affbaec1"
+    },
+    "B": {
+      "path": "/home/training/automatic_prompt_engineer/meta_coevoskills_experiment/manifests/dev_fold_b.json",
+      "sha256": "95cec7a9285b7c079c8f6e243fcdfca23990c79e3c0606f606250c19e05e327c"
+    },
+    "holdout": {
+      "path": "/home/training/automatic_prompt_engineer/meta_coevoskills_experiment/manifests/holdout.json",
+      "sha256": "c1a6a29ad240a2585f2dcda7d3332924f43085a95d510dab4b9a2980cead2082"
+    }
+  },
+  "frozen_artifacts": {
+    "config_sha256": "6d4ddd59c232d49df021c5010f3b552c751ab76ca229150e772bde9bebd6296c",
+    "runner_sha256": "685d4ad3ba88a0361bd0cd772e376813c173ec622e3eab1f8524beb8adc7d9f2",
+    "skill_v0_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verifier_prompt_sha256": "451f884e66f401f230ca5db15951129bc0c32248d901d0c2f227ffc78d483798",
+    "verifier_schema_sha256": "f703847fa6ac04bb9869abf13f131b59b4e286c69d35602e8d75c39dc6b628ff",
+    "rewriter_prompt_sha256": "ca7368ad588f535f7399a495aa0e675b2a9c91e016b3d06d9b703ec8d7cdb66c",
+    "rewriter_schema_sha256": "accae1c719ad5a51a3d1b6aab8dac4df37288d98b4fc0ff6ac04a7611452b699",
+    "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+    "repository_git_commit_at_design": "f234110632683c9602d21b6c9974900792b3fffa"
+  },
+  "output_directory": "/home/training/automatic_prompt_engineer/meta_coevoskills_experiment/runs/smoke",
+  "http_policy": {
+    "max_retries": 0,
+    "timeout_seconds": 180
+  },
+  "calls": {
+    "target": 6,
+    "verifier": 3,
+    "rewriter": 1,
+    "maximum_total": 10
+  },
+  "holdout_calls": 0,
+  "checkpoint_policy": "atomic per-call checkpoints; --resume reuses completed calls",
+  "holdout_policy": "measurement only; never enters verifier, aggregation, or rewriter input"
+}
+PLAN_SHA256=ccdacd63327de18aa5698fc3c1ceea68e4219cc7253957008cba2518550cdb0a
+Execution requires both --execute-paid and this exact --plan-sha256 value.
+RUN PLAN only: stopped before paid API calls

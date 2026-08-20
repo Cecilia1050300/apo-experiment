@@ -1,0 +1,38 @@
+{
+  "all_episodes_disjoint": true,
+  "all_ids_disjoint": true,
+  "api_model_validation": "local exact-config validation; no API call",
+  "api_models": {
+    "rewriter": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "xhigh",
+      "reasoning_mode": "pro"
+    },
+    "target": {
+      "model": "gpt-4o-mini",
+      "reasoning_effort": null,
+      "reasoning_mode": null
+    },
+    "verifier": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "reasoning_mode": "standard"
+    }
+  },
+  "counts": {
+    "A": 3,
+    "B": 3,
+    "holdout": 9
+  },
+  "frozen_m1_hashes_verified": 9,
+  "levels": [
+    1,
+    2,
+    3
+  ],
+  "mixed_split_warning": "FactoryBench L1-L3 mixed-split evaluation: L1 test plus L2/L3 validation; not a pure validation score.",
+  "skill_v0_byte_identical": true,
+  "skill_v0_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_items_verified": 15,
+  "status": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "arm": "surrogate_static",
+  "task_name": "m1_factorybench_l123",
+  "decision": "ADAPTER",
+  "selected_candidate": "adapter_v1",
+  "selected_adapter_sha256": "4b819fe1efaa70023df048cce07a0ed0be42769a44de4a8c38ffa77a5d067b3a",
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "optimizer_model": "gpt-5.6-luna"
+  },
+  "candidates": [
+    {
+      "candidate": "adapter_v1",
+      "eligible": true,
+      "reasons": [],
+      "fold_a_score": 0.4444444444444445,
+      "fold_b_score": 0.0,
+      "macro_score": 0.22222222222222224,
+      "minimum_fold_score": 0.0,
+      "worst_subgroup_score": 0.0,
+      "parse_failures": 0,
+      "adapter_sha256": "4b819fe1efaa70023df048cce07a0ed0be42769a44de4a8c38ffa77a5d067b3a",
+      "adapter_bytes": 1111
+    }
+  ]
+}
