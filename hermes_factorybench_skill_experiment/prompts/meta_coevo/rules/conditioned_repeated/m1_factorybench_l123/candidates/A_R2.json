@@ -1,0 +1,11 @@
+{
+  "rule_id": "A_R2",
+  "category": "event-relative proposition evaluation",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "For each event-relative proposition, separately identify its pre-event baseline, post-event interval, aggregation, comparison direction, and threshold before deciding its truth value.",
+  "rationale": "The failed multi-claim answer indicates that event-relative operators and proposition-specific statistical conditions must be applied precisely rather than treated as one shared test.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

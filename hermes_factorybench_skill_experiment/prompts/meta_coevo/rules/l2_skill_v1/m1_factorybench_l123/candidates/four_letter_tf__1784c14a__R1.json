@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__1784c14a__R1",
+  "source_case_id": "1784c14a-b596-4e85-920e-abcbb5230241",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "temporal comparison",
+  "rule_text": "Locate the event transition, then evaluate each option only over the explicitly stated post-event interval and compare it with the relevant pre-event baseline when the option specifies a relative change.",
+  "rationale": "This prevents mixing pre-event behavior with post-event behavior and supports correct interpretation of claims about drops, increases, or subsequent motion."
+}

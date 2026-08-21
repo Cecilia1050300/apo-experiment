@@ -1,0 +1,31 @@
+{
+  "experiment": "l2_skill_evolution_v1",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "fold_a_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/data_manifests/meta_m1/factorybench_l2_skill_dev_fold_a.json",
+  "fold_b_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/data_manifests/meta_m1/factorybench_l2_skill_dev_fold_b.json",
+  "holdout_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/data_manifests/meta_m1/factorybench_l2_skill_holdout.json",
+  "fold_a_sha256": "5255c7cd18013377b08b87dd955e35388186bb4e37aa2f7ba1c87eb182a32fad",
+  "fold_b_sha256": "c2bf21d4856d94b75a5d39bd4f3c63bab6ae3f94c752fbbdff5f389e667041df",
+  "holdout_sha256": "ad9d5dcbea7e4781875c10a69ab47cf341a839b4d5014ad4b764d84aac798789",
+  "development_case_count": 16,
+  "holdout_case_count": 50,
+  "development_format_counts": {
+    "four_letter_tf": 8,
+    "scalar_range": 8
+  },
+  "holdout_format_counts": {
+    "four_letter_tf": 20,
+    "scalar_range": 30
+  },
+  "excluded_prior_manifests": {
+    "factorybench_l123_dev_fold_a.json": 3,
+    "factorybench_l123_dev_fold_b.json": 3,
+    "factorybench_l123_holdout.json": 9,
+    "factorybench_l1_external_test_v1.json": 50,
+    "factorybench_l2_cross_level_test_v1.json": 50
+  },
+  "holdout_feedback_allowed": false,
+  "holdout_rule_generation_allowed": false,
+  "holdout_rule_selection_allowed": false,
+  "holdout_skill_revision_allowed": false
+}

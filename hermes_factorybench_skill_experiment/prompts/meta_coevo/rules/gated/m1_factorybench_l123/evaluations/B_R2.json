@@ -1,0 +1,23 @@
+{
+  "eligible": false,
+  "reasons": [
+    "source fold regression",
+    "source critical format regression: scalar_range"
+  ],
+  "source_baseline_score": 0.4,
+  "source_candidate_score": 0.19999999999999998,
+  "source_delta": -0.20000000000000004,
+  "target_baseline_score": 0.22222222222222224,
+  "target_candidate_score": 0.4444444444444445,
+  "target_delta": 0.22222222222222224,
+  "macro_baseline": 0.3111111111111111,
+  "macro_candidate": 0.32222222222222224,
+  "macro_delta": 0.011111111111111127,
+  "candidate_bytes": 369,
+  "rule_id": "B_R2",
+  "source_fold": "B",
+  "target_fold": "A",
+  "rule_text": "For multi-statement outputs, evaluate each statement independently using its own stated event interval, aggregation, comparison direction, and threshold, then preserve the statements' original order.",
+  "source_result_condition": "rule_B_R2_fold_b",
+  "target_result_condition": "rule_B_R2_fold_a"
+}

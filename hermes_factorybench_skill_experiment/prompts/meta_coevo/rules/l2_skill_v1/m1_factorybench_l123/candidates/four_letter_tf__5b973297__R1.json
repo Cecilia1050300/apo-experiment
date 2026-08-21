@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__5b973297__R1",
+  "source_case_id": "5b973297-200e-461c-ba03-207ebe4a298a",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "output validation",
+  "rule_text": "Before submitting, verify that the response is exactly four characters long and that every character is either F or T, with no spaces, punctuation, or other letters.",
+  "rationale": "This directly prevents invalid four-letter outputs and applies to every task using the four_letter_tf format."
+}

@@ -1,0 +1,8 @@
+{
+  "rule_id": "A_R2",
+  "category": "event windows",
+  "rule_text": "Translate phrases such as 'following the event' into an explicit post-event observation window, and use only that window when computing post-event means or comparing pre- and post-event behavior.",
+  "rationale": "A multi-statement event analysis failed on temporal-window interpretation, indicating that the post-event interval was not consistently isolated before evaluating claims.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

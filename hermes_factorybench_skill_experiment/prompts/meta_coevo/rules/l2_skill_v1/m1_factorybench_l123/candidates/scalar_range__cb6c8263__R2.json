@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__cb6c8263__R2",
+  "source_case_id": "cb6c8263-4904-437a-92d4-2002fe5ac374",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "window validation",
+  "rule_text": "Use the timestamp of that phase onset as the window start and verify that the fixed-length window contains the required number of sequential observations.",
+  "rationale": "This aligns the scalar with the beginning of the requested phase and avoids choosing a visually plausible timestamp that only marks a transition within or after the window."
+}

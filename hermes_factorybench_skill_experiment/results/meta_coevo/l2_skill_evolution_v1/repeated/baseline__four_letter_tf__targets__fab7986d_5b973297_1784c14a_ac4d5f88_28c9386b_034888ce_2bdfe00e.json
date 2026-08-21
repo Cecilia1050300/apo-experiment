@@ -1,0 +1,830 @@
+{
+  "condition": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e",
+  "repeat_count": 5,
+  "item_count_per_run": 7,
+  "ordered_ids": [
+    "fab7986d-d069-43c4-a400-93242bef00e0",
+    "5b973297-200e-461c-ba03-207ebe4a298a",
+    "1784c14a-b596-4e85-920e-abcbb5230241",
+    "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+    "28c9386b-ac84-414a-b45b-25160a5d7546",
+    "034888ce-8051-4a72-8700-e541a67d3d4a",
+    "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+  ],
+  "scores": [
+    -0.2857142857142857,
+    -0.2142857142857143,
+    -0.0714285714285714,
+    -0.0714285714285714,
+    -0.3571428571428571
+  ],
+  "mean_score": -0.19999999999999998,
+  "median_score": -0.2142857142857143,
+  "min_score": -0.3571428571428571,
+  "max_score": -0.0714285714285714,
+  "mean_by_format": {
+    "four_letter_tf": -0.19999999999999998
+  },
+  "runs": [
+    {
+      "run_label": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e_run_1",
+      "item_count": 7,
+      "ordered_ids": [
+        "fab7986d-d069-43c4-a400-93242bef00e0",
+        "5b973297-200e-461c-ba03-207ebe4a298a",
+        "1784c14a-b596-4e85-920e-abcbb5230241",
+        "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+        "28c9386b-ac84-414a-b45b-25160a5d7546",
+        "034888ce-8051-4a72-8700-e541a67d3d4a",
+        "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+      ],
+      "fixed_cardinality_score": -0.2857142857142857,
+      "parse_failures": 1,
+      "by_format": {
+        "four_letter_tf": -0.2857142857142857
+      },
+      "items": [
+        {
+          "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16180,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7508588740602136,
+          "skill_active": false
+        },
+        {
+          "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TFFT",
+          "parsed": "TFFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 17280,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6625892706215382,
+          "skill_active": false
+        },
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFTF",
+          "parsed": "FFTF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18025,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.8127892771735787,
+          "skill_active": false
+        },
+        {
+          "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": null,
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7000397136434913,
+          "skill_active": false
+        },
+        {
+          "id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 8994,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6396907083690166,
+          "skill_active": false
+        },
+        {
+          "id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFFT",
+          "parsed": "FFFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 10372,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7702256571501493,
+          "skill_active": false
+        },
+        {
+          "id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FNTF",
+          "parsed": null,
+          "score": null,
+          "chance": 0.5,
+          "parse_error": "expected 4 T/F chars, got 'FNTF'",
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16455,
+            "output_tokens": 3
+          },
+          "latency_seconds": 0.6264206618070602,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e_run_2",
+      "item_count": 7,
+      "ordered_ids": [
+        "fab7986d-d069-43c4-a400-93242bef00e0",
+        "5b973297-200e-461c-ba03-207ebe4a298a",
+        "1784c14a-b596-4e85-920e-abcbb5230241",
+        "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+        "28c9386b-ac84-414a-b45b-25160a5d7546",
+        "034888ce-8051-4a72-8700-e541a67d3d4a",
+        "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+      ],
+      "fixed_cardinality_score": -0.2142857142857143,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.2142857142857143
+      },
+      "items": [
+        {
+          "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16180,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6643911302089691,
+          "skill_active": false
+        },
+        {
+          "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 17280,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.8622065139934421,
+          "skill_active": false
+        },
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTTT",
+          "parsed": "FTTT",
+          "score": 0.0,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18025,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7044030278921127,
+          "skill_active": false
+        },
+        {
+          "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": null,
+          "answer_format": "four_letter_tf",
+          "raw_output": "TTFT",
+          "parsed": "TTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.9734010994434357,
+          "skill_active": false
+        },
+        {
+          "id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TFTF",
+          "parsed": "TFTF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 8994,
+            "output_tokens": 3
+          },
+          "latency_seconds": 0.58854397572577,
+          "skill_active": false
+        },
+        {
+          "id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TTFT",
+          "parsed": "TTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 10372,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7199951764196157,
+          "skill_active": false
+        },
+        {
+          "id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTTT",
+          "parsed": "FTTT",
+          "score": 1.0,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16455,
+            "output_tokens": 3
+          },
+          "latency_seconds": 0.7054679291322827,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e_run_3",
+      "item_count": 7,
+      "ordered_ids": [
+        "fab7986d-d069-43c4-a400-93242bef00e0",
+        "5b973297-200e-461c-ba03-207ebe4a298a",
+        "1784c14a-b596-4e85-920e-abcbb5230241",
+        "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+        "28c9386b-ac84-414a-b45b-25160a5d7546",
+        "034888ce-8051-4a72-8700-e541a67d3d4a",
+        "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+      ],
+      "fixed_cardinality_score": -0.0714285714285714,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.0714285714285714
+      },
+      "items": [
+        {
+          "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFFT",
+          "parsed": "FFFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16180,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.9427386522293091,
+          "skill_active": false
+        },
+        {
+          "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 17280,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7280717324465513,
+          "skill_active": false
+        },
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFTT",
+          "parsed": "FFTT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18025,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7406648863106966,
+          "skill_active": false
+        },
+        {
+          "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": null,
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTTT",
+          "parsed": "FTTT",
+          "score": 0.75,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7940176706761122,
+          "skill_active": false
+        },
+        {
+          "id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TFFT",
+          "parsed": "TFFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 8994,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6629155836999416,
+          "skill_active": false
+        },
+        {
+          "id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TTFT",
+          "parsed": "TTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 10372,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.2926620421931148,
+          "skill_active": false
+        },
+        {
+          "id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFFT",
+          "parsed": "FFFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16455,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.641049899160862,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e_run_4",
+      "item_count": 7,
+      "ordered_ids": [
+        "fab7986d-d069-43c4-a400-93242bef00e0",
+        "5b973297-200e-461c-ba03-207ebe4a298a",
+        "1784c14a-b596-4e85-920e-abcbb5230241",
+        "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+        "28c9386b-ac84-414a-b45b-25160a5d7546",
+        "034888ce-8051-4a72-8700-e541a67d3d4a",
+        "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+      ],
+      "fixed_cardinality_score": -0.0714285714285714,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.0714285714285714
+      },
+      "items": [
+        {
+          "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFF",
+          "parsed": "FTFF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16180,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.703939869068563,
+          "skill_active": false
+        },
+        {
+          "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFFT",
+          "parsed": "FFFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 17280,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.0429780799895525,
+          "skill_active": false
+        },
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TTFT",
+          "parsed": "TTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18025,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.0491437716409564,
+          "skill_active": false
+        },
+        {
+          "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": null,
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6528073502704501,
+          "skill_active": false
+        },
+        {
+          "id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 8994,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.118118517100811,
+          "skill_active": false
+        },
+        {
+          "id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TFTF",
+          "parsed": "TFTF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 10372,
+            "output_tokens": 3
+          },
+          "latency_seconds": 0.6040089996531606,
+          "skill_active": false
+        },
+        {
+          "id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFF",
+          "parsed": "FTFF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16455,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7459216676652431,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__four_letter_tf__targets__fab7986d_5b973297_1784c14a_ac4d5f88_28c9386b_034888ce_2bdfe00e_run_5",
+      "item_count": 7,
+      "ordered_ids": [
+        "fab7986d-d069-43c4-a400-93242bef00e0",
+        "5b973297-200e-461c-ba03-207ebe4a298a",
+        "1784c14a-b596-4e85-920e-abcbb5230241",
+        "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+        "28c9386b-ac84-414a-b45b-25160a5d7546",
+        "034888ce-8051-4a72-8700-e541a67d3d4a",
+        "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+      ],
+      "fixed_cardinality_score": -0.3571428571428571,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.3571428571428571
+      },
+      "items": [
+        {
+          "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16180,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.049379663541913,
+          "skill_active": false
+        },
+        {
+          "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFFT",
+          "parsed": "FFFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 17280,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.4460212923586369,
+          "skill_active": false
+        },
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18025,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.3433255478739738,
+          "skill_active": false
+        },
+        {
+          "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": null,
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 147,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.5546657396480441,
+          "skill_active": false
+        },
+        {
+          "id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFF",
+          "parsed": "FTFF",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 8994,
+            "output_tokens": 2
+          },
+          "latency_seconds": 1.43772775772959,
+          "skill_active": false
+        },
+        {
+          "id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 10372,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.645978158339858,
+          "skill_active": false
+        },
+        {
+          "id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "TFFT",
+          "parsed": "TFFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 16455,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6323561407625675,
+          "skill_active": false
+        }
+      ]
+    }
+  ]
+}

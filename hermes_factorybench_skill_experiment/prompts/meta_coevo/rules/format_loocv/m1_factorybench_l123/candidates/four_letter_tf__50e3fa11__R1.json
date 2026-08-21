@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__50e3fa11__R1",
+  "source_case_id": "50e3fa11-63ec-4e98-97e0-9bd2544af9be",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "metric computation",
+  "rule_text": "For each option, compute the explicitly specified pre-event, post-event, mean, peak, final, magnitude, absolute, summed, or joint-level quantity before applying its threshold; do not substitute a related statistic.",
+  "rationale": "The source failure involved applying the wrong operator or aggregation, such as confusing signed values with magnitudes or checking an individual value instead of the requested mean or joint-level condition."
+}

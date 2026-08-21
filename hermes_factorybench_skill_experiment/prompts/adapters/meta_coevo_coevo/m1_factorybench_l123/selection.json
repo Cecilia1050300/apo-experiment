@@ -1,0 +1,31 @@
+{
+  "arm": "coevo",
+  "task_name": "m1_factorybench_l123",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "baseline",
+  "selected_adapter_sha256": null,
+  "m1_sha256": "78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "optimizer_model": "gpt-5.6-luna"
+  },
+  "candidates": [
+    {
+      "candidate": "adapter_v1",
+      "eligible": false,
+      "reasons": [
+        "fold A regression",
+        "critical format regression"
+      ],
+      "fold_a_score": -0.22222222222222224,
+      "fold_b_score": 0.0,
+      "macro_score": -0.11111111111111112,
+      "minimum_fold_score": -0.22222222222222224,
+      "worst_subgroup_score": -0.3333333333333333,
+      "parse_failures": 0,
+      "adapter_sha256": "2f568c72d2be637bb84a66d3ec9e8e5c79c513e7e7b1b44d8ea015c4288cda8d",
+      "adapter_bytes": 943
+    }
+  ]
+}

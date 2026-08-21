@@ -1,0 +1,8 @@
+{
+  "rule_id": "B_R3",
+  "category": "metric semantics",
+  "rule_text": "When a claim specifies a mean, magnitude, absolute deviation, or summed error, compute that exact metric over the specified pre- or post-event interval before judging the claim.",
+  "rationale": "The failed multi-element judgment indicates that raw signal behavior was not consistently converted into the metric and interval explicitly requested by the proposition.",
+  "source_failure_count": 1,
+  "source_fold": "B"
+}

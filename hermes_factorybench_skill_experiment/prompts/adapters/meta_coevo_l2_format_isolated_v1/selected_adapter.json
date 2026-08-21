@@ -1,0 +1,14 @@
+{
+  "experiment": "l2_format_isolated_v1",
+  "selection_unit": "answer_format",
+  "decision": "NO_ADAPTER",
+  "rules": [],
+  "active_formats": [],
+  "source_accepted_rule_ids": [
+    "four_letter_tf__28c9386b__R1",
+    "scalar_range__9816a8be__R2",
+    "scalar_range__f0b1ee65__R1",
+    "scalar_range__f0b1ee65__R2"
+  ],
+  "holdout_feedback_used": false
+}

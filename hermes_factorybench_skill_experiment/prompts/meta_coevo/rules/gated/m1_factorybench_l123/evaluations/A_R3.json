@@ -1,0 +1,26 @@
+{
+  "eligible": false,
+  "reasons": [
+    "source fold regression",
+    "target fold regression",
+    "no strict opposite-fold gain",
+    "source critical format regression: single_letter_mcq",
+    "target critical format regression: four_letter_tf"
+  ],
+  "source_baseline_score": 0.22222222222222224,
+  "source_candidate_score": -0.22222222222222224,
+  "source_delta": -0.4444444444444445,
+  "target_baseline_score": 0.4,
+  "target_candidate_score": 0.3,
+  "target_delta": -0.10000000000000003,
+  "macro_baseline": 0.3111111111111111,
+  "macro_candidate": 0.038888888888888876,
+  "macro_delta": -0.27222222222222225,
+  "candidate_bytes": 383,
+  "rule_id": "A_R3",
+  "source_fold": "A",
+  "target_fold": "B",
+  "rule_text": "Evaluate each threshold statement using the specified aggregation, absolute-value convention, and inequality direction, then assign its Boolean result independently without letting other propositions influence it.",
+  "source_result_condition": "rule_A_R3_fold_a",
+  "target_result_condition": "rule_A_R3_fold_b"
+}

@@ -1,0 +1,62 @@
+{
+  "condition": "baseline_fold_b__formats__scalar_margin",
+  "repeat_count": 5,
+  "answer_formats": [
+    "scalar_margin"
+  ],
+  "item_count_per_run": 0,
+  "ordered_ids": [],
+  "scores": [],
+  "mean_score": null,
+  "median_score": null,
+  "min_score": null,
+  "max_score": null,
+  "mean_by_format": {},
+  "runs": [
+    {
+      "run_label": "baseline_fold_b__formats__scalar_margin_run_1",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "baseline_fold_b__formats__scalar_margin_run_2",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "baseline_fold_b__formats__scalar_margin_run_3",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "baseline_fold_b__formats__scalar_margin_run_4",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "baseline_fold_b__formats__scalar_margin_run_5",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    }
+  ]
+}

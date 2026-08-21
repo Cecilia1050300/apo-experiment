@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__23c7a062__R2",
+  "source_case_id": "23c7a062-75c6-42fe-862d-1bac64964ffa",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "threshold comparison",
+  "rule_text": "Apply the option's comparison operator literally: mark a claim using 'more than' true only when the computed value is strictly greater than its threshold, and verify the relevant post-event interval before deciding.",
+  "rationale": "Explicit operator and interval checks reduce errors caused by treating approximate, pre-event, or merely nearby values as satisfying a strict post-event threshold."
+}

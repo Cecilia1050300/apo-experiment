@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__7e11ce79__R1",
+  "source_case_id": "7e11ce79-ad49-4bb1-a16f-8466e15347a8",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "window alignment",
+  "rule_text": "Identify the release event from the relevant force-signal change, then set the window start so that the event is the final observation of the fixed-length window, counting the event row as one timestep.",
+  "rationale": "This aligns the requested phase with the endpoint event while respecting the stated window length."
+}

@@ -1,0 +1,8 @@
+{
+  "rule_id": "B_R1",
+  "category": "temporal-window validation",
+  "rule_text": "Before accepting a forward-window start, count the supplied observations from that start and verify that the complete requested number of timesteps is available.",
+  "rationale": "A failed temporal-window check selected a series endpoint even though no full forward window could follow it.",
+  "source_failure_count": 1,
+  "source_fold": "B"
+}

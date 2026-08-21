@@ -1,0 +1,39 @@
+{
+  "manifest": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/data_manifests/meta_m1/factorybench_l1_external_test_v1.json",
+  "manifest_sha256": "34fcd83be643021f93a5331c9fd66e4e85dec7c8e1e3889230b2c3df0285d083",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "prior_used_unique_id_count": 15,
+  "l1_test_total": 1309,
+  "l1_unseen_total_before_external_selection": 1304,
+  "unseen_format_counts_before_selection": {
+    "four_letter_tf": 38,
+    "scalar_exact": 166,
+    "scalar_margin": 197,
+    "scalar_range": 540,
+    "single_letter_mcq": 363
+  },
+  "external_total": 50,
+  "external_format_counts": {
+    "four_letter_tf": 20,
+    "scalar_range": 30
+  },
+  "external_dataset_counts": {
+    "aursad": 10,
+    "factorywave": 19,
+    "unknown": 20,
+    "vorausad": 1
+  },
+  "external_template_counts": {
+    "1": 30,
+    "3": 20
+  },
+  "unique_episode_count": 31,
+  "remaining_unseen_active_format_reserve": {
+    "four_letter_tf": 18,
+    "scalar_range": 510
+  },
+  "overlap_with_prior_data": 0,
+  "leakage_audit_pass": true,
+  "selection_used_model_outputs": false,
+  "selection_used_gt_performance": false
+}

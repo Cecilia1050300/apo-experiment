@@ -1,0 +1,8 @@
+{
+  "experiment": "l2_format_isolated_v1",
+  "selection_summary_sha256": "67ec5f9e71d9d212c7c8cdabf8ee88801a4d1e65bd3fc1412e87d72efc3d4103",
+  "selected_adapter_sha256": "b52fe18b6707bf2812f49650ebbb1ef5a4e550fc1756fbf96c7d8a5592904e44",
+  "selected_formats": [],
+  "holdout_sha256": "ad9d5dcbea7e4781875c10a69ab47cf341a839b4d5014ad4b764d84aac798789",
+  "holdout_feedback_used": false
+}

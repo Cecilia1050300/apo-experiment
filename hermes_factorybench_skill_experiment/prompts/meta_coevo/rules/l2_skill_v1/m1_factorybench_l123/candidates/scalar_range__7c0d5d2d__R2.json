@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__7c0d5d2d__R2",
+  "source_case_id": "7c0d5d2d-3d28-4fad-917f-09a7a7a3ee89",
+  "source_fold": "A",
+  "answer_format": "scalar_range",
+  "category": "window validation",
+  "rule_text": "After selecting a candidate start, count the candidate row plus the next seven timestep rows and verify that all eight observations are available and remain within the tightening phase.",
+  "rationale": "A fixed-length window must contain exactly eight sampled observations; checking the complete span prevents choosing a phase boundary that does not represent the requested segment."
+}

@@ -1,0 +1,45 @@
+{
+  "arm": "format_stratified_loocv",
+  "task_name": "m1_factorybench_l123",
+  "rules": [
+    {
+      "rule_id": "G1",
+      "answer_format": "scalar_range",
+      "category": "window anchoring",
+      "rule_text": "Interpret a fixed-length window as a count of sampled rows and report the timestamp of its first row, not the timestamp of a salient transition occurring within the window.",
+      "provenance_rule_ids": [
+        "scalar_range__2653bd29__R1",
+        "scalar_range__fbe4ccd6__R1",
+        "scalar_range__fbe4ccd6__R2"
+      ]
+    },
+    {
+      "rule_id": "G2",
+      "answer_format": "scalar_range",
+      "category": "window validation",
+      "rule_text": "Count the required rows from each candidate start and choose the earliest candidate whose complete forward window captures the approach lead-up or requested phase without starting after it has begun.",
+      "provenance_rule_ids": [
+        "scalar_range__2653bd29__R2",
+        "scalar_range__fbe4ccd6__R2"
+      ]
+    },
+    {
+      "rule_id": "G3",
+      "answer_format": "four_letter_tf",
+      "category": "metric computation",
+      "rule_text": "For each option, compute the explicitly specified statistic or aggregation before applying its threshold; do not substitute a related quantity.",
+      "provenance_rule_ids": [
+        "four_letter_tf__50e3fa11__R1"
+      ]
+    },
+    {
+      "rule_id": "G4",
+      "answer_format": "four_letter_tf",
+      "category": "threshold logic",
+      "rule_text": "Evaluate each option independently using its stated inequality and quantifier, then emit one T/F character per option in listed order.",
+      "provenance_rule_ids": [
+        "four_letter_tf__50e3fa11__R2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "A_R1",
+  "category": "temporal offset lookup",
+  "answer_formats": [
+    "scalar_margin"
+  ],
+  "rule_text": "Translate T+offset into elapsed time from the prompt's reference point, select the requested feature at that relative time, and do not confuse the offset with an absolute timestamp or another row's value.",
+  "rationale": "The failure selected a value from a row whose timestamp numerically resembled the offset rather than evaluating the requested relative time and feature.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

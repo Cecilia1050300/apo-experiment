@@ -1,0 +1,34 @@
+{
+  "arm": "l2_skill_evolution_v1",
+  "task_name": "m1_factorybench_l123",
+  "rules": [
+    {
+      "rule_id": "G1",
+      "answer_format": "four_letter_tf",
+      "category": "threshold evaluation",
+      "rule_text": "Evaluate each option independently using the stated aggregation and apply the inequality exactly as written, distinguishing inclusive conditions such as \"<=\" from strict conditions such as \">\" or \"exceeds\".",
+      "provenance_rule_ids": [
+        "four_letter_tf__28c9386b__R1"
+      ]
+    },
+    {
+      "rule_id": "G2",
+      "answer_format": "scalar_range",
+      "category": "window alignment",
+      "rule_text": "After identifying the relevant sustained transition, return its earliest timestamp as the window start and verify that the complete requested number of consecutive observations remains within the supplied series.",
+      "provenance_rule_ids": [
+        "scalar_range__9816a8be__R2",
+        "scalar_range__f0b1ee65__R2"
+      ]
+    },
+    {
+      "rule_id": "G3",
+      "answer_format": "scalar_range",
+      "category": "phase onset detection",
+      "rule_text": "Identify the earliest timestamp where the robot's position or setpoint trajectory begins a sustained retreat from the bin, using coordinated directional changes across relevant axes rather than an isolated effort-signal fluctuation.",
+      "provenance_rule_ids": [
+        "scalar_range__f0b1ee65__R1"
+      ]
+    }
+  ]
+}

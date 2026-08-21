@@ -1,0 +1,102 @@
+{
+  "experiment": "l2_format_isolated_v1",
+  "stage": "development_only",
+  "method_note": "This protocol revision was designed after observing the prior L2 development NO_ADAPTER result. The frozen L2 holdout remained untouched during this selection.",
+  "prior_development_result_source": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/results/meta_coevo/l2_skill_evolution_v1/development/m1_factorybench_l123_summary.json",
+  "prior_accepted_rule_ids": [
+    "four_letter_tf__28c9386b__R1",
+    "scalar_range__9816a8be__R2",
+    "scalar_range__f0b1ee65__R1",
+    "scalar_range__f0b1ee65__R2"
+  ],
+  "format_results": {
+    "four_letter_tf": {
+      "rule_ids": [
+        "four_letter_tf__28c9386b__R1"
+      ],
+      "comparison": {
+        "baseline_scores": [
+          -0.1875,
+          -0.0625,
+          -0.1875,
+          -0.1875,
+          0.0
+        ],
+        "candidate_scores": [
+          -0.25,
+          -0.125,
+          -0.1875,
+          0.0625,
+          -0.25
+        ],
+        "baseline_mean": -0.125,
+        "candidate_mean": -0.15,
+        "mean_delta": -0.024999999999999994,
+        "baseline_median": -0.1875,
+        "candidate_median": -0.1875,
+        "median_delta": 0.0,
+        "all_pairs_non_regression_probability": 0.44,
+        "all_pairs_win_probability": 0.32,
+        "baseline_parse_failures": 0,
+        "candidate_parse_failures": 1,
+        "parse_non_regression": false,
+        "run_index_pairing_used": false
+      },
+      "criteria": {
+        "strict_mean_gain": false,
+        "nonreg_probability_ge_0_8": false,
+        "parse_failures_do_not_increase": false,
+        "format_selection_pass": false
+      }
+    },
+    "scalar_range": {
+      "rule_ids": [
+        "scalar_range__9816a8be__R2",
+        "scalar_range__f0b1ee65__R1",
+        "scalar_range__f0b1ee65__R2"
+      ],
+      "comparison": {
+        "baseline_scores": [
+          0.25,
+          0.25,
+          0.375,
+          0.25,
+          0.125
+        ],
+        "candidate_scores": [
+          0.125,
+          0.125,
+          0.0,
+          0.25,
+          0.0
+        ],
+        "baseline_mean": 0.25,
+        "candidate_mean": 0.1,
+        "mean_delta": -0.15,
+        "baseline_median": 0.25,
+        "candidate_median": 0.125,
+        "median_delta": -0.125,
+        "all_pairs_non_regression_probability": 0.24,
+        "all_pairs_win_probability": 0.04,
+        "baseline_parse_failures": 0,
+        "candidate_parse_failures": 0,
+        "parse_non_regression": true,
+        "run_index_pairing_used": false
+      },
+      "criteria": {
+        "strict_mean_gain": false,
+        "nonreg_probability_ge_0_8": false,
+        "parse_failures_do_not_increase": true,
+        "format_selection_pass": false
+      }
+    }
+  },
+  "selection": {
+    "decision": "NO_ADAPTER",
+    "selected_formats": [],
+    "selected_rule_ids": [],
+    "selected_adapter_path": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/prompts/adapters/meta_coevo_l2_format_isolated_v1/selected_adapter.json",
+    "selected_adapter_sha256": "b52fe18b6707bf2812f49650ebbb1ef5a4e550fc1756fbf96c7d8a5592904e44"
+  },
+  "holdout_used": false
+}

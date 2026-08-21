@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__ac4d5f88__R2",
+  "source_case_id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "semantic distinction",
+  "rule_text": "When comparing robot time series, distinguish different anomalous states from ordinary task or phase differences, and treat 'same task at different phases' as separate from performing different tasks.",
+  "rationale": "These comparisons can overlap superficially, so explicitly separating anomaly identity, task identity, and phase helps evaluate each statement consistently."
+}

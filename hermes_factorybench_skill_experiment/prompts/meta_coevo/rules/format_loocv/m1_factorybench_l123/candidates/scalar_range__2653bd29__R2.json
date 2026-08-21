@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__2653bd29__R2",
+  "source_case_id": "2653bd29-dd50-440e-8588-86bec72412b6",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "window validation",
+  "rule_text": "Count the required number of timesteps from each candidate start and prefer the earliest candidate that contains the approach lead-up and satisfies the full fixed-length window requirement.",
+  "rationale": "Checking window coverage and temporal ordering prevents choosing a later event timestamp that omits the preceding approach segment."
+}

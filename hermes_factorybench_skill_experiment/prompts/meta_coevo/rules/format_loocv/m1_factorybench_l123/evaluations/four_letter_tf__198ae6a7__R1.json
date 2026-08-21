@@ -1,0 +1,79 @@
+{
+  "rule_id": "four_letter_tf__198ae6a7__R1",
+  "source_case_id": "198ae6a7-f1c6-42f5-b6a3-5d058bdeb0e7",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "50e3fa11-63ec-4e98-97e0-9bd2544af9be"
+  ],
+  "eligible": false,
+  "reasons": [
+    "no positive same-format target mean gain",
+    "target non-regression rate too low"
+  ],
+  "rule_text": "Evaluate each option independently in A-to-D order, mark T only when the complete stated condition is satisfied, and concatenate the four truth values without reordering.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.0,
+      -1.0,
+      0.0,
+      0.5,
+      0.0
+    ],
+    "candidate_scores": [
+      0.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    "paired_deltas": [
+      0.0,
+      0.5,
+      0.0,
+      -0.5,
+      0.5
+    ],
+    "baseline_mean": -0.1,
+    "candidate_mean": 0.0,
+    "mean_delta": 0.1,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.4
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -1.0,
+      -1.0,
+      0.5,
+      0.0
+    ],
+    "candidate_scores": [
+      -1.0,
+      0.0,
+      -1.0,
+      0.5,
+      -1.0
+    ],
+    "paired_deltas": [
+      -0.5,
+      1.0,
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "baseline_mean": -0.4,
+    "candidate_mean": -0.5,
+    "mean_delta": -0.09999999999999998,
+    "baseline_median": -0.5,
+    "candidate_median": -1.0,
+    "median_delta": -0.5,
+    "non_regression_rate": 0.6,
+    "win_rate": 0.2
+  }
+}

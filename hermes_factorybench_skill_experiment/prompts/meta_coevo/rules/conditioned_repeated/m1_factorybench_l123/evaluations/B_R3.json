@@ -1,0 +1,78 @@
+{
+  "rule_id": "B_R3",
+  "source_fold": "B",
+  "target_fold": "A",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "For each proposition, inspect every sample in its stated post-event interval, apply the exact inequality direction and boundary condition, then assign its truth value independently in proposition order.",
+  "eligible": false,
+  "reasons": [
+    "no positive target mean gain",
+    "target non-regression rate too low"
+  ],
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -1.0,
+      0.0,
+      -0.5,
+      -1.0
+    ],
+    "candidate_scores": [
+      1.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.0
+    ],
+    "paired_deltas": [
+      1.5,
+      1.0,
+      -0.5,
+      0.5,
+      1.0
+    ],
+    "baseline_mean": -0.6,
+    "candidate_mean": 0.1,
+    "mean_delta": 0.7,
+    "baseline_median": -0.5,
+    "candidate_median": 0.0,
+    "median_delta": 0.5,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.8
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      0.5,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "candidate_scores": [
+      0.0,
+      -0.5,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "paired_deltas": [
+      0.5,
+      -1.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "baseline_mean": 0.2,
+    "candidate_mean": -0.3,
+    "mean_delta": -0.5,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.6,
+    "win_rate": 0.2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__28c9386b__R2",
+  "source_case_id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "trajectory integration",
+  "rule_text": "For accumulated joint path length, integrate the absolute speed over each timestamp interval using the actual time differences, convert angular-speed units to degrees when required, and compare the resulting total with the stated cutoff.",
+  "rationale": "Using sample counts instead of elapsed time, omitting unit conversion, or failing to take speed magnitudes can change the truth value of motion-accumulation statements."
+}

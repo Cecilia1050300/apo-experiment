@@ -1,0 +1,582 @@
+{
+  "arm": "coevo",
+  "task_name": "m1_factorybench_l123",
+  "partition": "holdout",
+  "condition": "baseline",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "optimizer_model": "gpt-5.6-luna"
+  },
+  "manifest_path": "data_manifests/meta_m1/factorybench_l123_holdout.json",
+  "manifest_sha256": "c1a6a29ad240a2585f2dcda7d3332924f43085a95d510dab4b9a2980cead2082",
+  "adapter_sha256": null,
+  "surrogate_prompt_path": "prompts/meta_coevo/verifiers/coevo/m1_factorybench_l123/selected_verifier.txt",
+  "surrogate_prompt_sha256": "1e1624c2ed47f826c045d113e2f599b9ada2c6b7f93949ee344675f15b34d29e",
+  "surrogate_static": true,
+  "core_prompt_used": false,
+  "ordered_ids": [
+    "aedd52a6-a510-417b-8de8-48177cdb1c02",
+    "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+    "60c9a20e-d082-491a-8e5c-1601fb71c367",
+    "3e594c96-8b27-405d-9af8-17334cf34ea3",
+    "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+    "138f1721-16e4-4189-8d29-80967dc83807",
+    "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+    "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+    "65c3d538-c526-4ecd-8dfd-99d9764df838"
+  ],
+  "item_count": 9,
+  "canonical_score": 0.24528301886792456,
+  "fixed_cardinality_score": 0.24528301886792456,
+  "parse_failures": 0,
+  "by_level": {
+    "1": 0.49999999999999994,
+    "2": 0.25,
+    "3": -0.021276595744680948
+  },
+  "by_format": {
+    "four_letter_ranking": -0.043478260869565216,
+    "four_letter_tf": 0.0,
+    "scalar_range": 0.0,
+    "single_letter_mcq": 0.625
+  },
+  "by_dataset": {
+    "aursad": 1.0,
+    "factorywave": 0.055118110236220465,
+    "vorausad": 1.0
+  },
+  "surrogate_summary": {
+    "valid_count": 9,
+    "parse_or_transport_failures": 0,
+    "agreement_rate": 0.5555555555555556,
+    "false_pass_count": 0,
+    "false_reject_count": 4,
+    "false_pass_rate_on_gt_fail": 0.0,
+    "false_reject_rate_on_gt_pass": 1.0
+  },
+  "tokens_used": {
+    "agent": {
+      "model": "gpt-4o-mini",
+      "input_tokens": 112206,
+      "output_tokens": 14,
+      "calls": 9
+    },
+    "surrogate": {
+      "model": "gpt-5.6-luna",
+      "input_tokens": 120020,
+      "output_tokens": 7473,
+      "calls": 9
+    }
+  },
+  "cost": {
+    "agent": 0.016839,
+    "surrogate": 0.712195,
+    "known_total": 0.7290340000000001
+  },
+  "wall_time_seconds": 96.19334472995251,
+  "items": [
+    {
+      "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "level": 1,
+      "split": "test",
+      "dataset": "aursad",
+      "episode": "experiment_2166",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.97,\n  \"diagnosis\": [\"The supplied six-axis position data show a generic robot trajectory but contain no identifying evidence that uniquely distinguishes UR3e from the KUKA or Agile Robots options.\"],\n  \"failed_checks\": [\"comparative_multiple_choice_discrimination\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.97,
+          "diagnosis": [
+            "The supplied six-axis position data show a generic robot trajectory but contain no identifying evidence that uniquely distinguishes UR3e from the KUKA or Agile Robots options."
+          ],
+          "failed_checks": [
+            "comparative_multiple_choice_discrimination"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The supplied six-axis position data show a generic robot trajectory but contain no identifying evidence that uniquely distinguishes UR3e from the KUKA or Agile Robots options."
+        ],
+        "failed_checks": [
+          "comparative_multiple_choice_discrimination"
+        ],
+        "confidence": 0.97,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6760,
+          "output_tokens": 184
+        },
+        "latency_seconds": 2.5461479546502233
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": true,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 5891,
+        "output_tokens": 1
+      },
+      "latency_seconds": 2.14725583139807,
+      "development_evidence": null
+    },
+    {
+      "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "14462b5b-4295-4cd6-b4cf-683cd65e4531",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "A",
+      "parsed": "A",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\"The supplied sensor data contains only six position feedback/setpoint trajectories and provides no robot-specific identifier or distinguishing evidence to uniquely select option A over B or C.\"],\n  \"failed_checks\": [\"comparative multiple-choice discrimination\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.98,
+          "diagnosis": [
+            "The supplied sensor data contains only six position feedback/setpoint trajectories and provides no robot-specific identifier or distinguishing evidence to uniquely select option A over B or C."
+          ],
+          "failed_checks": [
+            "comparative multiple-choice discrimination"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The supplied sensor data contains only six position feedback/setpoint trajectories and provides no robot-specific identifier or distinguishing evidence to uniquely select option A over B or C."
+        ],
+        "failed_checks": [
+          "comparative multiple-choice discrimination"
+        ],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6760,
+          "output_tokens": 198
+        },
+        "latency_seconds": 3.5366096263751388
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": true,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 5891,
+        "output_tokens": 1
+      },
+      "latency_seconds": 2.8440583907067776,
+      "development_evidence": null
+    },
+    {
+      "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "level": 1,
+      "split": "test",
+      "dataset": "factorywave",
+      "episode": "5b7c79b7-f97b-4a8c-bbf6-2ee1c384dcc2",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "C",
+      "parsed": "C",
+      "score": 0.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\"The six joint position time series contains no robot-specific identifier, units, limits, or distinctive feature that uniquely distinguishes option C from the other six-axis robot options.\"],\n  \"failed_checks\": [\"comparative-choice discrimination\", \"unsupported assumptions\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.98,
+          "diagnosis": [
+            "The six joint position time series contains no robot-specific identifier, units, limits, or distinctive feature that uniquely distinguishes option C from the other six-axis robot options."
+          ],
+          "failed_checks": [
+            "comparative-choice discrimination",
+            "unsupported assumptions"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The six joint position time series contains no robot-specific identifier, units, limits, or distinctive feature that uniquely distinguishes option C from the other six-axis robot options."
+        ],
+        "failed_checks": [
+          "comparative-choice discrimination",
+          "unsupported assumptions"
+        ],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 6665,
+          "output_tokens": 288
+        },
+        "latency_seconds": 3.8088381374254823
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 5796,
+        "output_tokens": 1
+      },
+      "latency_seconds": 1.0955361453816295,
+      "development_evidence": null
+    },
+    {
+      "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "level": 2,
+      "split": "validation",
+      "dataset": "vorausad",
+      "episode": "experiment_466",
+      "answer_format": "single_letter_mcq",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "B",
+      "parsed": "B",
+      "score": 1.0,
+      "chance": 0.3333333333333333,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\"The supplied sensor data and context do not uniquely identify option B; no robot-specific evidence distinguishes it from the other listed robots.\"],\n  \"failed_checks\": [\"comparative-choice discrimination\", \"unsupported assumptions\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.98,
+          "diagnosis": [
+            "The supplied sensor data and context do not uniquely identify option B; no robot-specific evidence distinguishes it from the other listed robots."
+          ],
+          "failed_checks": [
+            "comparative-choice discrimination",
+            "unsupported assumptions"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The supplied sensor data and context do not uniquely identify option B; no robot-specific evidence distinguishes it from the other listed robots."
+        ],
+        "failed_checks": [
+          "comparative-choice discrimination",
+          "unsupported assumptions"
+        ],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 4821,
+          "output_tokens": 273
+        },
+        "latency_seconds": 3.6658709198236465
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": true,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 3952,
+        "output_tokens": 1
+      },
+      "latency_seconds": 0.8325726259499788,
+      "development_evidence": null
+    },
+    {
+      "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "f94cbb5c-9b75-4684-884d-8b5ab483f3ee",
+      "answer_format": "scalar_range",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "3734",
+      "parsed": 3734.0,
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.99,\n  \"diagnosis\": [\"3734 is not a supplied timestamp, and the data after that point contains far fewer than the required 30 timestep observations for a complete window.\"],\n  \"failed_checks\": [\"format compliance\", \"complete-window requirement\", \"unsupported assumptions\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.99,
+          "diagnosis": [
+            "3734 is not a supplied timestamp, and the data after that point contains far fewer than the required 30 timestep observations for a complete window."
+          ],
+          "failed_checks": [
+            "format compliance",
+            "complete-window requirement",
+            "unsupported assumptions"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "3734 is not a supplied timestamp, and the data after that point contains far fewer than the required 30 timestep observations for a complete window."
+        ],
+        "failed_checks": [
+          "format compliance",
+          "complete-window requirement",
+          "unsupported assumptions"
+        ],
+        "confidence": 0.99,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 10577,
+          "output_tokens": 423
+        },
+        "latency_seconds": 5.54373762011528
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 9714,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.1852255556732416,
+      "development_evidence": null
+    },
+    {
+      "id": "138f1721-16e4-4189-8d29-80967dc83807",
+      "level": 2,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "9cf37c0b-7f4e-4566-ac2c-78b54f556f46",
+      "answer_format": "scalar_range",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "1035",
+      "parsed": 1035.0,
+      "score": 0.0,
+      "chance": 0.0,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.99,\n  \"diagnosis\": [\"The proposed start timestamp 1035 is not present in the supplied time series; interpolation or an unsupplied time origin is not requested.\"],\n  \"failed_checks\": [\"temporal_validity\", \"unsupported_assumptions\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.99,
+          "diagnosis": [
+            "The proposed start timestamp 1035 is not present in the supplied time series; interpolation or an unsupplied time origin is not requested."
+          ],
+          "failed_checks": [
+            "temporal_validity",
+            "unsupported_assumptions"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The proposed start timestamp 1035 is not present in the supplied time series; interpolation or an unsupplied time origin is not requested."
+        ],
+        "failed_checks": [
+          "temporal_validity",
+          "unsupported_assumptions"
+        ],
+        "confidence": 0.99,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 13906,
+          "output_tokens": 955
+        },
+        "latency_seconds": 10.049776799045503
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 13043,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.6336141666397452,
+      "development_evidence": null
+    },
+    {
+      "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "04b1d79c-4221-407d-9c69-f23f2b64c5ae",
+      "answer_format": "four_letter_tf",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "FTFT",
+      "parsed": "FTFT",
+      "score": 1.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "gt_pass": true,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\"The answer marks B and D true, but after the 2622 ms event no joint sweeps more than 62 degrees, and the summed joint position-plus-speed tracking deviation exceeds 0.1464 in the supplied post-event rows.\"],\n  \"failed_checks\": [\"arithmetic and logic\", \"operator semantics\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.98,
+          "diagnosis": [
+            "The answer marks B and D true, but after the 2622 ms event no joint sweeps more than 62 degrees, and the summed joint position-plus-speed tracking deviation exceeds 0.1464 in the supplied post-event rows."
+          ],
+          "failed_checks": [
+            "arithmetic and logic",
+            "operator semantics"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The answer marks B and D true, but after the 2622 ms event no joint sweeps more than 62 degrees, and the summed joint position-plus-speed tracking deviation exceeds 0.1464 in the supplied post-event rows."
+        ],
+        "failed_checks": [
+          "arithmetic and logic",
+          "operator semantics"
+        ],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 26853,
+          "output_tokens": 1989
+        },
+        "latency_seconds": 21.947496166452765
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": true,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 25981,
+        "output_tokens": 2
+      },
+      "latency_seconds": 2.6186600867658854,
+      "development_evidence": null
+    },
+    {
+      "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "fbeefcfd-fd77-401d-9baf-25195f0477a4",
+      "answer_format": "four_letter_tf",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "FTFT",
+      "parsed": "FTFT",
+      "score": 0.0,
+      "chance": 0.5,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.98,\n  \"diagnosis\": [\"Option D is not supported: the supplied post-event joint positions show no joint accumulating more than 100 degrees of path length; the answer marks D True.\"],\n  \"failed_checks\": [\"operator semantics\", \"arithmetic and logic\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.98,
+          "diagnosis": [
+            "Option D is not supported: the supplied post-event joint positions show no joint accumulating more than 100 degrees of path length; the answer marks D True."
+          ],
+          "failed_checks": [
+            "operator semantics",
+            "arithmetic and logic"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "Option D is not supported: the supplied post-event joint positions show no joint accumulating more than 100 degrees of path length; the answer marks D True."
+        ],
+        "failed_checks": [
+          "operator semantics",
+          "arithmetic and logic"
+        ],
+        "confidence": 0.98,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 35206,
+          "output_tokens": 1111
+        },
+        "latency_seconds": 12.909559878520668
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 34335,
+        "output_tokens": 2
+      },
+      "latency_seconds": 2.989503227174282,
+      "development_evidence": null
+    },
+    {
+      "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+      "level": 3,
+      "split": "validation",
+      "dataset": "factorywave",
+      "episode": "e18b779b-4f74-4d4d-b2ea-3d8a2d07b38d",
+      "answer_format": "four_letter_ranking",
+      "agent_model": "gpt-4o-mini",
+      "raw_output": "CADB",
+      "parsed": "CADB",
+      "score": 0.0,
+      "chance": 0.041666666666666664,
+      "parse_error": null,
+      "gt_pass": false,
+      "surrogate": {
+        "model": "gpt-5.6-luna",
+        "raw_output": "{\n  \"verdict\": \"FAIL\",\n  \"confidence\": 0.99,\n  \"diagnosis\": [\"The proposed ranking CADB violates the apparent temporal continuity of the segments: C transitions into D, D into A, and A into B, giving CDAB.\"],\n  \"failed_checks\": [\"ranking and continuity\", \"comparative multiple-choice discrimination\"]\n}",
+        "parsed": {
+          "verdict": "FAIL",
+          "confidence": 0.99,
+          "diagnosis": [
+            "The proposed ranking CADB violates the apparent temporal continuity of the segments: C transitions into D, D into A, and A into B, giving CDAB."
+          ],
+          "failed_checks": [
+            "ranking and continuity",
+            "comparative multiple-choice discrimination"
+          ]
+        },
+        "verdict": "FAIL",
+        "diagnosis": [
+          "The proposed ranking CADB violates the apparent temporal continuity of the segments: C transitions into D, D into A, and A into B, giving CDAB."
+        ],
+        "failed_checks": [
+          "ranking and continuity",
+          "comparative multiple-choice discrimination"
+        ],
+        "confidence": 0.99,
+        "parse_error": null,
+        "transport_error": null,
+        "usage": {
+          "input_tokens": 8472,
+          "output_tokens": 2052
+        },
+        "latency_seconds": 23.507469449192286
+      },
+      "surrogate_verdict": "FAIL",
+      "false_pass": false,
+      "false_reject": false,
+      "transport_error": null,
+      "usage": {
+        "input_tokens": 7603,
+        "output_tokens": 2
+      },
+      "latency_seconds": 1.6261023422703147,
+      "development_evidence": null
+    }
+  ]
+}

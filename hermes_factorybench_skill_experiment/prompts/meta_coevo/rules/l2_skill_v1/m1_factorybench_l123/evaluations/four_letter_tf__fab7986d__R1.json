@@ -1,0 +1,84 @@
+{
+  "rule_id": "four_letter_tf__fab7986d__R1",
+  "source_case_id": "fab7986d-d069-43c4-a400-93242bef00e0",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "5b973297-200e-461c-ba03-207ebe4a298a",
+    "1784c14a-b596-4e85-920e-abcbb5230241",
+    "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+    "23c7a062-75c6-42fe-862d-1bac64964ffa",
+    "28c9386b-ac84-414a-b45b-25160a5d7546",
+    "034888ce-8051-4a72-8700-e541a67d3d4a",
+    "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+  ],
+  "eligible": false,
+  "reasons": [
+    "source non-regression rate too low"
+  ],
+  "rule_text": "For a claim about a joint's total post-event path, sum the absolute change between every consecutive post-event position observation for each joint, then compare the largest resulting sum with the stated threshold.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -0.5,
+      0.0,
+      -1.0,
+      1.0
+    ],
+    "candidate_scores": [
+      0.5,
+      0.0,
+      -0.5,
+      0.5,
+      0.0
+    ],
+    "paired_deltas": [
+      1.0,
+      0.5,
+      -0.5,
+      1.5,
+      -1.0
+    ],
+    "baseline_mean": -0.2,
+    "candidate_mean": 0.1,
+    "mean_delta": 0.30000000000000004,
+    "baseline_median": -0.5,
+    "candidate_median": 0.0,
+    "median_delta": 0.5,
+    "non_regression_rate": 0.6,
+    "win_rate": 0.6
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.2857142857142857,
+      0.1428571428571428,
+      -0.3571428571428571,
+      -0.0714285714285714,
+      -0.1428571428571429
+    ],
+    "candidate_scores": [
+      -0.0714285714285714,
+      -0.1428571428571429,
+      0.1428571428571428,
+      0.0,
+      -0.0714285714285714
+    ],
+    "paired_deltas": [
+      0.2142857142857143,
+      -0.2857142857142857,
+      0.4999999999999999,
+      0.0714285714285714,
+      0.07142857142857151
+    ],
+    "baseline_mean": -0.14285714285714285,
+    "candidate_mean": -0.02857142857142858,
+    "mean_delta": 0.11428571428571427,
+    "baseline_median": -0.1428571428571429,
+    "candidate_median": -0.0714285714285714,
+    "median_delta": 0.07142857142857151,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.8
+  }
+}

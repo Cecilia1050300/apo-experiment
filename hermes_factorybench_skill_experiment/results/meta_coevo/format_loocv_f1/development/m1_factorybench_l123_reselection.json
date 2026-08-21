@@ -1,0 +1,125 @@
+{
+  "arm": "format_stratified_loocv_f1",
+  "task_name": "m1_factorybench_l123",
+  "status": "RESELECTION_COMPLETE",
+  "source_arm_f_summary": "/home/training/automatic_prompt_engineer/hermes_factorybench_skill_experiment/results/meta_coevo/format_loocv/development/m1_factorybench_l123_summary.json",
+  "source_arm_f_selection_decision": "NO_ADAPTER",
+  "decision": "ADAPTER",
+  "selected_candidate": "format_stratified_loocv_skill",
+  "selected_adapter_sha256": "253044ed73fa651337dcc86bbae797c227a65e37523b19195b74ddcf7efc2af1",
+  "accepted_rule_ids": [
+    "scalar_range__2653bd29__R1",
+    "scalar_range__2653bd29__R2",
+    "scalar_range__fbe4ccd6__R1",
+    "scalar_range__fbe4ccd6__R2",
+    "four_letter_tf__50e3fa11__R1",
+    "four_letter_tf__50e3fa11__R2"
+  ],
+  "merged_rule_count": 4,
+  "development_gate": {
+    "eligible": true,
+    "reasons": [],
+    "gate_version": "F1_active_formats_only",
+    "active_formats": [
+      "four_letter_tf",
+      "scalar_range"
+    ],
+    "inactive_formats": [
+      "scalar_margin",
+      "single_letter_mcq"
+    ],
+    "activation_audit": {
+      "valid": true,
+      "errors": [],
+      "counts": {
+        "active_format_items": 20,
+        "inactive_format_items": 10,
+        "active_format_skill_true": 20,
+        "inactive_format_skill_false": 10
+      }
+    },
+    "active_format_comparison": {
+      "valid": true,
+      "comparison_type": "unpaired_repeated_samples",
+      "baseline_scores": [
+        0.0,
+        0.08333333333333333,
+        -0.08333333333333333,
+        -0.16666666666666666,
+        -0.08333333333333333
+      ],
+      "candidate_scores": [
+        0.25,
+        0.3333333333333333,
+        0.8333333333333334,
+        -0.08333333333333333,
+        0.4166666666666667
+      ],
+      "baseline_mean": -0.05,
+      "candidate_mean": 0.35,
+      "mean_delta": 0.39999999999999997,
+      "baseline_median": -0.08333333333333333,
+      "candidate_median": 0.3333333333333333,
+      "median_delta": 0.41666666666666663,
+      "all_pairs_non_regression_probability": 0.92,
+      "all_pairs_win_probability": 0.84,
+      "all_pair_comparison_count": 25,
+      "baseline_parse_failures_total": 0,
+      "candidate_parse_failures_total": 0
+    },
+    "overall_development_comparison_secondary": {
+      "valid": true,
+      "baseline_scores": [
+        0.15789473684210523,
+        0.21052631578947367,
+        0.10526315789473686,
+        -0.15789473684210528,
+        0.10526315789473686
+      ],
+      "candidate_scores": [
+        0.10526315789473686,
+        0.3684210526315789,
+        0.6842105263157895,
+        0.10526315789473686,
+        0.21052631578947367
+      ],
+      "paired_deltas": [
+        -0.05263157894736836,
+        0.15789473684210525,
+        0.5789473684210527,
+        0.26315789473684215,
+        0.10526315789473681
+      ],
+      "baseline_mean": 0.08421052631578944,
+      "candidate_mean": 0.2947368421052632,
+      "mean_delta": 0.21052631578947373,
+      "baseline_median": 0.10526315789473686,
+      "candidate_median": 0.21052631578947367,
+      "median_delta": 0.10526315789473681,
+      "non_regression_rate": 0.8,
+      "win_rate": 0.8
+    },
+    "inactive_format_audit": {
+      "scalar_margin": {
+        "baseline_mean": 0.0,
+        "candidate_mean": 0.0,
+        "used_for_selection": false,
+        "reason": "Skill inactive for this format"
+      },
+      "single_letter_mcq": {
+        "baseline_mean": 0.7333333333333333,
+        "candidate_mean": 0.4666666666666667,
+        "used_for_selection": false,
+        "reason": "Skill inactive for this format"
+      }
+    },
+    "selection_statistics": {
+      "primary": "unpaired repeated mean delta on active formats",
+      "stability_descriptive": "all-pairs probability of superiority",
+      "run_index_pairing_used": false
+    }
+  },
+  "holdout_access": false,
+  "rules_regenerated": false,
+  "development_model_calls_added": false
+}

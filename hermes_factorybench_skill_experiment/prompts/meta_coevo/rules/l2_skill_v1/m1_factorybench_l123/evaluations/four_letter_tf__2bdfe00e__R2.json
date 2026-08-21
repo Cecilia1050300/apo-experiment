@@ -1,0 +1,85 @@
+{
+  "rule_id": "four_letter_tf__2bdfe00e__R2",
+  "source_case_id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "fab7986d-d069-43c4-a400-93242bef00e0",
+    "5b973297-200e-461c-ba03-207ebe4a298a",
+    "1784c14a-b596-4e85-920e-abcbb5230241",
+    "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+    "23c7a062-75c6-42fe-862d-1bac64964ffa",
+    "28c9386b-ac84-414a-b45b-25160a5d7546",
+    "034888ce-8051-4a72-8700-e541a67d3d4a"
+  ],
+  "eligible": false,
+  "reasons": [
+    "no positive same-format target mean gain",
+    "target non-regression rate too low"
+  ],
+  "rule_text": "Evaluate each option independently from the time-series evidence, preserve the option order, and encode the resulting truth values as exactly one four-character F/T string.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.0,
+      0.5,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "candidate_scores": [
+      0.5,
+      0.5,
+      0.0,
+      0.5,
+      0.5
+    ],
+    "paired_deltas": [
+      0.5,
+      0.0,
+      -0.5,
+      0.0,
+      0.5
+    ],
+    "baseline_mean": 0.3,
+    "candidate_mean": 0.4,
+    "mean_delta": 0.10000000000000003,
+    "baseline_median": 0.5,
+    "candidate_median": 0.5,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.4
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.2857142857142857,
+      0.0,
+      -0.0714285714285714,
+      0.0714285714285714,
+      -0.2857142857142857
+    ],
+    "candidate_scores": [
+      -0.0714285714285714,
+      -0.4285714285714286,
+      -0.0714285714285714,
+      -0.1428571428571429,
+      -0.2142857142857143
+    ],
+    "paired_deltas": [
+      0.2142857142857143,
+      -0.4285714285714286,
+      0.0,
+      -0.2142857142857143,
+      0.0714285714285714
+    ],
+    "baseline_mean": -0.11428571428571428,
+    "candidate_mean": -0.18571428571428572,
+    "mean_delta": -0.07142857142857144,
+    "baseline_median": -0.0714285714285714,
+    "candidate_median": -0.1428571428571429,
+    "median_delta": -0.07142857142857151,
+    "non_regression_rate": 0.6,
+    "win_rate": 0.4
+  }
+}

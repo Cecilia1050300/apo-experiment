@@ -1,0 +1,8 @@
+{
+  "rule_id": "A_R3",
+  "category": "threshold evaluation",
+  "rule_text": "Evaluate each threshold statement using the specified aggregation, absolute-value convention, and inequality direction, then assign its Boolean result independently without letting other propositions influence it.",
+  "rationale": "The event-analysis failure involved incorrect threshold operations and multiple proposition errors, including treating a post-event mean as satisfying a below-threshold condition.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

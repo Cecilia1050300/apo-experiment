@@ -1,0 +1,15 @@
+{
+  "rule_id": "B_R1",
+  "source_fold": "B",
+  "target_fold": "A",
+  "answer_formats": [
+    "scalar_range"
+  ],
+  "rule_text": "For a fixed-length forward window, verify that the proposed start is an available observation and that enough subsequent observations remain to form the complete window.",
+  "eligible": false,
+  "reasons": [
+    "target invalid: no applicable items"
+  ],
+  "source_comparison": null,
+  "target_comparison": null
+}

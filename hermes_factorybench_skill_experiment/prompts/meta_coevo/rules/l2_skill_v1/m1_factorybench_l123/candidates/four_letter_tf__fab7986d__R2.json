@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__fab7986d__R2",
+  "source_case_id": "fab7986d-d069-43c4-a400-93242bef00e0",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "TCP tracking error",
+  "rule_text": "For a claim about TCP alignment, pair commanded and measured TCP values at each post-event timestep, compute the specified tracking-error metric for every pair, average it over the post-event window, and compare that mean with the threshold.",
+  "rationale": "Near-equality of command and feedback must be verified numerically over the relevant window rather than inferred from a few samples or from unrelated joint signals."
+}

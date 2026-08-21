@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__f0b1ee65__R1",
+  "source_case_id": "f0b1ee65-195a-4745-abf5-d95f1f92f350",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "phase onset detection",
+  "rule_text": "Identify the earliest timestamp where the robot's position or setpoint trajectory begins a sustained retreat from the bin, using coordinated directional changes across relevant axes rather than an isolated effort-signal fluctuation.",
+  "rationale": "This distinguishes the requested motion-phase onset from transient sensor noise and from actuator-failure signals that may not directly indicate retreat."
+}

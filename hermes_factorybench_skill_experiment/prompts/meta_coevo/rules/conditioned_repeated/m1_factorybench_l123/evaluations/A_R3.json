@@ -1,0 +1,78 @@
+{
+  "rule_id": "A_R3",
+  "source_fold": "A",
+  "target_fold": "B",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "Evaluate all options independently and serialize their truth values in the exact option order using one T or F per option.",
+  "eligible": false,
+  "reasons": [
+    "source non-regression rate too low",
+    "target non-regression rate too low"
+  ],
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      0.5,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "candidate_scores": [
+      1.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.5
+    ],
+    "paired_deltas": [
+      1.5,
+      -0.5,
+      -0.5,
+      -1.0,
+      0.5
+    ],
+    "baseline_mean": 0.2,
+    "candidate_mean": 0.2,
+    "mean_delta": 0.0,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.4,
+    "win_rate": 0.4
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -1.0,
+      0.0,
+      -0.5,
+      -1.0
+    ],
+    "candidate_scores": [
+      -1.0,
+      -0.5,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "paired_deltas": [
+      -0.5,
+      0.5,
+      0.0,
+      -0.5,
+      1.0
+    ],
+    "baseline_mean": -0.6,
+    "candidate_mean": -0.5,
+    "mean_delta": 0.09999999999999998,
+    "baseline_median": -0.5,
+    "candidate_median": -0.5,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.6,
+    "win_rate": 0.4
+  }
+}

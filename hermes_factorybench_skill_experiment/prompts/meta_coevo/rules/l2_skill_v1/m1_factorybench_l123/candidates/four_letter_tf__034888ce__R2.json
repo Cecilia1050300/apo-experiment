@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__034888ce__R2",
+  "source_case_id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "answer encoding",
+  "rule_text": "Evaluate options A through D independently against their stated metric and comparison, then encode the resulting truth values in the same A-to-D order as a four-character F/T string.",
+  "rationale": "Independent verification reduces cross-option inference errors and preserves the required correspondence between each statement and its output character."
+}

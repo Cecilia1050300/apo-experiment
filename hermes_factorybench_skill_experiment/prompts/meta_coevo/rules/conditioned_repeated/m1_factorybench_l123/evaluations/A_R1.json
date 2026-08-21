@@ -1,0 +1,15 @@
+{
+  "rule_id": "A_R1",
+  "source_fold": "A",
+  "target_fold": "B",
+  "answer_formats": [
+    "scalar_margin"
+  ],
+  "rule_text": "Translate T+offset into elapsed time from the prompt's reference point, select the requested feature at that relative time, and do not confuse the offset with an absolute timestamp or another row's value.",
+  "eligible": false,
+  "reasons": [
+    "target invalid: no applicable items"
+  ],
+  "source_comparison": null,
+  "target_comparison": null
+}

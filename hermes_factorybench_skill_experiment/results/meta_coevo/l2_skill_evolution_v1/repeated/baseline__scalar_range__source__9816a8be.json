@@ -1,0 +1,194 @@
+{
+  "condition": "baseline__scalar_range__source__9816a8be",
+  "repeat_count": 5,
+  "item_count_per_run": 1,
+  "ordered_ids": [
+    "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+  ],
+  "scores": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "mean_score": 0.0,
+  "median_score": 0.0,
+  "min_score": 0.0,
+  "max_score": 0.0,
+  "mean_by_format": {
+    "scalar_range": 0.0
+  },
+  "runs": [
+    {
+      "run_label": "baseline__scalar_range__source__9816a8be_run_1",
+      "item_count": 1,
+      "ordered_ids": [
+        "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_range": 0.0
+      },
+      "items": [
+        {
+          "id": "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "aursad",
+          "answer_format": "scalar_range",
+          "raw_output": "2783",
+          "parsed": 2783.0,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 7741,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.6094240909442306,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__scalar_range__source__9816a8be_run_2",
+      "item_count": 1,
+      "ordered_ids": [
+        "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_range": 0.0
+      },
+      "items": [
+        {
+          "id": "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "aursad",
+          "answer_format": "scalar_range",
+          "raw_output": "2185",
+          "parsed": 2185.0,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 7741,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.5449784817174077,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__scalar_range__source__9816a8be_run_3",
+      "item_count": 1,
+      "ordered_ids": [
+        "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_range": 0.0
+      },
+      "items": [
+        {
+          "id": "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "aursad",
+          "answer_format": "scalar_range",
+          "raw_output": "2783",
+          "parsed": 2783.0,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 7741,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.7607689145952463,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__scalar_range__source__9816a8be_run_4",
+      "item_count": 1,
+      "ordered_ids": [
+        "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_range": 0.0
+      },
+      "items": [
+        {
+          "id": "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "aursad",
+          "answer_format": "scalar_range",
+          "raw_output": "2783",
+          "parsed": 2783.0,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 7741,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.5947495447471738,
+          "skill_active": false
+        }
+      ]
+    },
+    {
+      "run_label": "baseline__scalar_range__source__9816a8be_run_5",
+      "item_count": 1,
+      "ordered_ids": [
+        "9816a8be-e828-4eb5-a9eb-c7bce408c20c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_range": 0.0
+      },
+      "items": [
+        {
+          "id": "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+          "fold": "B",
+          "split": "test",
+          "level": 2,
+          "dataset": "aursad",
+          "answer_format": "scalar_range",
+          "raw_output": "1987",
+          "parsed": 1987.0,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 7741,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.5999533822759986,
+          "skill_active": false
+        }
+      ]
+    }
+  ]
+}

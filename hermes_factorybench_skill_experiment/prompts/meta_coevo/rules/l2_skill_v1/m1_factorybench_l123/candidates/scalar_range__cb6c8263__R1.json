@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__cb6c8263__R1",
+  "source_case_id": "cb6c8263-4904-437a-92d4-2002fe5ac374",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "phase identification",
+  "rule_text": "Identify the earliest sustained change in position and velocity that indicates descent or approach toward the object, rather than selecting the later impact, force spike, or post-collision response.",
+  "rationale": "This prevents anchoring the window on collision evidence when the requested phase is the preceding descent-to-object motion."
+}

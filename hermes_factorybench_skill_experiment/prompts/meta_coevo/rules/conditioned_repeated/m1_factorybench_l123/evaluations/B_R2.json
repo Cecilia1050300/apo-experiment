@@ -1,0 +1,15 @@
+{
+  "rule_id": "B_R2",
+  "source_fold": "B",
+  "target_fold": "A",
+  "answer_formats": [
+    "scalar_range"
+  ],
+  "rule_text": "When isolating a named motion phase, choose the earliest supported timestamp marking its defining signal transition rather than an arbitrary endpoint or the final observation.",
+  "eligible": false,
+  "reasons": [
+    "target invalid: no applicable items"
+  ],
+  "source_comparison": null,
+  "target_comparison": null
+}

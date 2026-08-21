@@ -1,0 +1,76 @@
+{
+  "rule_id": "four_letter_tf__50e3fa11__R1",
+  "source_case_id": "50e3fa11-63ec-4e98-97e0-9bd2544af9be",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "198ae6a7-f1c6-42f5-b6a3-5d058bdeb0e7"
+  ],
+  "eligible": true,
+  "reasons": [],
+  "rule_text": "For each option, compute the explicitly specified pre-event, post-event, mean, peak, final, magnitude, absolute, summed, or joint-level quantity before applying its threshold; do not substitute a related statistic.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -1.0,
+      -1.0,
+      -0.5,
+      -0.5
+    ],
+    "candidate_scores": [
+      -1.0,
+      0.0,
+      -1.0,
+      0.0,
+      -0.5
+    ],
+    "paired_deltas": [
+      -0.5,
+      1.0,
+      0.0,
+      0.5,
+      0.0
+    ],
+    "baseline_mean": -0.7,
+    "candidate_mean": -0.5,
+    "mean_delta": 0.19999999999999996,
+    "baseline_median": -0.5,
+    "candidate_median": -0.5,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.4
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      0.0,
+      0.0,
+      -0.5,
+      0.0
+    ],
+    "candidate_scores": [
+      0.0,
+      0.5,
+      0.5,
+      0.0,
+      0.0
+    ],
+    "paired_deltas": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "baseline_mean": -0.2,
+    "candidate_mean": 0.2,
+    "mean_delta": 0.4,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 1.0,
+    "win_rate": 0.8
+  }
+}

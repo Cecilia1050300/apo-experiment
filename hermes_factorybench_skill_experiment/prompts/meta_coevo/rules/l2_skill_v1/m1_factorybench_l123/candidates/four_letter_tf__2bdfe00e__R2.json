@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__2bdfe00e__R2",
+  "source_case_id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "independent option evaluation",
+  "rule_text": "Evaluate each option independently from the time-series evidence, preserve the option order, and encode the resulting truth values as exactly one four-character F/T string.",
+  "rationale": "The failed response indicates that one incorrectly judged option can change the required string; independent checks and order preservation reduce cross-option and formatting errors."
+}

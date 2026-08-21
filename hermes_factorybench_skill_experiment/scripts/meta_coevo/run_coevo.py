@@ -1,234 +1,822 @@
 #!/usr/bin/env python3
-"""Run the frozen manufacturing Meta-Prompt M1 two-task smoke."""
+"""
+Arm C: CoEvo for FactoryBench L1-L3.
+
+- Agent: fixed GPT-4o-mini.
+- Skill evolves on development only.
+- Surrogate verifier evolves on development only.
+- Hidden FactoryBench GT is never shown to the surrogate during item verification.
+- Development GT/mismatch evidence may be used by the verifier optimizer.
+- Holdout is frozen: no skill update, no verifier update, no feedback.
+
+This script reuses:
+    scripts/meta_coevo/run_static_surrogate.py
+"""
+
 from __future__ import annotations
 
 import argparse
 import hashlib
 import importlib.util
 import json
-import math
 import os
 import re
+import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
 from openai import OpenAI
-from factorybench.cost import compute_cost_from_usage
-from factorybench.data import load_split
-from factorybench.evaluate import _score_one
-from factorybench.prompt import render_prompt
 
-REPO = Path('/home/training/automatic_prompt_engineer')
-ROOT = REPO / 'hermes_factorybench_skill_experiment'
-MODEL = 'gpt-5.5'
-REV = 'b3863519ccedbceab54dfa7600104eb42b985ed7'
-M1_PATH = ROOT / 'prompts/meta/manufacturing_meta_prompt_m1_candidate.txt'
-M1_SHA = '78187e3268294657d2398c9a79563a36f050c4189b2f6650cc569407512cb052'
-MANIFEST_DIR = ROOT / 'data_manifests/meta_m1'
-RESULT_DIR = ROOT / 'results/meta_m1'
-TRACE_DIR = ROOT / 'traces/meta_m1'
-ADAPTER_ROOT = ROOT / 'prompts/adapters'
-M1_FIELDS = {'meta_prompt_version','task_name','mode','decision','task_scope','supported_subtasks','supported_formats','applicability_conditions','failure_taxonomy','adapter_text','fallback_policy','changes_from_previous','predicted_regression_risks','evidence_limitations'}
-L4_SCHEMA = '''Return JSON only, with exactly this structure:
+REPO = Path("/home/training/automatic_prompt_engineer")
+ROOT = REPO / "hermes_factorybench_skill_experiment"
+BASE_RUNNER = ROOT / "scripts/meta_coevo/run_static_surrogate.py"
+
+ARM = "coevo"
+TASK = "m1_factorybench_l123"
+
+RESULT_DIR = ROOT / "results/meta_coevo/coevo"
+TRACE_DIR = ROOT / "traces/meta_coevo/coevo"
+ADAPTER_ROOT = ROOT / "prompts/adapters/meta_coevo_coevo"
+VERIFIER_ROOT = ROOT / "prompts/meta_coevo/verifiers/coevo"
+
+VERIFIER_OPTIMIZER_MODEL = os.getenv(
+    "VERIFIER_OPTIMIZER_MODEL",
+    os.getenv("SURROGATE_MODEL", "gpt-5.6-luna"),
+)
+MAX_COMPLETION_TOKENS = int(os.getenv("MAX_COMPLETION_TOKENS", "8192"))
+
+VERIFIER_OPTIMIZER_SYSTEM = r"""
+You revise a reusable surrogate verifier for FactoryBench Level 1-3 tasks.
+
+Goal:
+Improve agreement with the hidden deterministic GT oracle on DEVELOPMENT data,
+especially reducing false PASS and false REJECT decisions, while remaining
+general across unseen cases.
+
+You are revising verifier RULES, not solving or memorizing individual cases.
+
+Strict constraints:
+1. Do not include case IDs, episode IDs, holdout references, gold answers,
+   exact answer labels, or case-specific signal values in the verifier.
+2. Do not encode dataset-specific lookup tables.
+3. Do not write rules that reveal or reconstruct hidden GT.
+4. The verifier itself must still judge using only:
+   - task/question text
+   - required answer format
+   - agent answer
+5. Prefer general procedural checks:
+   temporal-window validity, operator semantics, threshold direction,
+   complete-window requirements, ranking continuity, multi-element checking,
+   format compliance, and unsupported-assumption detection.
+6. If mismatch evidence is too weak to justify a general rule, preserve the
+   previous verifier rather than inventing a brittle rule.
+7. Return JSON only.
+
+Required JSON schema:
 {
-  "root_cause": "the most likely underlying physical or operational cause",
-  "evidence": ["specific signal or task-phase evidence from the input"],
-  "corrective_actions": ["corrective action and a verification step"]
+  "decision": "VERIFIER" | "NO_CHANGE",
+  "verifier_text": "full reusable verifier prompt, or empty string for NO_CHANGE",
+  "changes": ["general change"],
+  "mismatch_taxonomy": [
+    {
+      "category": "general mismatch category",
+      "false_pass_count": 0,
+      "false_reject_count": 0,
+      "evidence_count": 0
+    }
+  ],
+  "predicted_risks": ["generalization risk"],
+  "evidence_limitations": ["limitation"]
 }
-Do not return Markdown, headings, a bare option letter, or a dataset label.'''
-L4_BASE_INSTRUCTIONS = f'''You are solving a FactoryBench Level 4 industrial troubleshooting case.
 
-Use the machine description, signal mapping, time series, and task question in the user input. Distinguish an observed symptom from the underlying physical or operational root cause. Ground every evidence item in the supplied input. Do not invent signals, machine specifications, fault documentation, or SOPs. If the supplied telemetry does not uniquely identify a cause, say so in the evidence array and return the most defensible diagnosis supported by the input.
+The full verifier_text, when decision=VERIFIER, must instruct the verifier to
+return exactly:
+{
+  "verdict": "PASS" | "FAIL",
+  "confidence": 0.0,
+  "diagnosis": ["brief reason"],
+  "failed_checks": ["name of failed verification rule"]
+}
+""".strip()
 
-{L4_SCHEMA}
 
-No reusable diagnostic Adapter, shared Core prompt, RAG passage, fault catalog, signal-analysis tool, gold root cause, or reference answer is supplied unless an Adapter condition explicitly follows.'''
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def sha(path: Path) -> str: return hashlib.sha256(path.read_bytes()).hexdigest()
 def write_new(path: Path, data: bytes) -> None:
     if path.exists():
-        if path.read_bytes() != data: raise RuntimeError(f'refusing overwrite: {path}')
+        if path.read_bytes() != data:
+            raise RuntimeError(f"refusing overwrite: {path}")
         return
-    path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(data)
-def write_json(path: Path, obj: Any) -> None: write_new(path,(json.dumps(obj,indent=2,ensure_ascii=False,allow_nan=False)+'\n').encode())
-def load(path: Path) -> Any: return json.loads(path.read_text(encoding='utf-8'))
-
-def evaluator_module():
-    path=REPO/'apo_experiment/factorybench_experiment/factorybench_evaluator_smoke_test.py'
-    spec=importlib.util.spec_from_file_location('m1_l4_evaluator',path); mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod
-EVALUATOR=evaluator_module()
-
-def usage(response: Any) -> dict[str,int]:
-    u=getattr(response,'usage',None)
-    return {'input_tokens':int(getattr(u,'input_tokens',getattr(u,'prompt_tokens',0)) or 0),'output_tokens':int(getattr(u,'output_tokens',getattr(u,'completion_tokens',0)) or 0)}
-
-class ResponseProxy:
-    def __init__(self, client: OpenAI): self._client=client; self.ledger=[]; self.responses=self
-    def create(self, **kwargs):
-        response=self._client.responses.create(**kwargs); self.ledger.append({'model':kwargs.get('model',MODEL),**usage(response)}); return response
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(data)
 
 
-def manifests(task:str):
-    prefix='factorybench_l123' if task=='m1_factorybench_l123' else 'factorybench_l4'
-    return {k:MANIFEST_DIR/f'{prefix}_{v}.json' for k,v in {'fold_a':'dev_fold_a','fold_b':'dev_fold_b','holdout':'holdout'}.items()}
-def adapter_dir(task:str): return ADAPTER_ROOT/task
-def result_path(task,part,condition): return RESULT_DIR/part/f'{task}_{condition}.json'
+def write_json(path: Path, obj: Any) -> None:
+    write_new(
+        path,
+        (json.dumps(obj, indent=2, ensure_ascii=False, allow_nan=False) + "\n").encode(),
+    )
 
-def source_items(path:Path):
-    m=load(path); cache={}
-    for row in m['items']:
-        key=(row['level'],row['split'])
-        if key not in cache: cache[key]={x.id:x for x in load_split(key[0],split=key[1],revision=REV,max_items=None)}
-    items=[cache[(r['level'],r['split'])][r['id']] for r in m['items']]
-    for row,item in zip(m['items'],items):
-        if item.provenance.get('episode')!=row['episode'] or item.answer_format.value!=row['answer_format']: raise RuntimeError('manifest mismatch')
-    return m,items
 
-def fixed(rows):
-    scores=[]; chances=[]
-    for r in rows:
-        clean=r.get('parse_error') is None and isinstance(r.get('score'),(int,float)) and math.isfinite(float(r['score']))
-        scores.append(float(r['score']) if clean else 0.0); chances.append(float(r.get('chance',0)))
-    mc=sum(chances)/len(chances); return (sum(scores)/len(scores)-mc)/(1-mc)
-def canonical(rows):
-    clean=[r for r in rows if r.get('parse_error') is None and isinstance(r.get('score'),(int,float)) and math.isfinite(float(r['score']))]
-    if not clean:return None
-    mc=sum(float(r.get('chance',0)) for r in clean)/len(clean); return (sum(float(r['score']) for r in clean)/len(clean)-mc)/(1-mc)
-def grouped(rows,field):
-    b={}
-    for r in rows:b.setdefault(str(r.get(field) or 'unknown'),[]).append(r)
-    return {k:fixed(v) for k,v in sorted(b.items())}
+def load_json(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
 
-def call_chat(client,system,prompt):
-    started=time.perf_counter()
-    try:
-        messages=[]
-        if system:messages.append({'role':'system','content':system})
-        messages.append({'role':'user','content':prompt})
-        resp=client.chat.completions.create(model=MODEL,messages=messages,max_completion_tokens=8192)
-        return resp.choices[0].message.content or '',usage(resp),time.perf_counter()-started,None
-    except Exception as exc:return '',{'input_tokens':0,'output_tokens':0},time.perf_counter()-started,f'{type(exc).__name__}: {exc}'
-def parallel(client,system,prompts):
-    out=[None]*len(prompts)
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        futs={pool.submit(call_chat,client,system,p):i for i,p in enumerate(prompts)}
-        for f,i in futs.items():out[i]=f.result()
-    return out
 
-def evaluate_l123(client,manifest_path,part,condition,adapter):
-    path=result_path('m1_factorybench_l123',part,condition)
-    if path.exists():return load(path)
-    m,items=source_items(manifest_path); system=adapter if adapter else None; start=time.perf_counter(); calls=parallel(client,system,[render_prompt(x) for x in items]); rows=[]
-    for item,(raw,u,lat,err) in zip(items,calls):
-        s=_score_one(item,raw); finite_score=s.score if isinstance(s.score,(int,float)) and math.isfinite(float(s.score)) else None; rows.append({'id':item.id,'level':item.level,'split':next(r['split'] for r in m['items'] if r['id']==item.id),'dataset':item.dataset,'episode':item.provenance.get('episode'),'answer_format':item.answer_format.value,'raw_output':raw,'parsed':s.parsed,'score':finite_score,'chance':s.chance,'parse_error':s.parse_error or ('non_finite_score' if finite_score is None else None),'transport_error':err,'usage':u,'latency_seconds':lat,'development_evidence':{'rendered_input':render_prompt(item),'reference_answer':item.answer} if part=='development' else None})
-    tokens={'candidate':{'model':MODEL,'input_tokens':sum(c[1]['input_tokens'] for c in calls),'output_tokens':sum(c[1]['output_tokens'] for c in calls),'calls':sum(bool(c[1]['input_tokens'] or c[1]['output_tokens']) for c in calls)},'judges':{}}
-    payload={'task_name':'m1_factorybench_l123','partition':part,'condition':condition,'manifest_path':str(manifest_path.relative_to(ROOT)),'manifest_sha256':sha(manifest_path),'adapter_sha256':hashlib.sha256(adapter.encode()).hexdigest() if adapter else None,'core_prompt_used':False,'ordered_ids':[r['id'] for r in rows],'item_count':len(rows),'canonical_score':canonical(rows),'fixed_cardinality_score':fixed(rows),'parse_failures':sum(r['parse_error'] is not None for r in rows),'by_level':grouped(rows,'level'),'by_format':grouped(rows,'answer_format'),'by_dataset':grouped(rows,'dataset'),'tokens_used':tokens,'cost':compute_cost_from_usage(tokens),'wall_time_seconds':time.perf_counter()-start,'items':rows}
-    write_json(path,payload);return payload
+def load_base():
+    if not BASE_RUNNER.exists():
+        raise SystemExit(f"missing Arm-B runner: {BASE_RUNNER}")
+    spec = importlib.util.spec_from_file_location("arm_b_static_runner", BASE_RUNNER)
+    if spec is None or spec.loader is None:
+        raise SystemExit("failed to import Arm-B runner")
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
 
-def evaluate_l4(client,manifest_path,part,condition,adapter):
-    path=result_path('m1_factorybench_l4',part,condition)
-    if path.exists():return load(path)
-    m,items=source_items(manifest_path); system=L4_BASE_INSTRUCTIONS+(f'\n\n--- BEGIN TASK ADAPTER ---\n{adapter}\n--- END TASK ADAPTER ---' if adapter else ''); start=time.perf_counter(); calls=parallel(client,system,[render_prompt(x) for x in items]); rows=[]; judge_proxy=ResponseProxy(client)
-    for item,(raw,u,lat,err) in zip(items,calls):
-        validation=EVALUATOR.validate_deterministically(raw); judge=None; score=0.0; perr=None
-        if validation['valid']:
-            payload={'question':render_prompt(item),'reference_answer':str(item.answer),'known_root_cause':str(item.root_cause or ''),'model_raw_answer':raw}
-            try: judge=EVALUATOR.call_judge(judge_proxy,MODEL,payload); score=float(judge['parsed']['score'])
-            except Exception as exc: perr=f'judge_error: {type(exc).__name__}: {exc}'
-        else: perr='schema_failure: '+'; '.join(validation['errors'])
-        rows.append({'id':item.id,'level':4,'split':'validation','dataset':item.dataset,'episode':item.provenance.get('episode'),'answer_format':'diagnostic_json','raw_output':raw,'parsed':validation.get('parsed'),'score':score,'chance':0.0,'parse_error':perr,'schema_valid':validation['valid'],'schema_errors':validation['errors'],'deterministic_validation':validation,'judge':judge,'judge_score':score if judge else None,'root_cause_correct':judge['parsed']['root_cause_correct'] if judge else None,'corrective_actions_correct':judge['parsed']['protocol_correct'] if judge else None,'evidence_count':len((validation.get('parsed') or {}).get('evidence',[])) if validation['valid'] else 0,'corrective_action_count':len((validation.get('parsed') or {}).get('corrective_actions',[])) if validation['valid'] else 0,'transport_error':err,'usage':u,'latency_seconds':lat,'development_evidence':{'rendered_input':render_prompt(item),'reference_answer':item.answer,'known_root_cause':item.root_cause} if part=='development' else None})
-    judges={'gpt-5.5':{'model':MODEL,'input_tokens':sum(x['input_tokens'] for x in judge_proxy.ledger),'output_tokens':sum(x['output_tokens'] for x in judge_proxy.ledger),'calls':len(judge_proxy.ledger)}}
-    tokens={'candidate':{'model':MODEL,'input_tokens':sum(c[1]['input_tokens'] for c in calls),'output_tokens':sum(c[1]['output_tokens'] for c in calls),'calls':sum(bool(c[1]['input_tokens'] or c[1]['output_tokens']) for c in calls)},'judges':judges}
-    payload={'task_name':'m1_factorybench_l4','partition':part,'condition':condition,'manifest_path':str(manifest_path.relative_to(ROOT)),'manifest_sha256':sha(manifest_path),'adapter_sha256':hashlib.sha256(adapter.encode()).hexdigest() if adapter else None,'core_prompt_used':False,'output_contract':'factorybench_diagnostic_json_v2','judge_model':MODEL,'judge_count':1,'judge_agreement':None,'judge_agreement_note':'Unavailable with one judge.','ordered_ids':[r['id'] for r in rows],'item_count':len(rows),'canonical_score':canonical(rows),'fixed_cardinality_score':fixed(rows),'parse_failures':sum(r['parse_error'] is not None for r in rows),'schema_failures':sum(not r['schema_valid'] for r in rows),'root_cause_correct_count':sum(r['root_cause_correct'] is True for r in rows),'corrective_actions_correct_count':sum(r['corrective_actions_correct'] is True for r in rows),'by_level':{'4':fixed(rows)},'by_format':{'diagnostic_json':fixed(rows)},'by_dataset':grouped(rows,'dataset'),'tokens_used':tokens,'cost':compute_cost_from_usage(tokens),'wall_time_seconds':time.perf_counter()-start,'items':rows}
-    write_json(path,payload);return payload
+    mod.ARM = ARM
+    mod.RESULT_DIR = RESULT_DIR
+    mod.TRACE_DIR = TRACE_DIR
+    mod.ADAPTER_ROOT = ADAPTER_ROOT
+    return mod
 
-def evaluate(client,task,manifest_path,part,condition,adapter):return evaluate_l123(client,manifest_path,part,condition,adapter) if task=='m1_factorybench_l123' else evaluate_l4(client,manifest_path,part,condition,adapter)
 
-def compact(r):return {'condition':r['condition'],'item_count':r['item_count'],'ordered_ids':r['ordered_ids'],'canonical_score':r['canonical_score'],'fixed_cardinality_score':r['fixed_cardinality_score'],'parse_failures':r['parse_failures'],'by_format':r['by_format'],'by_dataset':r['by_dataset'],'by_level':r['by_level'],'items':[{k:x.get(k) for k in ('id','level','dataset','answer_format','raw_output','parsed','score','chance','parse_error','schema_valid','root_cause_correct','corrective_actions_correct','development_evidence') if k in x} for x in r['items']]}
+def verifier_dir(task: str) -> Path:
+    return VERIFIER_ROOT / task
 
-def m1_input(task,mode,basea,baseb,v1a,v1b,previous):
-    if task=='m1_factorybench_l123':desc='FactoryBench L1-L3 manufacturing telemetry tasks with strict item-specific scalar, tensor, ranking, Boolean, and MCQ contracts.'; evaluator={'canonical':'FactoryBench chance-corrected score','fixed_cardinality':'parse failures retained as zero','parser':'FactoryBench deterministic parser/scorer'};contracts=['Follow each item-specific exact output contract.'];sub=['L1 predictive/identification','L2 predictive/identification','L3 predictive']
-    else:desc='FactoryBench L4 industrial troubleshooting with diagnostic JSON output grounded in telemetry.';evaluator={'validator':'existing deterministic diagnostic JSON validator','judge':'existing gpt-5.5 semantic judge, count 1','score_values':[0,0.5,1]};contracts=['JSON object with exactly root_cause, evidence, corrective_actions'];sub=['anomaly diagnosis','root cause identification','evidence grounding','corrective action and verification']
-    ms=manifests(task)
-    return {'task_name':task,'mode':mode,'task_description':desc,'execution_model':MODEL,'evaluator_specification':evaluator,'output_contracts':contracts,'supported_subtasks':sub,'development_manifests':{'fold_a_sha256':sha(ms['fold_a']),'fold_b_sha256':sha(ms['fold_b'])},'development_results':{'baseline_fold_a':compact(basea),'baseline_fold_b':compact(baseb),'adapter_v1_fold_a':compact(v1a) if v1a else None,'adapter_v1_fold_b':compact(v1b) if v1b else None},'previous_adapter':previous,'constraints':{'maximum_adapter_rounds':2,'manual_adapter_editing':False,'core_prompt':False,'holdout_access':False,'case_memorization':False}}
 
-def validate_m1(parsed,task,mode,data,hold_ids):
-    errors=[]
-    if not isinstance(parsed,dict) or set(parsed)!=M1_FIELDS:return ['schema fields mismatch']
-    if parsed.get('meta_prompt_version')!='m1' or parsed.get('task_name')!=task or parsed.get('mode')!=mode:errors.append('identity mismatch')
-    if parsed.get('decision') not in {'ADAPTER','NO_ADAPTER','INSUFFICIENT_DATA'} or not isinstance(parsed.get('adapter_text'),str):errors.append('decision/text invalid')
-    adapter=parsed.get('adapter_text','')
-    if parsed.get('decision')=='ADAPTER' and not adapter.strip():errors.append('empty adapter')
-    if parsed.get('decision')!='ADAPTER' and adapter!='':errors.append('nonempty null adapter')
-    devitems=data['development_results']['baseline_fold_a']['items']+data['development_results']['baseline_fold_b']['items']; low=adapter.casefold()
-    for x in devitems:
-        if x['id'].casefold() in low:errors.append('development ID leak')
-        ev=x.get('development_evidence') or {}; gold=str(ev.get('reference_answer') or '')
-        if len(gold)>=20 and gold.casefold() in low:errors.append('copied gold answer')
-        rendered=str(ev.get('rendered_input') or '')
-        nums=set(re.findall(r'(?<![A-Za-z])(?:\d{4,}|-?\d+\.\d{3,})(?![A-Za-z])',rendered))
-        if any(num in adapter for num in nums):errors.append('case-specific signal value');break
-    if any(x.casefold() in low for x in hold_ids):errors.append('holdout ID leak')
-    if re.search(r'holdout|held[- ]?out|final[-_ ]?test',low):errors.append('holdout reference')
-    for k in ('task_scope','supported_subtasks','supported_formats','applicability_conditions','failure_taxonomy','changes_from_previous','predicted_regression_risks','evidence_limitations'):
-        if not isinstance(parsed.get(k),list):errors.append(f'{k} invalid')
+def verifier_path(task: str, version: int) -> Path:
+    return verifier_dir(task) / f"verifier_v{version}.txt"
+
+
+def verifier_trace_dir(task: str) -> Path:
+    return TRACE_DIR / task / "verifier"
+
+
+def item_lookup(base, manifest_path: Path):
+    manifest, items = base.source_items(manifest_path)
+    return manifest, {item.id: item for item in items}
+
+
+def compact_for_verifier_revision(result: dict[str, Any]) -> dict[str, Any]:
+    rows = []
+    for item in result["items"]:
+        rows.append(
+            {
+                "id": item["id"],
+                "level": item["level"],
+                "dataset": item["dataset"],
+                "answer_format": item["answer_format"],
+                "agent_answer": item["raw_output"],
+                "gt_score": item["score"],
+                "gt_pass": item["gt_pass"],
+                "surrogate_verdict": item["surrogate_verdict"],
+                "false_pass": item["false_pass"],
+                "false_reject": item["false_reject"],
+                "surrogate_diagnosis": (item.get("surrogate") or {}).get(
+                    "diagnosis", []
+                ),
+                "surrogate_failed_checks": (item.get("surrogate") or {}).get(
+                    "failed_checks", []
+                ),
+                "development_evidence": item.get("development_evidence"),
+            }
+        )
+    return {
+        "condition": result["condition"],
+        "item_count": result["item_count"],
+        "surrogate_summary": result["surrogate_summary"],
+        "items": rows,
+    }
+
+
+def validate_verifier_text(
+    text: str,
+    *,
+    development_results: list[dict[str, Any]],
+    holdout_ids: list[str],
+) -> list[str]:
+    errors: list[str] = []
+    low = text.casefold()
+
+    if not text.strip():
+        return ["empty verifier"]
+
+    for token in ["verdict", "PASS", "FAIL", "confidence", "diagnosis", "failed_checks"]:
+        if token.casefold() not in low:
+            errors.append(f"missing required verifier contract token: {token}")
+
+    # Generic policy words such as "holdout" are NOT leakage by themselves.
+    # The previous version rejected any occurrence of the word "holdout",
+    # which caused a false positive when the optimizer wrote harmless policy
+    # text such as "do not use holdout information".
+    #
+    # We instead block actual holdout identifiers below. Holdout examples,
+    # scores, answers, and IDs are never included in the revision packet.
+    if any(hid.casefold() in low for hid in holdout_ids):
+        errors.append("holdout ID leak")
+
+    for result in development_results:
+        for item in result["items"]:
+            if str(item["id"]).casefold() in low:
+                errors.append("development ID leak")
+                return errors
+
+            evidence = item.get("development_evidence") or {}
+            gold = str(evidence.get("reference_answer") or "")
+            if len(gold) >= 20 and gold.casefold() in low:
+                errors.append("copied gold answer")
+                return errors
+
+            rendered = str(evidence.get("rendered_input") or "")
+            numbers = set(
+                re.findall(
+                    r"(?<![A-Za-z])(?:\d{4,}|-?\d+\.\d{3,})(?![A-Za-z])",
+                    rendered,
+                )
+            )
+            if any(number in text for number in numbers):
+                errors.append("case-specific signal value")
+                return errors
+
     return errors
 
-def call_m1(client,task,roundn,data):
-    td=TRACE_DIR/task; ip=td/f'm1_round_{roundn}_input.json'; rp=td/f'm1_round_{roundn}_raw_output.txt'; pp=td/f'm1_round_{roundn}_parsed_output.json';write_json(ip,data)
-    if rp.exists() or pp.exists():raise RuntimeError('existing partial M1 trace')
-    user='<MANUFACTURING_PROMPT_OPTIMIZATION_INPUT>\n'+json.dumps(data,indent=2,ensure_ascii=False,allow_nan=False)+'\n</MANUFACTURING_PROMPT_OPTIMIZATION_INPUT>';start=time.perf_counter();resp=client.chat.completions.create(model=MODEL,messages=[{'role':'system','content':M1_PATH.read_text()},{'role':'user','content':user}],max_completion_tokens=8192);wall=time.perf_counter()-start;raw=resp.choices[0].message.content or '';write_new(rp,raw.encode())
-    try:parsed=json.loads(raw.strip());jerr=None
-    except Exception as exc:parsed={};jerr=f'{type(exc).__name__}: {exc}'
-    holdids=[x['id'] for x in load(manifests(task)['holdout'])['items']];errors=([jerr] if jerr else [])+validate_m1(parsed,task,data['mode'],data,holdids);u=usage(resp);env={**parsed,'_trace_validation':{'valid':not errors,'errors':errors,'input_sha256':sha(ip),'raw_output_sha256':sha(rp),'m1_sha256':sha(M1_PATH),'usage':u,'cost':compute_cost_from_usage({'candidate':{'model':MODEL,**u,'calls':1},'judges':{}}),'wall_time_seconds':wall}};write_json(pp,env)
-    if errors:raise RuntimeError(f'invalid M1 output {errors}')
-    adapter=None;path=None
-    if parsed['decision']=='ADAPTER':adapter=parsed['adapter_text'];path=adapter_dir(task)/f'adapter_v{roundn}.txt';write_new(path,adapter.encode())
-    return env,adapter,path
 
-def select_candidate(task,basea,baseb,candidates):
-    path=adapter_dir(task)/'selection.json'
-    if path.exists():return load(path)
-    expecteda=basea['ordered_ids'];expectedb=baseb['ordered_ids'];records=[];eligible=[]
-    base_formats={}
-    for r in basea['items']+baseb['items']:base_formats.setdefault(r['answer_format'],[]).append(r)
-    base_fmt={k:fixed(v) for k,v in base_formats.items()}
-    for label,a,b,ap in candidates:
-        reasons=[]
-        if a['ordered_ids']!=expecteda or b['ordered_ids']!=expectedb:reasons.append('ID mismatch')
-        if a['parse_failures']+b['parse_failures']>0:reasons.append('Adapter parse failure')
-        if a['fixed_cardinality_score']<basea['fixed_cardinality_score']:reasons.append('fold A regression')
-        if b['fixed_cardinality_score']<baseb['fixed_cardinality_score']:reasons.append('fold B regression')
-        if not (a['fixed_cardinality_score']>basea['fixed_cardinality_score'] or b['fixed_cardinality_score']>baseb['fixed_cardinality_score']):reasons.append('no strict fold gain')
-        combined=a['items']+b['items'];fmts={}
-        for r in combined:fmts.setdefault(r['answer_format'],[]).append(r)
-        fs={k:fixed(v) for k,v in fmts.items()}
-        if any(fs.get(k,float('-inf'))<v for k,v in base_fmt.items()):reasons.append('critical format regression')
-        rec={'candidate':label,'eligible':not reasons,'reasons':reasons,'fold_a_score':a['fixed_cardinality_score'],'fold_b_score':b['fixed_cardinality_score'],'macro_score':(a['fixed_cardinality_score']+b['fixed_cardinality_score'])/2,'minimum_fold_score':min(a['fixed_cardinality_score'],b['fixed_cardinality_score']),'worst_subgroup_score':min(fs.values()),'parse_failures':a['parse_failures']+b['parse_failures'],'adapter_sha256':sha(ap) if ap else None,'adapter_bytes':ap.stat().st_size if ap else 0};records.append(rec)
-        if not reasons:eligible.append(rec)
-    if eligible:
-        order={'adapter_v1':1,'adapter_v2':2};chosen=sorted(eligible,key=lambda x:(-x['macro_score'],-x['minimum_fold_score'],-x['worst_subgroup_score'],x['adapter_bytes'],order[x['candidate']]))[0];decision='ADAPTER';selected=chosen['candidate'];src=adapter_dir(task)/f"{selected}.txt";dst=adapter_dir(task)/'selected_adapter.txt';write_new(dst,src.read_bytes());selected_hash=sha(dst)
-    else:decision='NO_ADAPTER';selected='baseline';selected_hash=None
-    payload={'task_name':task,'decision':decision,'selected_candidate':selected,'selected_adapter_sha256':selected_hash,'m1_sha256':M1_SHA,'candidates':records};write_json(path,payload);return payload
+def call_verifier_optimizer(
+    base,
+    client: OpenAI,
+    *,
+    task: str,
+    roundn: int,
+    previous_verifier_path: Path,
+    development_results: list[dict[str, Any]],
+) -> tuple[dict[str, Any], Path]:
+    trace_dir = verifier_trace_dir(task)
+    input_path = trace_dir / f"verifier_round_{roundn}_input.json"
+    raw_path = trace_dir / f"verifier_round_{roundn}_raw_output.txt"
+    parsed_path = trace_dir / f"verifier_round_{roundn}_parsed_output.json"
 
-def development(client,task):
-    ms=manifests(task);ba=evaluate(client,task,ms['fold_a'],'development','baseline_fold_a',None);bb=evaluate(client,task,ms['fold_b'],'development','baseline_fold_b',None);o1,a1,p1=call_m1(client,task,1,m1_input(task,'generate',ba,bb,None,None,None));cands=[];r1a=r1b=None
-    if a1:r1a=evaluate(client,task,ms['fold_a'],'development','adapter_v1_fold_a',a1);r1b=evaluate(client,task,ms['fold_b'],'development','adapter_v1_fold_b',a1);cands.append(('adapter_v1',r1a,r1b,p1))
-    prev={'sha256':sha(p1),'text':a1} if p1 else {'sha256':None,'text':''};o2,a2,p2=call_m1(client,task,2,m1_input(task,'refine',ba,bb,r1a,r1b,prev));r2a=r2b=None
-    if a2:r2a=evaluate(client,task,ms['fold_a'],'development','adapter_v2_fold_a',a2);r2b=evaluate(client,task,ms['fold_b'],'development','adapter_v2_fold_b',a2);cands.append(('adapter_v2',r2a,r2b,p2))
-    sel=select_candidate(task,ba,bb,cands);summary={'task_name':task,'status':'DEVELOPMENT_COMPLETE','baseline_fold_a':compact(ba),'baseline_fold_b':compact(bb),'adapter_v1_decision':o1['decision'],'adapter_v1_sha256':sha(p1) if p1 else None,'adapter_v1_fold_a':compact(r1a) if r1a else None,'adapter_v1_fold_b':compact(r1b) if r1b else None,'adapter_v2_decision':o2['decision'],'adapter_v2_sha256':sha(p2) if p2 else None,'adapter_v2_fold_a':compact(r2a) if r2a else None,'adapter_v2_fold_b':compact(r2b) if r2b else None,'selection':sel};write_json(RESULT_DIR/'development'/f'{task}_summary.json',summary);return summary
+    previous_text = previous_verifier_path.read_text(encoding="utf-8")
+    mismatches = []
+    for result in development_results:
+        for row in result["items"]:
+            if row.get("false_pass") or row.get("false_reject"):
+                mismatches.append(
+                    {
+                        "condition": result["condition"],
+                        "id": row["id"],
+                        "level": row["level"],
+                        "dataset": row["dataset"],
+                        "answer_format": row["answer_format"],
+                        "agent_answer": row["raw_output"],
+                        "gt_score": row["score"],
+                        "gt_pass": row["gt_pass"],
+                        "surrogate_verdict": row["surrogate_verdict"],
+                        "false_pass": row["false_pass"],
+                        "false_reject": row["false_reject"],
+                        "surrogate_diagnosis": (row.get("surrogate") or {}).get(
+                            "diagnosis", []
+                        ),
+                        "surrogate_failed_checks": (row.get("surrogate") or {}).get(
+                            "failed_checks", []
+                        ),
+                        "development_evidence": row.get("development_evidence"),
+                    }
+                )
 
-def holdout(client,task):
-    ms=manifests(task);sel=load(adapter_dir(task)/'selection.json');base=evaluate(client,task,ms['holdout'],'holdout','baseline',None);selected=None
-    if sel['decision']=='ADAPTER':ad=(adapter_dir(task)/'selected_adapter.txt').read_text();selected=evaluate(client,task,ms['holdout'],'holdout','selected_adapter',ad)
-    summary={'task_name':task,'status':'HOLDOUT_COMPLETE','selection_sha256':sha(adapter_dir(task)/'selection.json'),'selection_decision':sel['decision'],'baseline':compact(base),'selected_adapter':compact(selected) if selected else None,'selected_label':'selected_adapter' if selected else 'NO_ADAPTER (baseline reused; no duplicate call)','no_holdout_feedback':True,'core_prompt_used':False};write_json(RESULT_DIR/'holdout'/f'{task}_summary.json',summary);return summary
+    packet = {
+        "arm": ARM,
+        "task_name": task,
+        "round": roundn,
+        "purpose": "revise reusable surrogate verifier from development-only GT mismatches",
+        "previous_verifier": {
+            "sha256": sha(previous_verifier_path),
+            "text": previous_text,
+        },
+        "development_results": [
+            compact_for_verifier_revision(x) for x in development_results
+        ],
+        "mismatches_only": mismatches,
+        "constraints": {
+            "holdout_access": False,
+            "case_memorization": False,
+            "gt_visible_during_item_verification": False,
+            "gt_visible_only_to_development_verifier_optimizer": True,
+        },
+        "model_roles": {
+            "agent_model": base.AGENT_MODEL,
+            "surrogate_model": base.SURROGATE_MODEL,
+            "verifier_optimizer_model": VERIFIER_OPTIMIZER_MODEL,
+            "skill_optimizer_model": base.OPTIMIZER_MODEL,
+        },
+    }
+    write_json(input_path, packet)
+
+    if raw_path.exists() or parsed_path.exists():
+        raise RuntimeError(f"existing partial verifier trace for round {roundn}")
+
+    started = time.perf_counter()
+    response = client.chat.completions.create(
+        model=VERIFIER_OPTIMIZER_MODEL,
+        messages=[
+            {"role": "system", "content": VERIFIER_OPTIMIZER_SYSTEM},
+            {
+                "role": "user",
+                "content": (
+                    "<VERIFIER_REVISION_INPUT>\n"
+                    + json.dumps(packet, indent=2, ensure_ascii=False, allow_nan=False)
+                    + "\n</VERIFIER_REVISION_INPUT>"
+                ),
+            },
+        ],
+        max_completion_tokens=MAX_COMPLETION_TOKENS,
+    )
+    wall = time.perf_counter() - started
+    raw = response.choices[0].message.content or ""
+    write_new(raw_path, raw.encode())
+
+    try:
+        parsed = json.loads(raw.strip())
+        json_error = None
+    except Exception as exc:
+        parsed = {}
+        json_error = f"{type(exc).__name__}: {exc}"
+
+    errors = []
+    if json_error:
+        errors.append(json_error)
+
+    if not isinstance(parsed, dict):
+        errors.append("verifier optimizer output is not an object")
+        parsed = {}
+
+    decision = parsed.get("decision")
+    if decision not in {"VERIFIER", "NO_CHANGE"}:
+        errors.append("invalid verifier optimizer decision")
+
+    text = parsed.get("verifier_text")
+    if not isinstance(text, str):
+        errors.append("verifier_text must be a string")
+        text = ""
+
+    if decision == "NO_CHANGE" and text != "":
+        errors.append("NO_CHANGE must use empty verifier_text")
+    if decision == "VERIFIER" and not text.strip():
+        errors.append("VERIFIER requires non-empty verifier_text")
+
+    holdout_ids = [x["id"] for x in load_json(base.manifests(task)["holdout"])["items"]]
+    if decision == "VERIFIER":
+        errors.extend(
+            validate_verifier_text(
+                text,
+                development_results=development_results,
+                holdout_ids=holdout_ids,
+            )
+        )
+
+    role_usage = base.usage(response)
+    envelope = {
+        **parsed,
+        "_trace_validation": {
+            "valid": not errors,
+            "errors": errors,
+            "input_sha256": sha(input_path),
+            "raw_output_sha256": sha(raw_path),
+            "previous_verifier_sha256": sha(previous_verifier_path),
+            "verifier_optimizer_model": VERIFIER_OPTIMIZER_MODEL,
+            "usage": role_usage,
+            "cost": base.safe_cost(
+                VERIFIER_OPTIMIZER_MODEL, {**role_usage, "calls": 1}
+            ),
+            "wall_time_seconds": wall,
+            "mismatch_count": len(mismatches),
+        },
+    }
+    write_json(parsed_path, envelope)
+
+    if errors:
+        raise RuntimeError(f"invalid verifier revision output: {errors}")
+
+    new_path = verifier_path(task, roundn)
+    if decision == "VERIFIER":
+        write_new(new_path, text.encode())
+    else:
+        write_new(new_path, previous_text.encode())
+
+    return envelope, new_path
+
+
+def reverify_existing_result(
+    base,
+    client: OpenAI,
+    *,
+    source_result: dict[str, Any],
+    manifest_path: Path,
+    verifier_prompt_path: Path,
+    condition: str,
+) -> dict[str, Any]:
+    output_path = RESULT_DIR / "development" / f"{TASK}_{condition}.json"
+    if output_path.exists():
+        return load_json(output_path)
+
+    old_surrogate_path = base.SURROGATE_PATH
+    base.SURROGATE_PATH = verifier_prompt_path
+    try:
+        _, lookup = item_lookup(base, manifest_path)
+        new_rows = []
+        surrogate_usage = {"input_tokens": 0, "output_tokens": 0, "calls": 0}
+
+        for row in source_result["items"]:
+            item = lookup[row["id"]]
+            surrogate = base.run_surrogate(client, item, row["raw_output"])
+            su = surrogate.get("usage") or {}
+            surrogate_usage["input_tokens"] += int(su.get("input_tokens", 0) or 0)
+            surrogate_usage["output_tokens"] += int(su.get("output_tokens", 0) or 0)
+            if su.get("input_tokens") or su.get("output_tokens"):
+                surrogate_usage["calls"] += 1
+
+            verdict = surrogate.get("verdict")
+            gt_pass = bool(row["gt_pass"])
+            updated = dict(row)
+            updated["surrogate"] = surrogate
+            updated["surrogate_verdict"] = verdict
+            updated["false_pass"] = verdict == "PASS" and not gt_pass
+            updated["false_reject"] = verdict == "FAIL" and gt_pass
+            new_rows.append(updated)
+
+        payload = dict(source_result)
+        payload["arm"] = ARM
+        payload["condition"] = condition
+        payload["source_agent_condition"] = source_result["condition"]
+        payload["agent_answers_reused"] = True
+        payload["surrogate_prompt_path"] = str(verifier_prompt_path.relative_to(ROOT))
+        payload["surrogate_prompt_sha256"] = sha(verifier_prompt_path)
+        payload["surrogate_static"] = False
+        payload["surrogate_version"] = verifier_prompt_path.stem
+        payload["surrogate_summary"] = base.surrogate_summary(new_rows)
+        payload["tokens_used"] = {
+            "agent": {
+                "model": base.AGENT_MODEL,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "calls": 0,
+                "reused": True,
+            },
+            "surrogate": {"model": base.SURROGATE_MODEL, **surrogate_usage},
+        }
+        payload["cost"] = {
+            "agent": 0.0,
+            "surrogate": base.safe_cost(base.SURROGATE_MODEL, surrogate_usage),
+        }
+        payload["items"] = new_rows
+        write_json(output_path, payload)
+        return payload
+    finally:
+        base.SURROGATE_PATH = old_surrogate_path
+
+
+def evaluate_with_verifier(
+    base,
+    client: OpenAI,
+    *,
+    manifest_path: Path,
+    part: str,
+    condition: str,
+    adapter: str | None,
+    verifier_prompt_path: Path,
+):
+    old_path = base.SURROGATE_PATH
+    try:
+        base.SURROGATE_PATH = verifier_prompt_path
+        return base.evaluate(client, TASK, manifest_path, part, condition, adapter)
+    finally:
+        base.SURROGATE_PATH = old_path
+
+
+def coevo_skill_input(
+    base,
+    *,
+    mode: str,
+    baseline_a: dict[str, Any],
+    baseline_b: dict[str, Any],
+    v1a: dict[str, Any] | None,
+    v1b: dict[str, Any] | None,
+    previous: dict[str, Any] | None,
+    verifier_prompt_path: Path,
+) -> dict[str, Any]:
+    packet = base.m1_input(
+        TASK, mode, baseline_a, baseline_b, v1a, v1b, previous
+    )
+    packet["arm"] = ARM
+    packet["surrogate_verifier"] = {
+        "enabled": True,
+        "mode": verifier_prompt_path.stem,
+        "model": base.SURROGATE_MODEL,
+        "prompt_sha256": sha(verifier_prompt_path),
+        "gt_visible_to_surrogate": False,
+        "diagnosis_available_to_optimizer": True,
+        "co_evolving": True,
+    }
+    packet["constraints"]["surrogate_verifier_static"] = False
+    packet["constraints"]["holdout_access"] = False
+    packet["constraints"]["case_memorization"] = False
+    return packet
+
+
+def development(base, client: OpenAI):
+    ms = base.manifests(TASK)
+
+    v0_source = ROOT / "prompts/meta_coevo/surrogate_verifier_v0.txt"
+    v0 = verifier_path(TASK, 0)
+    write_new(v0, v0_source.read_bytes())
+
+    baseline_a_v0 = evaluate_with_verifier(
+        base, client,
+        manifest_path=ms["fold_a"], part="development",
+        condition="baseline_fold_a_verifier_v0",
+        adapter=None, verifier_prompt_path=v0,
+    )
+    baseline_b_v0 = evaluate_with_verifier(
+        base, client,
+        manifest_path=ms["fold_b"], part="development",
+        condition="baseline_fold_b_verifier_v0",
+        adapter=None, verifier_prompt_path=v0,
+    )
+
+    verifier_out1, v1 = call_verifier_optimizer(
+        base, client,
+        task=TASK, roundn=1, previous_verifier_path=v0,
+        development_results=[baseline_a_v0, baseline_b_v0],
+    )
+
+    baseline_a_v1 = reverify_existing_result(
+        base, client,
+        source_result=baseline_a_v0, manifest_path=ms["fold_a"],
+        verifier_prompt_path=v1, condition="baseline_fold_a_reverified_v1",
+    )
+    baseline_b_v1 = reverify_existing_result(
+        base, client,
+        source_result=baseline_b_v0, manifest_path=ms["fold_b"],
+        verifier_prompt_path=v1, condition="baseline_fold_b_reverified_v1",
+    )
+
+    skill_out1, adapter1, adapter1_path = base.call_m1(
+        client, TASK, 1,
+        coevo_skill_input(
+            base,
+            mode="generate",
+            baseline_a=baseline_a_v1,
+            baseline_b=baseline_b_v1,
+            v1a=None, v1b=None, previous=None,
+            verifier_prompt_path=v1,
+        ),
+    )
+
+    adapter1_a_v1 = adapter1_b_v1 = None
+    if adapter1:
+        adapter1_a_v1 = evaluate_with_verifier(
+            base, client,
+            manifest_path=ms["fold_a"], part="development",
+            condition="adapter_v1_fold_a_verifier_v1",
+            adapter=adapter1, verifier_prompt_path=v1,
+        )
+        adapter1_b_v1 = evaluate_with_verifier(
+            base, client,
+            manifest_path=ms["fold_b"], part="development",
+            condition="adapter_v1_fold_b_verifier_v1",
+            adapter=adapter1, verifier_prompt_path=v1,
+        )
+
+    verifier_sources = (
+        [adapter1_a_v1, adapter1_b_v1]
+        if adapter1_a_v1 and adapter1_b_v1
+        else [baseline_a_v1, baseline_b_v1]
+    )
+
+    verifier_out2, v2 = call_verifier_optimizer(
+        base, client,
+        task=TASK, roundn=2, previous_verifier_path=v1,
+        development_results=verifier_sources,
+    )
+
+    adapter1_a_v2 = adapter1_b_v2 = None
+    if adapter1_a_v1 and adapter1_b_v1:
+        adapter1_a_v2 = reverify_existing_result(
+            base, client,
+            source_result=adapter1_a_v1, manifest_path=ms["fold_a"],
+            verifier_prompt_path=v2, condition="adapter_v1_fold_a_reverified_v2",
+        )
+        adapter1_b_v2 = reverify_existing_result(
+            base, client,
+            source_result=adapter1_b_v1, manifest_path=ms["fold_b"],
+            verifier_prompt_path=v2, condition="adapter_v1_fold_b_reverified_v2",
+        )
+
+    baseline_a_v2 = reverify_existing_result(
+        base, client,
+        source_result=baseline_a_v0, manifest_path=ms["fold_a"],
+        verifier_prompt_path=v2, condition="baseline_fold_a_reverified_v2",
+    )
+    baseline_b_v2 = reverify_existing_result(
+        base, client,
+        source_result=baseline_b_v0, manifest_path=ms["fold_b"],
+        verifier_prompt_path=v2, condition="baseline_fold_b_reverified_v2",
+    )
+
+    previous = (
+        {"sha256": sha(adapter1_path), "text": adapter1}
+        if adapter1_path and adapter1
+        else {"sha256": None, "text": ""}
+    )
+
+    skill_out2, adapter2, adapter2_path = base.call_m1(
+        client, TASK, 2,
+        coevo_skill_input(
+            base,
+            mode="refine",
+            baseline_a=baseline_a_v2,
+            baseline_b=baseline_b_v2,
+            v1a=adapter1_a_v2,
+            v1b=adapter1_b_v2,
+            previous=previous,
+            verifier_prompt_path=v2,
+        ),
+    )
+
+    adapter2_a_v2 = adapter2_b_v2 = None
+    if adapter2:
+        adapter2_a_v2 = evaluate_with_verifier(
+            base, client,
+            manifest_path=ms["fold_a"], part="development",
+            condition="adapter_v2_fold_a_verifier_v2",
+            adapter=adapter2, verifier_prompt_path=v2,
+        )
+        adapter2_b_v2 = evaluate_with_verifier(
+            base, client,
+            manifest_path=ms["fold_b"], part="development",
+            condition="adapter_v2_fold_b_verifier_v2",
+            adapter=adapter2, verifier_prompt_path=v2,
+        )
+
+    selection_candidates = []
+    if adapter1_path and adapter1_a_v2 and adapter1_b_v2:
+        selection_candidates.append(
+            ("adapter_v1", adapter1_a_v2, adapter1_b_v2, adapter1_path)
+        )
+    if adapter2_path and adapter2_a_v2 and adapter2_b_v2:
+        selection_candidates.append(
+            ("adapter_v2", adapter2_a_v2, adapter2_b_v2, adapter2_path)
+        )
+
+    selection = base.select_candidate(
+        TASK, baseline_a_v2, baseline_b_v2, selection_candidates
+    )
+
+    final_verifier = verifier_dir(TASK) / "selected_verifier.txt"
+    write_new(final_verifier, v2.read_bytes())
+
+    summary = {
+        "arm": ARM,
+        "task_name": TASK,
+        "status": "DEVELOPMENT_COMPLETE",
+        "model_roles": {
+            "agent_model": base.AGENT_MODEL,
+            "surrogate_model": base.SURROGATE_MODEL,
+            "verifier_optimizer_model": VERIFIER_OPTIMIZER_MODEL,
+            "skill_optimizer_model": base.OPTIMIZER_MODEL,
+        },
+        "verifier_evolution": {
+            "v0_sha256": sha(v0),
+            "round_1_decision": verifier_out1.get("decision"),
+            "v1_sha256": sha(v1),
+            "round_2_decision": verifier_out2.get("decision"),
+            "v2_sha256": sha(v2),
+            "selected_verifier_sha256": sha(final_verifier),
+        },
+        "baseline_fold_a_v0": base.compact(baseline_a_v0),
+        "baseline_fold_b_v0": base.compact(baseline_b_v0),
+        "baseline_fold_a_v1": base.compact(baseline_a_v1),
+        "baseline_fold_b_v1": base.compact(baseline_b_v1),
+        "baseline_fold_a_v2": base.compact(baseline_a_v2),
+        "baseline_fold_b_v2": base.compact(baseline_b_v2),
+        "skill_round_1_decision": skill_out1.get("decision"),
+        "adapter_v1_fold_a_v1": base.compact(adapter1_a_v1) if adapter1_a_v1 else None,
+        "adapter_v1_fold_b_v1": base.compact(adapter1_b_v1) if adapter1_b_v1 else None,
+        "adapter_v1_fold_a_v2": base.compact(adapter1_a_v2) if adapter1_a_v2 else None,
+        "adapter_v1_fold_b_v2": base.compact(adapter1_b_v2) if adapter1_b_v2 else None,
+        "skill_round_2_decision": skill_out2.get("decision"),
+        "adapter_v2_fold_a_v2": base.compact(adapter2_a_v2) if adapter2_a_v2 else None,
+        "adapter_v2_fold_b_v2": base.compact(adapter2_b_v2) if adapter2_b_v2 else None,
+        "selection": selection,
+        "holdout_access": False,
+    }
+    write_json(RESULT_DIR / "development" / f"{TASK}_summary.json", summary)
+    return summary
+
+
+def holdout(base, client: OpenAI):
+    ms = base.manifests(TASK)
+    selection = load_json(base.adapter_dir(TASK) / "selection.json")
+    final_verifier = verifier_dir(TASK) / "selected_verifier.txt"
+
+    if not final_verifier.exists():
+        raise SystemExit("missing selected_verifier.txt; run --phase development first")
+
+    baseline = evaluate_with_verifier(
+        base, client,
+        manifest_path=ms["holdout"], part="holdout",
+        condition="baseline",
+        adapter=None, verifier_prompt_path=final_verifier,
+    )
+
+    selected_result = None
+    if selection["decision"] == "ADAPTER":
+        adapter = (base.adapter_dir(TASK) / "selected_adapter.txt").read_text(
+            encoding="utf-8"
+        )
+        selected_result = evaluate_with_verifier(
+            base, client,
+            manifest_path=ms["holdout"], part="holdout",
+            condition="selected_adapter",
+            adapter=adapter, verifier_prompt_path=final_verifier,
+        )
+
+    summary = {
+        "arm": ARM,
+        "task_name": TASK,
+        "status": "HOLDOUT_COMPLETE",
+        "model_roles": {
+            "agent_model": base.AGENT_MODEL,
+            "surrogate_model": base.SURROGATE_MODEL,
+            "verifier_optimizer_model": VERIFIER_OPTIMIZER_MODEL,
+            "skill_optimizer_model": base.OPTIMIZER_MODEL,
+        },
+        "selection_decision": selection["decision"],
+        "selection_sha256": sha(base.adapter_dir(TASK) / "selection.json"),
+        "selected_verifier_sha256": sha(final_verifier),
+        "baseline": base.compact(baseline),
+        "selected_adapter": base.compact(selected_result) if selected_result else None,
+        "no_holdout_feedback": True,
+        "optimizer_called_on_holdout": False,
+        "verifier_revision_on_holdout": False,
+        "skill_revision_on_holdout": False,
+    }
+    write_json(RESULT_DIR / "holdout" / f"{TASK}_summary.json", summary)
+    return summary
+
+
+def preflight(base):
+    v0 = ROOT / "prompts/meta_coevo/surrogate_verifier_v0.txt"
+    if not v0.exists():
+        raise SystemExit(f"missing verifier v0: {v0}")
+    for path in base.manifests(TASK).values():
+        if not path.exists():
+            raise SystemExit(f"missing manifest: {path}")
+
+    return {
+        "arm": ARM,
+        "task_name": TASK,
+        "base_runner": str(BASE_RUNNER),
+        "agent_model": base.AGENT_MODEL,
+        "surrogate_model": base.SURROGATE_MODEL,
+        "verifier_optimizer_model": VERIFIER_OPTIMIZER_MODEL,
+        "skill_optimizer_model": base.OPTIMIZER_MODEL,
+        "result_dir": str(RESULT_DIR),
+        "trace_dir": str(TRACE_DIR),
+        "adapter_dir": str(ADAPTER_ROOT),
+        "verifier_dir": str(VERIFIER_ROOT),
+        "gt_visible_to_surrogate": False,
+        "gt_visible_to_development_verifier_optimizer": True,
+        "holdout_feedback": False,
+        "skill_evolution": True,
+        "verifier_evolution": True,
+    }
+
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--task',choices=['m1_factorybench_l123','m1_factorybench_l4'],required=True);ap.add_argument('--phase',choices=['development','holdout'],required=True);args=ap.parse_args()
-    if not os.getenv('OPENAI_API_KEY'):raise SystemExit('OPENAI_API_KEY missing in model process')
-    if sha(M1_PATH)!=M1_SHA:raise SystemExit('M1 hash mismatch')
-    client=OpenAI();result=development(client,args.task) if args.phase=='development' else holdout(client,args.task);print(json.dumps(result,indent=2,ensure_ascii=False,allow_nan=False))
-if __name__=='__main__':main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--phase",
+        choices=["preflight", "development", "holdout"],
+        required=True,
+    )
+    args = parser.parse_args()
+
+    base = load_base()
+    info = preflight(base)
+
+    if args.phase == "preflight":
+        print(json.dumps(info, indent=2, ensure_ascii=False))
+        return
+
+    if not os.getenv("OPENAI_API_KEY"):
+        raise SystemExit("OPENAI_API_KEY missing in model process")
+
+    client = OpenAI()
+    result = development(base, client) if args.phase == "development" else holdout(base, client)
+    print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
+
+
+if __name__ == "__main__":
+    main()

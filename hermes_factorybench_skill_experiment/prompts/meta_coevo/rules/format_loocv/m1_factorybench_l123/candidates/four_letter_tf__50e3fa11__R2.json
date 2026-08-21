@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__50e3fa11__R2",
+  "source_case_id": "50e3fa11-63ec-4e98-97e0-9bd2544af9be",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "threshold logic",
+  "rule_text": "Evaluate every option independently using its stated inequality and quantifier, treating words such as at least one, no, all, below, and at least as logical conditions, then emit one T/F character per option in listed order.",
+  "rationale": "This prevents a single unsupported option or an incorrect boundary interpretation from contaminating the other judgments and preserves the required four-character output order."
+}

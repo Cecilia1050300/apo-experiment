@@ -1,0 +1,54 @@
+{
+  "arm": "format_stratified_loocv",
+  "task_name": "m1_factorybench_l123",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "baseline",
+  "selected_adapter_sha256": null,
+  "accepted_rule_ids": [
+    "scalar_range__2653bd29__R1",
+    "scalar_range__2653bd29__R2",
+    "scalar_range__fbe4ccd6__R1",
+    "scalar_range__fbe4ccd6__R2",
+    "four_letter_tf__50e3fa11__R1",
+    "four_letter_tf__50e3fa11__R2"
+  ],
+  "merged_rule_count": 4,
+  "final_gate": {
+    "eligible": false,
+    "reasons": [
+      "mean format regression: single_letter_mcq"
+    ],
+    "comparison": {
+      "valid": true,
+      "baseline_scores": [
+        0.15789473684210523,
+        0.21052631578947367,
+        0.10526315789473686,
+        -0.15789473684210528,
+        0.10526315789473686
+      ],
+      "candidate_scores": [
+        0.10526315789473686,
+        0.3684210526315789,
+        0.6842105263157895,
+        0.10526315789473686,
+        0.21052631578947367
+      ],
+      "paired_deltas": [
+        -0.05263157894736836,
+        0.15789473684210525,
+        0.5789473684210527,
+        0.26315789473684215,
+        0.10526315789473681
+      ],
+      "baseline_mean": 0.08421052631578944,
+      "candidate_mean": 0.2947368421052632,
+      "mean_delta": 0.21052631578947373,
+      "baseline_median": 0.10526315789473686,
+      "candidate_median": 0.21052631578947367,
+      "median_delta": 0.10526315789473681,
+      "non_regression_rate": 0.8,
+      "win_rate": 0.8
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__fab7986d__R1",
+  "source_case_id": "fab7986d-d069-43c4-a400-93242bef00e0",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "post-event joint path",
+  "rule_text": "For a claim about a joint's total post-event path, sum the absolute change between every consecutive post-event position observation for each joint, then compare the largest resulting sum with the stated threshold.",
+  "rationale": "This prevents confusing endpoint displacement with cumulative path length and supports consistent True/False evaluation across four-letter statements."
+}

@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__7e11ce79__R2",
+  "source_case_id": "7e11ce79-ad49-4bb1-a16f-8466e15347a8",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "timestep counting",
+  "rule_text": "Count rows in chronological order to determine the fixed-length window; do not subtract the window length from timestamp values, because timestamp spacing may not equal one timestep.",
+  "rationale": "Row-based counting remains valid when timestamps are irregular, duplicated, or measured in units different from timestep indices."
+}

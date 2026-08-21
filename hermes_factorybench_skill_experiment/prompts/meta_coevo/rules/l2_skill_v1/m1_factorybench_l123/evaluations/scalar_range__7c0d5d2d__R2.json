@@ -1,0 +1,84 @@
+{
+  "rule_id": "scalar_range__7c0d5d2d__R2",
+  "source_case_id": "7c0d5d2d-3d28-4fad-917f-09a7a7a3ee89",
+  "source_fold": "A",
+  "answer_format": "scalar_range",
+  "target_case_ids": [
+    "8e197939-3779-4ea8-881d-75250a1dc883",
+    "aaeeff47-16ab-4e9f-a422-26d87e7b8c19",
+    "19b1a75f-588a-4af3-8317-2bdbd9022291",
+    "9816a8be-e828-4eb5-a9eb-c7bce408c20c",
+    "cb6c8263-4904-437a-92d4-2002fe5ac374",
+    "7e11ce79-ad49-4bb1-a16f-8466e15347a8",
+    "f0b1ee65-195a-4745-abf5-d95f1f92f350"
+  ],
+  "eligible": false,
+  "reasons": [
+    "source mean regression"
+  ],
+  "rule_text": "After selecting a candidate start, count the candidate row plus the next seven timestep rows and verify that all eight observations are available and remain within the tightening phase.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "candidate_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "paired_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "baseline_mean": 0.2,
+    "candidate_mean": 0.0,
+    "mean_delta": -0.2,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.0
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.14285714285714285,
+      0.14285714285714285,
+      0.2857142857142857,
+      0.14285714285714285,
+      0.14285714285714285
+    ],
+    "candidate_scores": [
+      0.0,
+      0.2857142857142857,
+      0.2857142857142857,
+      0.2857142857142857,
+      0.2857142857142857
+    ],
+    "paired_deltas": [
+      -0.14285714285714285,
+      0.14285714285714285,
+      0.0,
+      0.14285714285714285,
+      0.14285714285714285
+    ],
+    "baseline_mean": 0.1714285714285714,
+    "candidate_mean": 0.22857142857142856,
+    "mean_delta": 0.05714285714285716,
+    "baseline_median": 0.14285714285714285,
+    "candidate_median": 0.2857142857142857,
+    "median_delta": 0.14285714285714285,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.6
+  }
+}

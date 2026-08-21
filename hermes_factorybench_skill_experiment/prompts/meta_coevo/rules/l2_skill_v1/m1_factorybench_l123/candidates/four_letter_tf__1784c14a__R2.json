@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__1784c14a__R2",
+  "source_case_id": "1784c14a-b596-4e85-920e-abcbb5230241",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "option encoding",
+  "rule_text": "Decide the truth value of each option independently in displayed order, then encode true as T and false as F to form the four-character string.",
+  "rationale": "Independent option checks reduce cross-option inference and ensure that the final string preserves both the required ordering and the required truth-value convention."
+}

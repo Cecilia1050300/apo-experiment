@@ -1,0 +1,26 @@
+{
+  "eligible": false,
+  "reasons": [
+    "source fold regression",
+    "target fold regression",
+    "no strict opposite-fold gain",
+    "source critical format regression: single_letter_mcq",
+    "target critical format regression: scalar_range"
+  ],
+  "source_baseline_score": 0.22222222222222224,
+  "source_candidate_score": -0.11111111111111112,
+  "source_delta": -0.33333333333333337,
+  "target_baseline_score": 0.4,
+  "target_candidate_score": 0.0,
+  "target_delta": -0.4,
+  "macro_baseline": 0.3111111111111111,
+  "macro_candidate": -0.05555555555555556,
+  "macro_delta": -0.3666666666666667,
+  "candidate_bytes": 378,
+  "rule_id": "A_R1",
+  "source_fold": "A",
+  "target_fold": "B",
+  "rule_text": "For a requested value at a time not directly observed, determine whether the task requires interpolation or extrapolation from the surrounding temporal trend rather than selecting the nearest recorded sample.",
+  "source_result_condition": "rule_A_R1_fold_a",
+  "target_result_condition": "rule_A_R1_fold_b"
+}

@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__7c0d5d2d__R1",
+  "source_case_id": "7c0d5d2d-3d28-4fad-917f-09a7a7a3ee89",
+  "source_fold": "A",
+  "answer_format": "scalar_range",
+  "category": "phase identification",
+  "rule_text": "Choose the window start at the beginning of the tightening phase itself, identified by the coordinated transition from approach dynamics to tightening behavior, rather than at the earliest transient onset.",
+  "rationale": "The incorrect response selected an early transition point, while the reference indicates that the requested window should isolate the later fastener-tightening segment."
+}

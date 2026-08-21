@@ -1,0 +1,62 @@
+{
+  "condition": "B_R1__target_A",
+  "repeat_count": 5,
+  "answer_formats": [
+    "scalar_range"
+  ],
+  "item_count_per_run": 0,
+  "ordered_ids": [],
+  "scores": [],
+  "mean_score": null,
+  "median_score": null,
+  "min_score": null,
+  "max_score": null,
+  "mean_by_format": {},
+  "runs": [
+    {
+      "run_label": "B_R1__target_A_run_1",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "B_R1__target_A_run_2",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "B_R1__target_A_run_3",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "B_R1__target_A_run_4",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    },
+    {
+      "run_label": "B_R1__target_A_run_5",
+      "item_count": 0,
+      "ordered_ids": [],
+      "fixed_cardinality_score": null,
+      "parse_failures": 0,
+      "by_format": {},
+      "items": []
+    }
+  ]
+}

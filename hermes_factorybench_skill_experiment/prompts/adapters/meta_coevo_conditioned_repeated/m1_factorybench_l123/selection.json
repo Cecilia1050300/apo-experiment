@@ -1,0 +1,15 @@
+{
+  "arm": "conditioned_repeated_gated",
+  "task_name": "m1_factorybench_l123",
+  "decision": "NO_ADAPTER",
+  "selected_candidate": "baseline",
+  "selected_adapter_sha256": null,
+  "accepted_rule_ids": [],
+  "merged_rule_count": 0,
+  "final_gate": {
+    "eligible": false,
+    "reasons": [
+      "no cross-fold-accepted rules"
+    ]
+  }
+}

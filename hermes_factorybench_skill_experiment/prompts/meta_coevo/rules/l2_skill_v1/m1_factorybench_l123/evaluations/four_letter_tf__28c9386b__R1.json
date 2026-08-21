@@ -1,0 +1,82 @@
+{
+  "rule_id": "four_letter_tf__28c9386b__R1",
+  "source_case_id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "fab7986d-d069-43c4-a400-93242bef00e0",
+    "5b973297-200e-461c-ba03-207ebe4a298a",
+    "1784c14a-b596-4e85-920e-abcbb5230241",
+    "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+    "23c7a062-75c6-42fe-862d-1bac64964ffa",
+    "034888ce-8051-4a72-8700-e541a67d3d4a",
+    "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac"
+  ],
+  "eligible": true,
+  "reasons": [],
+  "rule_text": "Evaluate each option independently using the stated aggregation and apply the inequality exactly as written, distinguishing inclusive conditions such as \"<=\" from strict conditions such as \">\" or \"exceeds\".",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "candidate_scores": [
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "paired_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baseline_mean": 0.1,
+    "candidate_mean": 0.1,
+    "mean_delta": 0.0,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 1.0,
+    "win_rate": 0.0
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.2142857142857143,
+      -0.2142857142857143,
+      0.0714285714285714,
+      -0.2857142857142857,
+      -0.2857142857142857
+    ],
+    "candidate_scores": [
+      -0.1428571428571429,
+      0.0,
+      0.0,
+      0.0714285714285714,
+      0.0
+    ],
+    "paired_deltas": [
+      0.0714285714285714,
+      0.2142857142857143,
+      -0.0714285714285714,
+      0.3571428571428571,
+      0.2857142857142857
+    ],
+    "baseline_mean": -0.18571428571428572,
+    "candidate_mean": -0.014285714285714301,
+    "mean_delta": 0.17142857142857143,
+    "baseline_median": -0.2142857142857143,
+    "candidate_median": 0.0,
+    "median_delta": 0.2142857142857143,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.8
+  }
+}

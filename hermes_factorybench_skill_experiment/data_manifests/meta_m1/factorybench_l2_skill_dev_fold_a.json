@@ -1,0 +1,81 @@
+{
+  "name": "factorybench_l2_skill_dev_fold_a",
+  "purpose": "Level-2 Skill Evolution v1 development Fold A",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "frozen_after_creation": true,
+  "selection_method": "deterministic metadata-diversity selection; no model outputs or GT performance used",
+  "items": [
+    {
+      "id": "fab7986d-d069-43c4-a400-93242bef00e0",
+      "level": 2,
+      "split": "test",
+      "episode": "0f207d05-1979-4061-bf25-829337eae773",
+      "answer_format": "four_letter_tf",
+      "dataset": "factorywave",
+      "template_id": 2
+    },
+    {
+      "id": "5b973297-200e-461c-ba03-207ebe4a298a",
+      "level": 2,
+      "split": "test",
+      "episode": "9b38ce61-c879-43bb-9a9a-46b1820664c1",
+      "answer_format": "four_letter_tf",
+      "dataset": "factorywave",
+      "template_id": 2
+    },
+    {
+      "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+      "level": 2,
+      "split": "test",
+      "episode": "30591ba0-6245-4d24-9ae1-19a11692ca39",
+      "answer_format": "four_letter_tf",
+      "dataset": "factorywave",
+      "template_id": 2
+    },
+    {
+      "id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+      "level": 2,
+      "split": "test",
+      "episode": null,
+      "answer_format": "four_letter_tf",
+      "dataset": null,
+      "template_id": 8
+    },
+    {
+      "id": "8e197939-3779-4ea8-881d-75250a1dc883",
+      "level": 2,
+      "split": "test",
+      "episode": "83dc2cd1-738d-4a8f-b03f-9857d1c79973",
+      "answer_format": "scalar_range",
+      "dataset": "factorywave",
+      "template_id": 6
+    },
+    {
+      "id": "aaeeff47-16ab-4e9f-a422-26d87e7b8c19",
+      "level": 2,
+      "split": "test",
+      "episode": "experiment_847",
+      "answer_format": "scalar_range",
+      "dataset": "vorausad",
+      "template_id": 6
+    },
+    {
+      "id": "19b1a75f-588a-4af3-8317-2bdbd9022291",
+      "level": 2,
+      "split": "test",
+      "episode": "0b8cdcbc-b0e0-4c08-9ba5-8a120ca95cdd",
+      "answer_format": "scalar_range",
+      "dataset": "factorywave",
+      "template_id": 6
+    },
+    {
+      "id": "7c0d5d2d-3d28-4fad-917f-09a7a7a3ee89",
+      "level": 2,
+      "split": "test",
+      "episode": "083d3d0f-27b7-4ecb-8214-8de986803ce3",
+      "answer_format": "scalar_range",
+      "dataset": "factorywave",
+      "template_id": 6
+    }
+  ]
+}

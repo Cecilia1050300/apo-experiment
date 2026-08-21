@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__198ae6a7__R1",
+  "source_case_id": "198ae6a7-f1c6-42f5-b6a3-5d058bdeb0e7",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "option mapping",
+  "rule_text": "Evaluate each option independently in A-to-D order, mark T only when the complete stated condition is satisfied, and concatenate the four truth values without reordering.",
+  "rationale": "This prevents conclusions about one metric from being transferred to another option and avoids positional or operator-application errors in fixed-length truth-string answers."
+}

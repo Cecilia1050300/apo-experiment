@@ -1,0 +1,78 @@
+{
+  "rule_id": "A_R2",
+  "source_fold": "A",
+  "target_fold": "B",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "For each event-relative proposition, separately identify its pre-event baseline, post-event interval, aggregation, comparison direction, and threshold before deciding its truth value.",
+  "eligible": false,
+  "reasons": [
+    "source mean regression",
+    "source non-regression rate too low"
+  ],
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      0.5,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "candidate_scores": [
+      0.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.0
+    ],
+    "paired_deltas": [
+      0.5,
+      -0.5,
+      -0.5,
+      -1.0,
+      0.0
+    ],
+    "baseline_mean": 0.2,
+    "candidate_mean": -0.1,
+    "mean_delta": -0.30000000000000004,
+    "baseline_median": 0.0,
+    "candidate_median": 0.0,
+    "median_delta": 0.0,
+    "non_regression_rate": 0.4,
+    "win_rate": 0.2
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.5,
+      -1.0,
+      0.0,
+      -0.5,
+      -1.0
+    ],
+    "candidate_scores": [
+      -0.5,
+      -0.5,
+      0.0,
+      0.0,
+      -0.5
+    ],
+    "paired_deltas": [
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.5
+    ],
+    "baseline_mean": -0.6,
+    "candidate_mean": -0.3,
+    "mean_delta": 0.3,
+    "baseline_median": -0.5,
+    "candidate_median": -0.5,
+    "median_delta": 0.0,
+    "non_regression_rate": 1.0,
+    "win_rate": 0.6
+  }
+}

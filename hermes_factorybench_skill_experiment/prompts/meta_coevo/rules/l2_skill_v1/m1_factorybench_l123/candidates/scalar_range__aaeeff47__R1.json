@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__aaeeff47__R1",
+  "source_case_id": "aaeeff47-16ab-4e9f-a422-26d87e7b8c19",
+  "source_fold": "A",
+  "answer_format": "scalar_range",
+  "category": "phase-boundary detection",
+  "rule_text": "Identify the window start from an explicit, observable transition in the relevant time-series signals that marks the requested phase; do not choose a timestamp without a stated criterion.",
+  "rationale": "This prevents unsupported scalar selections and transfers to cases where a phase must be localized from multivariate sensor behavior."
+}

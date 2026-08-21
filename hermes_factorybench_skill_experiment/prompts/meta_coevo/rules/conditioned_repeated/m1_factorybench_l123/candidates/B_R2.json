@@ -1,0 +1,11 @@
+{
+  "rule_id": "B_R2",
+  "category": "phase boundary detection",
+  "answer_formats": [
+    "scalar_range"
+  ],
+  "rule_text": "When isolating a named motion phase, choose the earliest supported timestamp marking its defining signal transition rather than an arbitrary endpoint or the final observation.",
+  "rationale": "The failed scalar answers used timestamps that did not mark the requested phase onset; anchoring the window to an observable transition is reusable for approach, descent, contact, and related phases.",
+  "source_failure_count": 2,
+  "source_fold": "B"
+}

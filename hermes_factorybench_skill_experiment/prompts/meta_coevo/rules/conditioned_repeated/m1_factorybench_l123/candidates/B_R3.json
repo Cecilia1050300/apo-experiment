@@ -1,0 +1,11 @@
+{
+  "rule_id": "B_R3",
+  "category": "temporal threshold evaluation",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "For each proposition, inspect every sample in its stated post-event interval, apply the exact inequality direction and boundary condition, then assign its truth value independently in proposition order.",
+  "rationale": "The four-letter failure treated a post-event threshold claim as true despite later violations, indicating that extrema over the full interval and the comparison direction must be checked rather than relying on a single event-adjacent sample.",
+  "source_failure_count": 1,
+  "source_fold": "B"
+}

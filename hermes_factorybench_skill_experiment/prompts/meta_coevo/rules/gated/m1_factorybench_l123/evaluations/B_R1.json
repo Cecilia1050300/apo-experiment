@@ -1,0 +1,23 @@
+{
+  "eligible": false,
+  "reasons": [
+    "source fold regression",
+    "source critical format regression: scalar_range"
+  ],
+  "source_baseline_score": 0.4,
+  "source_candidate_score": 0.0,
+  "source_delta": -0.4,
+  "target_baseline_score": 0.22222222222222224,
+  "target_candidate_score": 0.3333333333333333,
+  "target_delta": 0.11111111111111108,
+  "macro_baseline": 0.3111111111111111,
+  "macro_candidate": 0.16666666666666666,
+  "macro_delta": -0.14444444444444446,
+  "candidate_bytes": 331,
+  "rule_id": "B_R1",
+  "source_fold": "B",
+  "target_fold": "A",
+  "rule_text": "Before accepting a forward-window start, count the supplied observations from that start and verify that the complete requested number of timesteps is available.",
+  "source_result_condition": "rule_B_R1_fold_b",
+  "target_result_condition": "rule_B_R1_fold_a"
+}

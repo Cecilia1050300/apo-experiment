@@ -1,0 +1,11 @@
+{
+  "manifest_sha256": "0fc5609a1c67f74ec7242e82fd3beca905f00a7e4ecb2ec231e5aa88a3b869bb",
+  "skill_sha256": "253044ed73fa651337dcc86bbae797c227a65e37523b19195b74ddcf7efc2af1",
+  "dataset_revision": "b3863519ccedbceab54dfa7600104eb42b985ed7",
+  "case_count": 50,
+  "format_counts": {
+    "four_letter_tf": 20,
+    "scalar_range": 30
+  },
+  "no_l2_skill_evolution": true
+}

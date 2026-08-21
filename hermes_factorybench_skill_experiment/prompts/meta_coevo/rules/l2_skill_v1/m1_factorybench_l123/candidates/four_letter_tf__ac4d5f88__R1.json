@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__ac4d5f88__R1",
+  "source_case_id": "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "option-order encoding",
+  "rule_text": "Evaluate options A through D independently and encode their truth values in that same order as exactly four characters, using T for true and F for false.",
+  "rationale": "This prevents option-order shifts and ensures the response conforms to the required four-letter format."
+}

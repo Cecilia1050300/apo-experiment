@@ -1,0 +1,270 @@
+{
+  "arm": "coevo",
+  "task_name": "m1_factorybench_l123",
+  "status": "HOLDOUT_COMPLETE",
+  "model_roles": {
+    "agent_model": "gpt-4o-mini",
+    "surrogate_model": "gpt-5.6-luna",
+    "verifier_optimizer_model": "gpt-5.6-luna",
+    "skill_optimizer_model": "gpt-5.6-luna"
+  },
+  "selection_decision": "NO_ADAPTER",
+  "selection_sha256": "f3daa7ef1d47ff0e9536fcdba5b467af0027059ae1a4e9bd423fe0013dfca319",
+  "selected_verifier_sha256": "1e1624c2ed47f826c045d113e2f599b9ada2c6b7f93949ee344675f15b34d29e",
+  "baseline": {
+    "condition": "baseline",
+    "item_count": 9,
+    "ordered_ids": [
+      "aedd52a6-a510-417b-8de8-48177cdb1c02",
+      "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+      "60c9a20e-d082-491a-8e5c-1601fb71c367",
+      "3e594c96-8b27-405d-9af8-17334cf34ea3",
+      "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+      "138f1721-16e4-4189-8d29-80967dc83807",
+      "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+      "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+      "65c3d538-c526-4ecd-8dfd-99d9764df838"
+    ],
+    "canonical_score": 0.24528301886792456,
+    "fixed_cardinality_score": 0.24528301886792456,
+    "parse_failures": 0,
+    "by_format": {
+      "four_letter_ranking": -0.043478260869565216,
+      "four_letter_tf": 0.0,
+      "scalar_range": 0.0,
+      "single_letter_mcq": 0.625
+    },
+    "by_dataset": {
+      "aursad": 1.0,
+      "factorywave": 0.055118110236220465,
+      "vorausad": 1.0
+    },
+    "by_level": {
+      "1": 0.49999999999999994,
+      "2": 0.25,
+      "3": -0.021276595744680948
+    },
+    "surrogate_summary": {
+      "valid_count": 9,
+      "parse_or_transport_failures": 0,
+      "agreement_rate": 0.5555555555555556,
+      "false_pass_count": 0,
+      "false_reject_count": 4,
+      "false_pass_rate_on_gt_fail": 0.0,
+      "false_reject_rate_on_gt_pass": 1.0
+    },
+    "items": [
+      {
+        "id": "aedd52a6-a510-417b-8de8-48177cdb1c02",
+        "level": 1,
+        "dataset": "aursad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": true,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The supplied six-axis position data show a generic robot trajectory but contain no identifying evidence that uniquely distinguishes UR3e from the KUKA or Agile Robots options."
+        ],
+        "surrogate_failed_checks": [
+          "comparative_multiple_choice_discrimination"
+        ]
+      },
+      {
+        "id": "0f317a5c-f0a4-4c55-a522-bdc022de9a90",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "A",
+        "parsed": "A",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": true,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The supplied sensor data contains only six position feedback/setpoint trajectories and provides no robot-specific identifier or distinguishing evidence to uniquely select option A over B or C."
+        ],
+        "surrogate_failed_checks": [
+          "comparative multiple-choice discrimination"
+        ]
+      },
+      {
+        "id": "60c9a20e-d082-491a-8e5c-1601fb71c367",
+        "level": 1,
+        "dataset": "factorywave",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "C",
+        "parsed": "C",
+        "score": 0.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The six joint position time series contains no robot-specific identifier, units, limits, or distinctive feature that uniquely distinguishes option C from the other six-axis robot options."
+        ],
+        "surrogate_failed_checks": [
+          "comparative-choice discrimination",
+          "unsupported assumptions"
+        ]
+      },
+      {
+        "id": "3e594c96-8b27-405d-9af8-17334cf34ea3",
+        "level": 2,
+        "dataset": "vorausad",
+        "answer_format": "single_letter_mcq",
+        "raw_output": "B",
+        "parsed": "B",
+        "score": 1.0,
+        "chance": 0.3333333333333333,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": true,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The supplied sensor data and context do not uniquely identify option B; no robot-specific evidence distinguishes it from the other listed robots."
+        ],
+        "surrogate_failed_checks": [
+          "comparative-choice discrimination",
+          "unsupported assumptions"
+        ]
+      },
+      {
+        "id": "eb5a29f5-9230-4246-bdd3-8cf98ce12f6f",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "3734",
+        "parsed": 3734.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "3734 is not a supplied timestamp, and the data after that point contains far fewer than the required 30 timestep observations for a complete window."
+        ],
+        "surrogate_failed_checks": [
+          "format compliance",
+          "complete-window requirement",
+          "unsupported assumptions"
+        ]
+      },
+      {
+        "id": "138f1721-16e4-4189-8d29-80967dc83807",
+        "level": 2,
+        "dataset": "factorywave",
+        "answer_format": "scalar_range",
+        "raw_output": "1035",
+        "parsed": 1035.0,
+        "score": 0.0,
+        "chance": 0.0,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The proposed start timestamp 1035 is not present in the supplied time series; interpolation or an unsupplied time origin is not requested."
+        ],
+        "surrogate_failed_checks": [
+          "temporal_validity",
+          "unsupported_assumptions"
+        ]
+      },
+      {
+        "id": "3e1396cd-68e2-44f4-98f0-2c32e1089560",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "FTFT",
+        "parsed": "FTFT",
+        "score": 1.0,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": true,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": true,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The answer marks B and D true, but after the 2622 ms event no joint sweeps more than 62 degrees, and the summed joint position-plus-speed tracking deviation exceeds 0.1464 in the supplied post-event rows."
+        ],
+        "surrogate_failed_checks": [
+          "arithmetic and logic",
+          "operator semantics"
+        ]
+      },
+      {
+        "id": "fa9394bc-55c9-4aa9-bdc8-571f3d3f2fd9",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_tf",
+        "raw_output": "FTFT",
+        "parsed": "FTFT",
+        "score": 0.0,
+        "chance": 0.5,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "Option D is not supported: the supplied post-event joint positions show no joint accumulating more than 100 degrees of path length; the answer marks D True."
+        ],
+        "surrogate_failed_checks": [
+          "operator semantics",
+          "arithmetic and logic"
+        ]
+      },
+      {
+        "id": "65c3d538-c526-4ecd-8dfd-99d9764df838",
+        "level": 3,
+        "dataset": "factorywave",
+        "answer_format": "four_letter_ranking",
+        "raw_output": "CADB",
+        "parsed": "CADB",
+        "score": 0.0,
+        "chance": 0.041666666666666664,
+        "parse_error": null,
+        "gt_pass": false,
+        "surrogate_verdict": "FAIL",
+        "false_pass": false,
+        "false_reject": false,
+        "development_evidence": null,
+        "surrogate_diagnosis": [
+          "The proposed ranking CADB violates the apparent temporal continuity of the segments: C transitions into D, D into A, and A into B, giving CDAB."
+        ],
+        "surrogate_failed_checks": [
+          "ranking and continuity",
+          "comparative multiple-choice discrimination"
+        ]
+      }
+    ]
+  },
+  "selected_adapter": null,
+  "no_holdout_feedback": true,
+  "optimizer_called_on_holdout": false,
+  "verifier_revision_on_holdout": false,
+  "skill_revision_on_holdout": false
+}

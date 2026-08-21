@@ -1,0 +1,85 @@
+{
+  "rule_id": "four_letter_tf__2bdfe00e__R1",
+  "source_case_id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "target_case_ids": [
+    "fab7986d-d069-43c4-a400-93242bef00e0",
+    "5b973297-200e-461c-ba03-207ebe4a298a",
+    "1784c14a-b596-4e85-920e-abcbb5230241",
+    "ac4d5f88-54ee-456a-9dee-bd95e08974f7",
+    "23c7a062-75c6-42fe-862d-1bac64964ffa",
+    "28c9386b-ac84-414a-b45b-25160a5d7546",
+    "034888ce-8051-4a72-8700-e541a67d3d4a"
+  ],
+  "eligible": false,
+  "reasons": [
+    "source mean regression",
+    "source non-regression rate too low"
+  ],
+  "rule_text": "For each option asserting that commanded and measured motion remain aligned, calculate the relevant post-event absolute tracking error and compare it directly with the option's stated limit before assigning its truth value.",
+  "source_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      0.0,
+      0.5,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "candidate_scores": [
+      -0.5,
+      0.0,
+      -0.5,
+      0.5,
+      0.0
+    ],
+    "paired_deltas": [
+      -0.5,
+      -0.5,
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "baseline_mean": 0.3,
+    "candidate_mean": -0.1,
+    "mean_delta": -0.4,
+    "baseline_median": 0.5,
+    "candidate_median": 0.0,
+    "median_delta": -0.5,
+    "non_regression_rate": 0.4,
+    "win_rate": 0.0
+  },
+  "target_comparison": {
+    "valid": true,
+    "baseline_scores": [
+      -0.2857142857142857,
+      0.0,
+      -0.0714285714285714,
+      0.0714285714285714,
+      -0.2857142857142857
+    ],
+    "candidate_scores": [
+      0.0,
+      0.1428571428571428,
+      0.0714285714285714,
+      -0.0714285714285714,
+      -0.1428571428571429
+    ],
+    "paired_deltas": [
+      0.2857142857142857,
+      0.1428571428571428,
+      0.1428571428571428,
+      -0.1428571428571428,
+      0.1428571428571428
+    ],
+    "baseline_mean": -0.11428571428571428,
+    "candidate_mean": -2.2204460492503132e-17,
+    "mean_delta": 0.11428571428571425,
+    "baseline_median": -0.0714285714285714,
+    "candidate_median": 0.0,
+    "median_delta": 0.0714285714285714,
+    "non_regression_rate": 0.8,
+    "win_rate": 0.8
+  }
+}

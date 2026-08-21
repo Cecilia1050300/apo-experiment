@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__23c7a062__R1",
+  "source_case_id": "23c7a062-75c6-42fe-862d-1bac64964ffa",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "metric alignment",
+  "rule_text": "For each option, compute the exact metric and aggregation it names, such as a maximum, mean, or accumulated path length, rather than substituting a related measurement.",
+  "rationale": "This prevents declaring a statement true from evidence about a different statistic or aggregation, especially when evaluating multi-joint post-event behavior."
+}

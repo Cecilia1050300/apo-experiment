@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__28c9386b__R1",
+  "source_case_id": "28c9386b-ac84-414a-b45b-25160a5d7546",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "threshold evaluation",
+  "rule_text": "Evaluate each option independently using the stated aggregation and apply the inequality exactly as written, distinguishing inclusive conditions such as \"<=\" from strict conditions such as \">\" or \"exceeds\".",
+  "rationale": "This prevents sign, threshold, and operator errors when converting quantitative checks into the four truth characters."
+}

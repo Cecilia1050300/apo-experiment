@@ -1,0 +1,8 @@
+{
+  "rule_id": "A_R1",
+  "category": "temporal estimation",
+  "rule_text": "For a requested value at a time not directly observed, determine whether the task requires interpolation or extrapolation from the surrounding temporal trend rather than selecting the nearest recorded sample.",
+  "rationale": "A scalar temporal query was answered with the nearest observation even though the reference required estimating the value at the requested offset.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

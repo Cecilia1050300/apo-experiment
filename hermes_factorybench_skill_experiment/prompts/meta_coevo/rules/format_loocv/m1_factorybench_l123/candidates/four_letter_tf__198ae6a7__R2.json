@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__198ae6a7__R2",
+  "source_case_id": "198ae6a7-f1c6-42f5-b6a3-5d058bdeb0e7",
+  "source_fold": "A",
+  "answer_format": "four_letter_tf",
+  "category": "threshold comparison",
+  "rule_text": "For every quantitative option, compute the specified post-event aggregate using the stated absolute value, magnitude, mean, sum, or tracking-error definition, then compare it with the threshold in the exact direction stated, treating equality according to the inequality symbol.",
+  "rationale": "Different options may use different derived metrics and inequality directions; explicitly applying the requested operator and comparison prevents reversing True and False labels."
+}

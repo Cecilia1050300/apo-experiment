@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__2bdfe00e__R1",
+  "source_case_id": "2bdfe00e-55ce-4798-9ebf-cf70e09a34ac",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "command-measurement comparison",
+  "rule_text": "For each option asserting that commanded and measured motion remain aligned, calculate the relevant post-event absolute tracking error and compare it directly with the option's stated limit before assigning its truth value.",
+  "rationale": "This prevents treating small numerical differences as evidence of misalignment and transfers to any four-letter true/false case involving command-versus-measurement tracking."
+}

@@ -1,0 +1,194 @@
+{
+  "condition": "four_letter_tf__1784c14a__R2__source",
+  "repeat_count": 5,
+  "item_count_per_run": 1,
+  "ordered_ids": [
+    "1784c14a-b596-4e85-920e-abcbb5230241"
+  ],
+  "scores": [
+    -1.0,
+    -0.5,
+    0.0,
+    0.0,
+    -0.5
+  ],
+  "mean_score": -0.4,
+  "median_score": -0.5,
+  "min_score": -1.0,
+  "max_score": 0.0,
+  "mean_by_format": {
+    "four_letter_tf": -0.4
+  },
+  "runs": [
+    {
+      "run_label": "four_letter_tf__1784c14a__R2__source_run_1",
+      "item_count": 1,
+      "ordered_ids": [
+        "1784c14a-b596-4e85-920e-abcbb5230241"
+      ],
+      "fixed_cardinality_score": -1.0,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -1.0
+      },
+      "items": [
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTTT",
+          "parsed": "FTTT",
+          "score": 0.0,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18088,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.8968915343284607,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "four_letter_tf__1784c14a__R2__source_run_2",
+      "item_count": 1,
+      "ordered_ids": [
+        "1784c14a-b596-4e85-920e-abcbb5230241"
+      ],
+      "fixed_cardinality_score": -0.5,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.5
+      },
+      "items": [
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18088,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.5826800605282187,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "four_letter_tf__1784c14a__R2__source_run_3",
+      "item_count": 1,
+      "ordered_ids": [
+        "1784c14a-b596-4e85-920e-abcbb5230241"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": 0.0
+      },
+      "items": [
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFF",
+          "parsed": "FTFF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18088,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.590436995960772,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "four_letter_tf__1784c14a__R2__source_run_4",
+      "item_count": 1,
+      "ordered_ids": [
+        "1784c14a-b596-4e85-920e-abcbb5230241"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": 0.0
+      },
+      "items": [
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FFTF",
+          "parsed": "FFTF",
+          "score": 0.5,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18088,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.613861758261919,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "four_letter_tf__1784c14a__R2__source_run_5",
+      "item_count": 1,
+      "ordered_ids": [
+        "1784c14a-b596-4e85-920e-abcbb5230241"
+      ],
+      "fixed_cardinality_score": -0.5,
+      "parse_failures": 0,
+      "by_format": {
+        "four_letter_tf": -0.5
+      },
+      "items": [
+        {
+          "id": "1784c14a-b596-4e85-920e-abcbb5230241",
+          "fold": "A",
+          "split": "test",
+          "level": 2,
+          "dataset": "factorywave",
+          "answer_format": "four_letter_tf",
+          "raw_output": "FTFT",
+          "parsed": "FTFT",
+          "score": 0.25,
+          "chance": 0.5,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 18088,
+            "output_tokens": 2
+          },
+          "latency_seconds": 0.726810178719461,
+          "skill_active": true
+        }
+      ]
+    }
+  ]
+}

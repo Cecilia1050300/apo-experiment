@@ -1,0 +1,11 @@
+{
+  "rule_id": "A_R3",
+  "category": "ordered boolean serialization",
+  "answer_formats": [
+    "four_letter_tf"
+  ],
+  "rule_text": "Evaluate all options independently and serialize their truth values in the exact option order using one T or F per option.",
+  "rationale": "A four-letter response can be partially correct while still failing because one proposition is misclassified or the required option order is not preserved.",
+  "source_failure_count": 1,
+  "source_fold": "A"
+}

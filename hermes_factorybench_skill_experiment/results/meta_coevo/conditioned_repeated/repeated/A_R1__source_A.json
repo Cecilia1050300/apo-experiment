@@ -1,0 +1,192 @@
+{
+  "condition": "A_R1__source_A",
+  "repeat_count": 5,
+  "answer_formats": [
+    "scalar_margin"
+  ],
+  "item_count_per_run": 1,
+  "ordered_ids": [
+    "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+  ],
+  "scores": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "mean_score": 0.0,
+  "median_score": 0.0,
+  "min_score": 0.0,
+  "max_score": 0.0,
+  "mean_by_format": {
+    "scalar_margin": 0.0
+  },
+  "runs": [
+    {
+      "run_label": "A_R1__source_A_run_1",
+      "item_count": 1,
+      "ordered_ids": [
+        "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_margin": 0.0
+      },
+      "items": [
+        {
+          "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+          "level": 1,
+          "dataset": "factorywave",
+          "split": "test",
+          "answer_format": "scalar_margin",
+          "raw_output": "0.463",
+          "parsed": 0.463,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 5696,
+            "output_tokens": 3
+          },
+          "latency_seconds": 1.4340992104262114,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "A_R1__source_A_run_2",
+      "item_count": 1,
+      "ordered_ids": [
+        "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_margin": 0.0
+      },
+      "items": [
+        {
+          "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+          "level": 1,
+          "dataset": "factorywave",
+          "split": "test",
+          "answer_format": "scalar_margin",
+          "raw_output": "0.00137",
+          "parsed": 0.00137,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 5696,
+            "output_tokens": 4
+          },
+          "latency_seconds": 0.5923689901828766,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "A_R1__source_A_run_3",
+      "item_count": 1,
+      "ordered_ids": [
+        "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_margin": 0.0
+      },
+      "items": [
+        {
+          "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+          "level": 1,
+          "dataset": "factorywave",
+          "split": "test",
+          "answer_format": "scalar_margin",
+          "raw_output": "0.463",
+          "parsed": 0.463,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 5696,
+            "output_tokens": 3
+          },
+          "latency_seconds": 0.6469034608453512,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "A_R1__source_A_run_4",
+      "item_count": 1,
+      "ordered_ids": [
+        "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_margin": 0.0
+      },
+      "items": [
+        {
+          "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+          "level": 1,
+          "dataset": "factorywave",
+          "split": "test",
+          "answer_format": "scalar_margin",
+          "raw_output": "0.00137",
+          "parsed": 0.00137,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 5696,
+            "output_tokens": 4
+          },
+          "latency_seconds": 0.705590981990099,
+          "skill_active": true
+        }
+      ]
+    },
+    {
+      "run_label": "A_R1__source_A_run_5",
+      "item_count": 1,
+      "ordered_ids": [
+        "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c"
+      ],
+      "fixed_cardinality_score": 0.0,
+      "parse_failures": 0,
+      "by_format": {
+        "scalar_margin": 0.0
+      },
+      "items": [
+        {
+          "id": "a9e6fbbe-a9b9-4757-b7a1-c7e41590966c",
+          "level": 1,
+          "dataset": "factorywave",
+          "split": "test",
+          "answer_format": "scalar_margin",
+          "raw_output": "0.00137",
+          "parsed": 0.00137,
+          "score": 0.0,
+          "chance": 0.0,
+          "parse_error": null,
+          "transport_error": null,
+          "usage": {
+            "input_tokens": 5696,
+            "output_tokens": 4
+          },
+          "latency_seconds": 0.6106566535308957,
+          "skill_active": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "rule_id": "scalar_range__f0b1ee65__R2",
+  "source_case_id": "f0b1ee65-195a-4745-abf5-d95f1f92f350",
+  "source_fold": "B",
+  "answer_format": "scalar_range",
+  "category": "window validity",
+  "rule_text": "After selecting the phase onset, verify that a complete fixed-length window of the requested number of observations starts there and remains within the supplied series; reject any candidate too near the final observation.",
+  "rationale": "A valid window start must support all required timesteps, so the last timestamp cannot generally be selected as the beginning of a multi-observation window."
+}

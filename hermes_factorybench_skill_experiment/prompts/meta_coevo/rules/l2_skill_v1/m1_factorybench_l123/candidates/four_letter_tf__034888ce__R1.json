@@ -1,0 +1,9 @@
+{
+  "rule_id": "four_letter_tf__034888ce__R1",
+  "source_case_id": "034888ce-8051-4a72-8700-e541a67d3d4a",
+  "source_fold": "B",
+  "answer_format": "four_letter_tf",
+  "category": "path-length calculation",
+  "rule_text": "For a total joint path-length claim, sum the absolute position changes between every successive post-event observation for the specified joint, using consistent angle units, rather than comparing only its initial and final positions.",
+  "rationale": "This prevents confusing net displacement with accumulated travel and supports reliable threshold comparisons in other four-letter true/false cases."
+}
